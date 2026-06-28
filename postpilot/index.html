@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PostPilot — AIがSNSを自動化する。あなたは成長に集中。</title>
+  <meta name="description" content="PostPilotはX・Instagram・LinkedInへの投稿をAIが自動生成・スケジュール。コンテンツ作成の95%を削減し、フォロワーを3倍に。">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: #030712; color: #fff; overflow-x: hidden; }
+
+    /* ── Glass ── */
+    .glass {
+      background: rgba(255,255,255,0.04);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    /* ── Gradient text ── */
+    .grad { background: linear-gradient(135deg,#a78bfa,#60a5fa); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .grad-warm { background: linear-gradient(135deg,#f59e0b,#ef4444); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+
+    /* ── Blobs ── */
+    @keyframes blobMove {
+      0%,100% { transform:translate(0,0) scale(1); }
+      33%      { transform:translate(40px,-30px) scale(1.07); }
+      66%      { transform:translate(-25px,35px) scale(0.93); }
+    }
+    .blob1 { animation: blobMove 14s ease-in-out infinite; }
+    .blob2 { animation: blobMove 18s ease-in-out infinite reverse; animation-delay:-6s; }
+    .blob3 { animation: blobMove 11s ease-in-out infinite; animation-delay:-3s; }
+
+    /* ── Product card float ── */
+    @keyframes prodFloat {
+      0%,100% { transform: perspective(1200px) rotateX(7deg) rotateY(-5deg) translateY(0px); }
+      50%      { transform: perspective(1200px) rotateX(7deg) rotateY(-5deg) translateY(-16px); }
+    }
+    .prod-float { animation: prodFloat 6s ease-in-out infinite; }
+
+    /* ── Notification pop ── */
+    @keyframes popIn {
+      from { opacity:0; transform:translateX(20px) scale(.9); }
+      to   { opacity:1; transform:translateX(0) scale(1); }
+    }
+    .notif    { animation: popIn .6s cubic-bezier(.34,1.56,.64,1) both; }
+    .notif-d1 { animation-delay:.4s; }
+    .notif-d2 { animation-delay:.9s; }
+    .notif-d3 { animation-delay:1.4s; }
+
+    /* ── Float helper ── */
+    @keyframes floatY { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+    .float-y { animation: floatY 4s ease-in-out infinite; }
+
+    /* ── 3-D card tilt ── */
+    .card3d { transition: transform .4s cubic-bezier(.23,1,.32,1), box-shadow .4s ease; }
+    .card3d:hover {
+      transform: translateY(-10px) rotateX(4deg) rotateY(-3deg) scale(1.02);
+      box-shadow: 0 2px 4px rgba(0,0,0,.5), 0 10px 30px rgba(0,0,0,.4),
+                  0 30px 60px rgba(0,0,0,.25), 0 0 50px rgba(124,58,237,.12);
+    }
+
+    /* ── Deep shadow ── */
+    .shadow3d {
+      box-shadow: 0 2px 4px rgba(0,0,0,.6), 0 8px 24px rgba(0,0,0,.4),
+                  0 24px 60px rgba(0,0,0,.3), 0 60px 100px rgba(0,0,0,.2);
+    }
+
+    /* ── Grid bg ── */
+    .grid-bg {
+      background-image:
+        linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+      background-size: 64px 64px;
+    }
+
+    /* ── Buttons ── */
+    .btn-p {
+      display:inline-block; text-decoration:none;
+      background: linear-gradient(135deg,#7C3AED,#2563EB);
+      color:#fff; font-weight:700; border-radius:12px; padding:15px 30px; font-size:16px;
+      transition: all .3s ease; cursor:pointer;
+      box-shadow: 0 4px 24px rgba(124,58,237,.4); border:none;
+    }
+    .btn-p:hover { transform:translateY(-3px); box-shadow:0 8px 36px rgba(124,58,237,.6); }
+
+    .btn-s {
+      display:inline-block; text-decoration:none;
+      background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14);
+      color:#fff; font-weight:600; border-radius:12px; padding:15px 30px; font-size:16px;
+      transition:all .3s ease; cursor:pointer;
+    }
+    .btn-s:hover { background:rgba(255,255,255,.12); transform:translateY(-2px); }
+
+    /* ── Scroll reveal ── */
+    .rv { opacity:0; transform:translateY(36px); transition:opacity .75s ease, transform .75s ease; }
+    .rv.in { opacity:1; transform:translateY(0); }
+    .d1{transition-delay:.1s} .d2{transition-delay:.2s} .d3{transition-delay:.3s}
+    .d4{transition-delay:.4s} .d5{transition-delay:.5s}
+
+    /* ── Header ── */
+    #hdr { transition: background .3s, border-color .3s; }
+    #hdr.sticky-on {
+      background:rgba(3,7,18,.88);
+      backdrop-filter:blur(24px); -webkit-backdrop-filter:blur(24px);
+      border-bottom:1px solid rgba(255,255,255,.07);
+    }
+
+    /* ── FAQ ── */
+    .faq-body { max-height:0; overflow:hidden; transition:max-height .38s ease, opacity .38s ease; opacity:0; }
+    .faq-body.open { max-height:500px; opacity:1; }
+    .faq-ico { transition:transform .3s ease; }
+    .faq-item.open .faq-ico { transform:rotate(45deg); }
+
+    /* ── Typing cursor ── */
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+    .cursor::after { content:'|'; color:#a78bfa; margin-left:1px; animation:blink .8s infinite; }
+
+    /* ── Dots loader ── */
+    @keyframes dotBounce { 0%,80%,100%{transform:scale(0);opacity:0} 40%{transform:scale(1);opacity:1} }
+    .dot { width:8px; height:8px; border-radius:50%; background:#7C3AED; display:inline-block; }
+    .dot:nth-child(1){animation:dotBounce 1.3s ease-in-out infinite;}
+    .dot:nth-child(2){animation:dotBounce 1.3s ease-in-out infinite;animation-delay:.2s;}
+    .dot:nth-child(3){animation:dotBounce 1.3s ease-in-out infinite;animation-delay:.4s;}
+
+    /* ── Ticker ── */
+    @keyframes ticker { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+    .ticker { animation: ticker 22s linear infinite; white-space:nowrap; }
+
+    /* ── Section line ── */
+    .sec-line { height:1px; background:linear-gradient(90deg,transparent,rgba(139,92,246,.35),transparent); }
+
+    /* ── Pricing popular ── */
+    .pop-card {
+      background:linear-gradient(135deg,rgba(124,58,237,.18),rgba(37,99,235,.18));
+      border:1px solid rgba(124,58,237,.45);
+    }
+    .pop-badge { background:linear-gradient(135deg,#7C3AED,#2563EB); }
+
+    /* ── Platform pills ── */
+    .plat-x  { background:#000; }
+    .plat-ig { background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); }
+    .plat-li { background:#0077B5; }
+
+    ::-webkit-scrollbar{width:5px}
+    ::-webkit-scrollbar-track{background:#030712}
+    ::-webkit-scrollbar-thumb{background:rgba(124,58,237,.4);border-radius:10px}
+  </style>
+</head>
+<body class="bg-[#030712] text-white">
+
+<!-- ══════════════════════════════════
+     HEADER
+══════════════════════════════════ -->
+<header id="hdr" class="fixed top-0 left-0 right-0 z-50 px-6 py-4">
+  <div class="max-w-6xl mx-auto flex items-center justify-between">
+    <div class="flex items-center gap-2">
+      <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-500 to-blue-600 flex items-center justify-center font-black text-sm">P</div>
+      <span class="font-bold text-lg tracking-tight">PostPilot</span>
+    </div>
+    <nav class="hidden md:flex items-center gap-8 text-sm text-gray-400">
+      <a href="#features" class="hover:text-white transition-colors">機能</a>
+      <a href="#demo"     class="hover:text-white transition-colors">デモ</a>
+      <a href="#pricing"  class="hover:text-white transition-colors">料金</a>
+      <a href="#reviews"  class="hover:text-white transition-colors">口コミ</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <a href="#" class="hidden md:block text-sm text-gray-400 hover:text-white transition-colors">ログイン</a>
+      <a href="#pricing" class="btn-p py-2.5 px-5 text-sm rounded-lg">無料で始める</a>
+    </div>
+  </div>
+</header>
+
+
+<!-- ══════════════════════════════════
+     1. HERO
+══════════════════════════════════ -->
+<section class="relative min-h-screen flex flex-col items-center justify-start pt-32 pb-20 px-4 overflow-hidden">
+  <!-- Grid -->
+  <div class="absolute inset-0 grid-bg opacity-60 pointer-events-none"></div>
+
+  <!-- Blobs -->
+  <div class="blob1 absolute top-1/4 left-[15%] w-[520px] h-[520px] rounded-full bg-violet-700/[.18] blur-[120px] pointer-events-none"></div>
+  <div class="blob2 absolute bottom-1/4 right-[15%] w-[440px] h-[440px] rounded-full bg-blue-600/[.16] blur-[110px] pointer-events-none"></div>
+  <div class="blob3 absolute top-2/3 left-1/2 w-[300px] h-[300px] rounded-full bg-purple-500/[.12] blur-[90px] pointer-events-none"></div>
+
+  <!-- Badge -->
+  <div class="rv relative z-10 inline-flex items-center gap-2 glass rounded-full px-4 py-2 text-sm text-violet-300 mb-8">
+    <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+    AIが投稿を自動生成・スケジュール &nbsp;✦&nbsp; 14日間無料
+  </div>
+
+  <!-- Headline -->
+  <h1 class="rv d1 relative z-10 text-5xl md:text-7xl font-black text-center leading-[1.08] mb-6 max-w-4xl">
+    SNS投稿を、AIが。<br>
+    <span class="grad">あなたは成長に集中。</span>
+  </h1>
+
+  <!-- Sub -->
+  <p class="rv d2 relative z-10 text-lg md:text-xl text-gray-400 text-center max-w-2xl mb-10 leading-relaxed">
+    PostPilotはX・Instagram・LinkedInへの投稿をAIが毎日自動生成。<br class="hidden md:block">
+    コンテンツ作成の<strong class="text-white">95%を削減</strong>し、フォロワーを<strong class="text-white">平均3倍</strong>に成長させます。
+  </p>
+
+  <!-- CTAs -->
+  <div class="rv d3 relative z-10 flex flex-col sm:flex-row gap-4 mb-4">
+    <a href="#pricing" class="btn-p text-center">無料で14日間試す →</a>
+    <a href="#demo"    class="btn-s text-center">▶&nbsp; デモを見る</a>
+  </div>
+  <p class="rv d3 relative z-10 text-xs text-gray-600 mb-14">クレジットカード不要 · いつでもキャンセル可 · 設定5分</p>
+
+  <!-- ── PRODUCT CARD ── -->
+  <div class="rv d4 relative z-10 w-full max-w-xl mx-auto">
+    <!-- Floating notifications -->
+    <div class="notif notif-d1 absolute -top-5 -left-10 glass rounded-2xl px-3 py-2 shadow3d z-20 hidden sm:flex items-center gap-2 text-sm">
+      <div class="plat-x w-6 h-6 rounded-md flex items-center justify-center text-white text-xs font-black">𝕏</div>
+      <span class="text-green-400 font-semibold">投稿完了 ✓</span>
+    </div>
+    <div class="notif notif-d2 absolute -bottom-5 -right-8 glass rounded-2xl px-3 py-2 shadow3d z-20 hidden sm:flex items-center gap-2 text-sm">
+      <span>👥</span><span class="font-semibold">+142 フォロワー</span>
+    </div>
+    <div class="notif notif-d3 absolute top-1/3 -right-14 glass rounded-2xl px-3 py-2 shadow3d z-20 hidden md:flex items-center gap-2 text-sm">
+      <span>📈</span><span class="grad font-bold">+23%</span>
+    </div>
+
+    <!-- Main card -->
+    <div class="prod-float shadow3d rounded-2xl overflow-hidden"
+         style="background:rgba(12,18,40,.92);border:1px solid rgba(139,92,246,.25);">
+      <!-- Top bar -->
+      <div class="flex items-center justify-between px-5 py-3.5 border-b border-white/5">
+        <div class="flex items-center gap-2.5">
+          <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-violet-500 to-blue-500 flex items-center justify-center font-black text-xs">P</div>
+          <span class="font-semibold text-sm">PostPilot Dashboard</span>
+        </div>
+        <div class="flex gap-3 items-center">
+          <span class="flex items-center gap-1.5 text-xs text-green-400">
+            <span class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>稼働中
+          </span>
+          <span class="text-xs bg-violet-500/15 text-violet-300 px-2 py-0.5 rounded-full">AI ON</span>
+        </div>
+      </div>
+
+      <!-- Platforms -->
+      <div class="px-5 pt-4 pb-3">
+        <p class="text-[11px] text-gray-500 uppercase tracking-widest mb-2.5">接続済みプラットフォーム</p>
+        <div class="flex gap-2">
+          <div class="plat-x w-8 h-8 rounded-lg flex items-center justify-center text-white text-sm font-black">𝕏</div>
+          <div class="plat-ig w-8 h-8 rounded-lg flex items-center justify-center text-white text-xs">📷</div>
+          <div class="plat-li w-8 h-8 rounded-lg flex items-center justify-center text-white text-[10px] font-black">in</div>
+          <div class="w-8 h-8 rounded-lg border border-dashed border-white/15 flex items-center justify-center text-white/25 text-sm">+</div>
+        </div>
+      </div>
+
+      <!-- AI generating -->
+      <div class="mx-4 mb-3 px-4 py-3.5 rounded-xl" style="background:rgba(124,58,237,.08);border:1px solid rgba(124,58,237,.2);">
+        <div class="flex justify-between items-center mb-2">
+          <span class="flex items-center gap-1.5 text-xs text-violet-300">
+            <span class="w-1.5 h-1.5 rounded-full bg-violet-400 animate-pulse"></span>AI生成中...
+          </span>
+          <span class="text-xs text-gray-500">82%</span>
+        </div>
+        <div class="w-full bg-white/5 rounded-full h-1 mb-3">
+          <div class="bg-gradient-to-r from-violet-500 to-blue-500 h-full rounded-full" style="width:82%"></div>
+        </div>
+        <p class="text-sm text-gray-300 leading-relaxed">
+          "マーケターが知るべき5つのSNS戦略🚀<br>①毎日フォロワーと対話する<br>②コンテンツを定期的に..."
+        </p>
+      </div>
+
+      <!-- Stats mini -->
+      <div class="px-5 pb-4">
+        <p class="text-[11px] text-gray-500 uppercase tracking-widest mb-2.5">本日のパフォーマンス</p>
+        <div class="grid grid-cols-3 gap-3 text-center mb-3">
+          <div><p class="text-xl font-black">892</p><p class="text-[11px] text-green-400">いいね ↑23%</p></div>
+          <div><p class="text-xl font-black">142</p><p class="text-[11px] text-green-400">フォロワー ↑18%</p></div>
+          <div><p class="text-xl font-black">3.2k</p><p class="text-[11px] text-green-400">リーチ ↑41%</p></div>
+        </div>
+        <div class="flex justify-between text-xs text-gray-600">
+          <span>次回投稿: 14:30（2時間14分後）</span>
+          <span class="text-violet-400 cursor-pointer hover:text-violet-300">今すぐ投稿 →</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stats bar -->
+  <div class="rv d5 relative z-10 mt-20 flex flex-wrap justify-center gap-10 md:gap-16">
+    <div class="text-center"><p class="text-3xl font-black grad">12,000+</p><p class="text-sm text-gray-500 mt-1">利用中のクリエイター</p></div>
+    <div class="text-center"><p class="text-3xl font-black grad">4.2M+</p><p class="text-sm text-gray-500 mt-1">自動投稿数</p></div>
+    <div class="text-center"><p class="text-3xl font-black grad">3x</p><p class="text-sm text-gray-500 mt-1">平均エンゲージメント増加</p></div>
+    <div class="text-center"><p class="text-3xl font-black grad">95%</p><p class="text-sm text-gray-500 mt-1">作業時間の削減</p></div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="relative overflow-hidden py-4 border-y border-white/5 bg-white/[.02]">
+  <div class="ticker flex gap-16 items-center text-sm text-gray-600 select-none">
+    <span>✦ X（Twitter）自動投稿</span><span>✦ Instagram 自動投稿</span><span>✦ LinkedIn 自動投稿</span>
+    <span>✦ AI文章生成</span><span>✦ ベストタイム配信</span><span>✦ エンゲージメント分析</span>
+    <span>✦ ハッシュタグ最適化</span><span>✦ 画像キャプション生成</span><span>✦ 多言語対応</span>
+    <span>✦ X（Twitter）自動投稿</span><span>✦ Instagram 自動投稿</span><span>✦ LinkedIn 自動投稿</span>
+    <span>✦ AI文章生成</span><span>✦ ベストタイム配信</span><span>✦ エンゲージメント分析</span>
+    <span>✦ ハッシュタグ最適化</span><span>✦ 画像キャプション生成</span><span>✦ 多言語対応</span>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════
+     2. PROBLEM
+══════════════════════════════════ -->
+<section id="problem" class="relative py-28 px-4 overflow-hidden">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid md:grid-cols-2 gap-14 items-center">
+      <!-- Photo -->
+      <div class="rv relative">
+        <div class="rounded-2xl overflow-hidden shadow3d" style="transform:perspective(800px) rotateY(4deg);">
+          <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=720&h=500&fit=crop&q=80"
+               alt="SNS運用に疲れるビジネスパーソン" class="w-full h-[420px] object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#030712]/60 via-transparent to-transparent"></div>
+        </div>
+        <div class="absolute bottom-6 left-6 glass rounded-xl px-4 py-3">
+          <p class="text-sm font-semibold">😩 毎日の投稿作成に<strong class="text-red-400">3〜4時間</strong>を消費</p>
+        </div>
+      </div>
+
+      <!-- Copy -->
+      <div class="rv d2">
+        <p class="text-violet-400 text-sm font-semibold uppercase tracking-widest mb-4">The Problem</p>
+        <h2 class="text-4xl lg:text-5xl font-black mb-6 leading-tight">
+          SNS運用は、<br><span class="grad-warm">時間を食い尽くす。</span>
+        </h2>
+        <p class="text-gray-400 text-lg mb-10 leading-relaxed">
+          「毎日投稿しなければ」というプレッシャー。ネタ切れの恐怖。バズっても次が続かない。多くのクリエイターとビジネスオーナーが同じ壁にぶつかっています。
+        </p>
+        <div class="space-y-4">
+          <div class="card3d glass rounded-xl p-4 flex items-start gap-4">
+            <div class="w-10 h-10 rounded-xl bg-red-500/15 flex items-center justify-center text-xl shrink-0">⏰</div>
+            <div><p class="font-semibold mb-1">作成時間が膨大</p><p class="text-sm text-gray-500">1投稿あたり平均45分。週7投稿で月21時間が飛ぶ。</p></div>
+          </div>
+          <div class="card3d glass rounded-xl p-4 flex items-start gap-4">
+            <div class="w-10 h-10 rounded-xl bg-orange-500/15 flex items-center justify-center text-xl shrink-0">💡</div>
+            <div><p class="font-semibold mb-1">ネタ切れが続く</p><p class="text-sm text-gray-500">何を書けばいいか分からない。投稿のクオリティにもバラつきが出る。</p></div>
+          </div>
+          <div class="card3d glass rounded-xl p-4 flex items-start gap-4">
+            <div class="w-10 h-10 rounded-xl bg-yellow-500/15 flex items-center justify-center text-xl shrink-0">📉</div>
+            <div><p class="font-semibold mb-1">継続できずに諦める</p><p class="text-sm text-gray-500">忙しくなると投稿が止まり、積み上げたフォロワーが離脱していく。</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sec-line mx-auto max-w-4xl"></div>
+
+
+<!-- ══════════════════════════════════
+     3. SOLUTION
+══════════════════════════════════ -->
+<section id="solution" class="relative py-28 px-4">
+  <div class="max-w-5xl mx-auto text-center">
+    <p class="rv text-violet-400 text-sm font-semibold uppercase tracking-widest mb-4">The Solution</p>
+    <h2 class="rv d1 text-4xl lg:text-5xl font-black mb-6">PostPilotが全部やる。<br><span class="grad">3ステップで完全自動化。</span></h2>
+    <p class="rv d2 text-gray-400 text-lg max-w-xl mx-auto mb-20">あなたがすることは最初の設定だけ。あとはAIが毎日、ベストな投稿を生成して自動配信します。</p>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="rv card3d glass rounded-2xl p-8 relative overflow-hidden">
+        <div class="absolute top-4 right-4 text-6xl font-black text-white/[.05] select-none">01</div>
+        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-violet-500 to-violet-700 flex items-center justify-center text-2xl mb-6 shadow3d">🎯</div>
+        <h3 class="text-xl font-bold mb-3">プロフィールを設定</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">業種・ターゲット・トーンを入力するだけ。AIがあなたのブランドを学習します。所要時間はわずか5分。</p>
+      </div>
+      <div class="rv d1 card3d glass rounded-2xl p-8 relative overflow-hidden">
+        <div class="absolute top-4 right-4 text-6xl font-black text-white/[.05] select-none">02</div>
+        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center text-2xl mb-6 shadow3d">🤖</div>
+        <h3 class="text-xl font-bold mb-3">AIが投稿を生成</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">毎日自動でコンテンツを作成。文章・ハッシュタグ・投稿時刻まで最適化。あなたは確認するだけでOK。</p>
+      </div>
+      <div class="rv d2 card3d glass rounded-2xl p-8 relative overflow-hidden">
+        <div class="absolute top-4 right-4 text-6xl font-black text-white/[.05] select-none">03</div>
+        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-green-500 to-emerald-700 flex items-center justify-center text-2xl mb-6 shadow3d">📈</div>
+        <h3 class="text-xl font-bold mb-3">フォロワーが成長する</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">一貫した高品質投稿がアルゴリズムに評価され、本業に集中しながら影響力が拡大していきます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sec-line mx-auto max-w-4xl"></div>
+
+
+<!-- ══════════════════════════════════
+     4. FEATURES
+══════════════════════════════════ -->
+<section id="features" class="relative py-28 px-4 overflow-hidden">
+  <div class="blob1 absolute top-1/2 right-0 w-96 h-96 rounded-full bg-violet-700/[.10] blur-[100px] pointer-events-none"></div>
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <p class="rv text-violet-400 text-sm font-semibold uppercase tracking-widest mb-4">Features</p>
+      <h2 class="rv d1 text-4xl lg:text-5xl font-black mb-6">必要なものが、全部ある。</h2>
+      <p class="rv d2 text-gray-400 text-lg max-w-xl mx-auto">SNS運用に必要なすべての機能を、一つのプラットフォームに。</p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="rv card3d glass rounded-2xl p-6 cursor-default">
+        <div class="w-12 h-12 rounded-xl mb-5 flex items-center justify-center text-2xl" style="background:rgba(139,92,246,.15);">✍️</div>
+        <h3 class="text-lg font-bold mb-2">AI文章生成</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">GPT-4ベースのAIがあなたのブランドボイスに合った投稿を毎日自動生成。クオリティは常に高水準を維持。</p>
+        <div class="mt-4 flex gap-2 flex-wrap">
+          <span class="text-xs bg-violet-500/10 text-violet-400 px-2 py-1 rounded-full">GPT-4o</span>
+          <span class="text-xs bg-violet-500/10 text-violet-400 px-2 py-1 rounded-full">カスタマイズ可</span>
+        </div>
+      </div>
+      <div class="rv d1 card3d glass rounded-2xl p-6 cursor-default">
+        <div class="w-12 h-12 rounded-xl mb-5 flex items-center justify-center text-2xl" style="background:rgba(59,130,246,.15);">📅</div>
+        <h3 class="text-lg font-bold mb-2">スマートスケジューリング</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">フォロワーがもっとも活発な時間帯をAIが分析し、エンゲージメント最大化タイミングで自動配信。</p>
+        <div class="mt-4 flex gap-2 flex-wrap">
+          <span class="text-xs bg-blue-500/10 text-blue-400 px-2 py-1 rounded-full">最適時刻</span>
+          <span class="text-xs bg-blue-500/10 text-blue-400 px-2 py-1 rounded-full">タイムゾーン対応</span>
+        </div>
+      </div>
+      <div class="rv d2 card3d glass rounded-2xl p-6 cursor-default">
+        <div class="w-12 h-12 rounded-xl mb-5 flex items-center justify-center text-2xl" style="background:rgba(16,185,129,.15);">📊</div>
+        <h3 class="text-lg font-bold mb-2">リアルタイム分析</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">いいね・リーチ・フォロワー増減をダッシュボードで一元管理。どの投稿がバズったか瞬時に把握。</p>
+        <div class="mt-4 flex gap-2 flex-wrap">
+          <span class="text-xs bg-green-500/10 text-green-400 px-2 py-1 rounded-full">リアルタイム</span>
+          <span class="text-xs bg-green-500/10 text-green-400 px-2 py-1 rounded-full">CSV出力</span>
+        </div>
+      </div>
+      <div class="rv d1 card3d glass rounded-2xl p-6 cursor-default">
+        <div class="w-12 h-12 rounded-xl mb-5 flex items-center justify-center text-2xl" style="background:rgba(245,158,11,.15);">🏷️</div>
+        <h3 class="text-lg font-bold mb-2">ハッシュタグ最適化</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">トレンドと競合分析から最適なハッシュタグを自動提案。リーチを最大化するタグ戦略を自動実行。</p>
+        <div class="mt-4 flex gap-2 flex-wrap">
+          <span class="text-xs bg-yellow-500/10 text-yellow-400 px-2 py-1 rounded-full">トレンド分析</span>
+          <span class="text-xs bg-yellow-500/10 text-yellow-400 px-2 py-1 rounded-full">自動提案</span>
+        </div>
+      </div>
+      <div class="rv d2 card3d glass rounded-2xl p-6 cursor-default">
+        <div class="w-12 h-12 rounded-xl mb-5 flex items-center justify-center text-2xl" style="background:rgba(239,68,68,.15);">🖼️</div>
+        <h3 class="text-lg font-bold mb-2">画像・キャプション生成</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">DALL-E連携でアイキャッチ画像も自動生成。テキストと画像をセットで一気に作成できます。</p>
+        <div class="mt-4 flex gap-2 flex-wrap">
+          <span class="text-xs bg-red-500/10 text-red-400 px-2 py-1 rounded-full">DALL-E 3</span>
+          <span class="text-xs bg-red-500/10 text-red-400 px-2 py-1 rounded-full">テンプレート</span>
+        </div>
+      </div>
+      <div class="rv d3 card3d glass rounded-2xl p-6 cursor-default">
+        <div class="w-12 h-12 rounded-xl mb-5 flex items-center justify-center text-2xl" style="background:rgba(99,102,241,.15);">👥</div>
+        <h3 class="text-lg font-bold mb-2">チームコラボレーション</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">複数アカウントを一元管理。チームメンバーへの投稿承認フローで、ブランドの一貫性を保ちながら効率化。</p>
+        <div class="mt-4 flex gap-2 flex-wrap">
+          <span class="text-xs bg-indigo-500/10 text-indigo-400 px-2 py-1 rounded-full">承認フロー</span>
+          <span class="text-xs bg-indigo-500/10 text-indigo-400 px-2 py-1 rounded-full">マルチアカウント</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sec-line mx-auto max-w-4xl"></div>
+
+
+<!-- ══════════════════════════════════
+     5. DEMO GENERATOR
+══════════════════════════════════ -->
+<section id="demo" class="relative py-28 px-4 overflow-hidden">
+  <div class="blob2 absolute bottom-0 left-1/4 w-80 h-80 rounded-full bg-blue-700/[.12] blur-[90px] pointer-events-none"></div>
+  <div class="max-w-4xl mx-auto">
+    <div class="text-center mb-14">
+      <p class="rv text-violet-400 text-sm font-semibold uppercase tracking-widest mb-4">Live Demo</p>
+      <h2 class="rv d1 text-4xl lg:text-5xl font-black mb-6">AIが今すぐ投稿を生成。</h2>
+      <p class="rv d2 text-gray-400 text-lg">トピックを入力して、投稿内容とクオリティを体感してください。</p>
+    </div>
+
+    <!-- Demo card -->
+    <div class="rv d1 shadow3d rounded-2xl overflow-hidden" style="background:rgba(12,18,40,.95);border:1px solid rgba(139,92,246,.25);">
+      <!-- Title bar -->
+      <div class="flex items-center gap-3 px-6 py-4 border-b border-white/5">
+        <div class="flex gap-1.5">
+          <div class="w-3 h-3 rounded-full bg-red-500/60"></div>
+          <div class="w-3 h-3 rounded-full bg-yellow-500/60"></div>
+          <div class="w-3 h-3 rounded-full bg-green-500/60"></div>
+        </div>
+        <span class="text-xs text-gray-600 ml-2">PostPilot — AI Content Generator</span>
+      </div>
+
+      <div class="p-6 md:p-8">
+        <!-- Form -->
+        <div id="demo-form">
+          <div class="mb-6">
+            <label class="block text-sm font-semibold text-gray-300 mb-2">トピック・キーワード</label>
+            <input id="demo-input" type="text" placeholder="例: マーケティング、副業、筋トレ、読書…"
+                   class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-gray-600 focus:outline-none focus:border-violet-500/60 transition-colors text-sm">
+          </div>
+          <div class="grid grid-cols-2 gap-4 mb-6">
+            <div>
+              <label class="block text-sm font-semibold text-gray-300 mb-2">トーン</label>
+              <select id="demo-tone" class="w-full bg-[#0a0f1e] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-violet-500/60 transition-colors">
+                <option value="casual">カジュアル</option>
+                <option value="pro">プロフェッショナル</option>
+                <option value="edu">教育的</option>
+                <option value="story">ストーリー</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-gray-300 mb-2">プラットフォーム</label>
+              <select id="demo-platform" class="w-full bg-[#0a0f1e] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-violet-500/60 transition-colors">
+                <option value="x">X (Twitter)</option>
+                <option value="ig">Instagram</option>
+                <option value="li">LinkedIn</option>
+              </select>
+            </div>
+          </div>
+          <button id="demo-btn" class="btn-p w-full text-center py-4 rounded-xl text-base">
+            ✦&nbsp; AIで投稿を生成する
+          </button>
+        </div>
+
+        <!-- Loading -->
+        <div id="demo-loading" class="hidden text-center py-12">
+          <div class="flex justify-center gap-2 mb-6">
+            <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+          </div>
+          <p class="text-gray-400 text-sm" id="loading-msg">トピックを分析中...</p>
+          <div class="w-full max-w-xs mx-auto bg-white/5 rounded-full h-1 mt-4">
+            <div id="loading-bar" class="bg-gradient-to-r from-violet-500 to-blue-500 h-full rounded-full transition-all duration-300" style="width:0%"></div>
+          </div>
+        </div>
+
+        <!-- Output -->
+        <div id="demo-output" class="hidden">
+          <div class="flex items-center justify-between mb-4">
+            <div class="flex items-center gap-2 text-sm text-green-400">
+              <span>✓</span><span class="font-semibold">生成完了！</span>
+            </div>
+            <button id="demo-reset" class="text-xs text-gray-500 hover:text-gray-300 transition-colors">← もう一度</button>
+          </div>
+          <!-- Post preview -->
+          <div class="glass rounded-xl p-5 mb-4">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-full bg-gradient-to-br from-violet-500 to-blue-500 flex items-center justify-center font-bold text-sm">YOU</div>
+              <div>
+                <p class="font-semibold text-sm">@your_handle</p>
+                <p class="text-xs text-gray-600">たった今 · <span id="output-platform-label">X</span></p>
+              </div>
+            </div>
+            <p id="output-text" class="text-sm text-gray-200 leading-relaxed whitespace-pre-wrap"></p>
+            <div class="mt-4 pt-4 border-t border-white/5 flex gap-5 text-xs text-gray-600">
+              <span>❤️ いいね</span><span>🔁 リポスト</span><span>💬 返信</span><span>🔖 保存</span>
+            </div>
+          </div>
+          <div class="flex gap-3 flex-wrap mb-5">
+            <span class="text-xs glass px-3 py-1.5 rounded-full text-gray-400 cursor-pointer hover:text-gray-200 transition-colors">🔄 別バージョン</span>
+            <span class="text-xs glass px-3 py-1.5 rounded-full text-gray-400 cursor-pointer hover:text-gray-200 transition-colors">📝 長め</span>
+            <span class="text-xs glass px-3 py-1.5 rounded-full text-gray-400 cursor-pointer hover:text-gray-200 transition-colors">✂️ 短め</span>
+            <span class="text-xs glass px-3 py-1.5 rounded-full text-gray-400 cursor-pointer hover:text-gray-200 transition-colors">😄 カジュアルに</span>
+          </div>
+          <div class="flex gap-3">
+            <button class="flex-1 btn-p py-3 text-sm text-center rounded-xl">今すぐ投稿する</button>
+            <button class="flex-1 btn-s py-3 text-sm text-center rounded-xl">スケジュール設定</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sec-line mx-auto max-w-4xl"></div>
+
+
+<!-- ══════════════════════════════════
+     6. COMPARISON
+══════════════════════════════════ -->
+<section id="comparison" class="relative py-28 px-4">
+  <div class="max-w-4xl mx-auto">
+    <div class="text-center mb-14">
+      <p class="rv text-violet-400 text-sm font-semibold uppercase tracking-widest mb-4">Comparison</p>
+      <h2 class="rv d1 text-4xl lg:text-5xl font-black mb-6">他と何が違うのか。</h2>
+      <p class="rv d2 text-gray-400 text-lg">PostPilotは「AIネイティブ」に設計された唯一のSNS自動化ツールです。</p>
+    </div>
+    <div class="rv shadow3d rounded-2xl overflow-hidden" style="border:1px solid rgba(255,255,255,.07);">
+      <table class="w-full text-sm">
+        <thead>
+          <tr>
+            <th class="text-left px-6 py-5 text-gray-500 font-medium bg-white/[.02] border-b border-white/5 w-2/5">機能</th>
+            <th class="px-4 py-5 text-center border-b border-violet-500/20 text-violet-300 font-bold" style="background:linear-gradient(to bottom,rgba(124,58,237,.2),rgba(124,58,237,.05));">
+              PostPilot<br><span class="text-xs font-normal text-violet-400/70">¥3,980〜/月</span>
+            </th>
+            <th class="px-4 py-5 text-center bg-white/[.02] border-b border-white/5 text-gray-400 font-medium">
+              手動運用<br><span class="text-xs font-normal text-gray-600">月40〜60時間</span>
+            </th>
+            <th class="px-4 py-5 text-center bg-white/[.02] border-b border-white/5 text-gray-400 font-medium">
+              競合ツール<br><span class="text-xs font-normal text-gray-600">¥8,000〜/月</span>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-white/5"><td class="px-6 py-4 text-gray-300">AI文章生成</td><td class="px-4 py-4 text-center text-green-400 font-bold" style="background:rgba(124,58,237,.05)">✓</td><td class="px-4 py-4 text-center text-red-400">✗</td><td class="px-4 py-4 text-center text-yellow-400">△ 限定的</td></tr>
+          <tr class="border-b border-white/5 bg-white/[.01]"><td class="px-6 py-4 text-gray-300">自動スケジュール配信</td><td class="px-4 py-4 text-center text-green-400 font-bold" style="background:rgba(124,58,237,.05)">✓</td><td class="px-4 py-4 text-center text-red-400">✗</td><td class="px-4 py-4 text-center text-green-400">✓</td></tr>
+          <tr class="border-b border-white/5"><td class="px-6 py-4 text-gray-300">3プラットフォーム同時投稿</td><td class="px-4 py-4 text-center text-green-400 font-bold" style="background:rgba(124,58,237,.05)">✓</td><td class="px-4 py-4 text-center text-red-400">✗</td><td class="px-4 py-4 text-center text-yellow-400">△ 一部対応</td></tr>
+          <tr class="border-b border-white/5 bg-white/[.01]"><td class="px-6 py-4 text-gray-300">ハッシュタグ自動最適化</td><td class="px-4 py-4 text-center text-green-400 font-bold" style="background:rgba(124,58,237,.05)">✓</td><td class="px-4 py-4 text-center text-red-400">✗</td><td class="px-4 py-4 text-center text-red-400">✗</td></tr>
+          <tr class="border-b border-white/5"><td class="px-6 py-4 text-gray-300">日本語コンテンツ最適化</td><td class="px-4 py-4 text-center text-green-400 font-bold" style="background:rgba(124,58,237,.05)">✓</td><td class="px-4 py-4 text-center text-yellow-400">△</td><td class="px-4 py-4 text-center text-red-400">✗</td></tr>
+          <tr class="border-b border-white/5 bg-white/[.01]"><td class="px-6 py-4 text-gray-300">エンゲージメント分析</td><td class="px-4 py-4 text-center text-green-400 font-bold" style="background:rgba(124,58,237,.05)">✓</td><td class="px-4 py-4 text-center text-red-400">✗</td><td class="px-4 py-4 text-center text-yellow-400">△ 基本のみ</td></tr>
+          <tr><td class="px-6 py-4 text-gray-300">チーム共有機能</td><td class="px-4 py-4 text-center text-green-400 font-bold" style="background:rgba(124,58,237,.05)">✓</td><td class="px-4 py-4 text-center text-red-400">✗</td><td class="px-4 py-4 text-center text-yellow-400">△ 有料プランのみ</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<div class="sec-line mx-auto max-w-4xl"></div>
+
+
+<!-- ══════════════════════════════════
+     7. BENEFITS (photo)
+══════════════════════════════════ -->
+<section id="benefits" class="relative py-28 px-4 overflow-hidden">
+  <div class="blob1 absolute top-0 right-0 w-96 h-96 rounded-full bg-violet-700/[.10] blur-[120px] pointer-events-none"></div>
+  <div class="max-w-6xl mx-auto">
+    <div class="grid md:grid-cols-2 gap-14 items-center">
+      <!-- Copy -->
+      <div class="rv">
+        <p class="text-violet-400 text-sm font-semibold uppercase tracking-widest mb-4">Benefits</p>
+        <h2 class="text-4xl lg:text-5xl font-black mb-6 leading-tight">
+          PostPilotを使い始めた<br><span class="grad">3ヶ月後の未来。</span>
+        </h2>
+        <p class="text-gray-400 text-lg mb-10 leading-relaxed">
+          コンテンツ作成に費やしていた時間が、本業・家族・趣味に戻ってくる。フォロワーは勝手に増えていく。
+        </p>
+        <div class="space-y-5">
+          <div class="rv flex items-center gap-5">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-violet-500/20 to-violet-700/20 flex items-center justify-center text-2xl shrink-0">⏱️</div>
+            <div><p class="font-bold text-lg mb-1">月20時間の削減</p><p class="text-gray-500 text-sm">毎月20時間以上の作業時間が浮く。その時間をもっと大事なことへ。</p></div>
+          </div>
+          <div class="rv d1 flex items-center gap-5">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500/20 to-blue-700/20 flex items-center justify-center text-2xl shrink-0">📈</div>
+            <div><p class="font-bold text-lg mb-1">フォロワー3倍増</p><p class="text-gray-500 text-sm">継続的な高品質投稿がアルゴリズムに評価され、自然流入が加速。</p></div>
+          </div>
+          <div class="rv d2 flex items-center gap-5">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-green-500/20 to-green-700/20 flex items-center justify-center text-2xl shrink-0">💰</div>
+            <div><p class="font-bold text-lg mb-1">案件・収益につながる影響力</p><p class="text-gray-500 text-sm">SNSの影響力が上がることで、案件依頼・スポンサー収入へ直結。</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Photo -->
+      <div class="rv d2 relative">
+        <div class="rounded-2xl overflow-hidden shadow3d" style="transform:perspective(800px) rotateY(-4deg);">
+          <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=720&h=540&fit=crop&q=80"
+               alt="SNS成長でビジネスが成功" class="w-full h-[480px] object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#030712]/50 via-transparent to-transparent"></div>
+        </div>
+        <div class="float-y absolute -top-6 -right-6 glass rounded-2xl px-5 py-4 shadow3d">
+          <p class="text-xs text-gray-500 mb-1">フォロワー増加</p>
+          <p class="text-2xl font-black text-green-400">+3,842</p>
+          <p class="text-xs text-gray-600">過去30日間</p>
+        </div>
+        <div class="float-y absolute -bottom-6 -left-6 glass rounded-2xl px-5 py-4 shadow3d" style="animation-delay:-2s;">
+          <p class="text-xs text-gray-500 mb-1">節約できた時間</p>
+          <p class="text-2xl font-black grad">21h</p>
+          <p class="text-xs text-gray-600">今月の作業削減</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sec-line mx-auto max-w-4xl"></div>
+
+
+<!-- ══════════════════════════════════
+     8. PRICING
+══════════════════════════════════ -->
+<section id="pricing" class="relative py-28 px-4 overflow-hidden">
+  <div class="blob3 absolute bottom-0 right-1/3 w-80 h-80 rounded-full bg-blue-600/[.10] blur-[100px] pointer-events-none"></div>
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-16">
+      <p class="rv text-violet-400 text-sm font-semibold uppercase tracking-widest mb-4">Pricing</p>
+      <h2 class="rv d1 text-4xl lg:text-5xl font-black mb-6">透明でシンプルな料金。</h2>
+      <p class="rv d2 text-gray-400 text-lg">全プラン14日間無料。クレジットカード不要で今すぐ開始できます。</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6 items-stretch">
+      <!-- Free -->
+      <div class="rv card3d glass rounded-2xl p-8 flex flex-col">
+        <p class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">Free</p>
+        <div class="mb-6"><span class="text-5xl font-black">¥0</span><span class="text-gray-500 text-sm ml-2">/月</span></div>
+        <ul class="space-y-3 mb-8 text-sm text-gray-400 flex-1">
+          <li class="flex items-center gap-2"><span class="text-green-400">✓</span> 月10投稿まで</li>
+          <li class="flex items-center gap-2"><span class="text-green-400">✓</span> 1プラットフォーム</li>
+          <li class="flex items-center gap-2"><span class="text-green-400">✓</span> AI文章生成（基本）</li>
+          <li class="flex items-center gap-2"><span class="text-red-400/60">✗</span><span class="text-gray-600"> 自動スケジュール</span></li>
+          <li class="flex items-center gap-2"><span class="text-red-400/60">✗</span><span class="text-gray-600"> 分析レポート</span></li>
+          <li class="flex items-center gap-2"><span class="text-red-400/60">✗</span><span class="text-gray-600"> 画像生成</span></li>
+        </ul>
+        <a href="#" class="btn-s block text-center py-3.5 rounded-xl text-sm w-full mt-auto">無料で始める</a>
+      </div>
+
+      <!-- Pro -->
+      <div class="rv d1 pop-card rounded-2xl p-8 relative flex flex-col" style="transform:scale(1.04);">
+        <div class="pop-badge absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-xs font-bold text-white whitespace-nowrap">🏆 人気 No.1</div>
+        <p class="text-sm font-semibold text-violet-300 uppercase tracking-wider mb-4">Pro</p>
+        <div class="mb-6"><span class="text-5xl font-black">¥3,980</span><span class="text-gray-500 text-sm ml-2">/月</span></div>
+        <ul class="space-y-3 mb-8 text-sm text-gray-300 flex-1">
+          <li class="flex items-center gap-2"><span class="text-green-400">✓</span> 月100投稿</li>
+          <li class="flex items-center gap-2"><span class="text-green-400">✓</span> 3プラットフォーム</li>
+          <li class="flex items-center gap-2"><span class="text-green-400">✓</span> AI文章生成（高品質）</li>
+          <li class="flex items-center gap-2"><span class="text-green-400">✓</span> 自動スケジュール</li>
+          <li class="flex items-center gap-2"><span class="text-green-400">✓</span> エンゲージメント分析</li>
+          <li class="flex items-center gap-2"><span class="text-green-400">✓</span> ハッシュタグ最適化</li>
+        </ul>
+        <a href="#" class="btn-p block text-center py-3.5 rounded-xl text-sm w-full mt-auto">14日間無料で試す</a>
+        <p class="text-xs text-center text-gray-600 mt-3">カード不要 · いつでもキャンセル</p>
+      </div>
+
+      <!-- Business -->
+      <div class="rv d2 card3d glass rounded-2xl p-8 flex flex-col">
+        <p class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">Business</p>
+        <div class="mb-6"><span class="text-5xl font-black">¥9,800</span><span class="text-gray-500 text-sm ml-2">/月</span></div>
+        <ul class="space-y-3 mb-8 text-sm text-gray-400 flex-1">
+          <li class="flex items-center gap-2"><span class="text-green-400">✓</span> 無制限投稿</li>
+          <li class="flex items-center gap-2"><span class="text-green-400">✓</span> 全プラットフォーム</li>
+          <li class="flex items-center gap-2"><span class="text-green-400">✓</span> 画像AI生成</li>
+          <li class="flex items-center gap-2"><span class="text-green-400">✓</span> チーム管理（5名）</li>
+          <li class="flex items-center gap-2"><span class="text-green-400">✓</span> 高度な分析 + CSV</li>
+          <li class="flex items-center gap-2"><span class="text-green-400">✓</span> 優先サポート</li>
+        </ul>
+        <a href="#" class="btn-s block text-center py-3.5 rounded-xl text-sm w-full mt-auto">お問い合わせ</a>
+      </div>
+    </div>
+    <div class="rv d3 mt-10 text-center">
+      <p class="inline-flex items-center gap-2 text-sm text-gray-500 glass rounded-full px-5 py-2.5">
+        <span class="text-green-400">🛡️</span> 30日間全額返金保証 · データは即時エクスポート可能
+      </p>
+    </div>
+  </div>
+</section>
+
+<div class="sec-line mx-auto max-w-4xl"></div>
+
+
+<!-- ══════════════════════════════════
+     9. SOCIAL PROOF
+══════════════════════════════════ -->
+<section id="reviews" class="relative py-28 px-4 overflow-hidden">
+  <div class="blob1 absolute top-1/2 left-0 w-80 h-80 rounded-full bg-violet-700/[.10] blur-[100px] pointer-events-none"></div>
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <p class="rv text-violet-400 text-sm font-semibold uppercase tracking-widest mb-4">Social Proof</p>
+      <h2 class="rv d1 text-4xl lg:text-5xl font-black mb-6">12,000人が選んだ理由。</h2>
+      <p class="rv d2 text-gray-400 text-lg">全国のクリエイターとビジネスオーナーから届いたリアルな声。</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6 mb-16">
+      <!-- Review 1 -->
+      <div class="rv card3d glass rounded-2xl p-6">
+        <div class="flex gap-0.5 mb-4 text-yellow-400 text-base">★★★★★</div>
+        <p class="text-gray-300 text-sm leading-relaxed mb-6">「週7投稿を手動でやっていた頃は本当にしんどかった。PostPilotを使い始めて3ヶ月でフォロワーが3,200人→9,800人に。時間も戻ってきた。」</p>
+        <div class="flex items-center gap-3">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop&q=80"
+               alt="田中 美咲" class="w-10 h-10 rounded-full object-cover">
+          <div><p class="font-semibold text-sm">田中 美咲</p><p class="text-xs text-gray-500">フリーランスマーケター / 10.2k followers</p></div>
+        </div>
+      </div>
+      <!-- Review 2 -->
+      <div class="rv d1 card3d glass rounded-2xl p-6">
+        <div class="flex gap-0.5 mb-4 text-yellow-400 text-base">★★★★★</div>
+        <p class="text-gray-300 text-sm leading-relaxed mb-6">「LinkedInで毎日投稿したら問い合わせが月5件→23件に増えた。内容の質がプロ並みで、クライアントから『すごい発信してますね』と言われるように。」</p>
+        <div class="flex items-center gap-3">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&q=80"
+               alt="佐藤 健太" class="w-10 h-10 rounded-full object-cover">
+          <div><p class="font-semibold text-sm">佐藤 健太</p><p class="text-xs text-gray-500">中小企業診断士 / コンサルタント</p></div>
+        </div>
+      </div>
+      <!-- Review 3 -->
+      <div class="rv d2 card3d glass rounded-2xl p-6">
+        <div class="flex gap-0.5 mb-4 text-yellow-400 text-base">★★★★★</div>
+        <p class="text-gray-300 text-sm leading-relaxed mb-6">「Instagramの食アカウントに使用。毎朝6時に自動投稿してくれるのが最高。エンゲージメント率が2.1%から6.8%に上がった。もう手放せない。」</p>
+        <div class="flex items-center gap-3">
+          <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&q=80"
+               alt="山本 陽子" class="w-10 h-10 rounded-full object-cover">
+          <div><p class="font-semibold text-sm">山本 陽子</p><p class="text-xs text-gray-500">料理研究家 / 28.7k followers</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Trust strip -->
+    <div class="rv relative rounded-2xl overflow-hidden shadow3d">
+      <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&h=340&fit=crop&q=80"
+           alt="PostPilotチーム" class="w-full h-52 object-cover">
+      <div class="absolute inset-0 flex items-center" style="background:linear-gradient(to right,rgba(3,7,18,.92) 40%,rgba(3,7,18,.5) 70%,transparent);">
+        <div class="px-8 md:px-12">
+          <p class="text-sm text-violet-400 font-semibold uppercase tracking-widest mb-2">About PostPilot</p>
+          <h3 class="text-2xl font-black mb-2">東京発、プロダクトチームが開発。</h3>
+          <p class="text-gray-400 text-sm max-w-md">日本のSNS文化を深く理解したチームが、日本語コンテンツに特化したAIを独自開発しています。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sec-line mx-auto max-w-4xl"></div>
+
+
+<!-- ══════════════════════════════════
+     10. FAQ
+══════════════════════════════════ -->
+<section id="faq" class="relative py-28 px-4">
+  <div class="max-w-3xl mx-auto">
+    <div class="text-center mb-14">
+      <p class="rv text-violet-400 text-sm font-semibold uppercase tracking-widest mb-4">FAQ</p>
+      <h2 class="rv d1 text-4xl lg:text-5xl font-black mb-6">よくある質問。</h2>
+    </div>
+    <div class="space-y-3" id="faq-list">
+      <div class="rv faq-item glass rounded-2xl overflow-hidden">
+        <button class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left gap-4">
+          <span class="font-semibold text-sm md:text-base">AIが生成する投稿の品質はどうですか？</span>
+          <span class="faq-ico text-violet-400 text-2xl font-light shrink-0">+</span>
+        </button>
+        <div class="faq-body px-6 pb-5 text-gray-400 text-sm leading-relaxed">GPT-4oをベースに、日本語SNS特有の表現・文体・バズり要素をファインチューニングしています。初回設定でブランドボイスを学習するため、3〜5投稿で「自分らしい文体」になります。生成した投稿はダッシュボードで確認・編集してから配信することも可能です。</div>
+      </div>
+      <div class="rv d1 faq-item glass rounded-2xl overflow-hidden">
+        <button class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left gap-4">
+          <span class="font-semibold text-sm md:text-base">対応しているSNSプラットフォームは？</span>
+          <span class="faq-ico text-violet-400 text-2xl font-light shrink-0">+</span>
+        </button>
+        <div class="faq-body px-6 pb-5 text-gray-400 text-sm leading-relaxed">現在はX（旧Twitter）・Instagram・LinkedInに対応。2024年Q3にはTikTok・YouTube（コミュニティ投稿）・Threadsへの対応を予定しています。各プラットフォームの文字数制限・ハッシュタグ文化に合わせた最適化も自動で行います。</div>
+      </div>
+      <div class="rv d2 faq-item glass rounded-2xl overflow-hidden">
+        <button class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left gap-4">
+          <span class="font-semibold text-sm md:text-base">投稿前に確認・編集はできますか？</span>
+          <span class="faq-ico text-violet-400 text-2xl font-light shrink-0">+</span>
+        </button>
+        <div class="faq-body px-6 pb-5 text-gray-400 text-sm leading-relaxed">もちろんです。「全自動モード」と「承認モード」を切り替えられます。承認モードでは、AIが作成した投稿がメール・アプリ通知で届き、承認ボタンを押すだけで配信されます。編集も自由に行えます。</div>
+      </div>
+      <div class="rv d3 faq-item glass rounded-2xl overflow-hidden">
+        <button class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left gap-4">
+          <span class="font-semibold text-sm md:text-base">無料プランから有料プランへの移行は？</span>
+          <span class="faq-ico text-violet-400 text-2xl font-light shrink-0">+</span>
+        </button>
+        <div class="faq-body px-6 pb-5 text-gray-400 text-sm leading-relaxed">ダッシュボードから数クリックでアップグレード可能。学習済みのブランドデータ・投稿履歴はすべて引き継がれます。ダウングレード・解約もワンクリックで完了し、違約金は一切ありません。</div>
+      </div>
+      <div class="rv d4 faq-item glass rounded-2xl overflow-hidden">
+        <button class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left gap-4">
+          <span class="font-semibold text-sm md:text-base">セキュリティは大丈夫ですか？</span>
+          <span class="faq-ico text-violet-400 text-2xl font-light shrink-0">+</span>
+        </button>
+        <div class="faq-body px-6 pb-5 text-gray-400 text-sm leading-relaxed">SNSアカウントへのアクセスはOAuth2.0認証のみを使用し、パスワードは一切取得しません。データは国内サーバーで管理され、AES-256で暗号化。第三者へのデータ提供は行いません。</div>
+      </div>
+      <div class="rv d5 faq-item glass rounded-2xl overflow-hidden">
+        <button class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left gap-4">
+          <span class="font-semibold text-sm md:text-base">法人での利用は可能ですか？</span>
+          <span class="faq-ico text-violet-400 text-2xl font-light shrink-0">+</span>
+        </button>
+        <div class="faq-body px-6 pb-5 text-gray-400 text-sm leading-relaxed">Businessプランでは法人請求書対応、複数アカウント管理、チームメンバーへの権限設定が可能です。さらに大規模な導入はエンタープライズプランをご用意していますので、お問い合わせください。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════
+     11. FINAL CTA
+══════════════════════════════════ -->
+<section id="cta" class="relative py-36 px-4 overflow-hidden">
+  <div class="blob1 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[650px] rounded-full bg-violet-700/[.16] blur-[140px] pointer-events-none"></div>
+  <div class="blob2 absolute top-1/4 right-1/4 w-80 h-80 rounded-full bg-blue-600/[.12] blur-[100px] pointer-events-none"></div>
+  <div class="relative z-10 max-w-4xl mx-auto text-center">
+    <div class="rv glass inline-flex items-center gap-2 rounded-full px-5 py-2 text-sm text-violet-300 mb-8">
+      <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+      現在 847 人が無料トライアル中
+    </div>
+    <h2 class="rv d1 text-5xl lg:text-7xl font-black mb-6 leading-[1.06]">
+      今日から、SNSを<br><span class="grad">AIに任せよう。</span>
+    </h2>
+    <p class="rv d2 text-xl text-gray-400 max-w-xl mx-auto mb-12 leading-relaxed">
+      14日間無料・クレジットカード不要。<br>設定は5分で完了。最初の投稿は今日中に自動配信されます。
+    </p>
+    <div class="rv d3 flex flex-col sm:flex-row gap-4 justify-center mb-10">
+      <a href="#" class="btn-p py-5 px-10 text-lg rounded-2xl text-center">無料で14日間試す →</a>
+      <a href="#demo" class="btn-s py-5 px-10 text-lg rounded-2xl text-center">デモを体験する</a>
+    </div>
+    <div class="rv d4 flex flex-wrap justify-center gap-6 text-sm text-gray-600 mb-12">
+      <span>✓ クレジットカード不要</span>
+      <span>✓ 14日間無料</span>
+      <span>✓ 30日全額返金保証</span>
+      <span>✓ いつでもキャンセル可</span>
+    </div>
+    <!-- Urgency -->
+    <div class="rv d5 glass rounded-2xl px-6 py-5 max-w-sm mx-auto inline-block">
+      <p class="text-sm text-gray-400 mb-1">🔥 期間限定オファー</p>
+      <p class="font-bold text-white mb-1">今月末まで Proプランが<span class="grad-warm">&nbsp;30%オフ</span></p>
+      <p class="text-xs text-gray-600">残り <span id="countdown" class="text-white font-mono font-bold">3日 12:43:28</span></p>
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="border-t border-white/5 py-14 px-4">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid md:grid-cols-4 gap-10 mb-12">
+      <div>
+        <div class="flex items-center gap-2 mb-4">
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-500 to-blue-600 flex items-center justify-center font-black text-sm">P</div>
+          <span class="font-bold">PostPilot</span>
+        </div>
+        <p class="text-sm text-gray-600 leading-relaxed">AIがSNSを自動化し、あなたの本業・成長を加速させます。</p>
+      </div>
+      <div>
+        <p class="text-sm font-semibold mb-4">プロダクト</p>
+        <ul class="space-y-2.5 text-sm text-gray-500">
+          <li><a href="#features" class="hover:text-gray-300 transition-colors">機能一覧</a></li>
+          <li><a href="#pricing"  class="hover:text-gray-300 transition-colors">料金プラン</a></li>
+          <li><a href="#demo"     class="hover:text-gray-300 transition-colors">デモ</a></li>
+          <li><a href="#"         class="hover:text-gray-300 transition-colors">ロードマップ</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="text-sm font-semibold mb-4">サポート</p>
+        <ul class="space-y-2.5 text-sm text-gray-500">
+          <li><a href="#faq" class="hover:text-gray-300 transition-colors">よくある質問</a></li>
+          <li><a href="#"    class="hover:text-gray-300 transition-colors">お問い合わせ</a></li>
+          <li><a href="#"    class="hover:text-gray-300 transition-colors">ドキュメント</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="text-sm font-semibold mb-4">法的情報</p>
+        <ul class="space-y-2.5 text-sm text-gray-500">
+          <li><a href="#" class="hover:text-gray-300 transition-colors">プライバシーポリシー</a></li>
+          <li><a href="#" class="hover:text-gray-300 transition-colors">利用規約</a></li>
+          <li><a href="#" class="hover:text-gray-300 transition-colors">特定商取引法</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="sec-line mb-6"></div>
+    <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-700">
+      <p>© 2024 PostPilot, Inc. All rights reserved.</p>
+      <p>Made with ♥ in Tokyo, Japan</p>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ══════════════════════════════════
+     JAVASCRIPT
+══════════════════════════════════ -->
+<script>
+/* ── 1. Sticky header ── */
+const hdr = document.getElementById('hdr');
+window.addEventListener('scroll', () => {
+  hdr.classList.toggle('sticky-on', window.scrollY > 20);
+}, { passive: true });
+
+/* ── 2. Scroll reveal ── */
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('in'); revealObs.unobserve(e.target); }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.rv').forEach(el => revealObs.observe(el));
+
+/* ── 3. 3D card tilt ── */
+document.querySelectorAll('.card3d').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const r = card.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width  - 0.5;
+    const y = (e.clientY - r.top)  / r.height - 0.5;
+    card.style.transform = `perspective(700px) rotateX(${-y * 10}deg) rotateY(${x * 10}deg) translateY(-8px) scale(1.02)`;
+    card.style.boxShadow = '0 2px 4px rgba(0,0,0,.5),0 12px 36px rgba(0,0,0,.4),0 0 50px rgba(124,58,237,.14)';
+  });
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = '';
+    card.style.boxShadow = '';
+  });
+});
+
+/* ── 4. FAQ accordion ── */
+document.querySelectorAll('.faq-trigger').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const body = item.querySelector('.faq-body');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.faq-body').classList.remove('open');
+    });
+    if (!isOpen) { item.classList.add('open'); body.classList.add('open'); }
+  });
+});
+
+/* ── 5. Demo generator ── */
+const demoBtn  = document.getElementById('demo-btn');
+const demoForm = document.getElementById('demo-form');
+const demoLoad = document.getElementById('demo-loading');
+const demoOut  = document.getElementById('demo-output');
+const loadMsg  = document.getElementById('loading-msg');
+const loadBar  = document.getElementById('loading-bar');
+const outText  = document.getElementById('output-text');
+const outPlat  = document.getElementById('output-platform-label');
+const resetBtn = document.getElementById('demo-reset');
+
+const loadMsgs = [
+  'トピックを分析中...',
+  'バズりポイントを抽出中...',
+  'ハッシュタグを最適化中...',
+  '投稿を仕上げています...'
+];
+
+const posts = {
+  x: t =>
+`📣 ${t}で成果を出す人がやっている3つのこと
+
+①「量より質」を一度だけ捨てた
+②失敗を記録し、次に活かした
+③フォロワーとの対話を最優先にした
+
+結果より「過程」を発信すると
+不思議とリーチが伸びる🚀
+
+あなたはどれを実践してる？
+
+#${t.replace(/\s/g, '')} #SNS戦略 #コンテンツマーケ`,
+
+  ig: t =>
+`✨ ${t}で変わった、私の毎日
+
+半年前は「発信が続かない」と悩んでいた。
+でも毎日1つ続けたら、
+気づいたらフォロワーが3倍になってた🌿
+
+秘訣はシンプル：
+→ 完璧を目指さない
+→ 自分が楽しめることを発信する
+→ コメントには必ず返す
+
+コンテンツで人生が変わるって
+本当にあるんだと実感中✨
+
+#${t} #インスタグラム運用 #クリエイター`,
+
+  li: t =>
+`【${t}で3ヶ月、実際に起きた変化】
+
+✅ 月5件 → 23件の問い合わせに
+✅ 単価が1.5倍に上昇
+✅ 週2件のオファーが届くようになった
+
+やったことは一つ。
+「専門家としての発信を継続する」こと。
+
+発信は営業ではなく、価値提供だと気づいてから
+クライアントから見つけてもらえるようになった。
+
+#${t} #ビジネス #個人ブランディング`
+};
+
+const platLabels = { x: 'X (Twitter)', ig: 'Instagram', li: 'LinkedIn' };
+
+function typeText(el, text) {
+  el.textContent = '';
+  el.classList.add('cursor');
+  let i = 0;
+  const speed = Math.max(8, Math.floor(1400 / text.length));
+  const iv = setInterval(() => {
+    if (i < text.length) { el.textContent += text[i++]; }
+    else { clearInterval(iv); el.classList.remove('cursor'); }
+  }, speed);
+}
+
+demoBtn.addEventListener('click', () => {
+  const topic   = document.getElementById('demo-input').value.trim() || 'マーケティング';
+  const platKey = document.getElementById('demo-platform').value;
+
+  demoForm.classList.add('hidden');
+  demoLoad.classList.remove('hidden');
+  loadBar.style.width = '0%';
+
+  let msgIdx = 0;
+  loadMsg.textContent = loadMsgs[0];
+  const msgIv = setInterval(() => {
+    if (++msgIdx < loadMsgs.length) loadMsg.textContent = loadMsgs[msgIdx];
+  }, 620);
+
+  let pct = 0;
+  const barIv = setInterval(() => {
+    pct = Math.min(pct + Math.random() * 9, 93);
+    loadBar.style.width = pct + '%';
+  }, 120);
+
+  setTimeout(() => {
+    clearInterval(msgIv); clearInterval(barIv);
+    loadBar.style.width = '100%';
+    setTimeout(() => {
+      demoLoad.classList.add('hidden');
+      demoOut.classList.remove('hidden');
+      outPlat.textContent = platLabels[platKey];
+      typeText(outText, posts[platKey](topic));
+    }, 350);
+  }, 2700);
+});
+
+resetBtn.addEventListener('click', () => {
+  demoOut.classList.add('hidden');
+  demoForm.classList.remove('hidden');
+  loadBar.style.width = '0%';
+});
+
+/* ── 6. Countdown ── */
+(function tick() {
+  const now  = new Date();
+  const end  = new Date(now.getFullYear(), now.getMonth() + 1, 1, 0, 0, 0);
+  const diff = end - now;
+  const d = Math.floor(diff / 86400000);
+  const h = Math.floor((diff % 86400000) / 3600000);
+  const m = Math.floor((diff % 3600000) / 60000);
+  const s = Math.floor((diff % 60000) / 1000);
+  const el = document.getElementById('countdown');
+  if (el) el.textContent = `${d}日 ${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+  setTimeout(tick, 1000);
+})();
+
+/* ── 7. Mouse parallax on blobs ── */
+window.addEventListener('mousemove', e => {
+  const mx = (e.clientX / window.innerWidth  - 0.5) * 24;
+  const my = (e.clientY / window.innerHeight - 0.5) * 24;
+  document.querySelectorAll('.blob1').forEach(b => { b.style.transform = `translate(${mx}px,${my}px)`; });
+  document.querySelectorAll('.blob2').forEach(b => { b.style.transform = `translate(${-mx*.7}px,${-my*.7}px)`; });
+}, { passive: true });
+</script>
+</body>
+</html>

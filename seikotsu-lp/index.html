@@ -1,0 +1,1420 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>さくら整骨院｜三軒茶屋で腰痛・肩こり・産後骨盤矯正なら</title>
+  <meta name="description" content="三軒茶屋駅徒歩2分のさくら整骨院。腰痛・肩こり・交通事故・産後骨盤矯正に対応。柔道整復師による15年の実績。保険適用・当日予約OK。夜20時まで受付。">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://sakura-seikotsu.jp/">
+
+  <!-- OGP -->
+  <meta property="og:title" content="さくら整骨院｜三軒茶屋で腰痛・肩こり・産後骨盤矯正なら">
+  <meta property="og:description" content="三軒茶屋駅徒歩2分。腰痛・肩こり・交通事故・産後骨盤矯正に対応。保険適用・当日予約OK。夜20時まで受付。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sakura-seikotsu.jp/">
+  <meta property="og:image" content="https://sakura-seikotsu.jp/ogp.jpg">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:site_name" content="さくら整骨院">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Structured Data: MedicalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalBusiness",
+    "name": "さくら整骨院",
+    "description": "腰痛・肩こり・交通事故・産後骨盤矯正に対応する整骨院",
+    "url": "https://sakura-seikotsu.jp",
+    "telephone": "03-5432-8876",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "三軒茶屋2-14-8 三軒茶屋ビル1F",
+      "addressLocality": "世田谷区",
+      "addressRegion": "東京都",
+      "postalCode": "154-0024",
+      "addressCountry": "JP"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 35.6435,
+      "longitude": 139.6697
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Friday","Saturday"],
+        "opens": "09:00",
+        "closes": "20:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Sunday","PublicHolidays"],
+        "opens": "09:00",
+        "closes": "14:00"
+      }
+    ],
+    "medicalSpecialty": "柔道整復師",
+    "priceRange": "¥〜¥¥",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "142"
+    }
+  }
+  </script>
+
+  <!-- Google Analytics GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+
+    function trackCTA(label) {
+      gtag('event', 'cta_click', { event_category: 'CTA', event_label: label });
+    }
+  </script>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            main: '#2d8a6e',
+            sub:  '#e8f8f2',
+            dark: '#1d6b55',
+          },
+          fontFamily: {
+            sans: ['"Hiragino Kaku Gothic ProN"', '"Hiragino Sans"', 'Meiryo', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root {
+      --main:  #2d8a6e;
+      --sub:   #e8f8f2;
+      --text:  #333333;
+      --dark:  #1d6b55;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      color: var(--text);
+      font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+      line-height: 1.75;
+      padding-bottom: 72px; /* space for fixed CTA on mobile */
+    }
+
+    /* ── Scroll progress ── */
+    #scroll-progress {
+      position: fixed;
+      top: 0; left: 0;
+      height: 3px;
+      width: 0%;
+      background: var(--main);
+      z-index: 200;
+      transition: width 0.1s linear;
+    }
+
+    /* ── Fade-in ── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── Section label ── */
+    .sec-label {
+      display: inline-block;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      font-weight: 700;
+      color: var(--main);
+      text-transform: uppercase;
+    }
+
+    /* ── Hero overlay ── */
+    .hero-overlay {
+      background: linear-gradient(
+        140deg,
+        rgba(22, 80, 62, 0.88) 0%,
+        rgba(10, 40, 30, 0.60) 60%,
+        rgba(0, 0, 0, 0.35) 100%
+      );
+    }
+
+    /* ── LINE button pulse ── */
+    .btn-line {
+      background: #06C755;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .btn-line:hover { opacity: 0.88; transform: translateY(-1px); }
+    .btn-line-pulse { animation: linePulse 2.4s ease-in-out infinite; }
+    @keyframes linePulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(6, 199, 85, 0.45); }
+      60%       { box-shadow: 0 0 0 10px rgba(6, 199, 85, 0); }
+    }
+
+    /* ── Hover lift ── */
+    .hover-lift {
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+    }
+    .hover-lift:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 28px rgba(0,0,0,0.10);
+    }
+
+    /* ── Header slide ── */
+    header {
+      transition: transform 0.3s ease;
+    }
+
+    /* ── Step connector ── */
+    .step-line::after {
+      content: '';
+      position: absolute;
+      top: 32px;
+      left: calc(50% + 32px);
+      width: calc(100% - 64px);
+      height: 2px;
+      background: #c8ead9;
+    }
+
+    /* ── FAQ icon ── */
+    .faq-icon { transition: transform 0.25s ease; }
+    .faq-open .faq-icon { transform: rotate(180deg); }
+
+    /* ── Stars ── */
+    .stars { color: #f59e0b; letter-spacing: 1px; }
+
+    /* ── Table row ── */
+    .hour-row { border-bottom: 1px solid #f0f0f0; }
+    .hour-row:last-child { border-bottom: none; }
+
+    /* ── Fixed bottom CTA ── */
+    #fixed-cta {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 100;
+      background: white;
+      border-top: 1px solid #e5e7eb;
+      padding: 10px 16px;
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.09);
+    }
+
+    /* ── Scroll down chevron ── */
+    @keyframes bounceDown {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(6px); }
+    }
+    .bounce-down { animation: bounceDown 1.8s ease-in-out infinite; }
+
+    @media (min-width: 768px) {
+      body { padding-bottom: 0; }
+      #fixed-cta { display: none; }
+    }
+  </style>
+</head>
+
+<body class="bg-white">
+
+<!-- ── Scroll progress bar ── -->
+<div id="scroll-progress"></div>
+
+
+<!-- ════════════════════════════════
+     HEADER
+════════════════════════════════ -->
+<header id="site-header" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+  <div class="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="#hero" class="flex items-center gap-2">
+      <svg class="w-6 h-6 text-main" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2C9.5 2 7.5 3.5 6.5 5.5 5.5 3.5 3.5 2 1 2c0 4 2 7 5.5 9L12 22l5.5-11C21 9 23 6 23 2c-2.5 0-4.5 1.5-5.5 3.5C16.5 3.5 14.5 2 12 2z"/>
+      </svg>
+      <span class="font-bold text-[#333] text-sm md:text-base">さくら整骨院</span>
+    </a>
+
+    <!-- Nav (desktop) -->
+    <nav class="hidden md:flex items-center gap-6 text-sm text-gray-500">
+      <a href="#features"  class="hover:text-main transition-colors">選ばれる理由</a>
+      <a href="#treatments" class="hover:text-main transition-colors">施術内容</a>
+      <a href="#price"    class="hover:text-main transition-colors">料金</a>
+      <a href="#reviews"  class="hover:text-main transition-colors">口コミ</a>
+      <a href="#access"   class="hover:text-main transition-colors">アクセス</a>
+    </nav>
+
+    <!-- CTA (desktop) -->
+    <a href="tel:03-5432-8876"
+       onclick="trackCTA('header_tel')"
+       class="hidden md:flex items-center gap-2 bg-main text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-dark transition-colors">
+      <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.58.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.29 21 3 13.71 3 5c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57-.11.36-.02.75.23 1.03L6.6 10.8z"/>
+      </svg>
+      03-5432-8876
+    </a>
+
+    <!-- Mobile hamburger placeholder -->
+    <a href="#cta"
+       onclick="trackCTA('header_mobile_cta')"
+       class="md:hidden btn-line text-white text-xs font-bold px-4 py-2 rounded-full">
+      予約・相談
+    </a>
+  </div>
+</header>
+
+
+<!-- ════════════════════════════════
+     HERO
+════════════════════════════════ -->
+<section id="hero" class="relative min-h-screen flex items-center overflow-hidden pt-14">
+  <!-- BG image -->
+  <img
+    src="https://images.unsplash.com/photo-1519824145371-296894a0daa9?w=1600&q=80&auto=format&fit=crop"
+    alt="明るく清潔な院内の施術ベッド"
+    class="absolute inset-0 w-full h-full object-cover object-center"
+    loading="eager"
+  >
+  <div class="hero-overlay absolute inset-0"></div>
+
+  <div class="relative z-10 max-w-5xl mx-auto px-4 py-20 w-full">
+    <div class="max-w-lg">
+
+      <!-- Trust badges -->
+      <div class="flex flex-wrap gap-2 mb-6">
+        <span class="text-xs text-white/90 bg-white/15 border border-white/25 rounded-full px-3 py-1 backdrop-blur-sm">開院15年</span>
+        <span class="text-xs text-white/90 bg-white/15 border border-white/25 rounded-full px-3 py-1 backdrop-blur-sm">累計来院 8,000名以上</span>
+        <span class="text-xs text-white/90 bg-white/15 border border-white/25 rounded-full px-3 py-1 backdrop-blur-sm">保険対応</span>
+        <span class="text-xs text-white/90 bg-white/15 border border-white/25 rounded-full px-3 py-1 backdrop-blur-sm">三軒茶屋駅 徒歩2分</span>
+      </div>
+
+      <!-- Headline -->
+      <h1 class="text-white font-bold leading-tight mb-5" style="font-size: clamp(1.6rem, 5vw, 2.8rem);">
+        腰痛・肩こり・産後の不調、<br>
+        <span class="text-emerald-300">根本から向き合う</span><br>整骨院が、ここに。
+      </h1>
+
+      <p class="text-white/80 text-sm md:text-base mb-8 leading-relaxed">
+        「また再発した」「どこに行っても良くならない」<br>
+        その先を、一緒に目指しましょう。
+      </p>
+
+      <!-- CTAs -->
+      <div class="flex flex-col sm:flex-row gap-3 mb-6">
+        <a href="https://line.me/ti/p/XXXXXXXXXX"
+           target="_blank" rel="noopener"
+           onclick="trackCTA('hero_line')"
+           class="btn-line btn-line-pulse flex items-center justify-center gap-2 text-white font-bold py-4 px-8 rounded-xl text-base shadow-xl">
+          <!-- LINE icon -->
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.070 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
+          </svg>
+          LINEで予約・相談（無料）
+        </a>
+        <a href="tel:03-5432-8876"
+           onclick="trackCTA('hero_tel')"
+           class="flex items-center justify-center gap-2 bg-white text-main font-bold py-4 px-8 rounded-xl text-base border-2 border-white/40 hover:bg-sub transition-colors">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.58.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.29 21 3 13.71 3 5c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57-.11.36-.02.75.23 1.03L6.6 10.8z"/>
+          </svg>
+          03-5432-8876
+        </a>
+      </div>
+
+      <p class="text-white/50 text-xs">
+        ※ LINEでの相談・予約は24時間受付。当日予約もお気軽にどうぞ。
+      </p>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 bounce-down">
+    <svg class="w-6 h-6 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"/>
+    </svg>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════
+     PAIN POINTS（悩み共感）
+════════════════════════════════ -->
+<section id="pain" class="py-16 md:py-24 bg-[#f8f9fa]">
+  <div class="max-w-5xl mx-auto px-4">
+
+    <div class="text-center mb-10 fade-in">
+      <span class="sec-label">PAIN POINTS</span>
+      <h2 class="text-2xl md:text-3xl font-bold mt-2 text-[#333]">
+        こんなお悩み、ありませんか？
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+
+      <div class="fade-in bg-white rounded-2xl p-5 border border-gray-100 shadow-sm flex items-start gap-4">
+        <span class="text-2xl mt-0.5 flex-shrink-0">😓</span>
+        <div>
+          <p class="font-bold text-sm text-[#333] mb-1">朝起きると腰が痛くて、動くのがつらい</p>
+          <p class="text-xs text-gray-400">慢性的な腰痛で、日常生活に支障が出ている</p>
+        </div>
+      </div>
+
+      <div class="fade-in bg-white rounded-2xl p-5 border border-gray-100 shadow-sm flex items-start gap-4">
+        <span class="text-2xl mt-0.5 flex-shrink-0">😤</span>
+        <div>
+          <p class="font-bold text-sm text-[#333] mb-1">病院で「異常なし」と言われ、どこへ行けばいいかわからない</p>
+          <p class="text-xs text-gray-400">検査には写らないけど、確かに痛い</p>
+        </div>
+      </div>
+
+      <div class="fade-in bg-white rounded-2xl p-5 border border-gray-100 shadow-sm flex items-start gap-4">
+        <span class="text-2xl mt-0.5 flex-shrink-0">💻</span>
+        <div>
+          <p class="font-bold text-sm text-[#333] mb-1">肩こりが頭痛になり、仕事に集中できない</p>
+          <p class="text-xs text-gray-400">デスクワークの疲れが慢性化している</p>
+        </div>
+      </div>
+
+      <div class="fade-in bg-white rounded-2xl p-5 border border-gray-100 shadow-sm flex items-start gap-4">
+        <span class="text-2xl mt-0.5 flex-shrink-0">🤱</span>
+        <div>
+          <p class="font-bold text-sm text-[#333] mb-1">出産してから体のバランスが狂った気がする</p>
+          <p class="text-xs text-gray-400">産後の骨盤・腰痛・むくみに困っている</p>
+        </div>
+      </div>
+
+      <div class="fade-in bg-white rounded-2xl p-5 border border-gray-100 shadow-sm flex items-start gap-4">
+        <span class="text-2xl mt-0.5 flex-shrink-0">🔄</span>
+        <div>
+          <p class="font-bold text-sm text-[#333] mb-1">整体に通っても、すぐ元に戻ってしまう</p>
+          <p class="text-xs text-gray-400">一時しのぎにしかなっていない</p>
+        </div>
+      </div>
+
+      <div class="fade-in bg-white rounded-2xl p-5 border border-gray-100 shadow-sm flex items-start gap-4">
+        <span class="text-2xl mt-0.5 flex-shrink-0">⚡</span>
+        <div>
+          <p class="font-bold text-sm text-[#333] mb-1">スポーツで痛めた膝・足首が完治せず復帰できない</p>
+          <p class="text-xs text-gray-400">再発が怖くて踏み出せない</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bridge -->
+    <div class="fade-in text-center bg-sub rounded-2xl py-8 px-6 border border-[#c4e8d8]">
+      <p class="text-main font-bold text-base md:text-lg leading-relaxed">
+        その悩み、さくら整骨院で一緒に向き合います。
+      </p>
+      <p class="text-gray-500 text-sm mt-2">
+        「どこに行けばいいかわからない」という方こそ、<br class="md:hidden">まずはご相談ください。
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════
+     SOLUTION（解決策提示）
+════════════════════════════════ -->
+<section id="solution" class="py-16 md:py-24 bg-white">
+  <div class="max-w-5xl mx-auto px-4">
+    <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+
+      <div class="fade-in order-2 md:order-1">
+        <span class="sec-label">WHY WE CAN HELP</span>
+        <h2 class="text-2xl md:text-3xl font-bold mt-2 mb-6 text-[#333]">
+          なぜ、さくら整骨院で<br>変化が出るのか
+        </h2>
+
+        <div class="space-y-5">
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 bg-sub rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-4 h-4 text-main" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+              </svg>
+            </div>
+            <div>
+              <p class="font-bold text-sm text-[#333] mb-1">「痛い場所」だけでなく「原因」を診る</p>
+              <p class="text-sm text-gray-500 leading-relaxed">姿勢・骨格のゆがみ・筋肉バランスを総合的に評価し、症状の根本原因にアプローチします。</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 bg-sub rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-4 h-4 text-main" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+              </svg>
+            </div>
+            <div>
+              <p class="font-bold text-sm text-[#333] mb-1">柔道整復師による国家資格の施術</p>
+              <p class="text-sm text-gray-500 leading-relaxed">医学的知識を持つ有資格者が担当。必要に応じて健康保険も適用できます。</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 bg-sub rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-4 h-4 text-main" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+              </svg>
+            </div>
+            <div>
+              <p class="font-bold text-sm text-[#333] mb-1">「また来てほしい」ではなく「卒業」が目標</p>
+              <p class="text-sm text-gray-500 leading-relaxed">再発しにくい体づくりを目標に、セルフケア指導も含めた施術プランをご提案します。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fade-in order-1 md:order-2">
+        <img
+          src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80&auto=format&fit=crop"
+          alt="院長による丁寧な施術の様子"
+          class="rounded-2xl shadow-lg w-full h-72 md:h-96 object-cover"
+          loading="lazy"
+        >
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════
+     FEATURES（選ばれる理由 3つ）
+════════════════════════════════ -->
+<section id="features" class="py-16 md:py-24 bg-sub">
+  <div class="max-w-5xl mx-auto px-4">
+
+    <div class="text-center mb-12 fade-in">
+      <span class="sec-label">WHY CHOOSE US</span>
+      <h2 class="text-2xl md:text-3xl font-bold mt-2 text-[#333]">
+        さくら整骨院が選ばれる3つの理由
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <!-- 01 -->
+      <div class="fade-in bg-white rounded-2xl p-8 text-center shadow-sm hover-lift">
+        <div class="w-16 h-16 bg-sub rounded-full flex items-center justify-center mx-auto mb-5">
+          <svg class="w-8 h-8 text-main" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+          </svg>
+        </div>
+        <p class="sec-label mb-2">REASON 01</p>
+        <h3 class="font-bold text-lg text-[#333] mb-3">15年の経験と<br>国家資格の技術</h3>
+        <p class="text-sm text-gray-500 leading-relaxed">柔道整復師として15年以上の臨床経験を持つ院長が全施術を担当。骨格・筋肉・姿勢を総合的に診て、症状の本質にアプローチします。</p>
+      </div>
+
+      <!-- 02 -->
+      <div class="fade-in bg-white rounded-2xl p-8 text-center shadow-sm hover-lift">
+        <div class="w-16 h-16 bg-sub rounded-full flex items-center justify-center mx-auto mb-5">
+          <svg class="w-8 h-8 text-main" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+          </svg>
+        </div>
+        <p class="sec-label mb-2">REASON 02</p>
+        <h3 class="font-bold text-lg text-[#333] mb-3">駅チカ・夜20時まで<br>通いやすい立地・時間</h3>
+        <p class="text-sm text-gray-500 leading-relaxed">三軒茶屋駅から徒歩2分。平日夜20時まで受付しているので、仕事帰りや買い物ついでにも通えます。当日予約・予約なしも対応。</p>
+      </div>
+
+      <!-- 03 -->
+      <div class="fade-in bg-white rounded-2xl p-8 text-center shadow-sm hover-lift">
+        <div class="w-16 h-16 bg-sub rounded-full flex items-center justify-center mx-auto mb-5">
+          <svg class="w-8 h-8 text-main" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/>
+          </svg>
+        </div>
+        <p class="sec-label mb-2">REASON 03</p>
+        <h3 class="font-bold text-lg text-[#333] mb-3">口コミ評価 4.8<br>リピート率 87%</h3>
+        <p class="text-sm text-gray-500 leading-relaxed">地域の患者様に長年支えていただき、Google口コミ評価は平均4.8。「また来たい」と思っていただける施術・接客を大切にしています。</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════
+     STATS（数値バナー）
+════════════════════════════════ -->
+<section class="py-14 bg-main">
+  <div class="max-w-5xl mx-auto px-4">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      <div class="fade-in">
+        <p class="text-white/60 text-xs tracking-widest mb-1">開院</p>
+        <p class="text-white text-4xl font-bold"><span class="counter" data-target="15">0</span><span class="text-2xl">年</span></p>
+      </div>
+      <div class="fade-in">
+        <p class="text-white/60 text-xs tracking-widest mb-1">累計来院数</p>
+        <p class="text-white text-4xl font-bold"><span class="counter" data-target="8000">0</span><span class="text-2xl">名+</span></p>
+      </div>
+      <div class="fade-in">
+        <p class="text-white/60 text-xs tracking-widest mb-1">口コミ評価</p>
+        <p class="text-white text-4xl font-bold">4.8<span class="text-xl text-white/60"> / 5</span></p>
+      </div>
+      <div class="fade-in">
+        <p class="text-white/60 text-xs tracking-widest mb-1">リピート率</p>
+        <p class="text-white text-4xl font-bold"><span class="counter" data-target="87">0</span><span class="text-2xl">%</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════
+     TREATMENTS（施術内容）
+════════════════════════════════ -->
+<section id="treatments" class="py-16 md:py-24 bg-white">
+  <div class="max-w-5xl mx-auto px-4">
+
+    <div class="text-center mb-12 fade-in">
+      <span class="sec-label">TREATMENTS</span>
+      <h2 class="text-2xl md:text-3xl font-bold mt-2 text-[#333]">施術内容</h2>
+      <p class="text-gray-400 text-sm mt-2">症状・目的に合わせたメニューをご用意しています</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 gap-6">
+
+      <!-- 腰痛・肩こり -->
+      <div class="fade-in rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover-lift">
+        <img
+          src="https://images.unsplash.com/photo-1616279967983-ec413476e824?w=800&q=80&auto=format&fit=crop"
+          alt="腰痛・肩こり施術"
+          class="w-full h-44 object-cover"
+          loading="lazy"
+        >
+        <div class="p-6">
+          <span class="inline-block bg-sub text-main text-xs font-semibold px-3 py-1 rounded-full mb-3">保険対応</span>
+          <h3 class="font-bold text-base text-[#333] mb-2">腰痛・肩こり・首の痛み</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">慢性的な腰痛・肩こりは、筋肉の硬さだけでなく骨格のゆがみが原因であることが多くあります。丁寧な問診と姿勢評価を通じて、根本的な原因に働きかけます。</p>
+        </div>
+      </div>
+
+      <!-- 交通事故 -->
+      <div class="fade-in rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover-lift">
+        <img
+          src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80&auto=format&fit=crop"
+          alt="交通事故・むちうち施術"
+          class="w-full h-44 object-cover"
+          loading="lazy"
+        >
+        <div class="p-6">
+          <span class="inline-block bg-blue-50 text-blue-600 text-xs font-semibold px-3 py-1 rounded-full mb-3">自賠責対応・窓口0円</span>
+          <h3 class="font-bold text-base text-[#333] mb-2">交通事故・むちうち</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">事故後の痛みは時間が経ってから出ることがあります。自賠責保険を使った施術は窓口負担0円。示談前のご相談もお気軽にどうぞ。</p>
+        </div>
+      </div>
+
+      <!-- 産後骨盤矯正 -->
+      <div class="fade-in rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover-lift">
+        <img
+          src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=800&q=80&auto=format&fit=crop"
+          alt="産後骨盤矯正"
+          class="w-full h-44 object-cover"
+          loading="lazy"
+        >
+        <div class="p-6">
+          <span class="inline-block bg-orange-50 text-orange-500 text-xs font-semibold px-3 py-1 rounded-full mb-3">女性に人気</span>
+          <h3 class="font-bold text-base text-[#333] mb-2">産後骨盤矯正</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">産後の腰痛・骨盤の開き・体型変化に特化したプログラムです。赤ちゃん連れでも対応できるスペースを確保しています（事前にご相談ください）。</p>
+        </div>
+      </div>
+
+      <!-- スポーツ障害 -->
+      <div class="fade-in rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover-lift">
+        <img
+          src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&q=80&auto=format&fit=crop"
+          alt="スポーツ障害・捻挫"
+          class="w-full h-44 object-cover object-top"
+          loading="lazy"
+        >
+        <div class="p-6">
+          <span class="inline-block bg-sub text-main text-xs font-semibold px-3 py-1 rounded-full mb-3">急性外傷対応</span>
+          <h3 class="font-bold text-base text-[#333] mb-2">スポーツ障害・捻挫・打撲</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">捻挫・肉離れ・打撲などの急性外傷から、反復性のスポーツ障害まで。競技復帰を目標に、段階的なリハビリプランをご提案します。</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════
+     FLOW（施術の流れ）
+════════════════════════════════ -->
+<section id="flow" class="py-16 md:py-24 bg-[#f8f9fa]">
+  <div class="max-w-5xl mx-auto px-4">
+
+    <div class="text-center mb-12 fade-in">
+      <span class="sec-label">FLOW</span>
+      <h2 class="text-2xl md:text-3xl font-bold mt-2 text-[#333]">初回施術の流れ</h2>
+      <p class="text-gray-400 text-sm mt-2">初めての方でも安心してお越しいただけます</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-4">
+
+      <div class="fade-in flex md:flex-col items-start md:items-center gap-4 md:gap-0 md:text-center relative">
+        <div class="w-16 h-16 bg-main text-white rounded-full flex items-center justify-center flex-shrink-0 text-xl font-bold relative z-10 shadow-md">1</div>
+        <!-- Arrow (mobile: down, desktop: right) -->
+        <div class="hidden md:block absolute top-8 left-[calc(50%+32px)] w-[calc(100%-64px)] h-0.5 bg-[#c4e8d8]"></div>
+        <div class="md:mt-4">
+          <h3 class="font-bold text-[#333] text-sm mb-1">ご予約</h3>
+          <p class="text-xs text-gray-500 leading-relaxed">LINEまたはお電話にて。当日予約・予約なしも対応しています</p>
+        </div>
+      </div>
+
+      <div class="fade-in flex md:flex-col items-start md:items-center gap-4 md:gap-0 md:text-center relative">
+        <div class="w-16 h-16 bg-main text-white rounded-full flex items-center justify-center flex-shrink-0 text-xl font-bold relative z-10 shadow-md">2</div>
+        <div class="hidden md:block absolute top-8 left-[calc(50%+32px)] w-[calc(100%-64px)] h-0.5 bg-[#c4e8d8]"></div>
+        <div class="md:mt-4">
+          <h3 class="font-bold text-[#333] text-sm mb-1">問診・姿勢評価</h3>
+          <p class="text-xs text-gray-500 leading-relaxed">症状・生活習慣を丁寧にヒアリング。姿勢と動作も確認します</p>
+        </div>
+      </div>
+
+      <div class="fade-in flex md:flex-col items-start md:items-center gap-4 md:gap-0 md:text-center relative">
+        <div class="w-16 h-16 bg-main text-white rounded-full flex items-center justify-center flex-shrink-0 text-xl font-bold relative z-10 shadow-md">3</div>
+        <div class="hidden md:block absolute top-8 left-[calc(50%+32px)] w-[calc(100%-64px)] h-0.5 bg-[#c4e8d8]"></div>
+        <div class="md:mt-4">
+          <h3 class="font-bold text-[#333] text-sm mb-1">施術</h3>
+          <p class="text-xs text-gray-500 leading-relaxed">評価をもとに最適な施術を実施。痛みのある施術はしません</p>
+        </div>
+      </div>
+
+      <div class="fade-in flex md:flex-col items-start md:items-center gap-4 md:gap-0 md:text-center">
+        <div class="w-16 h-16 bg-main text-white rounded-full flex items-center justify-center flex-shrink-0 text-xl font-bold relative z-10 shadow-md">4</div>
+        <div class="md:mt-4">
+          <h3 class="font-bold text-[#333] text-sm mb-1">アフターケア説明</h3>
+          <p class="text-xs text-gray-500 leading-relaxed">自宅でできるストレッチや日常生活での注意点をお伝えします</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="fade-in mt-10 bg-white border border-[#c4e8d8] rounded-2xl p-5 text-center">
+      <p class="text-main text-sm font-bold">初回は問診・検査込みで約60分を目安にお考えください</p>
+      <p class="text-gray-400 text-xs mt-1">2回目以降は30〜40分程度です</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════
+     PRICE（料金）
+════════════════════════════════ -->
+<section id="price" class="py-16 md:py-24 bg-white">
+  <div class="max-w-5xl mx-auto px-4">
+
+    <div class="text-center mb-12 fade-in">
+      <span class="sec-label">PRICE</span>
+      <h2 class="text-2xl md:text-3xl font-bold mt-2 text-[#333]">料金案内</h2>
+      <p class="text-gray-400 text-sm mt-2">明確な料金設定で、安心してご来院いただけます</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 mb-8">
+
+      <!-- 保険施術 -->
+      <div class="fade-in">
+        <div class="flex items-center gap-2 mb-4">
+          <span class="w-2 h-2 bg-main rounded-full"></span>
+          <h3 class="font-bold text-[#333] text-sm">保険施術</h3>
+        </div>
+        <div class="space-y-0 border border-gray-100 rounded-2xl overflow-hidden">
+          <div class="flex justify-between items-center p-4 hour-row">
+            <div>
+              <p class="font-medium text-sm text-[#333]">初診料・問診</p>
+              <p class="text-xs text-gray-400 mt-0.5">初回のみ</p>
+            </div>
+            <p class="font-bold text-main text-sm">無料</p>
+          </div>
+          <div class="flex justify-between items-center p-4 hour-row">
+            <div>
+              <p class="font-medium text-sm text-[#333]">保険施術（窓口負担）</p>
+              <p class="text-xs text-gray-400 mt-0.5">3割負担の場合の目安</p>
+            </div>
+            <p class="font-bold text-main text-sm">〜¥1,000前後</p>
+          </div>
+          <div class="flex justify-between items-center p-4">
+            <div>
+              <p class="font-medium text-sm text-[#333]">交通事故施術</p>
+              <p class="text-xs text-gray-400 mt-0.5">自賠責保険適用</p>
+            </div>
+            <p class="font-bold text-main text-sm">窓口負担 0円</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 自費施術 -->
+      <div class="fade-in">
+        <div class="flex items-center gap-2 mb-4">
+          <span class="w-2 h-2 bg-orange-400 rounded-full"></span>
+          <h3 class="font-bold text-[#333] text-sm">自費施術</h3>
+        </div>
+        <div class="space-y-0 border border-gray-100 rounded-2xl overflow-hidden">
+          <div class="flex justify-between items-center p-4 hour-row">
+            <div>
+              <p class="font-medium text-sm text-[#333]">産後骨盤矯正</p>
+              <p class="text-xs text-gray-400 mt-0.5">初回60分</p>
+            </div>
+            <p class="font-bold text-main text-sm">¥5,500</p>
+          </div>
+          <div class="flex justify-between items-center p-4 hour-row">
+            <div>
+              <p class="font-medium text-sm text-[#333]">全身バランス調整</p>
+              <p class="text-xs text-gray-400 mt-0.5">60分</p>
+            </div>
+            <p class="font-bold text-main text-sm">¥6,600</p>
+          </div>
+          <div class="flex justify-between items-center p-4">
+            <div>
+              <p class="font-medium text-sm text-[#333]">5回回数券</p>
+              <p class="text-xs text-gray-400 mt-0.5">自費施術共通</p>
+            </div>
+            <p class="font-bold text-main text-sm">¥28,600</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="fade-in bg-sub rounded-2xl p-5 flex items-start gap-3 text-sm text-gray-600">
+      <svg class="w-5 h-5 text-main flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+      </svg>
+      <p>保険施術が適用できるかどうかは、症状によって異なります。初回問診の際に詳しくご説明しますので、まずはお気軽にご来院ください。自費・保険の併用はできません。</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════
+     REVIEWS（口コミ）
+════════════════════════════════ -->
+<section id="reviews" class="py-16 md:py-24 bg-[#f8f9fa]">
+  <div class="max-w-5xl mx-auto px-4">
+
+    <div class="text-center mb-12 fade-in">
+      <span class="sec-label">REVIEWS</span>
+      <h2 class="text-2xl md:text-3xl font-bold mt-2 text-[#333]">患者様の声</h2>
+      <p class="text-gray-400 text-sm mt-2">実際にご来院いただいた患者様のご感想です</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+      <div class="fade-in bg-white rounded-2xl p-6 shadow-sm">
+        <div class="stars text-base mb-3">★★★★★</div>
+        <p class="text-sm text-[#333] leading-relaxed mb-5">「3年以上悩んでいた腰痛が、通い始めて1ヶ月ほどで日常生活に支障がなくなりました。原因から丁寧に説明してもらえたのが良かったです。」</p>
+        <div class="flex items-center gap-3 pt-4 border-t border-gray-100">
+          <div class="w-9 h-9 bg-sub rounded-full flex items-center justify-center text-main font-bold text-sm">S</div>
+          <div>
+            <p class="text-xs font-semibold text-[#333]">佐藤さま（40代・女性）</p>
+            <p class="text-xs text-gray-400">慢性腰痛</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="fade-in bg-white rounded-2xl p-6 shadow-sm">
+        <div class="stars text-base mb-3">★★★★★</div>
+        <p class="text-sm text-[#333] leading-relaxed mb-5">「産後から続く骨盤の違和感と腰痛で来院。赤ちゃん連れでも嫌な顔せず対応していただき本当に助かりました。院内も清潔で通いやすいです。」</p>
+        <div class="flex items-center gap-3 pt-4 border-t border-gray-100">
+          <div class="w-9 h-9 bg-sub rounded-full flex items-center justify-center text-main font-bold text-sm">T</div>
+          <div>
+            <p class="text-xs font-semibold text-[#333]">田中さま（30代・女性）</p>
+            <p class="text-xs text-gray-400">産後骨盤矯正</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="fade-in bg-white rounded-2xl p-6 shadow-sm">
+        <div class="stars text-base mb-3">★★★★☆</div>
+        <p class="text-sm text-[#333] leading-relaxed mb-5">「交通事故後のむちうちでお世話になりました。保険の手続き説明も丁寧で、金銭的な不安なく通えました。首の痛みが落ち着いてほっとしています。」</p>
+        <div class="flex items-center gap-3 pt-4 border-t border-gray-100">
+          <div class="w-9 h-9 bg-sub rounded-full flex items-center justify-center text-main font-bold text-sm">Y</div>
+          <div>
+            <p class="text-xs font-semibold text-[#333]">山田さま（50代・男性）</p>
+            <p class="text-xs text-gray-400">交通事故・むちうち</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="fade-in bg-white rounded-2xl p-6 shadow-sm">
+        <div class="stars text-base mb-3">★★★★★</div>
+        <p class="text-sm text-[#333] leading-relaxed mb-5">「長年の肩こりで頭痛が頻繁でしたが、施術後から徐々に頻度が減りました。夜20時まで対応してくれるので、仕事帰りに通えるのも助かっています。」</p>
+        <div class="flex items-center gap-3 pt-4 border-t border-gray-100">
+          <div class="w-9 h-9 bg-sub rounded-full flex items-center justify-center text-main font-bold text-sm">K</div>
+          <div>
+            <p class="text-xs font-semibold text-[#333]">木村さま（30代・男性）</p>
+            <p class="text-xs text-gray-400">肩こり・頭痛</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="fade-in bg-white rounded-2xl p-6 shadow-sm">
+        <div class="stars text-base mb-3">★★★★★</div>
+        <p class="text-sm text-[#333] leading-relaxed mb-5">「サッカーで足首を捻挫し、他院でなかなか良くならず来院。原因の説明と適切な処置・リハビリで、無事に復帰できました。ありがとうございました。」</p>
+        <div class="flex items-center gap-3 pt-4 border-t border-gray-100">
+          <div class="w-9 h-9 bg-sub rounded-full flex items-center justify-center text-main font-bold text-sm">N</div>
+          <div>
+            <p class="text-xs font-semibold text-[#333]">中村さま（20代・男性）</p>
+            <p class="text-xs text-gray-400">スポーツ障害・捻挫</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Google Rating card -->
+      <div class="fade-in bg-main rounded-2xl p-6 flex flex-col items-center justify-center text-center">
+        <svg class="w-10 h-10 text-white/70 mb-3" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+        </svg>
+        <p class="text-white font-bold text-3xl">4.8</p>
+        <div class="stars text-white mt-1 text-sm">★★★★★</div>
+        <p class="text-white/60 text-xs mt-2">Google マップ 評価</p>
+        <p class="text-white/50 text-xs">（口コミ 142件）</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════
+     DOCTOR（院長紹介）
+════════════════════════════════ -->
+<section id="doctor" class="py-16 md:py-24 bg-white">
+  <div class="max-w-5xl mx-auto px-4">
+
+    <div class="text-center mb-12 fade-in">
+      <span class="sec-label">ABOUT</span>
+      <h2 class="text-2xl md:text-3xl font-bold mt-2 text-[#333]">院長紹介</h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+
+      <div class="fade-in">
+        <img
+          src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=800&q=80&auto=format&fit=crop&crop=top"
+          alt="院長 田中誠"
+          class="rounded-2xl shadow-lg w-full h-80 md:h-96 object-cover object-top"
+          loading="lazy"
+        >
+      </div>
+
+      <div class="fade-in">
+        <div class="mb-5">
+          <p class="text-main text-xs font-semibold tracking-widest mb-1">DIRECTOR</p>
+          <h3 class="text-2xl font-bold text-[#333]">田中 誠</h3>
+          <p class="text-gray-400 text-xs mt-0.5">Makoto Tanaka</p>
+        </div>
+
+        <div class="bg-[#f8f9fa] rounded-xl p-5 mb-6 text-sm space-y-2.5">
+          <div class="flex gap-3">
+            <span class="text-main font-semibold text-xs w-16 flex-shrink-0 mt-0.5">保有資格</span>
+            <span class="text-gray-600 text-xs leading-relaxed">柔道整復師（厚生労働大臣免許）</span>
+          </div>
+          <div class="flex gap-3">
+            <span class="text-main font-semibold text-xs w-16 flex-shrink-0 mt-0.5">略歴</span>
+            <span class="text-gray-600 text-xs leading-relaxed">専門学校卒業後、都内の整骨院に勤務。2009年に世田谷区三軒茶屋にて独立開業。</span>
+          </div>
+          <div class="flex gap-3">
+            <span class="text-main font-semibold text-xs w-16 flex-shrink-0 mt-0.5">得意分野</span>
+            <span class="text-gray-600 text-xs leading-relaxed">慢性腰痛・産後ケア・交通事故施術</span>
+          </div>
+        </div>
+
+        <div class="space-y-4 text-sm text-gray-500 leading-relaxed">
+          <p>開業して15年、地域の患者さんに育てていただいてきたと実感しています。「痛みのない生活を取り戻したい」という思いに、真剣に向き合うことが私の仕事だと思っています。</p>
+          <p>施術で大切にしているのは「痛い場所だけを見ない」こと。症状の裏にある原因を探り、患者さん自身が自分の体を理解できるように関わっています。</p>
+          <p>初めての方も、どうぞ気軽に声をかけてください。</p>
+        </div>
+
+        <div class="mt-6 pt-5 border-t border-gray-100">
+          <p class="text-xs text-gray-300">さくら整骨院 院長 田中 誠（たなか まこと）</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════
+     FAQ
+════════════════════════════════ -->
+<section id="faq" class="py-16 md:py-24 bg-[#f8f9fa]">
+  <div class="max-w-3xl mx-auto px-4">
+
+    <div class="text-center mb-12 fade-in">
+      <span class="sec-label">FAQ</span>
+      <h2 class="text-2xl md:text-3xl font-bold mt-2 text-[#333]">よくある質問</h2>
+    </div>
+
+    <div class="space-y-3" id="faq-list">
+
+      <div class="fade-in faq-item bg-white rounded-2xl overflow-hidden shadow-sm">
+        <button class="faq-trigger w-full text-left px-6 py-5 flex items-center justify-between gap-4">
+          <span class="font-semibold text-sm text-[#333]">予約は必要ですか？</span>
+          <svg class="faq-icon w-5 h-5 text-main flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div class="faq-body px-6 pb-5 hidden">
+          <p class="text-sm text-gray-500 leading-relaxed">予約なしでもご来院いただけますが、お待ちいただく場合がございます。LINE・電話での事前予約をおすすめしています。当日予約も対応しております。</p>
+        </div>
+      </div>
+
+      <div class="fade-in faq-item bg-white rounded-2xl overflow-hidden shadow-sm">
+        <button class="faq-trigger w-full text-left px-6 py-5 flex items-center justify-between gap-4">
+          <span class="font-semibold text-sm text-[#333]">保険は使えますか？</span>
+          <svg class="faq-icon w-5 h-5 text-main flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div class="faq-body px-6 pb-5 hidden">
+          <p class="text-sm text-gray-500 leading-relaxed">急性外傷（捻挫・打撲・挫傷）や骨折・脱臼の応急処置、交通事故によるケガには健康保険・自賠責保険が適用されます。慢性症状には保険が使えない場合もありますので、初診時にご説明します。</p>
+        </div>
+      </div>
+
+      <div class="fade-in faq-item bg-white rounded-2xl overflow-hidden shadow-sm">
+        <button class="faq-trigger w-full text-left px-6 py-5 flex items-center justify-between gap-4">
+          <span class="font-semibold text-sm text-[#333]">施術は痛くないですか？</span>
+          <svg class="faq-icon w-5 h-5 text-main flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div class="faq-body px-6 pb-5 hidden">
+          <p class="text-sm text-gray-500 leading-relaxed">「痛みのある施術はしない」を方針にしています。施術中に痛みを感じた場合はすぐにお声がけください。強さの調節は随時可能です。</p>
+        </div>
+      </div>
+
+      <div class="fade-in faq-item bg-white rounded-2xl overflow-hidden shadow-sm">
+        <button class="faq-trigger w-full text-left px-6 py-5 flex items-center justify-between gap-4">
+          <span class="font-semibold text-sm text-[#333]">何回通えば改善しますか？</span>
+          <svg class="faq-icon w-5 h-5 text-main flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div class="faq-body px-6 pb-5 hidden">
+          <p class="text-sm text-gray-500 leading-relaxed">症状により個人差があるため一概には申し上げられませんが、急性症状（捻挫等）は数回、慢性症状（腰痛・肩こり等）は1〜2ヶ月を目安にご案内することが多いです。初回問診後に目安をお伝えします。</p>
+        </div>
+      </div>
+
+      <div class="fade-in faq-item bg-white rounded-2xl overflow-hidden shadow-sm">
+        <button class="faq-trigger w-full text-left px-6 py-5 flex items-center justify-between gap-4">
+          <span class="font-semibold text-sm text-[#333]">子ども連れでも大丈夫ですか？</span>
+          <svg class="faq-icon w-5 h-5 text-main flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div class="faq-body px-6 pb-5 hidden">
+          <p class="text-sm text-gray-500 leading-relaxed">産後ケアでご来院いただく授乳中のお母さんも多くいらっしゃいます。赤ちゃん連れの場合は、事前にLINEまたはお電話でご相談ください。</p>
+        </div>
+      </div>
+
+      <div class="fade-in faq-item bg-white rounded-2xl overflow-hidden shadow-sm">
+        <button class="faq-trigger w-full text-left px-6 py-5 flex items-center justify-between gap-4">
+          <span class="font-semibold text-sm text-[#333]">交通事故の施術に費用はかかりますか？</span>
+          <svg class="faq-icon w-5 h-5 text-main flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div class="faq-body px-6 pb-5 hidden">
+          <p class="text-sm text-gray-500 leading-relaxed">自賠責保険の範囲内であれば、窓口負担は基本的に0円です。保険会社との手続きサポートも行っていますので、事故後の混乱した状況でもお気軽にご相談ください。</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════
+     ACCESS（アクセス）
+════════════════════════════════ -->
+<section id="access" class="py-16 md:py-24 bg-white">
+  <div class="max-w-5xl mx-auto px-4">
+
+    <div class="text-center mb-12 fade-in">
+      <span class="sec-label">ACCESS</span>
+      <h2 class="text-2xl md:text-3xl font-bold mt-2 text-[#333]">アクセス・診療時間</h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8">
+
+      <!-- Map -->
+      <div class="fade-in">
+        <div class="rounded-2xl overflow-hidden shadow-sm" style="height: 300px;">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.944!2d139.6672!3d35.6465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018f50c5eb6ff5f%3A0x17e4f38e38e12c37!2z5LiJ6Lu35Ym1!5e0!3m2!1sja!2sjp!4v1700000000000!5m2!1sja!2sjp"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="さくら整骨院 地図 三軒茶屋">
+          </iframe>
+        </div>
+        <p class="text-xs text-gray-400 mt-2 text-center">※ 三軒茶屋駅周辺を表示（架空住所のためピンはございません）</p>
+      </div>
+
+      <!-- Info -->
+      <div class="fade-in space-y-7">
+
+        <div>
+          <h3 class="font-bold text-[#333] mb-3">さくら整骨院</h3>
+          <div class="space-y-3">
+            <div class="flex items-start gap-3 text-sm text-gray-600">
+              <svg class="w-5 h-5 text-main flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+              <span>東京都世田谷区三軒茶屋2-14-8 三軒茶屋ビル1F</span>
+            </div>
+            <div class="flex items-center gap-3 text-sm">
+              <svg class="w-5 h-5 text-main flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+              </svg>
+              <a href="tel:03-5432-8876" class="text-main font-bold hover:underline">03-5432-8876</a>
+            </div>
+            <div class="flex items-start gap-3 text-sm text-gray-600">
+              <svg class="w-5 h-5 text-main flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
+              </svg>
+              <span>東急田園都市線・世田谷線「三軒茶屋駅」徒歩2分</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hours -->
+        <div>
+          <h4 class="font-bold text-[#333] text-sm mb-3">診療時間</h4>
+          <div class="rounded-xl overflow-hidden border border-gray-100 text-sm">
+            <div class="grid grid-cols-3 bg-[#f8f9fa] text-xs text-gray-400 font-semibold">
+              <div class="px-4 py-2.5">曜日</div>
+              <div class="px-4 py-2.5 text-center">午前</div>
+              <div class="px-4 py-2.5 text-center">午後</div>
+            </div>
+            <div class="grid grid-cols-3 hour-row text-xs">
+              <div class="px-4 py-3 text-gray-600">月・火・水</div>
+              <div class="px-4 py-3 text-center text-main font-semibold">9:00〜13:00</div>
+              <div class="px-4 py-3 text-center text-main font-semibold">15:00〜20:00</div>
+            </div>
+            <div class="grid grid-cols-3 hour-row text-xs bg-gray-50">
+              <div class="px-4 py-3 text-gray-400">木曜</div>
+              <div class="px-4 py-3 text-center text-gray-400 col-span-2">定休日</div>
+            </div>
+            <div class="grid grid-cols-3 hour-row text-xs">
+              <div class="px-4 py-3 text-gray-600">金・土</div>
+              <div class="px-4 py-3 text-center text-main font-semibold">9:00〜13:00</div>
+              <div class="px-4 py-3 text-center text-main font-semibold">15:00〜20:00</div>
+            </div>
+            <div class="grid grid-cols-3 text-xs">
+              <div class="px-4 py-3 text-gray-600">日・祝</div>
+              <div class="px-4 py-3 text-center text-main font-semibold">9:00〜14:00</div>
+              <div class="px-4 py-3 text-center text-gray-400">ー</div>
+            </div>
+          </div>
+          <p class="text-xs text-gray-400 mt-2">※ 最終受付は終了30分前です</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════
+     CTA SECTION（最終CTA）
+════════════════════════════════ -->
+<section id="cta" class="py-16 md:py-24 bg-main">
+  <div class="max-w-3xl mx-auto px-4 text-center">
+    <div class="fade-in">
+      <p class="text-white/60 text-xs tracking-widest mb-2 uppercase">Contact</p>
+      <h2 class="text-white text-2xl md:text-3xl font-bold mb-4">
+        まずはお気軽にご相談ください
+      </h2>
+      <p class="text-white/75 text-sm mb-10 leading-relaxed">
+        「どこに行けばいいか迷っている」「これくらいで行っていいの？」<br>
+        そんな些細なご質問でも、LINEからお気軽にどうぞ。
+      </p>
+
+      <!-- Primary CTAs -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+        <a href="https://line.me/ti/p/XXXXXXXXXX"
+           target="_blank" rel="noopener"
+           onclick="trackCTA('bottom_line')"
+           class="btn-line btn-line-pulse flex items-center justify-center gap-2 text-white font-bold py-5 px-10 rounded-xl text-base shadow-xl">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.070 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
+          </svg>
+          LINEで無料相談・予約
+        </a>
+        <a href="tel:03-5432-8876"
+           onclick="trackCTA('bottom_tel')"
+           class="flex items-center justify-center gap-2 bg-white/15 backdrop-blur-sm text-white font-bold py-5 px-10 rounded-xl text-base border border-white/30 hover:bg-white/25 transition-colors">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.58.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.29 21 3 13.71 3 5c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57-.11.36-.02.75.23 1.03L6.6 10.8z"/>
+          </svg>
+          03-5432-8876
+        </a>
+      </div>
+
+      <!-- Online form -->
+      <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-7 text-left">
+        <h3 class="text-white font-bold text-base mb-5 text-center">オンライン予約・お問い合わせ</h3>
+        <form
+          action="https://formspree.io/f/XXXXXXXX"
+          method="POST"
+          id="contact-form"
+          class="space-y-4"
+        >
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="text-white/60 text-xs mb-1.5 block">お名前 <span class="text-red-300">*</span></label>
+              <input type="text" name="name" required placeholder="田中 花子"
+                class="w-full rounded-lg px-4 py-3 text-sm text-gray-800 bg-white/90 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/60">
+            </div>
+            <div>
+              <label class="text-white/60 text-xs mb-1.5 block">電話番号 <span class="text-red-300">*</span></label>
+              <input type="tel" name="phone" required placeholder="090-0000-0000"
+                class="w-full rounded-lg px-4 py-3 text-sm text-gray-800 bg-white/90 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/60">
+            </div>
+          </div>
+          <div>
+            <label class="text-white/60 text-xs mb-1.5 block">ご希望の施術・お悩み</label>
+            <select name="treatment"
+              class="w-full rounded-lg px-4 py-3 text-sm text-gray-800 bg-white/90 focus:outline-none focus:ring-2 focus:ring-white/60">
+              <option value="">選択してください</option>
+              <option>腰痛・肩こり・首の痛み</option>
+              <option>交通事故・むちうち</option>
+              <option>産後骨盤矯正</option>
+              <option>スポーツ障害・捻挫</option>
+              <option>その他・まず相談したい</option>
+            </select>
+          </div>
+          <div>
+            <label class="text-white/60 text-xs mb-1.5 block">ご希望の来院日時（任意）</label>
+            <input type="text" name="preferred_date" placeholder="例：平日夕方、土曜の午前中"
+              class="w-full rounded-lg px-4 py-3 text-sm text-gray-800 bg-white/90 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/60">
+          </div>
+          <div>
+            <label class="text-white/60 text-xs mb-1.5 block">メッセージ（任意）</label>
+            <textarea name="message" rows="3" placeholder="症状やご不明な点をご記入ください"
+              class="w-full rounded-lg px-4 py-3 text-sm text-gray-800 bg-white/90 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/60 resize-none"></textarea>
+          </div>
+          <button
+            type="submit"
+            onclick="trackCTA('form_submit')"
+            class="w-full bg-white text-main font-bold py-4 rounded-xl text-sm hover:bg-sub transition-colors">
+            送信する
+          </button>
+          <p class="text-white/40 text-xs text-center">通常24時間以内にご返信いたします。お急ぎの場合はお電話ください。</p>
+        </form>
+        <div id="form-success" class="hidden text-center py-8">
+          <svg class="w-12 h-12 text-white/70 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <p class="text-white font-bold">送信が完了しました</p>
+          <p class="text-white/60 text-sm mt-1">担当者より24時間以内にご連絡いたします</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════
+     FOOTER
+════════════════════════════════ -->
+<footer class="bg-[#111] text-white pt-12 pb-8">
+  <div class="max-w-5xl mx-auto px-4">
+    <div class="grid sm:grid-cols-3 gap-8 mb-10">
+      <div>
+        <div class="flex items-center gap-2 mb-3">
+          <svg class="w-5 h-5 text-main" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C9.5 2 7.5 3.5 6.5 5.5 5.5 3.5 3.5 2 1 2c0 4 2 7 5.5 9L12 22l5.5-11C21 9 23 6 23 2c-2.5 0-4.5 1.5-5.5 3.5C16.5 3.5 14.5 2 12 2z"/>
+          </svg>
+          <span class="font-bold text-sm">さくら整骨院</span>
+        </div>
+        <p class="text-white/40 text-xs leading-relaxed">
+          東京都世田谷区三軒茶屋2-14-8<br>
+          三軒茶屋ビル1F<br>
+          TEL: 03-5432-8876
+        </p>
+      </div>
+      <div>
+        <h4 class="text-white/50 text-xs font-semibold tracking-widest mb-4 uppercase">Menu</h4>
+        <ul class="space-y-2">
+          <li><a href="#features"  class="text-white/40 text-xs hover:text-white/70 transition-colors">選ばれる理由</a></li>
+          <li><a href="#treatments" class="text-white/40 text-xs hover:text-white/70 transition-colors">施術内容</a></li>
+          <li><a href="#price"    class="text-white/40 text-xs hover:text-white/70 transition-colors">料金</a></li>
+          <li><a href="#reviews"  class="text-white/40 text-xs hover:text-white/70 transition-colors">口コミ</a></li>
+          <li><a href="#faq"      class="text-white/40 text-xs hover:text-white/70 transition-colors">よくある質問</a></li>
+          <li><a href="#access"   class="text-white/40 text-xs hover:text-white/70 transition-colors">アクセス</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white/50 text-xs font-semibold tracking-widest mb-4 uppercase">Hours</h4>
+        <div class="text-xs text-white/40 space-y-1.5">
+          <p>月・火・水・金・土</p>
+          <p class="text-white/60">9:00〜13:00 / 15:00〜20:00</p>
+          <p class="mt-2">日・祝</p>
+          <p class="text-white/60">9:00〜14:00</p>
+          <p class="mt-2 text-red-400/70">木曜定休</p>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-white/10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-white/25">
+      <p>© 2024 さくら整骨院 All Rights Reserved.</p>
+      <a href="#" class="hover:text-white/40 transition-colors">プライバシーポリシー</a>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ════════════════════════════════
+     FIXED BOTTOM CTA（スマホ）
+════════════════════════════════ -->
+<div id="fixed-cta">
+  <div class="flex gap-2 max-w-sm mx-auto">
+    <a href="https://line.me/ti/p/XXXXXXXXXX"
+       target="_blank" rel="noopener"
+       onclick="trackCTA('fixed_line')"
+       class="btn-line flex-1 flex items-center justify-center gap-2 text-white font-bold py-3 rounded-xl text-sm">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.07 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
+      </svg>
+      LINE予約（無料）
+    </a>
+    <a href="tel:03-5432-8876"
+       onclick="trackCTA('fixed_tel')"
+       class="flex-none bg-[#333] text-white font-bold py-3 px-5 rounded-xl text-sm flex items-center gap-1.5">
+      <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.58.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.29 21 3 13.71 3 5c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57-.11.36-.02.75.23 1.03L6.6 10.8z"/>
+      </svg>
+      電話
+    </a>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════
+     JAVASCRIPT
+════════════════════════════════ -->
+<script>
+// ── Scroll progress ──
+window.addEventListener('scroll', () => {
+  const scrolled = document.documentElement.scrollTop;
+  const total    = document.documentElement.scrollHeight - window.innerHeight;
+  document.getElementById('scroll-progress').style.width = (scrolled / total * 100) + '%';
+}, { passive: true });
+
+// ── Header hide/show on scroll ──
+let lastY = 0;
+const header = document.getElementById('site-header');
+window.addEventListener('scroll', () => {
+  const y = window.scrollY;
+  if (y > lastY && y > 120) {
+    header.style.transform = 'translateY(-100%)';
+  } else {
+    header.style.transform = 'translateY(0)';
+  }
+  lastY = y;
+}, { passive: true });
+
+// ── Fade-in via IntersectionObserver ──
+const fadeEls = document.querySelectorAll('.fade-in');
+const fadeObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add('visible');
+    fadeObserver.unobserve(entry.target);
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
+fadeEls.forEach(el => fadeObserver.observe(el));
+
+// ── Counter animation ──
+function runCounter(el) {
+  const target   = parseInt(el.dataset.target, 10);
+  const duration = 1600;
+  const start    = performance.now();
+  function step(now) {
+    const progress = Math.min((now - start) / duration, 1);
+    const ease     = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.floor(ease * target).toLocaleString('ja-JP');
+    if (progress < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    runCounter(entry.target);
+    counterObserver.unobserve(entry.target);
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('.counter').forEach(el => counterObserver.observe(el));
+
+// ── FAQ accordion ──
+document.querySelectorAll('.faq-trigger').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item   = btn.closest('.faq-item');
+    const body   = item.querySelector('.faq-body');
+    const isOpen = !body.classList.contains('hidden');
+
+    // Close all
+    document.querySelectorAll('.faq-item').forEach(i => {
+      i.querySelector('.faq-body').classList.add('hidden');
+      i.classList.remove('faq-open');
+    });
+
+    if (!isOpen) {
+      body.classList.remove('hidden');
+      item.classList.add('faq-open');
+    }
+  });
+});
+
+// ── Form success state ──
+const form    = document.getElementById('contact-form');
+const success = document.getElementById('form-success');
+if (form) {
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data     = new FormData(form);
+    const response = await fetch(form.action, {
+      method:  'POST',
+      body:    data,
+      headers: { 'Accept': 'application/json' }
+    });
+    if (response.ok) {
+      form.classList.add('hidden');
+      success.classList.remove('hidden');
+    }
+  });
+}
+</script>
+
+</body>
+</html>

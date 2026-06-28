@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LP Portfolio — Hayato</title>
+  <meta name="description" content="フロントエンドエンジニア・Webデザイナー Hayato のLPポートフォリオ" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #0c0c0c;
+      --surface:  #151515;
+      --border:   rgba(255,255,255,.07);
+      --text:     #e2e2e2;
+      --muted:    rgba(226,226,226,.45);
+      --accent:   #c9a96e;
+      --accent-d: #a8864e;
+      --r:        14px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', 'Noto Sans JP', sans-serif;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Header ── */
+    header {
+      padding: 3rem 2rem 0;
+      max-width: 1000px;
+      margin-inline: auto;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: .7rem;
+      font-weight: 500;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid rgba(201,169,110,.25);
+      border-radius: 999px;
+      padding: .3rem .85rem;
+      margin-bottom: 1.75rem;
+    }
+    .badge::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      font-weight: 300;
+      letter-spacing: -.02em;
+      line-height: 1.15;
+      color: #fff;
+    }
+    h1 span { color: var(--accent); }
+
+    .subtitle {
+      margin-top: 1rem;
+      font-size: .9375rem;
+      color: var(--muted);
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    .divider {
+      margin: 3rem auto 0;
+      max-width: 1000px;
+      padding-inline: 2rem;
+      border: none;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ── Grid ── */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+      gap: 1.25rem;
+      max-width: 1000px;
+      margin-inline: auto;
+      padding: 3rem 2rem 5rem;
+    }
+
+    /* ── Card ── */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: border-color .25s, transform .25s;
+      text-decoration: none;
+      color: inherit;
+    }
+    .card:hover {
+      border-color: rgba(255,255,255,.18);
+      transform: translateY(-3px);
+    }
+
+    /* browser chrome */
+    .preview {
+      position: relative;
+      height: 180px;
+      overflow: hidden;
+    }
+    .browser-bar {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 28px;
+      background: rgba(0,0,0,.35);
+      backdrop-filter: blur(4px);
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+      padding: 0 .75rem;
+      z-index: 2;
+    }
+    .dot { width: 8px; height: 8px; border-radius: 50%; }
+    .dot-r { background: #ff5f57; }
+    .dot-y { background: #febc2e; }
+    .dot-g { background: #28c840; }
+
+    .preview-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center top;
+      transition: transform .5s ease;
+    }
+    .card:hover .preview-bg { transform: scale(1.04); }
+    .preview-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 30%, rgba(0,0,0,.6) 100%);
+      z-index: 1;
+    }
+    .preview-num {
+      position: absolute;
+      bottom: .75rem;
+      left: .875rem;
+      font-size: .65rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      color: rgba(255,255,255,.55);
+      z-index: 2;
+    }
+
+    /* card body */
+    .card-body {
+      padding: 1.25rem 1.25rem 1rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: .6rem;
+    }
+    .card-cat {
+      font-size: .65rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .card-title {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #fff;
+      line-height: 1.35;
+    }
+    .card-desc {
+      font-size: .8rem;
+      color: var(--muted);
+      line-height: 1.6;
+      flex: 1;
+    }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .35rem;
+      margin-top: .25rem;
+    }
+    .tag {
+      font-size: .65rem;
+      font-weight: 500;
+      padding: .2rem .55rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: .875rem 1.25rem;
+      border-top: 1px solid var(--border);
+      font-size: .75rem;
+      color: var(--muted);
+    }
+    .card-link-icon {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.06);
+      display: flex; align-items: center; justify-content: center;
+      transition: background .2s, color .2s;
+    }
+    .card:hover .card-link-icon {
+      background: var(--accent);
+      color: #000;
+    }
+    .card-link-icon svg { width: 12px; height: 12px; }
+
+    /* ── Coming soon card ── */
+    .card-soon {
+      background: transparent;
+      border: 1px dashed rgba(255,255,255,.1);
+      border-radius: var(--r);
+      min-height: 340px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: .75rem;
+      color: rgba(255,255,255,.15);
+      font-size: .8125rem;
+      letter-spacing: .05em;
+    }
+    .card-soon svg {
+      width: 28px; height: 28px;
+      opacity: .25;
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      border-top: 1px solid var(--border);
+      font-size: .75rem;
+      color: rgba(255,255,255,.18);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="badge">LP Portfolio</div>
+  <h1>Works<br /><span>by Hayato</span></h1>
+  <p class="subtitle">LP制作 / Webデザイン / フロントエンド実装</p>
+</header>
+<hr class="divider" />
+
+<div class="grid">
+
+  <!-- ══ 01 · Cafe Aroma ══ -->
+  <a class="card" href="./cafe-lp/" target="_blank" rel="noopener">
+    <div class="preview">
+      <div class="browser-bar">
+        <div class="dot dot-r"></div>
+        <div class="dot dot-y"></div>
+        <div class="dot dot-g"></div>
+      </div>
+      <div class="preview-bg" style="background-color:#3d2b1f;background-image:url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80&auto=format&fit=crop');"></div>
+      <div class="preview-overlay"></div>
+      <div class="preview-num">No.01</div>
+    </div>
+    <div class="card-body">
+      <div class="card-cat">Cafe / Food</div>
+      <div class="card-title">Cafe Aroma</div>
+      <div class="card-desc">福岡のスペシャルティコーヒーカフェのLP。温かみのある世界観と予約導線を設計。</div>
+      <div class="tags">
+        <span class="tag">HTML/CSS</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">Tailwind</span>
+        <span class="tag">Formspree</span>
+      </div>
+    </div>
+    <div class="card-footer">
+      <span>cafe-lp</span>
+      <span class="card-link-icon">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+      </span>
+    </div>
+  </a>
+
+  <!-- ══ 02 · Hair Salon BLOOM ══ -->
+  <a class="card" href="./bloom-lp/" target="_blank" rel="noopener">
+    <div class="preview">
+      <div class="browser-bar">
+        <div class="dot dot-r"></div>
+        <div class="dot dot-y"></div>
+        <div class="dot dot-g"></div>
+      </div>
+      <div class="preview-bg" style="background-color:#3a2e24;background-image:url('https://images.unsplash.com/photo-1562322140-8baeececf3df?w=800&q=80&auto=format&fit=crop');"></div>
+      <div class="preview-overlay"></div>
+      <div class="preview-num">No.02</div>
+    </div>
+    <div class="card-body">
+      <div class="card-cat">Beauty / Hair Salon</div>
+      <div class="card-title">Hair Salon BLOOM</div>
+      <div class="card-desc">渋谷の美容院LP。ギャラリー・料金シミュレーター・Before/After等を実装した高機能構成。</div>
+      <div class="tags">
+        <span class="tag">HTML/CSS</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">Tailwind</span>
+        <span class="tag">JSON-LD</span>
+      </div>
+    </div>
+    <div class="card-footer">
+      <span>bloom-lp</span>
+      <span class="card-link-icon">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+      </span>
+    </div>
+  </a>
+
+  <!-- ══ Coming Soon ══ -->
+  <div class="card-soon">
+    <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+    Coming Soon
+  </div>
+
+</div>
+
+<footer>© 2025 Hayato — LP Portfolio</footer>
+
+</body>
+</html>

@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Hair Salon BLOOM | 渋谷の髪質改善専門プライベートサロン</title>
+  <meta name="description" content="渋谷駅徒歩3分・完全予約制のプライベートサロン Hair Salon BLOOM。髪質改善トリートメントに特化した30〜50代女性のための上質なサロンです。" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- OGP -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content="Hair Salon BLOOM | 渋谷の髪質改善専門サロン" />
+  <meta property="og:description" content="髪質改善に特化した完全予約制プライベートサロン。渋谷駅徒歩3分。" />
+  <meta property="og:image"       content="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=1200&h=630&q=80&auto=format&fit=crop" />
+  <meta property="og:locale"      content="ja_JP" />
+  <meta name="twitter:card"       content="summary_large_image" />
+  <meta name="twitter:title"      content="Hair Salon BLOOM | 渋谷の髪質改善専門サロン" />
+  <meta name="twitter:image"      content="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=1200&h=630&q=80&auto=format&fit=crop" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E✿%3C/text%3E%3C/svg%3E" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind (utility supplement) -->
+  <script>
+    // Minimal Tailwind config — only for utilities not covered by style.css
+    window.__TAILWIND_SUPPRESS_WARNINGS__ = true;
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { primary:'#F5F0EB', secondary:'#E8DDD1', accent:'#8B7355', dark:'#5F4B3A', border:'#E2D8CC' }
+        }
+      },
+      corePlugins: { preflight: false }
+    };
+  </script>
+
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"HairSalon","name":"Hair Salon BLOOM",
+   "description":"渋谷の髪質改善専門サロン。完全予約制のプライベート空間。",
+   "telephone":"+81-3-0000-0000","url":"https://example.com","priceRange":"¥¥¥",
+   "address":{"@type":"PostalAddress","streetAddress":"渋谷区神宮前1-1-1","addressLocality":"渋谷区","addressRegion":"東京都","postalCode":"150-0001","addressCountry":"JP"},
+   "openingHoursSpecification":[
+     {"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday","Friday"],"opens":"10:00","closes":"20:00"},
+     {"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday","Sunday"],"opens":"10:00","closes":"18:00"}
+   ]}
+  </script>
+</head>
+<body>
+<a href="#main" class="skip-link">本文へスキップ</a>
+
+<!-- ════════════════════════════════════════════════════════
+     HEADER
+════════════════════════════════════════════════════════ -->
+<header id="hdr">
+  <div class="hdr-inner">
+    <a href="#top" class="logo-wrap" aria-label="Hair Salon BLOOM トップへ">
+      <div class="logo-circle"><span class="logo-mark">B</span></div>
+      <div>
+        <p class="logo-name">BLOOM</p>
+        <p class="logo-sub">Hair Salon · Shibuya</p>
+      </div>
+    </a>
+
+    <nav class="pc-nav" aria-label="グローバルナビゲーション">
+      <a href="#about">About</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#price">Price</a>
+      <a href="#stylist">Stylist</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact" class="nav-cta">ご予約</a>
+    </nav>
+
+    <button id="burger" class="burger" aria-label="メニュー" aria-expanded="false">
+      <span class="burger-bar"></span>
+      <span class="burger-bar"></span>
+      <span class="burger-bar"></span>
+    </button>
+  </div>
+
+  <div id="mob-nav" style="display:none" aria-label="モバイルナビゲーション">
+    <a href="#about"   class="mob-link">About</a>
+    <a href="#gallery" class="mob-link">Gallery</a>
+    <a href="#price"   class="mob-link">Price</a>
+    <a href="#stylist" class="mob-link">Stylist</a>
+    <a href="#faq"     class="mob-link">FAQ</a>
+    <a href="#contact" class="mob-cta">ご予約・お問い合わせ</a>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ════════════════════════════════════════════════════════
+     HERO
+════════════════════════════════════════════════════════ -->
+<section id="top" class="hero">
+  <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=1920&q=85&auto=format&fit=crop" alt="Hair Salon BLOOM の上質なサロン空間" class="hero-bg" loading="eager" />
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="reveal hero-pill">
+        <span class="hero-pill-dot"></span>
+        Private Salon &nbsp;·&nbsp; Shibuya
+      </div>
+      <h1 class="reveal hero-h1" style="--d:80ms">
+        あなたの"似合う"を、<br />見つける場所。
+      </h1>
+      <p class="reveal hero-sub" style="--d:160ms">
+        渋谷駅徒歩3分。髪質改善に特化した<br class="hidden sm:inline" />完全予約制のプライベートサロンです。
+      </p>
+      <div class="reveal hero-btns" style="--d:240ms">
+        <a href="tel:03-0000-0000" class="btn-white">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+          電話予約
+        </a>
+        <a href="#" class="btn-green">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24-.01.38z"/></svg>
+          LINE予約
+        </a>
+        <a href="#reservation" class="btn-ghost">Web予約</a>
+      </div>
+      <div class="reveal hero-badges" style="--d:320ms">
+        <span class="hero-badge">完全予約制</span>
+        <span class="hero-badge">髪質改善専門</span>
+        <span class="hero-badge">半個室空間</span>
+        <span class="hero-badge">渋谷駅3分</span>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-cue" aria-hidden="true">
+    <span>Scroll</span>
+    <div class="scroll-cue-bar"></div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════
+     STATS STRIP
+════════════════════════════════════════════════════════ -->
+<section class="stats" id="hero" aria-label="実績" style="position:relative;overflow:hidden">
+  <img src="https://images.pexels.com/photos/3993446/pexels-photo-3993446.jpeg?auto=compress&cs=tinysrgb&w=1920" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.45" loading="lazy" />
+  <div style="position:absolute;inset:0;background:rgba(245,240,235,.72)"></div>
+  <div class="container" style="position:relative;z-index:1">
+    <dl class="stats-grid">
+      <div class="stat">
+        <dt class="stat-lbl">美容師歴</dt>
+        <dd class="stat-val"><span data-target="12">0</span><span class="stat-unit">年</span></dd>
+      </div>
+      <div class="stat">
+        <dt class="stat-lbl">顧客満足度</dt>
+        <dd class="stat-val"><span data-target="98">0</span><span class="stat-unit">%</span></dd>
+      </div>
+      <div class="stat">
+        <dt class="stat-lbl">累計施術実績</dt>
+        <dd class="stat-val"><span data-target="5000">0</span><span class="stat-unit">件+</span></dd>
+      </div>
+      <div class="stat">
+        <dt class="stat-lbl">スタイル</dt>
+        <dd class="stat-val stat-val-sm">完全予約制</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════
+     SALON ATMOSPHERE — photo mosaic
+════════════════════════════════════════════════════════ -->
+<section class="sec" id="about">
+  <div class="container">
+    <!-- Mosaic: wide left + stacked right -->
+    <div class="reveal grid gap-3 lg:grid-cols-[1.2fr_0.8fr]">
+      <div class="photo-frame" style="min-height:300px;max-height:560px">
+        <img src="https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?w=1200&q=80&auto=format&fit=crop" alt="Hair Salon BLOOM 店内空間" class="photo-img" loading="lazy" />
+      </div>
+      <div class="flex flex-col gap-3">
+        <div class="photo-frame" style="flex:1.2">
+          <img src="https://images.pexels.com/photos/3993468/pexels-photo-3993468.jpeg?auto=compress&cs=tinysrgb&w=800" alt="スタイリストとお客様" class="photo-img" style="height:100%;min-height:180px" loading="lazy" />
+        </div>
+        <div class="grid gap-3 grid-cols-2" style="flex:1">
+          <div class="photo-frame">
+            <img src="https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg?auto=compress&cs=tinysrgb&w=600" alt="シャンプー施術" class="photo-img" style="height:100%;min-height:130px" loading="lazy" />
+          </div>
+          <div class="photo-frame">
+            <img src="https://images.pexels.com/photos/3065209/pexels-photo-3065209.jpeg?auto=compress&cs=tinysrgb&w=600" alt="ヘアスタイリング" class="photo-img" style="height:100%;min-height:130px" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Text block below mosaic -->
+    <div class="reveal grid gap-10 mt-16 lg:grid-cols-2 lg:items-center" style="--d:80ms">
+      <div>
+        <p class="eyebrow">Our Concept</p>
+        <h2 class="section-title mt-3">上質な空間で、<br />とっておきのひとときを。</h2>
+        <p class="body-text mt-5">渋谷区の静かな一角に佇む半個室のプライベートサロン。騒がしい日常を離れ、穏やかな時間の中で施術を受けていただけます。こだわりの内装と厳選された薬剤で、髪も心もリフレッシュ。</p>
+        <ul class="mt-8 space-y-4">
+          <li class="flex items-start gap-3 text-sm" style="color:rgba(51,51,51,.65)">
+            <svg class="w-5 h-5 mt-0.5 flex-shrink-0" style="color:#8B7355" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            完全予約制で待ち時間なし・他のお客様との重なりなし
+          </li>
+          <li class="flex items-start gap-3 text-sm" style="color:rgba(51,51,51,.65)">
+            <svg class="w-5 h-5 mt-0.5 flex-shrink-0" style="color:#8B7355" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            マンツーマン担当制・初回30分カウンセリング込み
+          </li>
+          <li class="flex items-start gap-3 text-sm" style="color:rgba(51,51,51,.65)">
+            <svg class="w-5 h-5 mt-0.5 flex-shrink-0" style="color:#8B7355" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            オーガニック薬剤・Wi-Fi完備・各種キャッシュレス対応
+          </li>
+        </ul>
+      </div>
+      <div class="photo-frame">
+        <img src="https://images.pexels.com/photos/3993461/pexels-photo-3993461.jpeg?auto=compress&cs=tinysrgb&w=900" alt="シャンプー施術" class="photo-img" style="aspect-ratio:4/3" loading="lazy" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════
+     CONCERN
+════════════════════════════════════════════════════════ -->
+<section class="sec" id="concern" style="background:#EDE6DC">
+  <div class="container">
+    <div class="reveal text-center" style="max-width:38rem;margin-inline:auto">
+      <p class="eyebrow">Concern</p>
+      <h2 class="section-title mt-3">こんなお悩みありませんか？</h2>
+      <p class="body-text mt-4">髪の悩みは見た目だけでなく、毎日の自信にも影響します。あなただけの解決策を一緒に見つけましょう。</p>
+    </div>
+    <div class="concern-grid mt-12">
+      <article class="concern-card reveal" style="--d:0ms;padding:0;overflow:hidden">
+        <div style="overflow:hidden;border-radius:var(--r-lg) var(--r-lg) 0 0">
+          <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&q=80&auto=format&fit=crop" alt="髪のパサつきケア" style="width:100%;height:11rem;object-fit:cover;display:block;transition:transform .5s ease" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform=''" loading="lazy" />
+        </div>
+        <div style="padding:1.75rem">
+          <div class="concern-icon">
+            <svg class="w-6 h-6" style="color:#8B7355" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9z"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4m0 4h.01"/></svg>
+          </div>
+          <h3 class="font-serif mt-4" style="font-size:1.0625rem;font-weight:600;color:#5F4B3A">髪のパサつき・広がり</h3>
+          <p class="mt-2.5" style="font-size:.875rem;line-height:1.85;color:rgba(51,51,51,.6)">補修成分と保湿のバランスで、まとまりのある髪質へ。</p>
+        </div>
+      </article>
+      <article class="concern-card reveal" style="--d:80ms;padding:0;overflow:hidden">
+        <div style="overflow:hidden;border-radius:var(--r-lg) var(--r-lg) 0 0">
+          <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=800&q=80&auto=format&fit=crop" alt="白髪ぼかし" style="width:100%;height:11rem;object-fit:cover;display:block;transition:transform .5s ease" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform=''" loading="lazy" />
+        </div>
+        <div style="padding:1.75rem">
+          <div class="concern-icon">
+            <svg class="w-6 h-6" style="color:#8B7355" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42"/></svg>
+          </div>
+          <h3 class="font-serif mt-4" style="font-size:1.0625rem;font-weight:600;color:#5F4B3A">白髪・白髪ぼかし</h3>
+          <p class="mt-2.5" style="font-size:.875rem;line-height:1.85;color:rgba(51,51,51,.6)">自然に馴染む発色で、柔らかく上品な印象に仕上げます。</p>
+        </div>
+      </article>
+      <article class="concern-card reveal" style="--d:160ms;padding:0;overflow:hidden">
+        <div style="overflow:hidden;border-radius:var(--r-lg) var(--r-lg) 0 0">
+          <img src="https://images.pexels.com/photos/712513/pexels-photo-712513.jpeg?auto=compress&cs=tinysrgb&w=800" alt="スタイリングの悩み" style="width:100%;height:11rem;object-fit:cover;display:block;transition:transform .5s ease" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform=''" loading="lazy" />
+        </div>
+        <div style="padding:1.75rem">
+          <div class="concern-icon">
+            <svg class="w-6 h-6" style="color:#8B7355" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21a48.25 48.25 0 01-8.135-.687c-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/></svg>
+          </div>
+          <h3 class="font-serif mt-4" style="font-size:1.0625rem;font-weight:600;color:#5F4B3A">スタイリングが決まらない</h3>
+          <p class="mt-2.5" style="font-size:.875rem;line-height:1.85;color:rgba(51,51,51,.6)">毎日扱いやすい、再現性の高いスタイルをご提案します。</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════
+     TREATMENT SHOWCASE — alternating left-right
+════════════════════════════════════════════════════════ -->
+<section class="sec">
+  <div class="container">
+    <div class="reveal text-center mb-16" style="max-width:36rem;margin-inline:auto">
+      <p class="eyebrow">Our Services</p>
+      <h2 class="section-title mt-3">得意とする3つのメニュー</h2>
+    </div>
+
+    <!-- Row 1: image left -->
+    <div class="alt-row reveal mb-20">
+      <div class="alt-img-wrap">
+        <img src="https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg?auto=compress&cs=tinysrgb&w=900" alt="髪質改善トリートメント施術風景" loading="lazy" />
+      </div>
+      <div class="alt-body">
+        <p class="eyebrow">Treatment</p>
+        <h3 class="section-title mt-3" style="font-size:clamp(1.5rem,3vw,2rem)">髪質改善トリートメント</h3>
+        <p class="body-text mt-5">ダメージを受けた髪内部の結合を補修し、なめらかでツヤのある質感へ導きます。乾燥・枝毛・広がりに悩む方に特にお勧めです。仕上がりの違いは施術当日から実感いただけます。</p>
+        <ul class="mt-6 space-y-3">
+          <li class="flex items-center gap-2.5 text-sm" style="color:rgba(51,51,51,.7)"><span style="width:6px;height:6px;border-radius:50%;background:#8B7355;flex-shrink:0;display:inline-block"></span>TOKIOトリートメント取扱い</li>
+          <li class="flex items-center gap-2.5 text-sm" style="color:rgba(51,51,51,.7)"><span style="width:6px;height:6px;border-radius:50%;background:#8B7355;flex-shrink:0;display:inline-block"></span>ダメージケア〜補修まで幅広く対応</li>
+          <li class="flex items-center gap-2.5 text-sm" style="color:rgba(51,51,51,.7)"><span style="width:6px;height:6px;border-radius:50%;background:#8B7355;flex-shrink:0;display:inline-block"></span>施術後のホームケアアドバイス付き</li>
+        </ul>
+        <div class="mt-8 flex items-baseline gap-2">
+          <span style="font-size:.75rem;color:#8B7355;letter-spacing:.08em">FROM</span>
+          <span style="font-family:'Playfair Display',serif;font-size:1.75rem;font-weight:600;color:#5F4B3A">¥8,500</span>
+          <span style="font-size:.8rem;color:rgba(51,51,51,.45)">〜（税込）</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 2: image right -->
+    <div class="alt-row reverse reveal mb-20" style="--d:60ms">
+      <div class="alt-img-wrap">
+        <img src="https://images.pexels.com/photos/3993450/pexels-photo-3993450.jpeg?auto=compress&cs=tinysrgb&w=900" alt="ヘアカラー施術風景" loading="lazy" />
+      </div>
+      <div class="alt-body">
+        <p class="eyebrow">Color</p>
+        <h3 class="section-title mt-3" style="font-size:clamp(1.5rem,3vw,2rem)">透明感のあるヘアカラー</h3>
+        <p class="body-text mt-5">肌馴染みの良い発色と、日本人特有の黒髪ベースに合わせた透明感カラーが得意です。白髪ぼかしから大胆なカラーチェンジまで、お客様の個性に合わせて自由にデザインします。</p>
+        <ul class="mt-6 space-y-3">
+          <li class="flex items-center gap-2.5 text-sm" style="color:rgba(51,51,51,.7)"><span style="width:6px;height:6px;border-radius:50%;background:#8B7355;flex-shrink:0;display:inline-block"></span>白髪ぼかし・グレイカラー専門対応</li>
+          <li class="flex items-center gap-2.5 text-sm" style="color:rgba(51,51,51,.7)"><span style="width:6px;height:6px;border-radius:50%;background:#8B7355;flex-shrink:0;display:inline-block"></span>低刺激オーガニックカラー剤使用</li>
+          <li class="flex items-center gap-2.5 text-sm" style="color:rgba(51,51,51,.7)"><span style="width:6px;height:6px;border-radius:50%;background:#8B7355;flex-shrink:0;display:inline-block"></span>色持ち・退色後の美しさにもこだわり</li>
+        </ul>
+        <div class="mt-8 flex items-baseline gap-2">
+          <span style="font-size:.75rem;color:#8B7355;letter-spacing:.08em">FROM</span>
+          <span style="font-family:'Playfair Display',serif;font-size:1.75rem;font-weight:600;color:#5F4B3A">¥11,000</span>
+          <span style="font-size:.8rem;color:rgba(51,51,51,.45)">〜（税込）</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 3: image left -->
+    <div class="alt-row reveal" style="--d:120ms">
+      <div class="alt-img-wrap">
+        <img src="https://images.pexels.com/photos/3997989/pexels-photo-3997989.jpeg?auto=compress&cs=tinysrgb&w=900" alt="ヘッドスパ施術風景" loading="lazy" />
+      </div>
+      <div class="alt-body">
+        <p class="eyebrow">Spa</p>
+        <h3 class="section-title mt-3" style="font-size:clamp(1.5rem,3vw,2rem)">極上のヘッドスパ</h3>
+        <p class="body-text mt-5">炭酸泉シャワーと頭皮マッサージで、溜まった疲れを解き放ちます。頭皮環境を整えることで、健やかな髪の成長もサポート。日頃の疲れを癒す、特別なリラクゼーションタイムをご提供します。</p>
+        <ul class="mt-6 space-y-3">
+          <li class="flex items-center gap-2.5 text-sm" style="color:rgba(51,51,51,.7)"><span style="width:6px;height:6px;border-radius:50%;background:#8B7355;flex-shrink:0;display:inline-block"></span>炭酸泉シャワー使用</li>
+          <li class="flex items-center gap-2.5 text-sm" style="color:rgba(51,51,51,.7)"><span style="width:6px;height:6px;border-radius:50%;background:#8B7355;flex-shrink:0;display:inline-block"></span>頭皮マッサージ・ツボ押し</li>
+          <li class="flex items-center gap-2.5 text-sm" style="color:rgba(51,51,51,.7)"><span style="width:6px;height:6px;border-radius:50%;background:#8B7355;flex-shrink:0;display:inline-block"></span>カット・カラー等との同日施術可</li>
+        </ul>
+        <div class="mt-8 flex items-baseline gap-2">
+          <span style="font-size:.75rem;color:#8B7355;letter-spacing:.08em">FROM</span>
+          <span style="font-family:'Playfair Display',serif;font-size:1.75rem;font-weight:600;color:#5F4B3A">¥3,500</span>
+          <span style="font-size:.8rem;color:rgba(51,51,51,.45)">〜（税込）</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════
+     BEFORE / AFTER
+════════════════════════════════════════════════════════ -->
+<section class="sec" style="background:#EDE6DC">
+  <div class="container">
+    <div class="reveal text-center" style="max-width:36rem;margin-inline:auto">
+      <p class="eyebrow">Before / After</p>
+      <h2 class="section-title mt-3">お客様の変化</h2>
+      <p class="body-text mt-4">髪が変わると、毎日の気分が変わります。</p>
+    </div>
+    <div class="ba-grid mt-12">
+
+      <article class="ba-card reveal" style="--d:0ms">
+        <div class="ba-split">
+          <div class="ba-half"><img src="https://images.pexels.com/photos/712513/pexels-photo-712513.jpeg?auto=compress&cs=tinysrgb&w=400" alt="髪質改善 Before" /><span class="ba-lbl ba-lbl-b">Before</span></div>
+          <div class="ba-divider"><div class="ba-divider-btn"><svg class="w-3 h-3" style="color:rgba(95,75,58,.6)" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"/></svg></div></div>
+          <div class="ba-half"><img src="https://images.pexels.com/photos/3757942/pexels-photo-3757942.jpeg?auto=compress&cs=tinysrgb&w=400" alt="髪質改善 After" /><span class="ba-lbl ba-lbl-a">After</span></div>
+        </div>
+        <div class="ba-meta"><span class="ba-cat">髪質改善</span><p class="ba-title">しっとりまとまる</p></div>
+      </article>
+
+      <article class="ba-card reveal" style="--d:80ms">
+        <div class="ba-split">
+          <div class="ba-half"><img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=400&q=80&auto=format&fit=crop" alt="カラー Before" /><span class="ba-lbl ba-lbl-b">Before</span></div>
+          <div class="ba-divider"><div class="ba-divider-btn"><svg class="w-3 h-3" style="color:rgba(95,75,58,.6)" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"/></svg></div></div>
+          <div class="ba-half"><img src="https://images.unsplash.com/photo-1523263685509-57c1d050d19b?w=400&q=80&auto=format&fit=crop" alt="カラー After" /><span class="ba-lbl ba-lbl-a">After</span></div>
+        </div>
+        <div class="ba-meta"><span class="ba-cat">カラー</span><p class="ba-title">透明感のある色味</p></div>
+      </article>
+
+      <article class="ba-card reveal" style="--d:160ms">
+        <div class="ba-split">
+          <div class="ba-half"><img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=400" alt="縮毛矯正 Before" /><span class="ba-lbl ba-lbl-b">Before</span></div>
+          <div class="ba-divider"><div class="ba-divider-btn"><svg class="w-3 h-3" style="color:rgba(95,75,58,.6)" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"/></svg></div></div>
+          <div class="ba-half"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&q=80&auto=format&fit=crop" alt="縮毛矯正 After" /><span class="ba-lbl ba-lbl-a">After</span></div>
+        </div>
+        <div class="ba-meta"><span class="ba-cat">縮毛矯正</span><p class="ba-title">自然なストレート</p></div>
+      </article>
+
+      <article class="ba-card reveal" style="--d:240ms">
+        <div class="ba-split">
+          <div class="ba-half"><img src="https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?auto=compress&cs=tinysrgb&w=400" alt="白髪ぼかし Before" /><span class="ba-lbl ba-lbl-b">Before</span></div>
+          <div class="ba-divider"><div class="ba-divider-btn"><svg class="w-3 h-3" style="color:rgba(95,75,58,.6)" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"/></svg></div></div>
+          <div class="ba-half"><img src="https://images.pexels.com/photos/2681751/pexels-photo-2681751.jpeg?auto=compress&cs=tinysrgb&w=400" alt="白髪ぼかし After" /><span class="ba-lbl ba-lbl-a">After</span></div>
+        </div>
+        <div class="ba-meta"><span class="ba-cat">白髪ぼかし</span><p class="ba-title">ナチュラルな明るさ</p></div>
+      </article>
+
+      <article class="ba-card reveal" style="--d:320ms">
+        <div class="ba-split">
+          <div class="ba-half"><img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=400&q=80&auto=format&fit=crop" alt="ショートカット Before" /><span class="ba-lbl ba-lbl-b">Before</span></div>
+          <div class="ba-divider"><div class="ba-divider-btn"><svg class="w-3 h-3" style="color:rgba(95,75,58,.6)" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"/></svg></div></div>
+          <div class="ba-half"><img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400&q=80&auto=format&fit=crop" alt="ショートカット After" /><span class="ba-lbl ba-lbl-a">After</span></div>
+        </div>
+        <div class="ba-meta"><span class="ba-cat">ショートカット</span><p class="ba-title">軽やかな印象</p></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════
+     WHY BLOOM — 6 reasons
+════════════════════════════════════════════════════════ -->
+<section class="sec">
+  <div class="container">
+    <div class="reveal text-center" style="max-width:36rem;margin-inline:auto">
+      <p class="eyebrow">Why BLOOM</p>
+      <h2 class="section-title mt-3">選ばれる6つの理由</h2>
+    </div>
+    <div class="reason-grid mt-12">
+      <article class="reason-card reveal" style="--d:0ms">
+        <span class="reason-num">01</span>
+        <img src="https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?w=800&q=80&auto=format&fit=crop" alt="完全予約制" class="reason-img" loading="lazy" />
+        <div class="reason-body">
+          <h3 class="reason-h">完全予約制</h3>
+          <p class="reason-p">お客様一人ひとりと向き合えるよう、完全予約制を採用。待ち時間なし、他のお客様と重なることなくご利用いただけます。</p>
+        </div>
+      </article>
+      <article class="reason-card reveal" style="--d:80ms">
+        <span class="reason-num">02</span>
+        <img src="https://images.pexels.com/photos/3993446/pexels-photo-3993446.jpeg?auto=compress&cs=tinysrgb&w=800" alt="マンツーマン施術" class="reason-img" loading="lazy" />
+        <div class="reason-body">
+          <h3 class="reason-h">マンツーマン施術</h3>
+          <p class="reason-p">担当スタイリストが初回カウンセリングから仕上げまで一貫して対応。髪質・骨格・ライフスタイルを丁寧に把握した上で施術します。</p>
+        </div>
+      </article>
+      <article class="reason-card reveal" style="--d:160ms">
+        <span class="reason-num">03</span>
+        <img src="https://images.pexels.com/photos/3993461/pexels-photo-3993461.jpeg?auto=compress&cs=tinysrgb&w=800" alt="髪質改善専門" class="reason-img" loading="lazy" />
+        <div class="reason-body">
+          <h3 class="reason-h">髪質改善専門</h3>
+          <p class="reason-p">乾燥・くせ毛・枝毛・広がりなど、様々な髪の悩みに対応した専門的なトリートメントプログラムをご提案します。</p>
+        </div>
+      </article>
+      <article class="reason-card reveal" style="--d:0ms">
+        <span class="reason-num">04</span>
+        <img src="https://images.pexels.com/photos/3993450/pexels-photo-3993450.jpeg?auto=compress&cs=tinysrgb&w=800" alt="オーガニック薬剤" class="reason-img" loading="lazy" />
+        <div class="reason-body">
+          <h3 class="reason-h">オーガニック薬剤</h3>
+          <p class="reason-p">髪と頭皮に優しい低刺激のオーガニック薬剤を厳選。敏感肌の方や妊娠中の方にも安心してご利用いただけます。</p>
+        </div>
+      </article>
+      <article class="reason-card reveal" style="--d:80ms">
+        <span class="reason-num">05</span>
+        <img src="https://images.pexels.com/photos/3993468/pexels-photo-3993468.jpeg?auto=compress&cs=tinysrgb&w=800" alt="半個室空間" class="reason-img" loading="lazy" />
+        <div class="reason-body">
+          <h3 class="reason-h">半個室空間</h3>
+          <p class="reason-p">周りを気にせずリラックスできる半個室スタイル。ゆったりとした空間で、心地よい施術の時間をお過ごしください。</p>
+        </div>
+      </article>
+      <article class="reason-card reveal" style="--d:160ms">
+        <span class="reason-num">06</span>
+        <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=800&q=80&auto=format&fit=crop" alt="丁寧なカウンセリング" class="reason-img" loading="lazy" />
+        <div class="reason-body">
+          <h3 class="reason-h">丁寧なカウンセリング</h3>
+          <p class="reason-p">初回は30分のカウンセリングからスタート。「こうなりたい」という理想の姿まで丁寧にお伺いします。</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════
+     4-COL PHOTO GRID — service images
+════════════════════════════════════════════════════════ -->
+<section class="sec" style="background:#EDE6DC;padding-top:0;padding-bottom:4rem">
+  <div class="container">
+    <div class="photo-grid-4">
+      <div class="pg-item tall reveal" style="--d:0ms">
+        <img src="https://images.pexels.com/photos/1391499/pexels-photo-1391499.jpeg?auto=compress&cs=tinysrgb&w=600" alt="スタイリング風景" loading="lazy" />
+      </div>
+      <div class="pg-item reveal" style="--d:60ms">
+        <img src="https://images.pexels.com/photos/3993446/pexels-photo-3993446.jpeg?auto=compress&cs=tinysrgb&w=600" alt="スタイリング" loading="lazy" />
+      </div>
+      <div class="pg-item reveal" style="--d:120ms">
+        <img src="https://images.pexels.com/photos/3065209/pexels-photo-3065209.jpeg?auto=compress&cs=tinysrgb&w=600" alt="パーマスタイル" loading="lazy" />
+      </div>
+      <div class="pg-item tall reveal" style="--d:180ms">
+        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80&auto=format&fit=crop" alt="ロングスタイル" loading="lazy" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════
+     GALLERY — 16 items with filter
+════════════════════════════════════════════════════════ -->
+<section class="sec" id="gallery" style="background:#fff">
+  <div class="container">
+    <div class="reveal" style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:1.5rem">
+      <div>
+        <p class="eyebrow">Style Gallery</p>
+        <h2 class="section-title mt-3">スタイルギャラリー</h2>
+      </div>
+      <div class="filter-btns" role="tablist" aria-label="ギャラリーフィルター">
+        <button class="f-btn active" data-cat="all" role="tab" aria-selected="true">All</button>
+        <button class="f-btn" data-cat="short" role="tab" aria-selected="false">ショート</button>
+        <button class="f-btn" data-cat="bob" role="tab" aria-selected="false">ボブ</button>
+        <button class="f-btn" data-cat="medium" role="tab" aria-selected="false">ミディアム</button>
+        <button class="f-btn" data-cat="long" role="tab" aria-selected="false">ロング</button>
+        <button class="f-btn" data-cat="color" role="tab" aria-selected="false">カラー</button>
+        <button class="f-btn" data-cat="treatment" role="tab" aria-selected="false">髪質改善</button>
+      </div>
+    </div>
+
+    <div class="gallery-grid mt-10" id="gallery-grid">
+      <article class="g-item" data-cat="short"><div class="g-card"><img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=600&q=80&auto=format&fit=crop&crop=faces" alt="ショートスタイル" loading="lazy" /><div class="g-overlay"><span>ショート</span></div></div></article>
+      <article class="g-item" data-cat="bob"><div class="g-card"><img src="https://images.pexels.com/photos/712513/pexels-photo-712513.jpeg?auto=compress&cs=tinysrgb&w=600&h=720&fit=crop" alt="ボブスタイル" loading="lazy" /><div class="g-overlay"><span>ボブ</span></div></div></article>
+      <article class="g-item" data-cat="medium"><div class="g-card"><img src="https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&w=600&h=720&fit=crop" alt="ミディアムスタイル" loading="lazy" /><div class="g-overlay"><span>ミディアム</span></div></div></article>
+      <article class="g-item" data-cat="long"><div class="g-card"><img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80&auto=format&fit=crop" alt="ロングスタイル" loading="lazy" /><div class="g-overlay"><span>ロング</span></div></div></article>
+      <article class="g-item" data-cat="color"><div class="g-card"><img src="https://images.pexels.com/photos/3757942/pexels-photo-3757942.jpeg?auto=compress&cs=tinysrgb&w=600&h=720&fit=crop" alt="カラースタイル" loading="lazy" /><div class="g-overlay"><span>カラー</span></div></div></article>
+      <article class="g-item" data-cat="treatment"><div class="g-card"><img src="https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg?auto=compress&cs=tinysrgb&w=600&h=720&fit=crop" alt="髪質改善トリートメント" loading="lazy" /><div class="g-overlay"><span>髪質改善</span></div></div></article>
+      <article class="g-item" data-cat="short"><div class="g-card"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&q=80&auto=format&fit=crop&crop=faces" alt="ショートスタイル" loading="lazy" /><div class="g-overlay"><span>ショート</span></div></div></article>
+      <article class="g-item" data-cat="bob"><div class="g-card"><img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=600&q=80&auto=format&fit=crop&crop=faces" alt="ボブスタイル" loading="lazy" /><div class="g-overlay"><span>ボブ</span></div></div></article>
+      <article class="g-item" data-cat="medium"><div class="g-card"><img src="https://images.pexels.com/photos/2681751/pexels-photo-2681751.jpeg?auto=compress&cs=tinysrgb&w=600&h=720&fit=crop" alt="ミディアムスタイル" loading="lazy" /><div class="g-overlay"><span>ミディアム</span></div></div></article>
+      <article class="g-item" data-cat="long"><div class="g-card"><img src="https://images.pexels.com/photos/1391499/pexels-photo-1391499.jpeg?auto=compress&cs=tinysrgb&w=600&h=720&fit=crop" alt="ロングスタイル" loading="lazy" /><div class="g-overlay"><span>ロング</span></div></div></article>
+      <article class="g-item" data-cat="color"><div class="g-card"><img src="https://images.unsplash.com/photo-1523263685509-57c1d050d19b?w=600&q=80&auto=format&fit=crop&crop=faces" alt="カラースタイル" loading="lazy" /><div class="g-overlay"><span>カラー</span></div></div></article>
+      <article class="g-item" data-cat="treatment"><div class="g-card"><img src="https://images.pexels.com/photos/3993461/pexels-photo-3993461.jpeg?auto=compress&cs=tinysrgb&w=600&h=720&fit=crop" alt="髪質改善トリートメント" loading="lazy" /><div class="g-overlay"><span>髪質改善</span></div></div></article>
+      <article class="g-item" data-cat="short"><div class="g-card"><img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=600&h=720&fit=crop" alt="ショートスタイル" loading="lazy" /><div class="g-overlay"><span>ショート</span></div></div></article>
+      <article class="g-item" data-cat="bob"><div class="g-card"><img src="https://images.pexels.com/photos/3065209/pexels-photo-3065209.jpeg?auto=compress&cs=tinysrgb&w=600&h=720&fit=crop" alt="パーマ/ボブ" loading="lazy" /><div class="g-overlay"><span>ボブ</span></div></div></article>
+      <article class="g-item" data-cat="medium"><div class="g-card"><img src="https://images.pexels.com/photos/1987301/pexels-photo-1987301.jpeg?auto=compress&cs=tinysrgb&w=600&h=720&fit=crop" alt="ミディアムスタイル" loading="lazy" /><div class="g-overlay"><span>ミディアム</span></div></div></article>
+      <article class="g-item" data-cat="color"><div class="g-card"><img src="https://images.pexels.com/photos/3997989/pexels-photo-3997989.jpeg?auto=compress&cs=tinysrgb&w=600&h=720&fit=crop" alt="カラー/スパ" loading="lazy" /><div class="g-overlay"><span>カラー</span></div></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════
+     PRICE — tabs + simulator
+════════════════════════════════════════════════════════ -->
+<section class="sec" id="price">
+  <div class="container">
+    <div class="reveal text-center" style="max-width:36rem;margin-inline:auto">
+      <p class="eyebrow">Menu &amp; Price</p>
+      <h2 class="section-title mt-3">メニュー・料金</h2>
+      <p class="body-text mt-4">表示価格はすべて税込みです。髪の長さ・状態により変動する場合があります。</p>
+    </div>
+
+    <!-- Photo strip: 5-col service images -->
+    <div class="reveal mt-12" style="display:grid;grid-template-columns:repeat(5,1fr);gap:.625rem;border-radius:var(--r-xl);overflow:hidden">
+      <div style="overflow:hidden">
+        <img src="https://images.pexels.com/photos/3993446/pexels-photo-3993446.jpeg?auto=compress&cs=tinysrgb&w=400" alt="カット" style="width:100%;height:10rem;object-fit:cover;display:block;transition:transform .5s ease" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform=''" loading="lazy" />
+      </div>
+      <div style="overflow:hidden">
+        <img src="https://images.pexels.com/photos/3993450/pexels-photo-3993450.jpeg?auto=compress&cs=tinysrgb&w=400" alt="カラー" style="width:100%;height:10rem;object-fit:cover;display:block;transition:transform .5s ease" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform=''" loading="lazy" />
+      </div>
+      <div style="overflow:hidden">
+        <img src="https://images.pexels.com/photos/3065209/pexels-photo-3065209.jpeg?auto=compress&cs=tinysrgb&w=400" alt="パーマ・縮毛矯正" style="width:100%;height:10rem;object-fit:cover;display:block;transition:transform .5s ease" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform=''" loading="lazy" />
+      </div>
+      <div style="overflow:hidden">
+        <img src="https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg?auto=compress&cs=tinysrgb&w=400" alt="髪質改善トリートメント" style="width:100%;height:10rem;object-fit:cover;display:block;transition:transform .5s ease" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform=''" loading="lazy" />
+      </div>
+      <div style="overflow:hidden">
+        <img src="https://images.pexels.com/photos/3997989/pexels-photo-3997989.jpeg?auto=compress&cs=tinysrgb&w=400" alt="ヘッドスパ" style="width:100%;height:10rem;object-fit:cover;display:block;transition:transform .5s ease" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform=''" loading="lazy" />
+      </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="reveal mt-10">
+      <div class="tab-bar" role="tablist" aria-label="メニューカテゴリ">
+        <button class="tab-btn active" data-tab="cut"       role="tab" aria-selected="true"  aria-controls="tp-cut">CUT</button>
+        <button class="tab-btn"        data-tab="color"     role="tab" aria-selected="false" aria-controls="tp-color">COLOR</button>
+        <button class="tab-btn"        data-tab="perm"      role="tab" aria-selected="false" aria-controls="tp-perm">PERM</button>
+        <button class="tab-btn"        data-tab="treatment" role="tab" aria-selected="false" aria-controls="tp-treatment">TREATMENT</button>
+        <button class="tab-btn"        data-tab="spa"       role="tab" aria-selected="false" aria-controls="tp-spa">SPA</button>
+      </div>
+
+      <div class="tab-panel" id="tp-cut" role="tabpanel">
+        <div class="price-row"><div class="flex items-center gap-3"><span>カット</span><span class="p-badge">人気No.1</span></div><span class="p-val">¥11,000</span></div>
+        <div class="price-row"><span>前髪カット</span><span class="p-val">¥3,500</span></div>
+        <p class="price-note">所要時間：約60〜90分</p>
+      </div>
+      <div class="tab-panel" id="tp-color" role="tabpanel" hidden>
+        <div class="price-row"><span>カラー（全体）</span><span class="p-val">¥13,000〜</span></div>
+        <div class="price-row"><span>リタッチ</span><span class="p-val">¥8,000〜</span></div>
+        <div class="price-row"><div class="flex items-center gap-3"><span>白髪染め</span><span class="p-badge">人気No.1</span></div><span class="p-val">¥11,000〜</span></div>
+        <p class="price-note">所要時間：約90〜120分</p>
+      </div>
+      <div class="tab-panel" id="tp-perm" role="tabpanel" hidden>
+        <div class="price-row"><span>パーマ</span><span class="p-val">¥15,000〜</span></div>
+        <div class="price-row"><span>デジタルパーマ</span><span class="p-val">¥18,000〜</span></div>
+        <div class="price-row"><div class="flex items-center gap-3"><span>縮毛矯正</span><span class="p-badge">人気No.1</span></div><span class="p-val">¥22,000〜</span></div>
+        <p class="price-note">所要時間：約120〜240分</p>
+      </div>
+      <div class="tab-panel" id="tp-treatment" role="tabpanel" hidden>
+        <div class="price-row"><div class="flex items-center gap-3"><span>髪質改善トリートメント</span><span class="p-badge">人気No.1</span></div><span class="p-val">¥8,500〜</span></div>
+        <div class="price-row"><span>TOKIOトリートメント</span><span class="p-val">¥15,000〜</span></div>
+        <p class="price-note">所要時間：約60〜90分</p>
+      </div>
+      <div class="tab-panel" id="tp-spa" role="tabpanel" hidden>
+        <div class="price-row"><span>ヘッドスパ</span><span class="p-val">¥5,500〜</span></div>
+        <div class="price-row"><div class="flex items-center gap-3"><span>炭酸スパ</span><span class="p-badge">人気No.1</span></div><span class="p-val">¥3,500〜</span></div>
+        <p class="price-note">所要時間：約30〜45分</p>
+      </div>
+    </div>
+
+    <!-- Simulator -->
+    <div class="sim-wrap reveal mt-16">
+      <div class="sim-grid">
+        <div>
+          <p style="font-size:.7rem;letter-spacing:.35em;text-transform:uppercase;color:rgba(255,255,255,.4)">Price Simulator</p>
+          <h3 class="font-serif mt-3" style="font-size:1.5rem;font-weight:600;color:#fff">施術料金シミュレーター</h3>
+          <p style="font-size:.875rem;line-height:1.8;color:rgba(255,255,255,.55);margin-top:.75rem">ご希望のメニューを選択すると料金の目安をリアルタイムで確認できます。</p>
+
+          <form id="sim-form" style="margin-top:2rem" novalidate>
+            <fieldset style="border:none;padding:0;margin:0">
+              <legend style="font-size:.8rem;font-weight:600;color:rgba(255,255,255,.7);margin-bottom:.75rem">希望メニュー（複数選択可）</legend>
+              <label class="sim-check-row"><input type="checkbox" class="sim-menu sim-check" value="11000" data-t="60" data-n="カット" /><span>カット</span><span class="sim-price-hint">¥11,000</span></label>
+              <label class="sim-check-row"><input type="checkbox" class="sim-menu sim-check" value="13000" data-t="90" data-n="カラー" /><span>カラー</span><span class="sim-price-hint">¥13,000〜</span></label>
+              <label class="sim-check-row"><input type="checkbox" class="sim-menu sim-check" value="8500"  data-t="75" data-n="髪質改善トリートメント" /><span>髪質改善トリートメント</span><span class="sim-price-hint">¥8,500〜</span></label>
+              <label class="sim-check-row"><input type="checkbox" class="sim-menu sim-check" value="22000" data-t="150" data-n="縮毛矯正" /><span>縮毛矯正</span><span class="sim-price-hint">¥22,000〜</span></label>
+              <label class="sim-check-row"><input type="checkbox" class="sim-menu sim-check" value="18000" data-t="120" data-n="デジタルパーマ" /><span>デジタルパーマ</span><span class="sim-price-hint">¥18,000〜</span></label>
+              <label class="sim-check-row"><input type="checkbox" class="sim-menu sim-check" value="5500"  data-t="40" data-n="ヘッドスパ" /><span>ヘッドスパ</span><span class="sim-price-hint">¥5,500〜</span></label>
+            </fieldset>
+
+            <div style="margin-top:1.5rem">
+              <label for="sim-len" style="display:block;font-size:.8rem;font-weight:600;color:rgba(255,255,255,.7);margin-bottom:.5rem">髪の長さ</label>
+              <select id="sim-len" class="sim-select">
+                <option value="0">ショート</option>
+                <option value="2000">ミディアム</option>
+                <option value="4000">ロング</option>
+                <option value="6000">スーパーロング</option>
+              </select>
+            </div>
+
+            <fieldset style="border:none;padding:0;margin:1.5rem 0 0">
+              <legend style="font-size:.8rem;font-weight:600;color:rgba(255,255,255,.7);margin-bottom:.75rem">オプション</legend>
+              <label class="sim-check-row"><input type="checkbox" class="sim-opt sim-check" value="3500" data-t="30" data-n="炭酸スパ" /><span>炭酸スパ</span><span class="sim-price-hint">¥3,500</span></label>
+              <label class="sim-check-row"><input type="checkbox" class="sim-opt sim-check" value="1500" data-t="20" data-n="プレミアムシャンプー" /><span>プレミアムシャンプー</span><span class="sim-price-hint">¥1,500</span></label>
+            </fieldset>
+
+            <div style="margin-top:1.5rem">
+              <label for="sim-first" style="display:block;font-size:.8rem;font-weight:600;color:rgba(255,255,255,.7);margin-bottom:.5rem">初回来店</label>
+              <select id="sim-first" class="sim-select">
+                <option value="0">いいえ</option>
+                <option value="-2000">はい（¥2,000 初回割引）</option>
+              </select>
+            </div>
+          </form>
+        </div>
+
+        <div style="display:flex;flex-direction:column;justify-content:space-between">
+          <div class="sim-result">
+            <p style="font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.35)">Estimate</p>
+            <div class="sim-result-row" style="margin-top:1.5rem">
+              <span>合計料金（税込）</span>
+              <span id="sim-total" class="sim-result-val sim-total-num">¥0</span>
+            </div>
+            <div class="sim-result-row">
+              <span>初回割引後</span>
+              <span id="sim-disc" class="sim-result-val">¥0</span>
+            </div>
+            <div class="sim-result-row">
+              <span>所要時間の目安</span>
+              <span id="sim-time" class="sim-result-val">—</span>
+            </div>
+            <p id="sim-items" style="margin-top:1rem;font-size:.75rem;color:rgba(255,255,255,.4);min-height:1.1rem"></p>
+            <p class="sim-note">※ 実際の金額は髪の状態・長さにより変動します。カウンセリング時に正確な金額をお伝えします。</p>
+          </div>
+          <div class="sim-btns">
+            <a href="#contact" class="sim-btn-primary">この内容で予約する</a>
+            <a href="#contact" class="sim-btn-ghost">無料カウンセリングはこちら</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════
+     TESTIMONIALS — 6件
+════════════════════════════════════════════════════════ -->
+<section class="sec" style="background:#EDE6DC">
+  <div class="container">
+    <!-- 2-col: photo left + heading right -->
+    <div class="reveal lg:grid-cols-2" style="display:grid;gap:3rem;align-items:center;margin-bottom:4rem">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem">
+        <div style="overflow:hidden;border-radius:var(--r-lg)">
+          <img src="https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?auto=compress&cs=tinysrgb&w=600" alt="施術後の笑顔" style="width:100%;height:100%;min-height:220px;object-fit:cover;display:block;transition:transform .5s ease" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform=''" loading="lazy" />
+        </div>
+        <div style="display:flex;flex-direction:column;gap:.75rem">
+          <div style="overflow:hidden;border-radius:var(--r-lg);flex:1">
+            <img src="https://images.pexels.com/photos/712513/pexels-photo-712513.jpeg?auto=compress&cs=tinysrgb&w=600" alt="トリートメント施術" style="width:100%;height:100%;min-height:130px;object-fit:cover;display:block;transition:transform .5s ease" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform=''" loading="lazy" />
+          </div>
+          <div style="overflow:hidden;border-radius:var(--r-lg);flex:1">
+            <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=600" alt="カウンセリング風景" style="width:100%;height:100%;min-height:130px;object-fit:cover;display:block;transition:transform .5s ease" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform=''" loading="lazy" />
+          </div>
+        </div>
+      </div>
+      <div>
+        <p class="eyebrow">Testimonials</p>
+        <h2 class="section-title mt-3">お客様の声</h2>
+        <p class="body-text mt-4">施術を受けられたお客様からいただいた、リアルな感想をご紹介します。</p>
+        <div style="display:flex;gap:2rem;margin-top:2rem">
+          <div style="text-align:center">
+            <p style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:600;color:#5F4B3A;line-height:1">98<span style="font-size:1rem;color:#8B7355">%</span></p>
+            <p style="font-size:.75rem;color:rgba(51,51,51,.5);margin-top:.25rem">顧客満足度</p>
+          </div>
+          <div style="text-align:center">
+            <p style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:600;color:#5F4B3A;line-height:1">5,000<span style="font-size:1rem;color:#8B7355">+</span></p>
+            <p style="font-size:.75rem;color:rgba(51,51,51,.5);margin-top:.25rem">累計施術数</p>
+          </div>
+          <div style="text-align:center">
+            <p style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:600;color:#5F4B3A;line-height:1">85<span style="font-size:1rem;color:#8B7355">%</span></p>
+            <p style="font-size:.75rem;color:rgba(51,51,51,.5);margin-top:.25rem">リピート率</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="review-grid mt-0">
+
+      <article class="review-card reveal" style="--d:0ms">
+        <div class="review-header">
+          <div class="r-avatar">M</div>
+          <div>
+            <p class="r-name">M.K. さま</p>
+            <p class="r-meta">40代女性 · 髪質改善トリートメント</p>
+            <p class="r-stars">★★★★★</p>
+          </div>
+        </div>
+        <p class="r-text">「長年悩んでいた髪のパサつきが改善されました。カウンセリングがとても丁寧で、初めてでも安心して来られました。毎朝のセットが楽しくなっています。またすぐに来たいです！」</p>
+      </article>
+
+      <article class="review-card reveal" style="--d:80ms">
+        <div class="review-header">
+          <div class="r-avatar">Y</div>
+          <div>
+            <p class="r-name">Y.T. さま</p>
+            <p class="r-meta">35歳女性 · 白髪ぼかし</p>
+            <p class="r-stars">★★★★★</p>
+          </div>
+        </div>
+        <p class="r-text">「白髪が目立ってきて悩んでいましたが、自然に馴染む色に仕上げていただき大満足です。半個室で落ち着いて施術を受けられるのが嬉しかったです。」</p>
+      </article>
+
+      <article class="review-card reveal" style="--d:160ms">
+        <div class="review-header">
+          <div class="r-avatar">S</div>
+          <div>
+            <p class="r-name">S.N. さま</p>
+            <p class="r-meta">45歳女性 · カラー＋カット</p>
+            <p class="r-stars">★★★★★</p>
+          </div>
+        </div>
+        <p class="r-text">「完全予約制で待ち時間もなく、ゆったりと過ごせました。スタイリストさんが髪の悩みをしっかり聞いてくれて、理想通りの仕上がりでした。プロのカウンセリングの大切さを実感しました。」</p>
+      </article>
+
+      <article class="review-card reveal" style="--d:0ms">
+        <div class="review-header">
+          <div class="r-avatar">A</div>
+          <div>
+            <p class="r-name">A.H. さま</p>
+            <p class="r-meta">38歳女性 · 縮毛矯正</p>
+            <p class="r-stars">★★★★★</p>
+          </div>
+        </div>
+        <p class="r-text">「くせ毛で長年悩んでいましたが、縮毛矯正でとても扱いやすくなりました。自然な仕上がりで、雨の日でもまとまるようになり、毎日が楽になりました。」</p>
+      </article>
+
+      <article class="review-card reveal" style="--d:80ms">
+        <div class="review-header">
+          <div class="r-avatar">R</div>
+          <div>
+            <p class="r-name">R.O. さま</p>
+            <p class="r-meta">42歳女性 · ヘッドスパ</p>
+            <p class="r-stars">★★★★★</p>
+          </div>
+        </div>
+        <p class="r-text">「ヘッドスパが癒しそのものでした。静かな空間で自分だけの時間を過ごせて、日頃の疲れが全部取れた気がします。カットとの組み合わせも最高でした。」</p>
+      </article>
+
+      <article class="review-card reveal" style="--d:160ms">
+        <div class="review-header">
+          <div class="r-avatar">K</div>
+          <div>
+            <p class="r-name">K.F. さま</p>
+            <p class="r-meta">50歳女性 · TOKIOトリートメント</p>
+            <p class="r-stars">★★★★★</p>
+          </div>
+        </div>
+        <p class="r-text">「TOKIOトリートメントを受けて、髪が見違えるようになりました。年齢とともに気になっていたパサつきが解消され、今まで使ってきたサロンの中で一番満足しています。」</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════
+     STYLIST
+════════════════════════════════════════════════════════ -->
+<section class="sec" id="stylist">
+  <div class="container">
+    <div class="reveal text-center" style="max-width:36rem;margin-inline:auto">
+      <p class="eyebrow">Our Stylists</p>
+      <h2 class="section-title mt-3">スタイリスト紹介</h2>
+      <p class="body-text mt-4">それぞれの専門性を活かし、あなたに最適な施術をご提案します。</p>
+    </div>
+    <div class="stylist-grid mt-12">
+
+      <article class="stylist-card reveal" style="--d:0ms">
+        <div class="stylist-img-wrap">
+          <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=800" alt="スタイリスト Mika" loading="lazy" />
+          <div class="stylist-tags">
+            <span class="stylist-tag">ナチュラル</span>
+            <span class="stylist-tag">ボブ</span>
+            <span class="stylist-tag">髪質改善</span>
+          </div>
+        </div>
+        <div class="stylist-body">
+          <div style="display:flex;align-items:baseline;justify-content:space-between">
+            <h3 class="stylist-name">Mika</h3>
+            <span class="stylist-years">美容師歴 12年</span>
+          </div>
+          <p class="stylist-text">丁寧なカウンセリングと髪質改善を得意とします。お客様の日常を想像しながら、毎日扱いやすい仕上がりを大切に提案します。</p>
+          <blockquote class="stylist-quote">「髪の悩みは見た目だけでなく、毎日の自信にもつながります。一緒に理想の髪を目指しましょう。」</blockquote>
+        </div>
+      </article>
+
+      <article class="stylist-card reveal" style="--d:80ms">
+        <div class="stylist-img-wrap">
+          <img src="https://images.pexels.com/photos/1065084/pexels-photo-1065084.jpeg?auto=compress&cs=tinysrgb&w=800" alt="スタイリスト Ayaka" loading="lazy" />
+          <div class="stylist-tags">
+            <span class="stylist-tag">透明感カラー</span>
+            <span class="stylist-tag">白髪ぼかし</span>
+          </div>
+        </div>
+        <div class="stylist-body">
+          <div style="display:flex;align-items:baseline;justify-content:space-between">
+            <h3 class="stylist-name">Ayaka</h3>
+            <span class="stylist-years">美容師歴 9年</span>
+          </div>
+          <p class="stylist-text">カラーリング技術に定評があり、肌馴染みの良い発色を追求。透明感カラーや白髪ぼかしを得意とし、多くのリピーターに支持されています。</p>
+          <blockquote class="stylist-quote">「あなたに似合う色を一緒に見つけます。自然で上品な仕上がりをお約束します。」</blockquote>
+        </div>
+      </article>
+
+      <article class="stylist-card reveal" style="--d:160ms">
+        <div class="stylist-img-wrap">
+          <img src="https://images.pexels.com/photos/3757942/pexels-photo-3757942.jpeg?auto=compress&cs=tinysrgb&w=800" alt="スタイリスト Yui" loading="lazy" />
+          <div class="stylist-tags">
+            <span class="stylist-tag">ロング</span>
+            <span class="stylist-tag">縮毛矯正</span>
+            <span class="stylist-tag">スパ</span>
+          </div>
+        </div>
+        <div class="stylist-body">
+          <div style="display:flex;align-items:baseline;justify-content:space-between">
+            <h3 class="stylist-name">Yui</h3>
+            <span class="stylist-years">美容師歴 8年</span>
+          </div>
+          <p class="stylist-text">ロングヘアの扱いやすさと縮毛矯正を得意とします。施術後の再現性の高さが好評で、ヘッドスパやリラクゼーション施術も専任で担当します。</p>
+          <blockquote class="stylist-quote">「毎日のセットが楽になるスタイルを提案します。再現性を一番大切にしています。」</blockquote>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════
+     FAQ — 8項目
+════════════════════════════════════════════════════════ -->
+<section class="sec" id="faq" style="background:#EDE6DC">
+  <div class="container">
+    <!-- 2-col: photo left + FAQ right -->
+    <div style="display:grid;gap:4rem;align-items:start" class="lg:grid-cols-[0.85fr_1.15fr]">
+      <div class="reveal">
+        <p class="eyebrow">FAQ</p>
+        <h2 class="section-title mt-3">よくある<br />ご質問</h2>
+        <p class="body-text mt-4">お気軽にお問い合わせください。</p>
+        <!-- stacked 3 photos -->
+        <div style="display:flex;flex-direction:column;gap:.75rem;margin-top:2.5rem">
+          <div style="overflow:hidden;border-radius:var(--r-lg)">
+            <img src="https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?w=800&q=80&auto=format&fit=crop" alt="サロンの雰囲気" style="width:100%;height:10rem;object-fit:cover;display:block;transition:transform .5s ease" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform=''" loading="lazy" />
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem">
+            <div style="overflow:hidden;border-radius:var(--r-lg)">
+              <img src="https://images.pexels.com/photos/3992874/pexels-photo-3992874.jpeg?auto=compress&cs=tinysrgb&w=500" alt="店内" style="width:100%;height:8rem;object-fit:cover;display:block;transition:transform .5s ease" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform=''" loading="lazy" />
+            </div>
+            <div style="overflow:hidden;border-radius:var(--r-lg)">
+              <img src="https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg?auto=compress&cs=tinysrgb&w=500" alt="シャンプー" style="width:100%;height:8rem;object-fit:cover;display:block;transition:transform .5s ease" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform=''" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+    <div class="faq-list mt-12">
+
+      <details class="faq-item reveal" style="--d:0ms">
+        <summary class="faq-summary"><div class="faq-q">当日予約は可能ですか？<span class="faq-plus"></span></div></summary>
+        <p class="faq-a">空き状況によってはご対応可能です。当日のご予約はお電話（03-0000-0000）またはLINE（@bloomhair）にてお問い合わせください。できる限り柔軟に対応いたします。</p>
+      </details>
+
+      <details class="faq-item reveal" style="--d:50ms">
+        <summary class="faq-summary"><div class="faq-q">男性のお客様もご利用できますか？<span class="faq-plus"></span></div></summary>
+        <p class="faq-a">はい、男性のお客様も大歓迎です。メンズカット・髪質改善トリートメント・ヘッドスパなど幅広いメニューに対応しております。</p>
+      </details>
+
+      <details class="faq-item reveal" style="--d:100ms">
+        <summary class="faq-summary"><div class="faq-q">お子さま連れでも大丈夫ですか？<span class="faq-plus"></span></div></summary>
+        <p class="faq-a">はい、お子さま連れのお客様もご利用いただけます。半個室のためお気兼ねなくお過ごしいただけます。小さなお子さまがいらっしゃる場合は事前にお知らせいただけると助かります。</p>
+      </details>
+
+      <details class="faq-item reveal" style="--d:150ms">
+        <summary class="faq-summary"><div class="faq-q">駐車場はありますか？<span class="faq-plus"></span></div></summary>
+        <p class="faq-a">専用駐車場はございませんが、近隣にコインパーキングが複数ございます。渋谷駅より徒歩3分のため、公共交通機関のご利用をお勧めしております。</p>
+      </details>
+
+      <details class="faq-item reveal" style="--d:200ms">
+        <summary class="faq-summary"><div class="faq-q">クレジットカードは使えますか？<span class="faq-plus"></span></div></summary>
+        <p class="faq-a">Visa・Mastercard・JCB・American Expressに対応しています。PayPay・LINE Pay・交通系ICカードなどのキャッシュレス決済もご利用いただけます。</p>
+      </details>
+
+      <details class="faq-item reveal" style="--d:250ms">
+        <summary class="faq-summary"><div class="faq-q">スタイリストの指名はできますか？<span class="faq-plus"></span></div></summary>
+        <p class="faq-a">もちろんご指名いただけます。ご予約時にご希望のスタイリスト名をお知らせください。スケジュールの空き状況によってご案内いたします。</p>
+      </details>
+
+      <details class="faq-item reveal" style="--d:300ms">
+        <summary class="faq-summary"><div class="faq-q">キャンセルはいつまで可能ですか？<span class="faq-plus"></span></div></summary>
+        <p class="faq-a">前日20時までにご連絡いただければキャンセル・変更を承ります。当日のキャンセルはお電話にてご連絡ください。次回のご予約への振り替えも可能です。</p>
+      </details>
+
+      <details class="faq-item reveal" style="--d:350ms">
+        <summary class="faq-summary"><div class="faq-q">施術時間の目安を教えてください。<span class="faq-plus"></span></div></summary>
+        <p class="faq-a">カットのみで約60〜90分、カラー＋カットで約120〜150分が目安です。髪質改善トリートメントは約90〜120分、縮毛矯正は約180〜240分かかります。初回はカウンセリングが別途30分加わります。</p>
+      </details>
+
+    </div><!-- /faq-list -->
+      </div><!-- /right col -->
+    </div><!-- /2-col grid -->
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════
+     STORE INFO
+════════════════════════════════════════════════════════ -->
+<section class="sec">
+  <div class="container">
+    <div class="reveal" style="border:1px solid var(--c-border);border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--shadow)">
+      <div class="info-grid">
+        <div class="info-body">
+          <p class="eyebrow">Visit</p>
+          <h2 class="section-title mt-3">店舗情報</h2>
+          <div class="info-rows">
+            <dl class="info-row">
+              <dt class="info-dt"><svg class="w-4 h-4 flex-shrink-0 mt-0.5" style="color:#8B7355" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>営業時間</dt>
+              <dd class="info-dd">火〜金 10:00〜20:00<br />土・日・祝 10:00〜18:00</dd>
+            </dl>
+            <dl class="info-row">
+              <dt class="info-dt"><svg class="w-4 h-4 flex-shrink-0 mt-0.5" style="color:#8B7355" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"/></svg>定休日</dt>
+              <dd class="info-dd">毎週月曜日</dd>
+            </dl>
+            <dl class="info-row">
+              <dt class="info-dt"><svg class="w-4 h-4 flex-shrink-0 mt-0.5" style="color:#8B7355" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>住所</dt>
+              <dd class="info-dd">東京都渋谷区神宮前1-1-1<br /><a href="#" style="color:#8B7355">渋谷駅 徒歩3分</a></dd>
+            </dl>
+            <dl class="info-row">
+              <dt class="info-dt"><svg class="w-4 h-4 flex-shrink-0 mt-0.5" style="color:#8B7355" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>電話番号</dt>
+              <dd class="info-dd"><a href="tel:03-0000-0000" style="color:#8B7355">03-0000-0000</a></dd>
+            </dl>
+            <dl class="info-row">
+              <dt class="info-dt"><svg class="w-4 h-4 flex-shrink-0 mt-0.5" style="color:#8B7355" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z"/></svg>支払い方法</dt>
+              <dd class="info-dd">現金・各種クレジットカード<br />PayPay・LINE Pay・交通系IC</dd>
+            </dl>
+            <dl class="info-row">
+              <dt class="info-dt"><svg class="w-4 h-4 flex-shrink-0 mt-0.5" style="color:#8B7355" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.288 15.038a5.25 5.25 0 017.424 0M5.106 11.856c3.807-3.808 9.98-3.808 13.788 0M1.924 8.674c5.565-5.565 14.587-5.565 20.152 0M12.53 18.22l-.53.53-.53-.53a.75.75 0 011.06 0z"/></svg>Wi-Fi・席数</dt>
+              <dd class="info-dd">Wi-Fi完備 / 全4席（半個室）</dd>
+            </dl>
+          </div>
+        </div>
+        <div class="info-map">
+          <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1200&q=80&auto=format&fit=crop" alt="Hair Salon BLOOM 周辺地図" class="w-full h-full object-cover" loading="lazy" style="min-height:300px" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════
+     RESERVATION
+════════════════════════════════════════════════════════ -->
+<section class="sec" id="reservation" style="background:#EDE6DC">
+  <div class="container">
+    <div class="reveal text-center" style="max-width:36rem;margin-inline:auto">
+      <p class="eyebrow">Reservation</p>
+      <h2 class="section-title mt-3">ご予約はこちら</h2>
+      <p class="body-text mt-4">24時間いつでもオンライン予約が可能です。<br />お電話・LINEでも承ります。</p>
+    </div>
+
+    <!-- 3-col photo banner -->
+    <div class="reveal mt-12" style="display:grid;grid-template-columns:1.2fr 0.9fr 0.9fr;gap:.75rem;border-radius:var(--r-xl);overflow:hidden">
+      <div style="overflow:hidden;position:relative">
+        <img src="https://images.pexels.com/photos/3993446/pexels-photo-3993446.jpeg?auto=compress&cs=tinysrgb&w=900" alt="カウンセリング風景" style="width:100%;height:16rem;object-fit:cover;display:block;transition:transform .6s ease" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform=''" loading="lazy" />
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(50,32,18,.55) 0%,transparent 55%);display:flex;align-items:flex-end;padding:1.25rem">
+          <p style="color:#fff;font-size:.8125rem;font-weight:600;letter-spacing:.05em">丁寧なカウンセリング</p>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:.75rem">
+        <div style="overflow:hidden;flex:1;position:relative">
+          <img src="https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg?auto=compress&cs=tinysrgb&w=600" alt="シャンプー台" style="width:100%;height:100%;min-height:7.5rem;object-fit:cover;display:block;transition:transform .6s ease" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform=''" loading="lazy" />
+        </div>
+        <div style="overflow:hidden;flex:1;position:relative">
+          <img src="https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?w=600&q=80&auto=format&fit=crop" alt="半個室スペース" style="width:100%;height:100%;min-height:7.5rem;object-fit:cover;display:block;transition:transform .6s ease" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform=''" loading="lazy" />
+        </div>
+      </div>
+      <div style="overflow:hidden;position:relative">
+        <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=600&q=80&auto=format&fit=crop" alt="仕上がりイメージ" style="width:100%;height:16rem;object-fit:cover;display:block;transition:transform .6s ease" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform=''" loading="lazy" />
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(50,32,18,.55) 0%,transparent 55%);display:flex;align-items:flex-end;padding:1.25rem">
+          <p style="color:#fff;font-size:.8125rem;font-weight:600;letter-spacing:.05em">初回30分カウンセリング無料</p>
+        </div>
+      </div>
+    </div>
+    <div class="rsv-grid mt-12">
+      <div class="rsv-iframe-wrap reveal">
+        <div style="text-align:center;padding:2rem">
+          <p class="font-serif" style="font-size:1.125rem;color:#5F4B3A">オンライン予約フォーム</p>
+          <p style="font-size:.875rem;color:rgba(51,51,51,.5);margin-top:.75rem">Calendly埋め込み予定 — 実装時にiframeに差し替えてください</p>
+          <a href="#contact" style="display:inline-block;margin-top:1.5rem;padding:.875rem 1.875rem;border-radius:999px;background:#8B7355;color:#fff;font-size:.875rem;font-weight:700">お問い合わせフォームへ</a>
+        </div>
+      </div>
+      <div class="rsv-side reveal" style="--d:80ms">
+        <div class="rsv-phone">
+          <p class="eyebrow" style="font-size:.65rem">Phone</p>
+          <a href="tel:03-0000-0000" class="rsv-phone-num">03-0000-0000</a>
+          <p style="font-size:.8125rem;color:rgba(51,51,51,.5);margin-top:.5rem">受付：10:00〜20:00（月曜定休）</p>
+        </div>
+        <a href="#" class="rsv-opt rsv-line">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24-.01.38z"/></svg>
+          LINE で予約する
+        </a>
+        <a href="#contact" class="rsv-opt rsv-web">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"/></svg>
+          Web フォームへ
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════
+     CONTACT FORM
+════════════════════════════════════════════════════════ -->
+<section class="sec" id="contact">
+  <div class="container">
+    <div class="reveal" style="border:1px solid var(--c-border);border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--shadow)">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <!-- Contact side photo -->
+          <div style="overflow:hidden;border-radius:var(--r-lg);margin-bottom:2rem">
+            <img src="https://images.pexels.com/photos/3993468/pexels-photo-3993468.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Hair Salon BLOOMへようこそ" style="width:100%;height:12rem;object-fit:cover;display:block;transition:transform .5s ease" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform=''" loading="lazy" />
+          </div>
+          <p class="eyebrow">Contact</p>
+          <h2 class="section-title mt-3">お問い合わせ</h2>
+          <p class="body-text mt-5">ご希望の日時・メニューをお知らせください。2営業日以内にご連絡いたします。</p>
+          <div style="margin-top:2rem;display:flex;flex-direction:column;gap:1rem">
+            <div class="contact-side-item">
+              <svg class="w-4 h-4 flex-shrink-0" style="color:#8B7355" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+              <a href="tel:03-0000-0000" style="transition:color .2s" onmouseover="this.style.color='#8B7355'" onmouseout="this.style.color=''">03-0000-0000</a>
+            </div>
+            <div class="contact-side-item">
+              <svg class="w-4 h-4 flex-shrink-0" style="color:#8B7355" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24-.01.38z"/></svg>
+              LINE: @bloomhair
+            </div>
+            <div class="contact-side-item">
+              <svg class="w-4 h-4 flex-shrink-0" style="color:#8B7355" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              受付：10:00〜20:00（月曜定休）
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-area">
+          <form id="c-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem">
+              <div>
+                <label for="c-name" class="form-lbl">お名前 <span class="form-req">*</span></label>
+                <input id="c-name" name="name" type="text" class="form-ctrl" placeholder="山田 花子" autocomplete="name" required />
+                <p id="c-name-err" class="form-err" role="alert"></p>
+              </div>
+              <div>
+                <label for="c-phone" class="form-lbl">電話番号 <span class="form-req">*</span></label>
+                <input id="c-phone" name="phone" type="tel" class="form-ctrl" placeholder="090-0000-0000" autocomplete="tel" required />
+                <p id="c-phone-err" class="form-err" role="alert"></p>
+              </div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:1.25rem">
+              <div>
+                <label for="c-email" class="form-lbl">メールアドレス <span class="form-req">*</span></label>
+                <input id="c-email" name="email" type="email" class="form-ctrl" placeholder="example@mail.com" autocomplete="email" required />
+                <p id="c-email-err" class="form-err" role="alert"></p>
+              </div>
+              <div>
+                <label for="c-date" class="form-lbl">希望日時 <span class="form-req">*</span></label>
+                <input id="c-date" name="date" type="date" class="form-ctrl" required />
+                <p id="c-date-err" class="form-err" role="alert"></p>
+              </div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:1.25rem">
+              <div>
+                <label for="c-menu" class="form-lbl">希望メニュー</label>
+                <select id="c-menu" name="menu" class="form-ctrl">
+                  <option value="">選択してください</option>
+                  <option>カット</option>
+                  <option>カラー</option>
+                  <option>パーマ・縮毛矯正</option>
+                  <option>髪質改善トリートメント</option>
+                  <option>ヘッドスパ</option>
+                  <option>複数メニュー（相談）</option>
+                </select>
+              </div>
+              <div>
+                <label for="c-staff" class="form-lbl">担当者希望</label>
+                <select id="c-staff" name="staff" class="form-ctrl">
+                  <option value="">指定なし</option>
+                  <option>Mika</option>
+                  <option>Ayaka</option>
+                  <option>Yui</option>
+                </select>
+              </div>
+            </div>
+            <div style="margin-top:1.25rem">
+              <label for="c-msg" class="form-lbl">相談内容・ご要望</label>
+              <textarea id="c-msg" name="message" rows="4" class="form-ctrl" placeholder="ご希望のスタイルや気になることをお書きください"></textarea>
+            </div>
+            <div style="margin-top:1.75rem">
+              <button type="submit" class="form-submit">送信する</button>
+            </div>
+            <p id="c-ok" class="form-ok" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════
+     FINAL CTA
+════════════════════════════════════════════════════════ -->
+<section class="final-cta" style="position:relative;overflow:hidden">
+  <!-- Background photo with overlay -->
+  <img src="https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?w=1920&q=80&auto=format&fit=crop" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.45" loading="lazy" />
+  <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(50,32,18,.95) 0%,rgba(95,75,58,.82) 100%)"></div>
+  <div class="container" style="position:relative;z-index:1">
+    <p class="reveal final-cta-eyebrow">Hair Salon BLOOM</p>
+    <h2 class="reveal final-h" style="--d:80ms">髪が変わると、<br />毎日がもっと楽しくなる。</h2>
+    <p class="reveal final-sub" style="--d:160ms">自然で上品なヘアスタイルを、あなたの"似合う"に合わせて。まずは無料カウンセリングからどうぞ。</p>
+    <div class="reveal final-btns" style="--d:240ms">
+      <a href="#contact" class="fcta-primary">ご予約・お問い合わせ</a>
+      <a href="tel:03-0000-0000" class="fcta-ghost">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+        電話予約
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ════════════════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <p style="font-family:'Noto Serif JP',serif;font-size:1.25rem;font-weight:600;color:#5F4B3A">Hair Salon BLOOM</p>
+        <div class="footer-brand">
+          <p>東京都渋谷区・完全予約制のプライベートサロン。髪質改善に特化した、30〜50代女性のためのサロンです。</p>
+        </div>
+      </div>
+      <div>
+        <p class="footer-col-label">Menu</p>
+        <div class="footer-links">
+          <a href="#about">About</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#price">Price</a>
+          <a href="#stylist">Stylist</a>
+          <a href="#faq">FAQ</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-col-label">Contact</p>
+        <div class="footer-links">
+          <a href="tel:03-0000-0000">03-0000-0000</a>
+          <span>LINE: @bloomhair</span>
+          <span>東京都渋谷区神宮前1-1-1</span>
+          <span>火〜金 10:00〜20:00</span>
+          <span>土日祝 10:00〜18:00</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Hair Salon BLOOM. All rights reserved.</p>
+      <a href="#top" class="footer-top-link">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 10.5L12 3m0 0l7.5 7.5M12 3v18"/></svg>
+        Top へ
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- ════════════════════════════════════════════════════════
+     MOBILE FLOATING CTA
+════════════════════════════════════════════════════════ -->
+<div class="mob-cta-bar" aria-hidden="true">
+  <div class="mob-cta-inner">
+    <a href="tel:03-0000-0000" class="mob-cta-tel">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+      電話
+    </a>
+    <a href="#contact" class="mob-cta-rsv">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"/></svg>
+      予約する
+    </a>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
