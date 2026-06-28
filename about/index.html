@@ -11,23 +11,64 @@
 
   <style>
     html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; background: #080a0e; color: #e2e8f0; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+    body { font-family: 'Inter', sans-serif; background: #060810; color: #f0f4f8; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
 
     /* ── Gradient text ── */
     .gt  { background: linear-gradient(135deg,#60a5fa,#a78bfa); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
     .gt2 { background: linear-gradient(135deg,#34d399,#60a5fa); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
 
     /* ── Glass ── */
-    .glass { background:rgba(255,255,255,.04); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid rgba(255,255,255,.07); }
+    .glass {
+      background: rgba(255,255,255,.06);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,.11);
+    }
 
     /* ── Sticky header ── */
     #hdr { transition: background .3s, border-color .3s; }
-    #hdr.on { background:rgba(8,10,14,.9); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border-bottom:1px solid rgba(255,255,255,.07); }
+    #hdr.on {
+      background: rgba(6,8,16,.92);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border-bottom: 1px solid rgba(255,255,255,.09);
+    }
 
     /* ── Blobs ── */
-    @keyframes bm { 0%,100%{transform:translate(0,0) scale(1)} 33%{transform:translate(30px,-20px) scale(1.06)} 66%{transform:translate(-20px,25px) scale(.94)} }
+    @keyframes bm {
+      0%,100% { transform: translate(0,0) scale(1); }
+      33%      { transform: translate(35px,-25px) scale(1.06); }
+      66%      { transform: translate(-20px,30px) scale(.94); }
+    }
     .b1 { animation: bm 14s ease-in-out infinite; }
     .b2 { animation: bm 18s ease-in-out infinite reverse; animation-delay:-6s; }
+    .b3 { animation: bm 11s ease-in-out infinite; animation-delay:-3s; }
+
+    /* ── Hero 3D card ── */
+    @keyframes heroFloat {
+      0%,100% { transform: perspective(1100px) rotateX(5deg) rotateY(-8deg) translateY(0); }
+      50%      { transform: perspective(1100px) rotateX(5deg) rotateY(-8deg) translateY(-14px); }
+    }
+    #hero-card {
+      animation: heroFloat 5.5s ease-in-out infinite;
+      transform-origin: center center;
+      will-change: transform;
+    }
+
+    /* ── Floating chips ── */
+    @keyframes chipIn {
+      from { opacity:0; transform:translateX(16px) scale(.9); }
+      to   { opacity:1; transform:translateX(0) scale(1); }
+    }
+    .chip  { animation: chipIn .7s cubic-bezier(.34,1.56,.64,1) both; }
+    .chip1 { animation-delay:.5s; }
+    .chip2 { animation-delay:1s; }
+    .chip3 { animation-delay:1.5s; }
+
+    /* ── Float Y helper ── */
+    @keyframes floatY { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+    .fy1 { animation: floatY 4s ease-in-out infinite; }
+    .fy2 { animation: floatY 5s ease-in-out infinite; animation-delay:-2s; }
 
     /* ── Scroll reveal ── */
     .rv { opacity:0; transform:translateY(28px); transition:opacity .7s ease, transform .7s ease; }
@@ -35,210 +76,338 @@
     .d1{transition-delay:.08s} .d2{transition-delay:.16s} .d3{transition-delay:.24s}
     .d4{transition-delay:.32s} .d5{transition-delay:.40s}
 
-    /* ── Cards ── */
-    .card { background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.07); border-radius:16px; transition:border-color .25s, transform .25s, box-shadow .25s; }
-    .card:hover { border-color:rgba(255,255,255,.18); transform:translateY(-4px); box-shadow:0 12px 40px rgba(0,0,0,.5); }
+    /* ── Cards (高視認性) ── */
+    .card {
+      background: rgba(255,255,255,.055);
+      border: 1px solid rgba(255,255,255,.11);
+      border-radius: 16px;
+      transition: border-color .25s, transform .3s, box-shadow .3s;
+    }
+    .card:hover {
+      border-color: rgba(255,255,255,.22);
+      transform: translateY(-5px);
+      box-shadow: 0 16px 48px rgba(0,0,0,.6);
+    }
 
     /* ── Buttons ── */
-    .btn-p { display:inline-flex; align-items:center; gap:.5rem; background:linear-gradient(135deg,#3b82f6,#8b5cf6); color:#fff; font-weight:700; border-radius:10px; padding:13px 26px; font-size:15px; transition:all .3s ease; text-decoration:none; box-shadow:0 4px 20px rgba(59,130,246,.3); border:none; cursor:pointer; }
-    .btn-p:hover { transform:translateY(-2px); box-shadow:0 8px 30px rgba(59,130,246,.5); }
-    .btn-o { display:inline-flex; align-items:center; gap:.5rem; background:transparent; border:1px solid rgba(255,255,255,.15); color:#e2e8f0; font-weight:600; border-radius:10px; padding:13px 26px; font-size:15px; transition:all .3s ease; text-decoration:none; cursor:pointer; }
-    .btn-o:hover { border-color:rgba(255,255,255,.35); transform:translateY(-2px); }
+    .btn-p {
+      display:inline-flex; align-items:center; gap:.5rem;
+      background:linear-gradient(135deg,#3b82f6,#8b5cf6);
+      color:#fff; font-weight:700; border-radius:10px; padding:14px 28px; font-size:15px;
+      transition:all .3s ease; text-decoration:none;
+      box-shadow:0 4px 24px rgba(59,130,246,.35); border:none; cursor:pointer;
+    }
+    .btn-p:hover { transform:translateY(-3px); box-shadow:0 10px 34px rgba(59,130,246,.55); }
 
-    /* ── Section line ── */
-    .sec-line { height:1px; background:linear-gradient(90deg,transparent,rgba(99,102,241,.3),transparent); }
+    .btn-o {
+      display:inline-flex; align-items:center; gap:.5rem;
+      background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.18);
+      color:#f0f4f8; font-weight:600; border-radius:10px; padding:14px 28px; font-size:15px;
+      transition:all .3s ease; text-decoration:none; cursor:pointer;
+    }
+    .btn-o:hover { background:rgba(255,255,255,.13); border-color:rgba(255,255,255,.32); transform:translateY(-2px); }
+
+    /* ── Section divider ── */
+    .sec-line { height:1px; background:linear-gradient(90deg,transparent,rgba(99,102,241,.35),transparent); }
 
     /* ── Grid bg ── */
-    .gbg { background-image:linear-gradient(rgba(255,255,255,.02) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,.02) 1px, transparent 1px); background-size:56px 56px; }
+    .gbg {
+      background-image:
+        linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+      background-size: 56px 56px;
+    }
 
-    /* ── Badge ── */
-    .badge-feat { background:linear-gradient(135deg,rgba(59,130,246,.2),rgba(139,92,246,.2)); border:1px solid rgba(99,102,241,.4); color:#a78bfa; font-size:.65rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; padding:.2rem .55rem; border-radius:4px; }
-    .badge-cat  { font-size:.65rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:#60a5fa; }
+    /* ── Badges ── */
+    .badge-feat {
+      background:linear-gradient(135deg,rgba(59,130,246,.25),rgba(139,92,246,.25));
+      border:1px solid rgba(99,102,241,.5);
+      color:#c4b5fd; font-size:.65rem; font-weight:700; letter-spacing:.08em;
+      text-transform:uppercase; padding:.25rem .6rem; border-radius:5px;
+    }
+    .badge-cat { font-size:.65rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:#60a5fa; }
 
-    /* ── Process step connector ── */
-    .step-line { position:absolute; top:2rem; left:calc(50% + 1.75rem); right:calc(-50% + 1.75rem); height:1px; background:linear-gradient(90deg,rgba(99,102,241,.4),rgba(99,102,241,.1)); }
-    @media (max-width:768px) { .step-line { display:none; } }
+    /* ── Capability pill ── */
+    .cap-pill {
+      display:inline-flex; align-items:center; gap:.5rem;
+      padding:.55rem 1.1rem; border-radius:9999px; font-size:.8125rem; font-weight:500;
+    }
 
-    /* ── Pricing popular ── */
-    .pop { background:linear-gradient(135deg,rgba(59,130,246,.12),rgba(139,92,246,.12)); border:1px solid rgba(99,102,241,.4); }
-    .pop-badge { background:linear-gradient(135deg,#3b82f6,#8b5cf6); }
-
-    /* ── Capability pills ── */
-    .cap-pill { display:inline-flex; align-items:center; gap:.5rem; padding:.55rem 1rem; border-radius:9999px; font-size:.8125rem; font-weight:500; white-space:nowrap; }
+    /* ── Process step line ── */
+    .step-line {
+      position:absolute; top:2rem;
+      left:calc(50% + 1.75rem); right:calc(-50% + 1.75rem);
+      height:1px; background:linear-gradient(90deg,rgba(99,102,241,.5),rgba(99,102,241,.1));
+    }
+    @media(max-width:768px){ .step-line{display:none} }
 
     /* ── Scrollbar ── */
     ::-webkit-scrollbar{width:5px}
-    ::-webkit-scrollbar-track{background:#080a0e}
-    ::-webkit-scrollbar-thumb{background:rgba(99,102,241,.4);border-radius:99px}
+    ::-webkit-scrollbar-track{background:#060810}
+    ::-webkit-scrollbar-thumb{background:rgba(99,102,241,.45);border-radius:99px}
 
-    /* ── Copy button ── */
-    #copy-btn { transition:all .2s; }
-    #copy-btn.copied { color:#34d399; }
+    /* ── Hero card inner progress ── */
+    @keyframes prog { from{width:0} to{width:72%} }
+    .prog { animation: prog 2.5s ease-out forwards; animation-delay:.8s; width:0; }
 
-    /* ── Number counter ── */
-    .num { font-variant-numeric: tabular-nums; }
+    /* ── Tab highlight ── */
+    .tab-active { background:rgba(59,130,246,.2); border:1px solid rgba(59,130,246,.4); color:#93c5fd; }
+    .tab-base   { background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.07); color:#64748b; }
   </style>
 </head>
-<body class="bg-[#080a0e]">
+<body>
 
-<!-- ════════════════════════
+<!-- ═══════════════════════════
      HEADER
-════════════════════════ -->
+═══════════════════════════ -->
 <header id="hdr" class="fixed top-0 left-0 right-0 z-50 px-5 py-4">
-  <div class="max-w-5xl mx-auto flex items-center justify-between">
-    <a href="#" class="flex items-center gap-2.5 text-white no-underline">
-      <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-blue-500 to-violet-600 flex items-center justify-center font-black text-xs">H</div>
-      <span class="font-bold tracking-tight">Hayato</span>
-      <span class="hidden sm:block text-[11px] text-slate-500 font-normal">/ Web制作フリーランス</span>
+  <div class="max-w-6xl mx-auto flex items-center justify-between">
+    <a href="#" class="flex items-center gap-2.5 no-underline">
+      <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-blue-500 to-violet-600 flex items-center justify-center font-black text-xs text-white">H</div>
+      <span class="font-bold tracking-tight text-white">Hayato</span>
+      <span class="hidden sm:block text-[11px] text-slate-500">/ Web制作フリーランス</span>
     </a>
-    <nav class="hidden md:flex items-center gap-7 text-sm text-slate-400">
+    <nav class="hidden md:flex items-center gap-8 text-sm text-slate-400">
       <a href="#services" class="hover:text-white transition-colors">できること</a>
       <a href="#works"    class="hover:text-white transition-colors">実績</a>
-      <a href="#pricing"  class="hover:text-white transition-colors">料金</a>
+      <a href="#process"  class="hover:text-white transition-colors">制作の流れ</a>
       <a href="#contact"  class="hover:text-white transition-colors">お問い合わせ</a>
     </nav>
-    <a href="#contact" class="btn-p py-2 px-4 text-sm rounded-lg gap-1.5">
-      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
-      相談する
-    </a>
+    <a href="#contact" class="btn-p py-2.5 px-5 text-sm rounded-lg">相談する</a>
   </div>
 </header>
 
 
-<!-- ════════════════════════
-     1. HERO
-════════════════════════ -->
-<section class="relative min-h-screen flex flex-col justify-center items-center text-center px-5 pt-24 pb-20 overflow-hidden">
+<!-- ═══════════════════════════
+     1. HERO（3D）
+═══════════════════════════ -->
+<section class="relative min-h-screen flex items-center px-5 pt-24 pb-16 overflow-hidden">
   <div class="gbg absolute inset-0 opacity-70 pointer-events-none"></div>
-  <div class="b1 absolute top-1/3 left-1/5 w-[500px] h-[500px] rounded-full bg-blue-600/10 blur-[120px] pointer-events-none"></div>
-  <div class="b2 absolute bottom-1/4 right-1/5 w-[400px] h-[400px] rounded-full bg-violet-600/10 blur-[100px] pointer-events-none"></div>
 
-  <div class="rv relative z-10 inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 text-xs text-blue-300 font-medium mb-8">
-    <span class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
-    新規のご依頼、受付中
-  </div>
+  <!-- Blobs -->
+  <div class="b1 absolute top-1/4 left-1/6 w-[480px] h-[480px] rounded-full bg-blue-600/[.13] blur-[120px] pointer-events-none"></div>
+  <div class="b2 absolute bottom-1/4 right-1/6 w-[420px] h-[420px] rounded-full bg-violet-600/[.12] blur-[110px] pointer-events-none"></div>
+  <div class="b3 absolute top-2/3 left-1/2 w-[300px] h-[300px] rounded-full bg-indigo-500/[.09] blur-[90px] pointer-events-none"></div>
 
-  <h1 class="rv d1 relative z-10 text-4xl sm:text-6xl md:text-7xl font-black leading-[1.06] mb-7 max-w-4xl">
-    集客できるLP＋<br>
-    業務を効率化するシステム、<br>
-    <span class="gt">まとめて作ります。</span>
-  </h1>
+  <div class="relative z-10 max-w-6xl mx-auto w-full grid lg:grid-cols-2 gap-14 items-center">
 
-  <p class="rv d2 relative z-10 text-slate-400 text-base sm:text-lg max-w-xl mb-10 leading-relaxed">
-    静的なLPだけじゃない。<strong class="text-white">予約システム・料金シミュレーター・自動フォーム</strong>まで、
-    フリーランス1人で完結。余計なコストなし、スピード納品。
-  </p>
+    <!-- ── LEFT: コピー ── -->
+    <div>
+      <div class="rv inline-flex items-center gap-2 glass rounded-full px-4 py-2 text-xs text-blue-300 font-semibold mb-8">
+        <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+        新規のご依頼、受付中
+      </div>
 
-  <div class="rv d3 relative z-10 flex flex-col sm:flex-row gap-3 mb-12">
-    <a href="#contact" class="btn-p">
-      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.625 9.75a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375m-13.5 3.01c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 01.778-.332 48.294 48.294 0 005.83-.498c1.585-.233 2.708-1.626 2.708-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z"/></svg>
-      まず相談してみる
-    </a>
-    <a href="#works" class="btn-o">
-      実績を見る →
-    </a>
-  </div>
+      <h1 class="rv d1 text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.07] mb-7">
+        集客できるLP＋<br>
+        業務を効率化する<br>
+        システム、<span class="gt">まとめて</span><br>
+        <span class="gt">作ります。</span>
+      </h1>
 
-  <!-- Capability pills -->
-  <div class="rv d4 relative z-10 flex flex-wrap justify-center gap-2.5 max-w-2xl mb-14">
-    <span class="cap-pill glass"><span class="text-base">🎯</span> LP制作</span>
-    <span class="cap-pill glass"><span class="text-base">📅</span> 予約システム</span>
-    <span class="cap-pill glass"><span class="text-base">🧮</span> 料金シミュレーター</span>
-    <span class="cap-pill glass"><span class="text-base">📬</span> フォーム構築</span>
-    <span class="cap-pill glass"><span class="text-base">📱</span> レスポンシブ対応</span>
-    <span class="cap-pill glass"><span class="text-base">⚡</span> 最短3営業日</span>
-  </div>
+      <p class="rv d2 text-slate-300 text-base sm:text-lg max-w-lg mb-10 leading-[1.85]">
+        静的なLPだけじゃない。<strong class="text-white">予約システム・料金シミュレーター・自動フォーム</strong>まで、フリーランス1人で完結。余計な中間コストなし。
+      </p>
 
-  <!-- Stats -->
-  <div class="rv d5 relative z-10 flex flex-wrap justify-center gap-8 sm:gap-14">
-    <div class="text-center">
-      <p class="text-3xl font-black num gt">6<span class="text-slate-500 text-lg">+</span></p>
-      <p class="text-xs text-slate-500 mt-1">制作実績</p>
+      <div class="rv d3 flex flex-col sm:flex-row gap-3 mb-10">
+        <a href="#contact" class="btn-p">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+          まず相談してみる
+        </a>
+        <a href="#works" class="btn-o">実績を見る →</a>
+      </div>
+
+      <!-- Stats -->
+      <div class="rv d4 flex flex-wrap gap-8">
+        <div>
+          <p class="text-3xl font-black gt">6<span class="text-slate-500 text-base ml-0.5">+</span></p>
+          <p class="text-xs text-slate-500 mt-1">制作実績</p>
+        </div>
+        <div>
+          <p class="text-3xl font-black gt">3<span class="text-slate-500 text-base ml-0.5">営業日〜</span></p>
+          <p class="text-xs text-slate-500 mt-1">最短納期</p>
+        </div>
+        <div>
+          <p class="text-3xl font-black gt">100<span class="text-slate-500 text-base ml-0.5">%</span></p>
+          <p class="text-xs text-slate-500 mt-1">レスポンシブ対応</p>
+        </div>
+      </div>
     </div>
-    <div class="text-center">
-      <p class="text-3xl font-black num gt">3<span class="text-slate-500 text-lg">営業日〜</span></p>
-      <p class="text-xs text-slate-500 mt-1">最短納期</p>
-    </div>
-    <div class="text-center">
-      <p class="text-3xl font-black num gt">¥80,000<span class="text-slate-500 text-lg">〜</span></p>
-      <p class="text-xs text-slate-500 mt-1">LP基本制作</p>
-    </div>
-    <div class="text-center">
-      <p class="text-3xl font-black num gt">100<span class="text-slate-500 text-lg">%</span></p>
-      <p class="text-xs text-slate-500 mt-1">レスポンシブ対応</p>
-    </div>
-  </div>
+
+    <!-- ── RIGHT: 3D カード ── -->
+    <div class="rv d2 relative hidden lg:flex items-center justify-center">
+
+      <!-- Floating chips -->
+      <div class="chip chip1 fy1 absolute -top-5 -left-4 z-20 glass rounded-2xl px-4 py-2.5 flex items-center gap-2 shadow-[0_8px_32px_rgba(0,0,0,.5)]">
+        <span class="w-2 h-2 rounded-full bg-green-400"></span>
+        <span class="text-sm font-semibold text-green-300">Cafe Aroma — 納品完了</span>
+      </div>
+      <div class="chip chip2 fy2 absolute -bottom-5 -right-6 z-20 glass rounded-2xl px-4 py-2.5 flex items-center gap-2 shadow-[0_8px_32px_rgba(0,0,0,.5)]">
+        <span class="text-lg">⚡</span>
+        <div>
+          <p class="text-xs font-bold text-white">最短3営業日</p>
+          <p class="text-[10px] text-slate-500">スピード納品</p>
+        </div>
+      </div>
+      <div class="chip chip3 fy1 absolute top-1/3 -right-14 z-20 glass rounded-2xl px-3 py-2.5 flex flex-col items-center gap-1 shadow-[0_8px_32px_rgba(0,0,0,.5)]" style="animation-delay:-1s;">
+        <span class="text-base">📅</span>
+        <p class="text-[10px] font-bold text-white">予約システム</p>
+        <p class="text-[10px] text-blue-400">対応可</p>
+      </div>
+
+      <!-- Main 3D card -->
+      <div id="hero-card" class="w-full max-w-md rounded-2xl overflow-hidden shadow-[0_4px_8px_rgba(0,0,0,.7),0_16px_48px_rgba(0,0,0,.5),0_48px_96px_rgba(0,0,0,.35),0_0_60px_rgba(59,130,246,.08)] cursor-pointer"
+           style="background:rgba(10,14,30,.95);border:1px solid rgba(255,255,255,.13);">
+
+        <!-- Window chrome -->
+        <div class="flex items-center justify-between px-5 py-3.5 border-b border-white/[.07]">
+          <div class="flex items-center gap-2">
+            <div class="flex gap-1.5">
+              <div class="w-3 h-3 rounded-full bg-red-500/70"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500/70"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500/70"></div>
+            </div>
+            <span class="text-xs text-slate-500 ml-1.5">hayato.dev — Portfolio</span>
+          </div>
+          <span class="flex items-center gap-1.5 text-xs text-green-400 font-medium">
+            <span class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>受付中
+          </span>
+        </div>
+
+        <!-- Tabs -->
+        <div class="flex gap-2 px-5 pt-4 pb-3">
+          <span class="tab-active text-xs font-semibold px-3 py-1 rounded-full">LP制作</span>
+          <span class="tab-base text-xs font-medium px-3 py-1 rounded-full">予約システム</span>
+          <span class="tab-base text-xs font-medium px-3 py-1 rounded-full">シミュレーター</span>
+        </div>
+
+        <!-- Work list -->
+        <div class="px-5 pb-2 space-y-3">
+          <!-- Item 1 -->
+          <div class="flex items-center gap-3 rounded-xl p-3" style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);">
+            <div class="w-12 h-12 rounded-lg overflow-hidden shrink-0">
+              <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=120&h=120&fit=crop&q=80" class="w-full h-full object-cover" alt="">
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-sm font-semibold text-white mb-0.5 truncate">Cafe Aroma LP</p>
+              <div class="flex gap-1.5 flex-wrap">
+                <span class="text-[10px] text-slate-500">Tailwind</span>
+                <span class="text-[10px] text-slate-600">·</span>
+                <span class="text-[10px] text-slate-500">Formspree</span>
+              </div>
+            </div>
+            <span class="text-xs text-green-400 font-semibold shrink-0">✓ 完了</span>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="flex items-center gap-3 rounded-xl p-3" style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);">
+            <div class="w-12 h-12 rounded-lg overflow-hidden shrink-0">
+              <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=120&h=120&fit=crop&q=80" class="w-full h-full object-cover" alt="">
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-sm font-semibold text-white mb-0.5 truncate">Hair Salon BLOOM</p>
+              <div class="flex gap-1.5 flex-wrap">
+                <span class="text-[10px] text-slate-500">シミュレーター</span>
+                <span class="text-[10px] text-slate-600">·</span>
+                <span class="text-[10px] text-slate-500">JavaScript</span>
+              </div>
+            </div>
+            <span class="text-xs text-green-400 font-semibold shrink-0">✓ 完了</span>
+          </div>
+
+          <!-- Item 3: In progress -->
+          <div class="flex items-center gap-3 rounded-xl p-3" style="background:rgba(59,130,246,.06);border:1px solid rgba(59,130,246,.2);">
+            <div class="w-12 h-12 rounded-lg overflow-hidden shrink-0">
+              <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=120&h=120&fit=crop&q=80" class="w-full h-full object-cover" alt="">
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-sm font-semibold text-white mb-1.5 truncate">工務店 予約システム</p>
+              <div class="w-full bg-white/5 rounded-full h-1">
+                <div class="prog bg-gradient-to-r from-blue-500 to-violet-500 h-full rounded-full"></div>
+              </div>
+            </div>
+            <span class="text-xs text-blue-400 font-semibold shrink-0">制作中</span>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="px-5 py-4 mt-1 border-t border-white/[.06] flex items-center justify-between">
+          <div>
+            <p class="text-xs text-slate-500">次回受付枠</p>
+            <p class="text-sm font-bold text-white">7月〜 空きあり 📅</p>
+          </div>
+          <a href="#contact" class="btn-p text-xs py-2 px-4 rounded-lg">相談する →</a>
+        </div>
+      </div>
+    </div><!-- /right -->
+  </div><!-- /grid -->
 </section>
 
-<div class="sec-line max-w-4xl mx-auto"></div>
+<div class="sec-line max-w-5xl mx-auto"></div>
 
 
-<!-- ════════════════════════
+<!-- ═══════════════════════════
      2. WHAT I CAN DO
-════════════════════════ -->
+═══════════════════════════ -->
 <section id="services" class="relative py-28 px-5">
   <div class="max-w-5xl mx-auto">
     <div class="text-center mb-16">
       <p class="rv text-blue-400 text-xs font-bold uppercase tracking-widest mb-3">What I Can Do</p>
-      <h2 class="rv d1 text-3xl sm:text-4xl font-black mb-5">LP制作だけじゃない。</h2>
-      <p class="rv d2 text-slate-400 max-w-md mx-auto text-sm leading-relaxed">静的なサイトから動的システムまで、1人で対応。外注の中間コストが一切かかりません。</p>
+      <h2 class="rv d1 text-3xl sm:text-5xl font-black mb-5">LP制作だけじゃない。</h2>
+      <p class="rv d2 text-slate-300 max-w-md mx-auto leading-relaxed">静的サイトから動的システムまで1人で完結。外注の中間コストが一切かかりません。</p>
     </div>
 
     <div class="grid sm:grid-cols-2 gap-5">
-      <!-- 01 -->
       <div class="rv card p-7 flex gap-5 items-start">
-        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl shrink-0" style="background:rgba(59,130,246,.12)">🎯</div>
+        <div class="w-13 h-13 w-12 h-12 rounded-xl shrink-0 flex items-center justify-center text-2xl" style="background:rgba(59,130,246,.15);">🎯</div>
         <div>
-          <h3 class="font-bold text-lg mb-2">LP制作</h3>
-          <p class="text-slate-400 text-sm leading-relaxed mb-4">Tailwind CSS + JavaScript でコーディング。コンバージョン設計・SEO対策・アニメーション実装まで対応。CMS連携も可。</p>
-          <div class="flex flex-wrap gap-1.5">
-            <span class="text-xs glass px-2 py-1 rounded-md text-slate-400">Tailwind CSS</span>
-            <span class="text-xs glass px-2 py-1 rounded-md text-slate-400">JavaScript</span>
-            <span class="text-xs glass px-2 py-1 rounded-md text-slate-400">SEO対策</span>
-            <span class="text-xs glass px-2 py-1 rounded-md text-slate-400">アニメーション</span>
+          <h3 class="font-bold text-xl mb-2.5 text-white">LP制作</h3>
+          <p class="text-slate-300 text-sm leading-relaxed mb-4">Tailwind CSS + JavaScript でコーディング。コンバージョン設計・SEO対策・アニメーション実装まで対応。CMS連携も可。</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-xs glass px-2.5 py-1 rounded-md text-slate-300">Tailwind CSS</span>
+            <span class="text-xs glass px-2.5 py-1 rounded-md text-slate-300">JavaScript</span>
+            <span class="text-xs glass px-2.5 py-1 rounded-md text-slate-300">SEO対策</span>
+            <span class="text-xs glass px-2.5 py-1 rounded-md text-slate-300">アニメーション</span>
           </div>
         </div>
       </div>
 
-      <!-- 02 -->
       <div class="rv d1 card p-7 flex gap-5 items-start">
-        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl shrink-0" style="background:rgba(139,92,246,.12)">📅</div>
+        <div class="w-12 h-12 rounded-xl shrink-0 flex items-center justify-center text-2xl" style="background:rgba(139,92,246,.15);">📅</div>
         <div>
-          <h3 class="font-bold text-lg mb-2">予約システム構築</h3>
-          <p class="text-slate-400 text-sm leading-relaxed mb-4">カレンダー選択 → 自動メール送信 → 管理者通知まで一気通貫。Googleカレンダー連携・Slack通知も対応。</p>
-          <div class="flex flex-wrap gap-1.5">
-            <span class="text-xs glass px-2 py-1 rounded-md text-slate-400">カレンダーUI</span>
-            <span class="text-xs glass px-2 py-1 rounded-md text-slate-400">自動メール</span>
-            <span class="text-xs glass px-2 py-1 rounded-md text-slate-400">Slack通知</span>
-            <span class="text-xs glass px-2 py-1 rounded-md text-slate-400">管理画面</span>
+          <h3 class="font-bold text-xl mb-2.5 text-white">予約システム構築</h3>
+          <p class="text-slate-300 text-sm leading-relaxed mb-4">カレンダー選択 → 自動メール送信 → 管理者通知まで一気通貫。Googleカレンダー・Slack通知も対応。</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-xs glass px-2.5 py-1 rounded-md text-slate-300">カレンダーUI</span>
+            <span class="text-xs glass px-2.5 py-1 rounded-md text-slate-300">自動メール</span>
+            <span class="text-xs glass px-2.5 py-1 rounded-md text-slate-300">Slack通知</span>
+            <span class="text-xs glass px-2.5 py-1 rounded-md text-slate-300">管理画面</span>
           </div>
         </div>
       </div>
 
-      <!-- 03 -->
       <div class="rv d2 card p-7 flex gap-5 items-start">
-        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl shrink-0" style="background:rgba(16,185,129,.12)">🧮</div>
+        <div class="w-12 h-12 rounded-xl shrink-0 flex items-center justify-center text-2xl" style="background:rgba(16,185,129,.15);">🧮</div>
         <div>
-          <h3 class="font-bold text-lg mb-2">料金シミュレーター</h3>
-          <p class="text-slate-400 text-sm leading-relaxed mb-4">選択肢を選ぶだけで自動計算。リフォーム・保険・引越しなど幅広い業種に対応。PDF出力機能も実装可能。</p>
-          <div class="flex flex-wrap gap-1.5">
-            <span class="text-xs glass px-2 py-1 rounded-md text-slate-400">リアルタイム計算</span>
-            <span class="text-xs glass px-2 py-1 rounded-md text-slate-400">PDF出力</span>
-            <span class="text-xs glass px-2 py-1 rounded-md text-slate-400">多段階分岐</span>
+          <h3 class="font-bold text-xl mb-2.5 text-white">料金シミュレーター</h3>
+          <p class="text-slate-300 text-sm leading-relaxed mb-4">選択肢を選ぶだけで自動計算。リフォーム・保険・引越しなど幅広い業種に対応。PDF出力機能も実装可能。</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-xs glass px-2.5 py-1 rounded-md text-slate-300">リアルタイム計算</span>
+            <span class="text-xs glass px-2.5 py-1 rounded-md text-slate-300">PDF出力</span>
+            <span class="text-xs glass px-2.5 py-1 rounded-md text-slate-300">多段階分岐</span>
           </div>
         </div>
       </div>
 
-      <!-- 04 -->
       <div class="rv d3 card p-7 flex gap-5 items-start">
-        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl shrink-0" style="background:rgba(245,158,11,.12)">📬</div>
+        <div class="w-12 h-12 rounded-xl shrink-0 flex items-center justify-center text-2xl" style="background:rgba(245,158,11,.15);">📬</div>
         <div>
-          <h3 class="font-bold text-lg mb-2">フォーム構築</h3>
-          <p class="text-slate-400 text-sm leading-relaxed mb-4">バリデーション・自動返信メール・管理者通知まで実装。Formspree / Netlify Forms / 独自APIとの連携も対応。</p>
-          <div class="flex flex-wrap gap-1.5">
-            <span class="text-xs glass px-2 py-1 rounded-md text-slate-400">バリデーション</span>
-            <span class="text-xs glass px-2 py-1 rounded-md text-slate-400">自動返信</span>
-            <span class="text-xs glass px-2 py-1 rounded-md text-slate-400">Formspree連携</span>
+          <h3 class="font-bold text-xl mb-2.5 text-white">フォーム構築</h3>
+          <p class="text-slate-300 text-sm leading-relaxed mb-4">バリデーション・自動返信メール・管理者通知まで実装。Formspree / Netlify Forms / 独自APIとの連携も対応。</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-xs glass px-2.5 py-1 rounded-md text-slate-300">バリデーション</span>
+            <span class="text-xs glass px-2.5 py-1 rounded-md text-slate-300">自動返信</span>
+            <span class="text-xs glass px-2.5 py-1 rounded-md text-slate-300">Formspree連携</span>
           </div>
         </div>
       </div>
@@ -246,164 +415,160 @@
   </div>
 </section>
 
-<div class="sec-line max-w-4xl mx-auto"></div>
+<div class="sec-line max-w-5xl mx-auto"></div>
 
 
-<!-- ════════════════════════
+<!-- ═══════════════════════════
      3. WORKS
-════════════════════════ -->
+═══════════════════════════ -->
 <section id="works" class="relative py-28 px-5 overflow-hidden">
-  <div class="b1 absolute top-1/2 right-0 w-72 h-72 rounded-full bg-violet-700/8 blur-[90px] pointer-events-none"></div>
+  <div class="b2 absolute top-1/2 right-0 w-80 h-80 rounded-full bg-violet-700/[.09] blur-[100px] pointer-events-none"></div>
   <div class="max-w-5xl mx-auto">
     <div class="text-center mb-16">
       <p class="rv text-blue-400 text-xs font-bold uppercase tracking-widest mb-3">Works</p>
-      <h2 class="rv d1 text-3xl sm:text-4xl font-black mb-5">制作実績</h2>
-      <p class="rv d2 text-slate-400 text-sm">実際に制作した作品の一部をご紹介します。</p>
+      <h2 class="rv d1 text-3xl sm:text-5xl font-black mb-5">制作実績</h2>
+      <p class="rv d2 text-slate-300">実際に制作した作品の一部をご紹介します。</p>
     </div>
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
 
-      <!-- Work 01: Cafe Aroma -->
+      <!-- 01: Cafe Aroma -->
       <div class="rv card flex flex-col overflow-hidden group">
-        <div class="relative h-44 overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&h=350&fit=crop&q=80"
-               alt="Cafe Aroma" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-          <div class="absolute inset-0 bg-gradient-to-t from-[#080a0e]/80 to-transparent"></div>
-          <div class="absolute top-3 left-3"><span class="badge-cat">Cafe / Food</span></div>
+        <div class="relative h-48 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&h=380&fit=crop&q=80"
+               alt="Cafe Aroma" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-106">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#060810]/90 via-[#060810]/20 to-transparent"></div>
+          <span class="absolute top-3 left-3 badge-cat">Cafe / Food</span>
         </div>
         <div class="flex flex-col flex-1 p-5 gap-3">
-          <h3 class="font-bold text-base">Cafe Aroma</h3>
-          <p class="text-slate-500 text-xs leading-relaxed flex-1">福岡のスペシャルティコーヒーカフェLP。世界観・予約導線・フォーム連携を実装。</p>
-          <div class="flex items-center justify-between pt-2 border-t border-white/5">
-            <div class="flex gap-1.5 flex-wrap">
-              <span class="text-[10px] glass px-1.5 py-0.5 rounded text-slate-500">HTML/CSS</span>
-              <span class="text-[10px] glass px-1.5 py-0.5 rounded text-slate-500">Tailwind</span>
-              <span class="text-[10px] glass px-1.5 py-0.5 rounded text-slate-500">Formspree</span>
+          <h3 class="font-bold text-base text-white">Cafe Aroma</h3>
+          <p class="text-slate-300 text-sm leading-relaxed flex-1">福岡のスペシャルティコーヒーカフェLP。世界観・予約導線・フォーム連携を実装。</p>
+          <div class="flex items-center justify-between pt-3 border-t border-white/[.08]">
+            <div class="flex gap-2 flex-wrap">
+              <span class="text-[11px] glass px-2 py-1 rounded text-slate-300">Tailwind</span>
+              <span class="text-[11px] glass px-2 py-1 rounded text-slate-300">Formspree</span>
             </div>
-            <a href="../cafe-lp/" target="_blank" class="text-xs text-blue-400 hover:text-blue-300 transition-colors whitespace-nowrap ml-2">見る →</a>
+            <a href="../cafe-lp/" target="_blank" class="text-sm text-blue-400 hover:text-blue-300 transition-colors font-semibold whitespace-nowrap ml-2">見る →</a>
           </div>
         </div>
       </div>
 
-      <!-- Work 02: Hair Salon BLOOM -->
+      <!-- 02: Hair Salon BLOOM -->
       <div class="rv d1 card flex flex-col overflow-hidden group">
-        <div class="relative h-44 overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=600&h=350&fit=crop&q=80"
-               alt="Hair Salon BLOOM" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-          <div class="absolute inset-0 bg-gradient-to-t from-[#080a0e]/80 to-transparent"></div>
-          <div class="absolute top-3 left-3"><span class="badge-cat">Beauty / Salon</span></div>
+        <div class="relative h-48 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=600&h=380&fit=crop&q=80"
+               alt="Hair Salon BLOOM" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-106">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#060810]/90 via-[#060810]/20 to-transparent"></div>
+          <span class="absolute top-3 left-3 badge-cat">Beauty / Salon</span>
         </div>
         <div class="flex flex-col flex-1 p-5 gap-3">
           <div class="flex items-start justify-between gap-2">
-            <h3 class="font-bold text-base">Hair Salon BLOOM</h3>
+            <h3 class="font-bold text-base text-white">Hair Salon BLOOM</h3>
             <span class="badge-feat shrink-0">機能付き</span>
           </div>
-          <p class="text-slate-500 text-xs leading-relaxed flex-1">渋谷の美容室LP。ギャラリー・料金シミュレーター・Before/After比較スライダーを実装。</p>
-          <div class="flex items-center justify-between pt-2 border-t border-white/5">
-            <div class="flex gap-1.5 flex-wrap">
-              <span class="text-[10px] glass px-1.5 py-0.5 rounded text-slate-500">JS</span>
-              <span class="text-[10px] glass px-1.5 py-0.5 rounded text-slate-500">シミュレーター</span>
-              <span class="text-[10px] glass px-1.5 py-0.5 rounded text-slate-500">JSON-LD</span>
+          <p class="text-slate-300 text-sm leading-relaxed flex-1">渋谷の美容室LP。ギャラリー・料金シミュレーター・Before/After比較スライダーを実装。</p>
+          <div class="flex items-center justify-between pt-3 border-t border-white/[.08]">
+            <div class="flex gap-2 flex-wrap">
+              <span class="text-[11px] glass px-2 py-1 rounded text-slate-300">シミュレーター</span>
+              <span class="text-[11px] glass px-2 py-1 rounded text-slate-300">JSON-LD</span>
             </div>
-            <a href="../bloom-lp/" target="_blank" class="text-xs text-blue-400 hover:text-blue-300 transition-colors whitespace-nowrap ml-2">見る →</a>
+            <a href="../bloom-lp/" target="_blank" class="text-sm text-blue-400 hover:text-blue-300 transition-colors font-semibold whitespace-nowrap ml-2">見る →</a>
           </div>
         </div>
       </div>
 
-      <!-- Work 03: さくら整骨院 -->
+      <!-- 03: さくら整骨院 -->
       <div class="rv d2 card flex flex-col overflow-hidden group">
-        <div class="relative h-44 overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1519824145371-296894a0daa9?w=600&h=350&fit=crop&q=80"
-               alt="さくら整骨院" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-          <div class="absolute inset-0 bg-gradient-to-t from-[#080a0e]/80 to-transparent"></div>
-          <div class="absolute top-3 left-3"><span class="badge-cat">Medical / Health</span></div>
+        <div class="relative h-48 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1519824145371-296894a0daa9?w=600&h=380&fit=crop&q=80"
+               alt="さくら整骨院" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-106">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#060810]/90 via-[#060810]/20 to-transparent"></div>
+          <span class="absolute top-3 left-3 badge-cat">Medical / Health</span>
         </div>
         <div class="flex flex-col flex-1 p-5 gap-3">
-          <h3 class="font-bold text-base">さくら整骨院</h3>
-          <p class="text-slate-500 text-xs leading-relaxed flex-1">三軒茶屋の整骨院LP。腰痛・産後骨盤矯正をターゲットにした集患特化設計。地域SEO対策済み。</p>
-          <div class="flex items-center justify-between pt-2 border-t border-white/5">
-            <div class="flex gap-1.5 flex-wrap">
-              <span class="text-[10px] glass px-1.5 py-0.5 rounded text-slate-500">Tailwind</span>
-              <span class="text-[10px] glass px-1.5 py-0.5 rounded text-slate-500">SEO</span>
-              <span class="text-[10px] glass px-1.5 py-0.5 rounded text-slate-500">集患LP</span>
+          <h3 class="font-bold text-base text-white">さくら整骨院</h3>
+          <p class="text-slate-300 text-sm leading-relaxed flex-1">三軒茶屋の整骨院LP。腰痛・産後骨盤矯正をターゲットにした集患特化設計。地域SEO対策済み。</p>
+          <div class="flex items-center justify-between pt-3 border-t border-white/[.08]">
+            <div class="flex gap-2 flex-wrap">
+              <span class="text-[11px] glass px-2 py-1 rounded text-slate-300">Tailwind</span>
+              <span class="text-[11px] glass px-2 py-1 rounded text-slate-300">地域SEO</span>
             </div>
-            <a href="../seikotsu-lp/" target="_blank" class="text-xs text-blue-400 hover:text-blue-300 transition-colors whitespace-nowrap ml-2">見る →</a>
+            <a href="../seikotsu-lp/" target="_blank" class="text-sm text-blue-400 hover:text-blue-300 transition-colors font-semibold whitespace-nowrap ml-2">見る →</a>
           </div>
         </div>
       </div>
 
-      <!-- Work 04: PostPilot -->
+      <!-- 04: PostPilot -->
       <div class="rv d1 card flex flex-col overflow-hidden group">
-        <div class="relative h-44 overflow-hidden" style="background:linear-gradient(135deg,#0f0c29,#1a1040,#24074e);">
+        <div class="relative h-48 overflow-hidden" style="background:linear-gradient(135deg,#0f0c29,#1a1040,#24074e);">
           <div class="absolute inset-0 flex items-center justify-center">
             <div class="text-center">
-              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-violet-500 to-blue-500 flex items-center justify-center font-black text-lg mx-auto mb-2">P</div>
+              <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-violet-500 to-blue-500 flex items-center justify-center font-black text-xl mx-auto mb-2">P</div>
               <p class="text-xs text-slate-400">AI SaaS Landing Page</p>
             </div>
           </div>
-          <div class="absolute top-3 left-3"><span class="badge-cat">SaaS / AI</span></div>
+          <span class="absolute top-3 left-3 badge-cat">SaaS / AI</span>
         </div>
         <div class="flex flex-col flex-1 p-5 gap-3">
           <div class="flex items-start justify-between gap-2">
-            <h3 class="font-bold text-base">PostPilot</h3>
+            <h3 class="font-bold text-base text-white">PostPilot</h3>
             <span class="badge-feat shrink-0">機能付き</span>
           </div>
-          <p class="text-slate-500 text-xs leading-relaxed flex-1">AI SNS自動化SaaSのLP。3D風UI・インタラクティブAIデモ・比較表・価格設計を実装。</p>
-          <div class="flex items-center justify-between pt-2 border-t border-white/5">
-            <div class="flex gap-1.5 flex-wrap">
-              <span class="text-[10px] glass px-1.5 py-0.5 rounded text-slate-500">3D UI</span>
-              <span class="text-[10px] glass px-1.5 py-0.5 rounded text-slate-500">AIデモ</span>
-              <span class="text-[10px] glass px-1.5 py-0.5 rounded text-slate-500">SaaS LP</span>
+          <p class="text-slate-300 text-sm leading-relaxed flex-1">AI SNS自動化SaaSのLP。3D風UI・インタラクティブAIデモ・比較表を実装。</p>
+          <div class="flex items-center justify-between pt-3 border-t border-white/[.08]">
+            <div class="flex gap-2 flex-wrap">
+              <span class="text-[11px] glass px-2 py-1 rounded text-slate-300">3D UI</span>
+              <span class="text-[11px] glass px-2 py-1 rounded text-slate-300">AIデモ</span>
             </div>
-            <a href="../postpilot/" target="_blank" class="text-xs text-blue-400 hover:text-blue-300 transition-colors whitespace-nowrap ml-2">見る →</a>
+            <a href="../postpilot/" target="_blank" class="text-sm text-blue-400 hover:text-blue-300 transition-colors font-semibold whitespace-nowrap ml-2">見る →</a>
           </div>
         </div>
       </div>
 
-      <!-- Work 05: 工務店予約システム -->
+      <!-- 05: 工務店予約システム -->
       <div class="rv d2 card flex flex-col overflow-hidden group">
-        <div class="relative h-44 overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&h=350&fit=crop&q=80"
-               alt="工務店LP+予約システム" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-          <div class="absolute inset-0 bg-gradient-to-t from-[#080a0e]/80 to-transparent"></div>
-          <div class="absolute top-3 left-3"><span class="badge-cat">Construction</span></div>
+        <div class="relative h-48 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&h=380&fit=crop&q=80"
+               alt="工務店LP+予約システム" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-106">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#060810]/90 via-[#060810]/20 to-transparent"></div>
+          <span class="absolute top-3 left-3 badge-cat">Construction</span>
         </div>
         <div class="flex flex-col flex-1 p-5 gap-3">
           <div class="flex items-start justify-between gap-2">
-            <h3 class="font-bold text-base">工務店 LP + 予約システム</h3>
+            <h3 class="font-bold text-base text-white">工務店 LP + 予約システム</h3>
             <span class="badge-feat shrink-0">機能付き</span>
           </div>
-          <p class="text-slate-500 text-xs leading-relaxed flex-1">新築・リフォーム相談の予約をLP内で完結。カレンダー選択・空き確認・自動メール通知を実装。</p>
-          <div class="flex items-center justify-between pt-2 border-t border-white/5">
-            <div class="flex gap-1.5 flex-wrap">
-              <span class="text-[10px] glass px-1.5 py-0.5 rounded text-slate-500">予約カレンダー</span>
-              <span class="text-[10px] glass px-1.5 py-0.5 rounded text-slate-500">自動メール</span>
+          <p class="text-slate-300 text-sm leading-relaxed flex-1">新築・リフォーム相談の予約をLP内で完結。カレンダー・空き確認・自動メール通知を実装。</p>
+          <div class="flex items-center justify-between pt-3 border-t border-white/[.08]">
+            <div class="flex gap-2 flex-wrap">
+              <span class="text-[11px] glass px-2 py-1 rounded text-slate-300">予約カレンダー</span>
+              <span class="text-[11px] glass px-2 py-1 rounded text-slate-300">自動メール</span>
             </div>
-            <span class="text-xs text-slate-600 whitespace-nowrap ml-2">非公開</span>
+            <span class="text-xs text-slate-500 whitespace-nowrap ml-2">非公開</span>
           </div>
         </div>
       </div>
 
-      <!-- Work 06: リフォーム料金シミュレーター -->
+      <!-- 06: リフォームシミュレーター -->
       <div class="rv d3 card flex flex-col overflow-hidden group">
-        <div class="relative h-44 overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600&h=350&fit=crop&q=80"
-               alt="リフォーム料金シミュレーター" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-          <div class="absolute inset-0 bg-gradient-to-t from-[#080a0e]/80 to-transparent"></div>
-          <div class="absolute top-3 left-3"><span class="badge-cat">Reform / Housing</span></div>
+        <div class="relative h-48 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600&h=380&fit=crop&q=80"
+               alt="リフォーム料金シミュレーター" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-106">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#060810]/90 via-[#060810]/20 to-transparent"></div>
+          <span class="absolute top-3 left-3 badge-cat">Reform / Housing</span>
         </div>
         <div class="flex flex-col flex-1 p-5 gap-3">
           <div class="flex items-start justify-between gap-2">
-            <h3 class="font-bold text-base">リフォーム 料金シミュレーター</h3>
+            <h3 class="font-bold text-base text-white">リフォーム 料金シミュレーター</h3>
             <span class="badge-feat shrink-0">機能付き</span>
           </div>
-          <p class="text-slate-500 text-xs leading-relaxed flex-1">部屋数・施工箇所・グレードを選ぶだけで即見積もり。PDF出力・メール送信機能付き。問い合わせCVR 2.3倍改善。</p>
-          <div class="flex items-center justify-between pt-2 border-t border-white/5">
-            <div class="flex gap-1.5 flex-wrap">
-              <span class="text-[10px] glass px-1.5 py-0.5 rounded text-slate-500">シミュレーター</span>
-              <span class="text-[10px] glass px-1.5 py-0.5 rounded text-slate-500">PDF出力</span>
+          <p class="text-slate-300 text-sm leading-relaxed flex-1">選択するだけで即見積もり。PDF出力・メール送信機能付き。問い合わせCVR 2.3倍改善。</p>
+          <div class="flex items-center justify-between pt-3 border-t border-white/[.08]">
+            <div class="flex gap-2 flex-wrap">
+              <span class="text-[11px] glass px-2 py-1 rounded text-slate-300">シミュレーター</span>
+              <span class="text-[11px] glass px-2 py-1 rounded text-slate-300">PDF出力</span>
             </div>
-            <span class="text-xs text-slate-600 whitespace-nowrap ml-2">非公開</span>
+            <span class="text-xs text-slate-500 whitespace-nowrap ml-2">非公開</span>
           </div>
         </div>
       </div>
@@ -412,182 +577,103 @@
   </div>
 </section>
 
-<div class="sec-line max-w-4xl mx-auto"></div>
+<div class="sec-line max-w-5xl mx-auto"></div>
 
 
-<!-- ════════════════════════
-     4. PRICING
-════════════════════════ -->
-<section id="pricing" class="relative py-28 px-5">
-  <div class="max-w-5xl mx-auto">
-    <div class="text-center mb-16">
-      <p class="rv text-blue-400 text-xs font-bold uppercase tracking-widest mb-3">Pricing</p>
-      <h2 class="rv d1 text-3xl sm:text-4xl font-black mb-5">料金目安</h2>
-      <p class="rv d2 text-slate-400 text-sm max-w-sm mx-auto leading-relaxed">要件によって変動します。まずは無料でご相談ください。</p>
-    </div>
-
-    <div class="grid md:grid-cols-3 gap-5 items-stretch">
-      <!-- Plan 1 -->
-      <div class="rv card p-7 flex flex-col">
-        <p class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-4">LP 基本</p>
-        <div class="mb-1">
-          <span class="text-4xl font-black">¥80,000</span>
-          <span class="text-slate-500 text-sm ml-1">〜</span>
-        </div>
-        <p class="text-xs text-slate-600 mb-7">納期目安：7〜14営業日</p>
-        <ul class="space-y-3 text-sm text-slate-400 flex-1 mb-8">
-          <li class="flex items-start gap-2"><span class="text-green-400 mt-0.5">✓</span> レスポンシブLP（1〜5セクション）</li>
-          <li class="flex items-start gap-2"><span class="text-green-400 mt-0.5">✓</span> コンバージョン設計</li>
-          <li class="flex items-start gap-2"><span class="text-green-400 mt-0.5">✓</span> お問い合わせフォーム</li>
-          <li class="flex items-start gap-2"><span class="text-green-400 mt-0.5">✓</span> 基本SEO設定</li>
-          <li class="flex items-start gap-2"><span class="text-green-400 mt-0.5">✓</span> 修正2回まで</li>
-          <li class="flex items-start gap-2"><span class="text-slate-700 mt-0.5">–</span><span class="text-slate-600"> システム機能</span></li>
-        </ul>
-        <a href="#contact" class="btn-o text-sm py-3 justify-center rounded-xl mt-auto">相談する</a>
-      </div>
-
-      <!-- Plan 2 (popular) -->
-      <div class="rv d1 pop rounded-2xl p-7 relative flex flex-col" style="transform:scale(1.03);">
-        <div class="pop-badge absolute -top-3.5 left-1/2 -translate-x-1/2 text-white text-xs font-bold px-4 py-1 rounded-full whitespace-nowrap">⭐ 人気プラン</div>
-        <p class="text-xs font-bold text-blue-400 uppercase tracking-wider mb-4">LP ＋ 機能</p>
-        <div class="mb-1">
-          <span class="text-4xl font-black">¥150,000</span>
-          <span class="text-slate-500 text-sm ml-1">〜</span>
-        </div>
-        <p class="text-xs text-slate-600 mb-7">納期目安：14〜21営業日</p>
-        <ul class="space-y-3 text-sm text-slate-300 flex-1 mb-8">
-          <li class="flex items-start gap-2"><span class="text-green-400 mt-0.5">✓</span> LP基本プランすべて</li>
-          <li class="flex items-start gap-2"><span class="text-green-400 mt-0.5">✓</span> 予約システム <em class="not-italic text-blue-400 text-xs">or</em> シミュレーター</li>
-          <li class="flex items-start gap-2"><span class="text-green-400 mt-0.5">✓</span> 管理者向け通知（メール/Slack）</li>
-          <li class="flex items-start gap-2"><span class="text-green-400 mt-0.5">✓</span> アニメーション実装</li>
-          <li class="flex items-start gap-2"><span class="text-green-400 mt-0.5">✓</span> 修正4回まで</li>
-          <li class="flex items-start gap-2"><span class="text-green-400 mt-0.5">✓</span> 公開後1ヶ月サポート</li>
-        </ul>
-        <a href="#contact" class="btn-p text-sm py-3 justify-center rounded-xl mt-auto">相談する</a>
-      </div>
-
-      <!-- Plan 3 -->
-      <div class="rv d2 card p-7 flex flex-col">
-        <p class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-4">フルカスタム</p>
-        <div class="mb-1">
-          <span class="text-4xl font-black">要相談</span>
-        </div>
-        <p class="text-xs text-slate-600 mb-7">納期・金額はヒアリング後にご提案</p>
-        <ul class="space-y-3 text-sm text-slate-400 flex-1 mb-8">
-          <li class="flex items-start gap-2"><span class="text-green-400 mt-0.5">✓</span> LP + 機能プランすべて</li>
-          <li class="flex items-start gap-2"><span class="text-green-400 mt-0.5">✓</span> 予約＋シミュレーター複合</li>
-          <li class="flex items-start gap-2"><span class="text-green-400 mt-0.5">✓</span> 外部API・DB連携</li>
-          <li class="flex items-start gap-2"><span class="text-green-400 mt-0.5">✓</span> 管理画面（CRUD）開発</li>
-          <li class="flex items-start gap-2"><span class="text-green-400 mt-0.5">✓</span> 修正回数無制限</li>
-          <li class="flex items-start gap-2"><span class="text-green-400 mt-0.5">✓</span> 3ヶ月保守サポート</li>
-        </ul>
-        <a href="#contact" class="btn-o text-sm py-3 justify-center rounded-xl mt-auto">相談する</a>
-      </div>
-    </div>
-
-    <p class="rv text-center text-xs text-slate-600 mt-8">※ 料金はすべて税別。デザインデータ提供の有無・ページ数・機能規模により変動します。</p>
-  </div>
-</section>
-
-<div class="sec-line max-w-4xl mx-auto"></div>
-
-
-<!-- ════════════════════════
-     5. PROCESS
-════════════════════════ -->
+<!-- ═══════════════════════════
+     4. PROCESS
+═══════════════════════════ -->
 <section id="process" class="relative py-28 px-5">
   <div class="max-w-5xl mx-auto">
     <div class="text-center mb-16">
       <p class="rv text-blue-400 text-xs font-bold uppercase tracking-widest mb-3">Process</p>
-      <h2 class="rv d1 text-3xl sm:text-4xl font-black mb-5">制作の流れ</h2>
-      <p class="rv d2 text-slate-400 text-sm">ご依頼から公開まで、5ステップで進めます。</p>
+      <h2 class="rv d1 text-3xl sm:text-5xl font-black mb-5">制作の流れ</h2>
+      <p class="rv d2 text-slate-300">ご依頼から公開まで、5ステップで進めます。</p>
     </div>
 
     <div class="grid sm:grid-cols-5 gap-4">
-
       <div class="rv card p-6 text-center relative">
-        <div class="step-line hidden sm:block"></div>
-        <div class="w-10 h-10 rounded-full bg-blue-500/15 border border-blue-500/30 flex items-center justify-center text-blue-400 font-black text-sm mx-auto mb-4">01</div>
-        <p class="font-bold text-sm mb-2">ヒアリング</p>
-        <p class="text-slate-500 text-xs leading-relaxed">目的・ターゲット・機能要件・予算をお聞きします</p>
-        <p class="mt-3 text-[10px] text-blue-400/70 font-medium">1〜2日</p>
+        <div class="step-line"></div>
+        <div class="w-11 h-11 rounded-full bg-blue-500/20 border border-blue-500/40 flex items-center justify-center text-blue-300 font-black text-sm mx-auto mb-4">01</div>
+        <p class="font-bold text-sm mb-2 text-white">ヒアリング</p>
+        <p class="text-slate-400 text-xs leading-relaxed">目的・機能要件・予算をお聞きします</p>
+        <p class="mt-3 text-[11px] text-blue-400 font-semibold">1〜2日</p>
       </div>
-
       <div class="rv d1 card p-6 text-center relative">
-        <div class="step-line hidden sm:block"></div>
-        <div class="w-10 h-10 rounded-full bg-violet-500/15 border border-violet-500/30 flex items-center justify-center text-violet-400 font-black text-sm mx-auto mb-4">02</div>
-        <p class="font-bold text-sm mb-2">提案・見積もり</p>
-        <p class="text-slate-500 text-xs leading-relaxed">構成案・機能仕様・お見積もりをご提示</p>
-        <p class="mt-3 text-[10px] text-blue-400/70 font-medium">2〜3日</p>
+        <div class="step-line"></div>
+        <div class="w-11 h-11 rounded-full bg-violet-500/20 border border-violet-500/40 flex items-center justify-center text-violet-300 font-black text-sm mx-auto mb-4">02</div>
+        <p class="font-bold text-sm mb-2 text-white">提案・見積もり</p>
+        <p class="text-slate-400 text-xs leading-relaxed">構成案・機能仕様・見積もりをご提示</p>
+        <p class="mt-3 text-[11px] text-blue-400 font-semibold">2〜3日</p>
       </div>
-
       <div class="rv d2 card p-6 text-center relative">
-        <div class="step-line hidden sm:block"></div>
-        <div class="w-10 h-10 rounded-full bg-indigo-500/15 border border-indigo-500/30 flex items-center justify-center text-indigo-400 font-black text-sm mx-auto mb-4">03</div>
-        <p class="font-bold text-sm mb-2">設計・実装</p>
-        <p class="text-slate-500 text-xs leading-relaxed">デザイン設計〜コーディング〜システム実装</p>
-        <p class="mt-3 text-[10px] text-blue-400/70 font-medium">7〜14日</p>
+        <div class="step-line"></div>
+        <div class="w-11 h-11 rounded-full bg-indigo-500/20 border border-indigo-500/40 flex items-center justify-center text-indigo-300 font-black text-sm mx-auto mb-4">03</div>
+        <p class="font-bold text-sm mb-2 text-white">設計・実装</p>
+        <p class="text-slate-400 text-xs leading-relaxed">デザイン〜コーディング〜システム実装</p>
+        <p class="mt-3 text-[11px] text-blue-400 font-semibold">7〜14日</p>
       </div>
-
       <div class="rv d3 card p-6 text-center relative">
-        <div class="step-line hidden sm:block"></div>
-        <div class="w-10 h-10 rounded-full bg-sky-500/15 border border-sky-500/30 flex items-center justify-center text-sky-400 font-black text-sm mx-auto mb-4">04</div>
-        <p class="font-bold text-sm mb-2">確認・修正</p>
-        <p class="text-slate-500 text-xs leading-relaxed">プレビュー環境でご確認いただき、修正対応</p>
-        <p class="mt-3 text-[10px] text-blue-400/70 font-medium">3〜5日</p>
+        <div class="step-line"></div>
+        <div class="w-11 h-11 rounded-full bg-sky-500/20 border border-sky-500/40 flex items-center justify-center text-sky-300 font-black text-sm mx-auto mb-4">04</div>
+        <p class="font-bold text-sm mb-2 text-white">確認・修正</p>
+        <p class="text-slate-400 text-xs leading-relaxed">プレビュー環境でご確認・修正対応</p>
+        <p class="mt-3 text-[11px] text-blue-400 font-semibold">3〜5日</p>
       </div>
-
       <div class="rv d4 card p-6 text-center">
-        <div class="w-10 h-10 rounded-full bg-green-500/15 border border-green-500/30 flex items-center justify-center text-green-400 font-black text-sm mx-auto mb-4">05</div>
-        <p class="font-bold text-sm mb-2">納品・公開</p>
-        <p class="text-slate-500 text-xs leading-relaxed">ファイル納品 or サーバー設定まで対応可</p>
-        <p class="mt-3 text-[10px] text-blue-400/70 font-medium">当日〜1日</p>
+        <div class="w-11 h-11 rounded-full bg-green-500/20 border border-green-500/40 flex items-center justify-center text-green-300 font-black text-sm mx-auto mb-4">05</div>
+        <p class="font-bold text-sm mb-2 text-white">納品・公開</p>
+        <p class="text-slate-400 text-xs leading-relaxed">ファイル納品 or サーバー設定まで対応</p>
+        <p class="mt-3 text-[11px] text-blue-400 font-semibold">当日〜1日</p>
       </div>
-
     </div>
   </div>
 </section>
 
-<div class="sec-line max-w-4xl mx-auto"></div>
+<div class="sec-line max-w-5xl mx-auto"></div>
 
 
-<!-- ════════════════════════
-     6. CONTACT
-════════════════════════ -->
+<!-- ═══════════════════════════
+     5. CONTACT
+═══════════════════════════ -->
 <section id="contact" class="relative py-28 px-5 overflow-hidden">
-  <div class="b1 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-blue-600/8 blur-[120px] pointer-events-none"></div>
-  <div class="max-w-2xl mx-auto text-center">
-    <p class="rv text-blue-400 text-xs font-bold uppercase tracking-widest mb-3">Contact</p>
-    <h2 class="rv d1 text-3xl sm:text-4xl font-black mb-5">まずは気軽に<br><span class="gt">ご相談ください。</span></h2>
-    <p class="rv d2 text-slate-400 text-sm max-w-sm mx-auto leading-relaxed mb-12">「こんなの作れる？」「予算はいくら？」—どんな小さな質問でも大歓迎です。返信は通常1営業日以内。</p>
+  <div class="b1 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[520px] h-[520px] rounded-full bg-blue-600/[.09] blur-[130px] pointer-events-none"></div>
 
-    <div class="rv d2 grid sm:grid-cols-2 gap-4 max-w-md mx-auto mb-10">
+  <div class="relative z-10 max-w-2xl mx-auto text-center">
+    <p class="rv text-blue-400 text-xs font-bold uppercase tracking-widest mb-3">Contact</p>
+    <h2 class="rv d1 text-3xl sm:text-5xl font-black mb-5">
+      まずは気軽に<br><span class="gt">ご相談ください。</span>
+    </h2>
+    <p class="rv d2 text-slate-300 max-w-sm mx-auto leading-relaxed mb-12">
+      「こんなの作れる？」「予算はいくら？」<br>どんな小さな質問でも大歓迎です。返信は通常1営業日以内。
+    </p>
+
+    <div class="rv d3 grid sm:grid-cols-2 gap-4 max-w-md mx-auto mb-10">
       <!-- Email -->
-      <div class="card p-6 flex flex-col items-center gap-3 text-center">
-        <div class="w-11 h-11 rounded-xl flex items-center justify-center text-xl" style="background:rgba(59,130,246,.1);">📧</div>
-        <p class="font-semibold text-sm">メールで相談</p>
-        <p class="text-slate-500 text-xs">直接メールを送る</p>
+      <div class="card p-7 flex flex-col items-center gap-3 text-center">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl" style="background:rgba(59,130,246,.12);">📧</div>
+        <p class="font-bold text-base text-white">メールで相談</p>
+        <p class="text-slate-400 text-xs">直接メールを送る</p>
         <button id="copy-btn"
-          onclick="navigator.clipboard.writeText('hayato.dev@gmail.com').then(()=>{ this.textContent='コピーしました ✓'; this.classList.add('copied'); setTimeout(()=>{ this.textContent='khaya0026@gmail.com'; this.classList.remove('copied'); },2000); })"
-          class="text-xs text-blue-400 hover:text-blue-300 transition-all font-mono border border-blue-400/20 rounded-lg px-3 py-1.5 hover:border-blue-400/40">
+          onclick="navigator.clipboard.writeText('khaya0026@gmail.com').then(()=>{ this.textContent='コピーしました ✓'; this.style.color='#4ade80'; setTimeout(()=>{ this.textContent='khaya0026@gmail.com'; this.style.color=''; },2000); })"
+          class="text-xs text-blue-400 hover:text-blue-300 transition-all font-mono border border-blue-400/25 rounded-lg px-3 py-2 hover:border-blue-400/50">
           khaya0026@gmail.com
         </button>
       </div>
 
       <!-- Coconala -->
-      <div class="card p-6 flex flex-col items-center gap-3 text-center">
-        <div class="w-11 h-11 rounded-xl flex items-center justify-center text-xl" style="background:rgba(251,146,60,.1);">🥥</div>
-        <p class="font-semibold text-sm">ココナラで相談</p>
-        <p class="text-slate-500 text-xs">安心の第三者決済</p>
+      <div class="card p-7 flex flex-col items-center gap-3 text-center">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl" style="background:rgba(251,146,60,.12);">🥥</div>
+        <p class="font-bold text-base text-white">ココナラで相談</p>
+        <p class="text-slate-400 text-xs">安心の第三者決済</p>
         <a href="https://coconala.com" target="_blank" rel="noopener"
-           class="text-xs text-orange-400 hover:text-orange-300 transition-colors border border-orange-400/20 rounded-lg px-3 py-1.5 hover:border-orange-400/40">
+           class="text-xs text-orange-400 hover:text-orange-300 transition-colors border border-orange-400/25 rounded-lg px-3 py-2 hover:border-orange-400/50">
           ページを見る →
         </a>
       </div>
     </div>
 
-    <!-- Reassurance points -->
-    <div class="rv d3 flex flex-wrap justify-center gap-4 text-xs text-slate-600">
+    <div class="rv d4 flex flex-wrap justify-center gap-5 text-sm text-slate-400">
       <span class="flex items-center gap-1.5"><span class="text-green-400">✓</span> 相談・見積もり無料</span>
       <span class="flex items-center gap-1.5"><span class="text-green-400">✓</span> 返信1営業日以内</span>
       <span class="flex items-center gap-1.5"><span class="text-green-400">✓</span> 依頼しなくてもOK</span>
@@ -597,42 +683,59 @@
 
 
 <!-- FOOTER -->
-<footer class="border-t border-white/5 py-10 px-5">
-  <div class="max-w-5xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+<footer class="border-t border-white/[.07] py-10 px-5">
+  <div class="max-w-5xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-5">
     <div class="flex items-center gap-2.5">
-      <div class="w-6 h-6 rounded-md bg-gradient-to-br from-blue-500 to-violet-600 flex items-center justify-center font-black text-[10px]">H</div>
-      <span class="font-bold text-sm">Hayato</span>
+      <div class="w-6 h-6 rounded-md bg-gradient-to-br from-blue-500 to-violet-600 flex items-center justify-center font-black text-[10px] text-white">H</div>
+      <span class="font-bold text-sm text-white">Hayato</span>
       <span class="text-slate-600 text-xs">/ Web制作フリーランス</span>
     </div>
-    <div class="flex gap-6 text-xs text-slate-600">
-      <a href="#services" class="hover:text-slate-400 transition-colors">できること</a>
-      <a href="#works"    class="hover:text-slate-400 transition-colors">実績</a>
-      <a href="#pricing"  class="hover:text-slate-400 transition-colors">料金</a>
-      <a href="#contact"  class="hover:text-slate-400 transition-colors">お問い合わせ</a>
-    </div>
+    <nav class="flex gap-7 text-sm text-slate-500">
+      <a href="#services" class="hover:text-slate-300 transition-colors">できること</a>
+      <a href="#works"    class="hover:text-slate-300 transition-colors">実績</a>
+      <a href="#process"  class="hover:text-slate-300 transition-colors">制作の流れ</a>
+      <a href="#contact"  class="hover:text-slate-300 transition-colors">お問い合わせ</a>
+    </nav>
     <p class="text-xs text-slate-700">© 2025 Hayato. All rights reserved.</p>
   </div>
 </footer>
 
 
 <script>
-/* Header */
+/* ── Header scroll ── */
 const hdr = document.getElementById('hdr');
 window.addEventListener('scroll', () => hdr.classList.toggle('on', window.scrollY > 20), { passive: true });
 
-/* Scroll reveal */
-const ro = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); } });
+/* ── Scroll reveal ── */
+const ro = new IntersectionObserver(es => {
+  es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); } });
 }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
 document.querySelectorAll('.rv').forEach(el => ro.observe(el));
 
-/* Blob parallax */
+/* ── Blob mouse parallax ── */
 window.addEventListener('mousemove', e => {
-  const x = (e.clientX / innerWidth  - 0.5) * 20;
-  const y = (e.clientY / innerHeight - 0.5) * 20;
+  const x = (e.clientX / innerWidth  - 0.5) * 22;
+  const y = (e.clientY / innerHeight - 0.5) * 22;
   document.querySelectorAll('.b1').forEach(b => b.style.transform = `translate(${x}px,${y}px)`);
-  document.querySelectorAll('.b2').forEach(b => b.style.transform = `translate(${-x*.6}px,${-y*.6}px)`);
+  document.querySelectorAll('.b2').forEach(b => b.style.transform = `translate(${-x*.65}px,${-y*.65}px)`);
+  document.querySelectorAll('.b3').forEach(b => b.style.transform = `translate(${x*.4}px,${-y*.4}px)`);
 }, { passive: true });
+
+/* ── Hero card 3D mouse tilt ── */
+const heroCard = document.getElementById('hero-card');
+if (heroCard) {
+  heroCard.addEventListener('mousemove', e => {
+    const r = heroCard.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width  - 0.5;
+    const y = (e.clientY - r.top)  / r.height - 0.5;
+    heroCard.style.animation = 'none';
+    heroCard.style.transform = `perspective(1100px) rotateX(${-y * 14}deg) rotateY(${x * 14}deg) translateY(-8px) scale(1.02)`;
+  });
+  heroCard.addEventListener('mouseleave', () => {
+    heroCard.style.transform = '';
+    heroCard.style.animation = '';
+  });
+}
 </script>
 </body>
 </html>
