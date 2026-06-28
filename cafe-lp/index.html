@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>Cafe Aroma | 福岡・こだわりのスペシャルティコーヒー</title>
+  <meta name="description" content="福岡のカフェ Cafe Aroma。一杯のコーヒーで、特別な時間を。自家焙煎スペシャルティコーヒーと手作りスイーツ。Wi-Fi・電源完備。">
+  <meta name="keywords" content="カフェ,福岡,スペシャルティコーヒー,自家焙煎,Wi-Fi,コンセント,作業カフェ">
+  <meta name="author" content="Cafe Aroma">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#6b4f4f">
+  <link rel="canonical" href="https://cafe-aroma.jp">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>">
+
+  <!-- OGP -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cafe-aroma.jp">
+  <meta property="og:title" content="Cafe Aroma | 福岡・こだわりのスペシャルティコーヒー">
+  <meta property="og:description" content="一杯のコーヒーで、特別な時間を。福岡の自家焙煎スペシャルティコーヒー専門店。">
+  <meta property="og:image" content="https://cafe-aroma.jp/images/og.jpg">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:site_name" content="Cafe Aroma">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cafe Aroma | 福岡・スペシャルティコーヒー">
+  <meta name="twitter:description" content="一杯のコーヒーで、特別な時間を。福岡の自家焙煎カフェ。">
+  <meta name="twitter:image" content="https://cafe-aroma.jp/images/og.jpg">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CafeOrCoffeeShop",
+    "name": "Cafe Aroma",
+    "description": "福岡の自家焙煎スペシャルティコーヒー専門店。手作りスイーツ、Wi-Fi・電源完備。",
+    "url": "https://cafe-aroma.jp",
+    "telephone": "+81-92-000-0000",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "大名2丁目1-1",
+      "addressLocality": "福岡市中央区",
+      "addressRegion": "福岡県",
+      "postalCode": "810-0041",
+      "addressCountry": "JP"
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "21:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday","Sunday"], "opens": "09:00", "closes": "22:00" }
+    ],
+    "servesCuisine": ["Coffee","Sweets"],
+    "priceRange": "¥¥",
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "96" },
+    "amenityFeature": [
+      { "@type": "LocationFeatureSpecification", "name": "Wi-Fi", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "電源コンセント", "value": true }
+    ]
+  }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bg:     '#f5f3ef',
+            accent: '#6b4f4f',
+            sub:    '#c9b49a',
+            dark:   '#2c1f1f',
+            light:  '#ede8e0',
+            muted:  '#9b8776',
+          },
+          fontFamily: {
+            sans:  ['"Noto Sans JP"', 'sans-serif'],
+            serif: ['"Cormorant Garamond"', '"Noto Serif JP"', 'serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root {
+      --bg:     #f5f3ef;
+      --accent: #6b4f4f;
+      --sub:    #c9b49a;
+      --dark:   #2c1f1f;
+      --light:  #ede8e0;
+      --muted:  #9b8776;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--dark); font-family: 'Noto Sans JP', sans-serif; }
+    .skip-link {
+      position: absolute; left: 16px; top: -48px; z-index: 1000;
+      background: var(--accent); color: #fff; padding: 10px 14px; border-radius: 2px;
+      text-decoration: none; font-size: 13px; transition: top .2s ease;
+    }
+    .skip-link:focus { top: 16px; outline: 2px solid #fff; outline-offset: 2px; }
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+      outline: 2px solid var(--accent); outline-offset: 2px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+    }
+
+    /* ── Reveal ── */
+    .reveal { opacity: 0; transform: translateY(32px); transition: opacity .75s ease, transform .75s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    .reveal-delay-1 { transition-delay: .1s; }
+    .reveal-delay-2 { transition-delay: .22s; }
+    .reveal-delay-3 { transition-delay: .34s; }
+    .reveal-delay-4 { transition-delay: .46s; }
+
+    /* ── Navbar ── */
+    #navbar { transition: background .35s, box-shadow .35s; }
+    #navbar.scrolled { background: rgba(245,243,239,.96); backdrop-filter: blur(14px); box-shadow: 0 2px 24px rgba(107,79,79,.1); }
+
+    /* ── Labels ── */
+    .en-label { font-family: 'Cormorant Garamond', serif; color: var(--muted); font-size: 13px; letter-spacing: .3em; font-style: italic; }
+    .section-heading { font-family: 'Cormorant Garamond', serif; color: var(--dark); line-height: 1.2; }
+    .divider { width: 40px; height: 1.5px; background: var(--accent); margin: 14px auto 0; }
+
+    /* ── Buttons ── */
+    .btn-primary {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      background: var(--accent); color: #fff; padding: 14px 34px; border-radius: 2px;
+      font-size: 13px; font-weight: 500; letter-spacing: .1em; text-decoration: none;
+      transition: background .25s, transform .25s, box-shadow .25s;
+    }
+    .btn-primary:hover { background: var(--dark); transform: translateY(-2px); box-shadow: 0 10px 28px rgba(107,79,79,.3); }
+    .btn-outline {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      border: 1.5px solid var(--accent); color: var(--accent); padding: 13px 30px; border-radius: 2px;
+      font-size: 13px; font-weight: 500; letter-spacing: .1em; text-decoration: none;
+      transition: background .25s, color .25s, transform .25s; background: transparent;
+    }
+    .btn-outline:hover { background: var(--accent); color: #fff; transform: translateY(-2px); }
+
+    /* ── Cards ── */
+    .card { transition: transform .3s ease, box-shadow .3s ease; }
+    .card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(107,79,79,.14); }
+
+    /* ── Hero ── */
+    #hero { position: relative; min-height: 100vh; min-height: 100svh; display: flex; align-items: center; overflow: hidden; }
+    .hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transform-origin: center; animation: heroZoom 12s ease-in-out infinite alternate; }
+    @keyframes heroZoom { from { transform: scale(1); } to { transform: scale(1.06); } }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(160deg, rgba(44,31,31,.65) 0%, rgba(44,31,31,.35) 60%, rgba(107,79,79,.2) 100%); }
+    @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(10px)} }
+    .scroll-bounce { animation: bounce 2.2s ease-in-out infinite; }
+
+    /* ── Gallery ── */
+    .gallery-item { position: relative; overflow: hidden; border-radius: 2px; }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
+    .gallery-item:hover img { transform: scale(1.06); }
+
+    /* ── Menu tabs ── */
+    .tab-btn { padding: 10px 24px; border-radius: 2px; font-size: 13px; font-weight: 500; letter-spacing: .08em; cursor: pointer; transition: background .2s, color .2s; border: 1.5px solid var(--sub); color: var(--muted); background: transparent; }
+    .tab-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+    /* ── Form ── */
+    .form-field { width: 100%; padding: 13px 16px; border: 1.5px solid var(--sub); border-radius: 2px; background: #fff; color: var(--dark); font-family: 'Noto Sans JP', sans-serif; font-size: 14px; outline: none; transition: border-color .2s, box-shadow .2s; }
+    .form-field:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(107,79,79,.1); }
+    .form-field.is-error { border-color: #e53e3e; }
+    .err-msg { color: #e53e3e; font-size: 11px; margin-top: 3px; display: none; }
+    .err-msg.show { display: block; }
+
+    /* ── Chat widget ── */
+    #chat-bubble { position: absolute; bottom: 72px; right: 0; width: 300px; border-radius: 4px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,.16); display: none; }
+    #chat-bubble.open { display: block; animation: slideUp .3s ease; }
+    @keyframes slideUp { from{opacity:0;transform:translateY(14px)} to{opacity:1;transform:none} }
+    #chat-messages { height: 260px; overflow-y: auto; padding: 16px; background: #f9f6f2; scrollbar-width: thin; scrollbar-color: var(--sub) transparent; }
+    .msg-bot { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 10px; }
+    .msg-bot-avatar { width: 28px; height: 28px; border-radius: 50%; background: var(--accent); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; flex-shrink: 0; }
+    .msg-bot-text { background: #fff; border-radius: 12px; border-top-left-radius: 3px; padding: 8px 12px; font-size: 12px; color: var(--dark); max-width: 210px; line-height: 1.7; box-shadow: 0 1px 4px rgba(0,0,0,.05); }
+    .msg-user { display: flex; justify-content: flex-end; margin-bottom: 10px; }
+    .msg-user-text { background: var(--accent); border-radius: 12px; border-top-right-radius: 3px; padding: 8px 12px; font-size: 12px; color: #fff; max-width: 210px; line-height: 1.7; }
+
+    /* ── Misc ── */
+    .star { color: #d4a847; }
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--sub); border-radius: 2px; }
+    .mobile-nav { display: none; flex-direction: column; }
+    .mobile-nav.open { display: flex; }
+    @media(max-width:767px){ .hero-title{font-size:clamp(2.4rem,10vw,3.4rem)!important} }
+  </style>
+</head>
+<body class="antialiased">
+  <a href="#main-content" class="skip-link">本文へスキップ</a>
+
+  <!-- ═══════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════ -->
+  <nav id="navbar" class="fixed top-0 inset-x-0 z-50 py-5 px-6 md:px-12">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <a href="#hero" class="flex flex-col leading-none" aria-label="Cafe Aroma トップへ">
+        <span class="font-serif text-2xl font-bold tracking-widest text-white drop-shadow" id="nav-logo">Cafe Aroma</span>
+        <span class="text-xs tracking-[.3em] text-white/60 font-light" id="nav-sub">SPECIALTY COFFEE</span>
+      </a>
+
+      <ul class="hidden md:flex items-center gap-8 text-xs font-medium tracking-widest uppercase text-white/85" id="nav-links">
+        <li><a href="#about"   class="hover:text-sub transition-colors duration-200">About</a></li>
+        <li><a href="#menu"    class="hover:text-sub transition-colors duration-200">Menu</a></li>
+        <li><a href="#gallery" class="hover:text-sub transition-colors duration-200">Gallery</a></li>
+        <li><a href="#access"  class="hover:text-sub transition-colors duration-200">Access</a></li>
+        <li><a href="#contact" class="btn-primary !py-2.5 !px-5 text-xs">予約・お問い合わせ</a></li>
+      </ul>
+
+      <button type="button" id="menu-btn" aria-label="メニューを開く" class="md:hidden flex flex-col gap-1.5 p-2">
+        <span class="block w-6 h-px bg-white transition-all" id="ham-1"></span>
+        <span class="block w-6 h-px bg-white transition-all" id="ham-2"></span>
+        <span class="block w-4 h-px bg-white transition-all" id="ham-3"></span>
+      </button>
+    </div>
+
+    <div id="mobile-nav" class="mobile-nav md:hidden bg-bg/98 backdrop-blur-sm mt-4 rounded overflow-hidden shadow-xl">
+      <a href="#about"   onclick="closeMobileNav()" class="block px-6 py-4 text-dark border-b border-sub/20 hover:bg-light transition-colors text-sm tracking-widest">ABOUT</a>
+      <a href="#menu"    onclick="closeMobileNav()" class="block px-6 py-4 text-dark border-b border-sub/20 hover:bg-light transition-colors text-sm tracking-widest">MENU</a>
+      <a href="#gallery" onclick="closeMobileNav()" class="block px-6 py-4 text-dark border-b border-sub/20 hover:bg-light transition-colors text-sm tracking-widest">GALLERY</a>
+      <a href="#access"  onclick="closeMobileNav()" class="block px-6 py-4 text-dark border-b border-sub/20 hover:bg-light transition-colors text-sm tracking-widest">ACCESS</a>
+      <a href="#contact" onclick="closeMobileNav()" class="block px-6 py-4 text-accent font-semibold hover:bg-light transition-colors text-sm">予約・お問い合わせ →</a>
+    </div>
+  </nav>
+
+  <main id="main-content">
+  <!-- ═══════════════════════════════════
+       1. HERO
+  ═══════════════════════════════════ -->
+  <section id="hero" aria-label="ヒーロー">
+    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1920&q=80"
+         alt="Cafe Aromaの店内" class="hero-img" loading="eager" fetchpriority="high">
+    <div class="hero-overlay"></div>
+
+    <div class="relative z-10 w-full px-6 md:px-12 max-w-3xl mx-auto text-center">
+      <p class="en-label text-white/60 reveal visible mb-5 tracking-[.35em]">SPECIALTY COFFEE · FUKUOKA</p>
+      <h1 class="hero-title font-serif font-bold text-white leading-tight reveal visible mb-6"
+          style="font-size:clamp(2.8rem,6vw,5rem); text-shadow: 0 2px 30px rgba(0,0,0,.3);">
+        一杯のコーヒーで、<br>特別な時間を。
+      </h1>
+      <p class="text-white/70 text-sm md:text-base leading-relaxed max-w-md mx-auto reveal visible mb-10">
+        自家焙煎スペシャルティコーヒーと<br class="hidden md:block">丁寧に作ったスイーツで、<br>あなたのための時間を届けます。
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center reveal visible">
+        <a href="#contact" class="btn-primary">ご予約はこちら</a>
+        <a href="#menu" class="btn-outline !text-white !border-white/70 hover:!bg-white hover:!text-dark">メニューを見る</a>
+      </div>
+    </div>
+
+    <div class="absolute bottom-10 inset-x-0 flex flex-col items-center gap-2 z-10 scroll-bounce">
+      <span class="text-white/50 text-xs tracking-[.3em]">SCROLL</span>
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+        <path d="M9 3v12M3 9l6 6 6-6" stroke="rgba(255,255,255,.5)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       2. ABOUT / CONCEPT
+  ═══════════════════════════════════ -->
+  <section id="about" class="py-28 px-6 md:px-12 bg-bg" aria-label="Cafe Aromaについて">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-14 items-center">
+      <div class="reveal">
+        <div class="gallery-item" style="aspect-ratio:4/3;">
+          <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=80"
+               alt="Cafe Aroma 店内の様子" loading="lazy">
+        </div>
+      </div>
+      <div>
+        <p class="en-label reveal">Our Concept</p>
+        <h2 class="section-heading text-4xl md:text-5xl font-bold mt-3 mb-6 reveal reveal-delay-1">香りと共に、<br>日常に寄り添う。</h2>
+        <div class="w-10 h-px bg-accent mb-8 reveal reveal-delay-1"></div>
+        <p class="text-dark/70 text-sm leading-[2] reveal reveal-delay-2">
+          Cafe Aromaは、コーヒーの香りが持つ力を信じています。忙しい毎日の中で、ふと立ち止まり、深く息を吸い込む—そんな瞬間をお届けしたい。
+        </p>
+        <p class="text-dark/70 text-sm leading-[2] mt-4 reveal reveal-delay-3">
+          世界各地から厳選した生豆を、毎朝店内で丁寧に焙煎。一杯に宿る個性と香りを、そのままあなたのカップへ。
+        </p>
+        <div class="flex gap-8 mt-10 reveal reveal-delay-4">
+          <div class="text-center">
+            <p class="font-serif text-4xl font-bold text-accent">12<span class="text-xl">年</span></p>
+            <p class="text-xs text-muted mt-1 tracking-widest">創業</p>
+          </div>
+          <div class="w-px bg-sub/40"></div>
+          <div class="text-center">
+            <p class="font-serif text-4xl font-bold text-accent">8<span class="text-xl">種</span></p>
+            <p class="text-xs text-muted mt-1 tracking-widest">シングルオリジン</p>
+          </div>
+          <div class="w-px bg-sub/40"></div>
+          <div class="text-center">
+            <p class="font-serif text-4xl font-bold text-accent">4.9<span class="text-xl">★</span></p>
+            <p class="text-xs text-muted mt-1 tracking-widest">平均評価</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       3. FEATURES
+  ═══════════════════════════════════ -->
+  <section id="features" class="py-24 px-6 md:px-12" style="background:var(--light);" aria-label="特徴">
+    <div class="max-w-5xl mx-auto text-center mb-16">
+      <p class="en-label reveal">Why Aroma</p>
+      <h2 class="section-heading text-3xl md:text-4xl font-bold mt-3 reveal reveal-delay-1">選ばれる理由</h2>
+      <div class="divider reveal reveal-delay-2"></div>
+    </div>
+
+    <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-8">
+      <article class="card bg-white p-8 text-center reveal reveal-delay-1" style="border-radius:2px;">
+        <div class="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-5" style="background:var(--light);" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <ellipse cx="14" cy="20" rx="9" ry="3.5" fill="#c9b49a"/>
+            <path d="M7 16c0-3.9 3.1-7 7-7s7 3.1 7 7" stroke="#6b4f4f" stroke-width="1.8" stroke-linecap="round"/>
+            <circle cx="14" cy="9" r="2" fill="#6b4f4f"/>
+            <path d="M19 10.5c1.8-.2 3.5-1.2 3.5-2.8S21 5 19 5" stroke="#6b4f4f" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="font-serif text-xl font-bold text-dark mb-3">自家焙煎コーヒー</h3>
+        <p class="text-sm text-dark/65 leading-relaxed">産地・品種にこだわった生豆を毎朝焙煎。豆本来の香りと個性を最大限に引き出した一杯を提供します。</p>
+      </article>
+
+      <article class="card bg-white p-8 text-center reveal reveal-delay-2" style="border-radius:2px;">
+        <div class="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-5" style="background:var(--light);" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <rect x="5" y="14" width="18" height="9" rx="2.5" fill="#c9b49a"/>
+            <path d="M9 14V9a5 5 0 0110 0v5" stroke="#6b4f4f" stroke-width="1.8"/>
+            <circle cx="14" cy="9" r="2.5" fill="#6b4f4f"/>
+          </svg>
+        </div>
+        <h3 class="font-serif text-xl font-bold text-dark mb-3">手作りスイーツ</h3>
+        <p class="text-sm text-dark/65 leading-relaxed">毎日仕込む手作りのスイーツは、旬の素材を使い、コーヒーとのペアリングを追求したラインナップ。</p>
+      </article>
+
+      <article class="card bg-white p-8 text-center reveal reveal-delay-3" style="border-radius:2px;">
+        <div class="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-5" style="background:var(--light);" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <rect x="4" y="7" width="20" height="14" rx="2.5" stroke="#6b4f4f" stroke-width="1.8" fill="#c9b49a"/>
+            <rect x="8" y="11" width="12" height="7" rx="1" fill="#fff"/>
+            <circle cx="22" cy="18" r="4.5" fill="#2c1f1f"/>
+            <path d="M20.5 18h1.5v-1.5" stroke="#c9b49a" stroke-width="1.1" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="font-serif text-xl font-bold text-dark mb-3">快適な作業空間</h3>
+        <p class="text-sm text-dark/65 leading-relaxed">全席Wi-Fi・コンセント完備。落ち着いたBGMと照明で、仕事も読書も心地よくはかどります。</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       4. MENU
+  ═══════════════════════════════════ -->
+  <section id="menu" class="py-28 px-6 md:px-12 bg-bg" aria-label="メニュー">
+    <div class="max-w-5xl mx-auto text-center mb-16">
+      <p class="en-label reveal">Our Menu</p>
+      <h2 class="section-heading text-3xl md:text-4xl font-bold mt-3 reveal reveal-delay-1">メニュー</h2>
+      <div class="divider reveal reveal-delay-2"></div>
+    </div>
+
+    <!-- Tab buttons -->
+    <div class="flex justify-center gap-3 mb-10 reveal">
+      <button class="tab-btn active" data-tab="coffee" onclick="switchTab('coffee', this)">コーヒー</button>
+      <button class="tab-btn" data-tab="sweets" onclick="switchTab('sweets', this)">スイーツ</button>
+      <button class="tab-btn" data-tab="other" onclick="switchTab('other', this)">その他</button>
+    </div>
+
+    <!-- Coffee -->
+    <div id="tab-coffee" class="max-w-5xl mx-auto grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <article class="card bg-white overflow-hidden reveal reveal-delay-1" style="border-radius:2px;">
+        <div class="gallery-item" style="aspect-ratio:4/3;">
+          <img src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&w=600&q=80" alt="ハウスブレンド" loading="lazy">
+        </div>
+        <div class="p-5">
+          <span class="text-xs text-accent font-bold tracking-widest">BLEND</span>
+          <h3 class="font-serif text-lg font-bold text-dark mt-1 mb-2">ハウスブレンド</h3>
+          <p class="text-xs text-dark/60 leading-relaxed mb-3">甘みと酸味のバランスが絶妙な定番。毎朝焙煎したての豆を使用。</p>
+          <p class="text-accent font-bold text-lg">¥550</p>
+        </div>
+      </article>
+
+      <article class="card bg-white overflow-hidden reveal reveal-delay-2" style="border-radius:2px;">
+        <div class="gallery-item" style="aspect-ratio:4/3;">
+          <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=600&q=80" alt="カフェラテ" loading="lazy">
+        </div>
+        <div class="p-5">
+          <span class="text-xs text-accent font-bold tracking-widest">LATTE</span>
+          <h3 class="font-serif text-lg font-bold text-dark mt-1 mb-2">アロマ カフェラテ</h3>
+          <p class="text-xs text-dark/60 leading-relaxed mb-3">クリーミーな泡立てミルクと自家焙煎エスプレッソが溶け合う一杯。</p>
+          <p class="text-accent font-bold text-lg">¥650</p>
+        </div>
+      </article>
+
+      <article class="card bg-white overflow-hidden reveal reveal-delay-3" style="border-radius:2px;">
+        <div class="gallery-item" style="aspect-ratio:4/3;">
+          <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=80" alt="シングルオリジン" loading="lazy">
+        </div>
+        <div class="p-5">
+          <span class="text-xs text-accent font-bold tracking-widest">SINGLE ORIGIN</span>
+          <h3 class="font-serif text-lg font-bold text-dark mt-1 mb-2">エチオピア ナチュラル</h3>
+          <p class="text-xs text-dark/60 leading-relaxed mb-3">ブルーベリーを思わせる果実感。花のような上品な香りが特徴。</p>
+          <p class="text-accent font-bold text-lg">¥720</p>
+        </div>
+      </article>
+
+      <article class="card bg-white overflow-hidden reveal reveal-delay-1" style="border-radius:2px;">
+        <div class="gallery-item" style="aspect-ratio:4/3;">
+          <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80" alt="アイスコーヒー" loading="lazy">
+        </div>
+        <div class="p-5">
+          <span class="text-xs text-accent font-bold tracking-widest">ICE</span>
+          <h3 class="font-serif text-lg font-bold text-dark mt-1 mb-2">アイスコーヒー</h3>
+          <p class="text-xs text-dark/60 leading-relaxed mb-3">水出し12時間。まろやかな甘みとクリアな後味。</p>
+          <p class="text-accent font-bold text-lg">¥580</p>
+        </div>
+      </article>
+
+      <article class="card bg-white overflow-hidden reveal reveal-delay-2" style="border-radius:2px;">
+        <div class="gallery-item" style="aspect-ratio:4/3;">
+          <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=600&q=80" alt="カプチーノ" loading="lazy">
+        </div>
+        <div class="p-5">
+          <span class="text-xs text-accent font-bold tracking-widest">CAPPUCCINO</span>
+          <h3 class="font-serif text-lg font-bold text-dark mt-1 mb-2">カプチーノ</h3>
+          <p class="text-xs text-dark/60 leading-relaxed mb-3">きめ細かいフォームミルクとエスプレッソの黄金比。</p>
+          <p class="text-accent font-bold text-lg">¥620</p>
+        </div>
+      </article>
+
+      <article class="card bg-white overflow-hidden reveal reveal-delay-3" style="border-radius:2px;">
+        <div class="gallery-item" style="aspect-ratio:4/3;">
+          <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80" alt="コロンビア" loading="lazy">
+        </div>
+        <div class="p-5">
+          <span class="text-xs text-accent font-bold tracking-widest">SINGLE ORIGIN</span>
+          <h3 class="font-serif text-lg font-bold text-dark mt-1 mb-2">コロンビア スプレモ</h3>
+          <p class="text-xs text-dark/60 leading-relaxed mb-3">チョコレートのような甘さとキャラメルのコク。バランスが秀逸。</p>
+          <p class="text-accent font-bold text-lg">¥700</p>
+        </div>
+      </article>
+    </div>
+
+    <!-- Sweets -->
+    <div id="tab-sweets" class="max-w-5xl mx-auto grid sm:grid-cols-2 md:grid-cols-3 gap-6 hidden">
+      <article class="card bg-white overflow-hidden reveal reveal-delay-1" style="border-radius:2px;">
+        <div class="gallery-item" style="aspect-ratio:4/3;">
+          <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=600&q=80" alt="バスクチーズケーキ" loading="lazy">
+        </div>
+        <div class="p-5">
+          <span class="text-xs text-accent font-bold tracking-widest">CAKE</span>
+          <h3 class="font-serif text-lg font-bold text-dark mt-1 mb-2">バスクチーズケーキ</h3>
+          <p class="text-xs text-dark/60 leading-relaxed mb-3">毎朝仕込む濃厚チーズケーキ。とろける食感と香ばしい表面が絶品。</p>
+          <p class="text-accent font-bold text-lg">¥580</p>
+        </div>
+      </article>
+
+      <article class="card bg-white overflow-hidden reveal reveal-delay-2" style="border-radius:2px;">
+        <div class="gallery-item" style="aspect-ratio:4/3;">
+          <img src="https://images.unsplash.com/photo-1519915028121-7d3463d20b13?auto=format&fit=crop&w=600&q=80" alt="季節のタルト" loading="lazy">
+        </div>
+        <div class="p-5">
+          <span class="text-xs text-accent font-bold tracking-widest">TART</span>
+          <h3 class="font-serif text-lg font-bold text-dark mt-1 mb-2">季節のフルーツタルト</h3>
+          <p class="text-xs text-dark/60 leading-relaxed mb-3">旬のフルーツをたっぷり使った彩り豊かなタルト。見た目も華やか。</p>
+          <p class="text-accent font-bold text-lg">¥620</p>
+        </div>
+      </article>
+
+      <article class="card bg-white overflow-hidden reveal reveal-delay-3" style="border-radius:2px;">
+        <div class="gallery-item" style="aspect-ratio:4/3;">
+          <img src="https://images.unsplash.com/photo-1558303539-4b4bc4fc20aa?auto=format&fit=crop&w=600&q=80" alt="スコーン" loading="lazy">
+        </div>
+        <div class="p-5">
+          <span class="text-xs text-accent font-bold tracking-widest">SCONE</span>
+          <h3 class="font-serif text-lg font-bold text-dark mt-1 mb-2">スコーン &amp; クロテッドクリーム</h3>
+          <p class="text-xs text-dark/60 leading-relaxed mb-3">英国伝統レシピで焼き上げた香ばしいスコーン。コーヒーとの相性◎</p>
+          <p class="text-accent font-bold text-lg">¥480</p>
+        </div>
+      </article>
+    </div>
+
+    <!-- Other -->
+    <div id="tab-other" class="max-w-5xl mx-auto grid sm:grid-cols-2 md:grid-cols-3 gap-6 hidden">
+      <article class="card bg-white overflow-hidden reveal reveal-delay-1" style="border-radius:2px;">
+        <div class="gallery-item" style="aspect-ratio:4/3;">
+          <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=600&q=80" alt="ハーブティー" loading="lazy">
+        </div>
+        <div class="p-5">
+          <span class="text-xs text-accent font-bold tracking-widest">TEA</span>
+          <h3 class="font-serif text-lg font-bold text-dark mt-1 mb-2">オーガニック ハーブティー</h3>
+          <p class="text-xs text-dark/60 leading-relaxed mb-3">カフェインフリー。ラベンダー・カモミールなど日替わりで提供。</p>
+          <p class="text-accent font-bold text-lg">¥520</p>
+        </div>
+      </article>
+
+      <article class="card bg-white overflow-hidden reveal reveal-delay-2" style="border-radius:2px;">
+        <div class="gallery-item" style="aspect-ratio:4/3;">
+          <img src="https://images.unsplash.com/photo-1638176067000-9b8b8c4eb3a5?auto=format&fit=crop&w=600&q=80" alt="レモネード" loading="lazy">
+        </div>
+        <div class="p-5">
+          <span class="text-xs text-accent font-bold tracking-widest">DRINK</span>
+          <h3 class="font-serif text-lg font-bold text-dark mt-1 mb-2">自家製レモネード</h3>
+          <p class="text-xs text-dark/60 leading-relaxed mb-3">国産レモンを丁寧に絞った爽やかな一杯。炭酸・ノン炭酸選べます。</p>
+          <p class="text-accent font-bold text-lg">¥550</p>
+        </div>
+      </article>
+
+      <article class="card bg-white overflow-hidden reveal reveal-delay-3" style="border-radius:2px;">
+        <div class="gallery-item" style="aspect-ratio:4/3;">
+          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80" alt="モーニングセット" loading="lazy">
+        </div>
+        <div class="p-5">
+          <span class="text-xs text-accent font-bold tracking-widest">MORNING</span>
+          <h3 class="font-serif text-lg font-bold text-dark mt-1 mb-2">モーニングセット</h3>
+          <p class="text-xs text-dark/60 leading-relaxed mb-3">8:00〜10:00限定。トースト＋サラダ＋ドリンク付き。</p>
+          <p class="text-accent font-bold text-lg">¥750</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="text-center mt-14 reveal">
+      <a href="#contact" class="btn-outline">全メニューを見る →</a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       5. TODAY'S SPECIAL
+  ═══════════════════════════════════ -->
+  <section id="special" class="py-28 px-6 md:px-12" style="background:var(--dark);" aria-label="本日のおすすめ">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <div class="gallery-item rounded-none reveal" style="aspect-ratio:4/3;">
+        <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=900&q=80"
+             alt="本日のおすすめ：ゲイシャ" loading="lazy" style="border-radius:2px;">
+      </div>
+      <div class="reveal reveal-delay-2">
+        <span class="inline-block text-xs font-bold tracking-[.2em] px-4 py-1.5 mb-5" style="background:var(--accent); color:#fff; border-radius:1px;">TODAY'S SPECIAL</span>
+        <h2 class="font-serif text-3xl md:text-4xl font-bold text-white mb-2 leading-snug">パナマ ゲイシャ<br><span class="text-sub text-xl font-normal">ウォッシュドプロセス</span></h2>
+        <p class="text-white/65 text-sm leading-relaxed mt-4 mb-6">
+          世界最高峰と称されるゲイシャ品種。ジャスミンティーのような華やかな香りと、桃を思わせる甘くフルーティーな後味。週に一度の限定入荷。
+        </p>
+        <div class="flex items-center gap-4 mb-8">
+          <p class="text-sub text-3xl font-serif font-bold">¥900</p>
+          <span class="text-white/40 text-xs border border-white/20 px-3 py-1 rounded-sm">数量限定</span>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="text-xs border border-white/20 text-white/60 px-4 py-1.5 rounded-sm">フルーティー</span>
+          <span class="text-xs border border-white/20 text-white/60 px-4 py-1.5 rounded-sm">甘み強め</span>
+          <span class="text-xs border border-white/20 text-white/60 px-4 py-1.5 rounded-sm">限定入荷</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       6. GALLERY
+  ═══════════════════════════════════ -->
+  <section id="gallery" class="py-28 px-6 md:px-12" style="background:var(--light);" aria-label="ギャラリー">
+    <div class="max-w-5xl mx-auto text-center mb-16">
+      <p class="en-label reveal">Photo Gallery</p>
+      <h2 class="section-heading text-3xl md:text-4xl font-bold mt-3 reveal reveal-delay-1">ギャラリー</h2>
+      <div class="divider reveal reveal-delay-2"></div>
+    </div>
+
+    <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-3 reveal">
+      <div class="gallery-item" style="aspect-ratio:4/3;">
+        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=700&q=80" alt="カフェ外観" loading="lazy">
+      </div>
+      <div class="gallery-item" style="aspect-ratio:4/3;">
+        <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=700&q=80" alt="ラテアート" loading="lazy">
+      </div>
+      <div class="gallery-item" style="aspect-ratio:4/3;">
+        <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=700&q=80" alt="焙煎風景" loading="lazy">
+      </div>
+      <div class="gallery-item" style="aspect-ratio:4/3;">
+        <img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=700&q=80" alt="テーブル席" loading="lazy">
+      </div>
+      <div class="gallery-item" style="aspect-ratio:4/3;">
+        <img src="https://images.unsplash.com/photo-1464979681340-bdd28a61699e?auto=format&fit=crop&w=700&q=80" alt="スイーツ" loading="lazy">
+      </div>
+      <div class="gallery-item" style="aspect-ratio:4/3;">
+        <img src="https://images.unsplash.com/photo-1453614512568-c4024d13c247?auto=format&fit=crop&w=700&q=80" alt="コーヒー豆" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       7. REVIEWS
+  ═══════════════════════════════════ -->
+  <section id="reviews" class="py-28 px-6 md:px-12 bg-bg" aria-label="お客様の声">
+    <div class="max-w-5xl mx-auto text-center mb-16">
+      <p class="en-label reveal">Customer Voice</p>
+      <h2 class="section-heading text-3xl md:text-4xl font-bold mt-3 reveal reveal-delay-1">お客様の声</h2>
+      <div class="divider reveal reveal-delay-2"></div>
+      <div class="flex items-center justify-center gap-2 mt-6 reveal reveal-delay-3">
+        <span class="star text-2xl">★★★★★</span>
+        <span class="font-serif font-bold text-dark text-2xl">4.9</span>
+        <span class="text-dark/40 text-sm">（96件の口コミ）</span>
+      </div>
+    </div>
+
+    <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-6">
+      <article class="card bg-white p-6 reveal reveal-delay-1" style="border-radius:2px;">
+        <span class="star text-sm">★★★★★</span>
+        <blockquote class="text-sm text-dark/70 leading-relaxed my-4">
+          "コーヒーの香りが入口から広がって、それだけで癒されます。バスクチーズケーキとのペアリングが最高。毎週通っています。"
+        </blockquote>
+        <footer class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full bg-light flex items-center justify-center text-accent font-bold text-sm">Y</div>
+          <div>
+            <p class="text-sm font-semibold text-dark">Yuki M.</p>
+            <time class="text-xs text-dark/40" datetime="2026-04">2026年4月</time>
+          </div>
+        </footer>
+      </article>
+
+      <article class="card bg-white p-6 reveal reveal-delay-2" style="border-radius:2px;">
+        <span class="star text-sm">★★★★★</span>
+        <blockquote class="text-sm text-dark/70 leading-relaxed my-4">
+          "フリーランスで頻繁に利用しています。Wi-Fiが速くて全席コンセントあり、静かで集中できます。コーヒーのクオリティも最高。"
+        </blockquote>
+        <footer class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full bg-light flex items-center justify-center text-accent font-bold text-sm">T</div>
+          <div>
+            <p class="text-sm font-semibold text-dark">Takashi K.</p>
+            <time class="text-xs text-dark/40" datetime="2026-03">2026年3月</time>
+          </div>
+        </footer>
+      </article>
+
+      <article class="card bg-white p-6 reveal reveal-delay-3" style="border-radius:2px;">
+        <span class="star text-sm">★★★★★</span>
+        <blockquote class="text-sm text-dark/70 leading-relaxed my-4">
+          "シングルオリジンのエチオピアが絶品！バリスタさんが丁寧に説明してくれて、コーヒーの奥深さを知るきっかけになりました。"
+        </blockquote>
+        <footer class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full bg-light flex items-center justify-center text-accent font-bold text-sm">H</div>
+          <div>
+            <p class="text-sm font-semibold text-dark">Hana S.</p>
+            <time class="text-xs text-dark/40" datetime="2026-02">2026年2月</time>
+          </div>
+        </footer>
+      </article>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       8. ACCESS
+  ═══════════════════════════════════ -->
+  <section id="access" class="py-28 px-6 md:px-12" style="background:var(--light);" aria-label="アクセス">
+    <div class="max-w-5xl mx-auto text-center mb-16">
+      <p class="en-label reveal">Access</p>
+      <h2 class="section-heading text-3xl md:text-4xl font-bold mt-3 reveal reveal-delay-1">アクセス</h2>
+      <div class="divider reveal reveal-delay-2"></div>
+    </div>
+
+    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-start">
+      <div class="reveal" style="aspect-ratio:4/3; background:linear-gradient(135deg,#ede8e0,#c9b49a); border-radius:2px; display:flex; align-items:center; justify-content:center;">
+        <div class="text-center p-8">
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" class="mx-auto mb-4" aria-hidden="true">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z" fill="#6b4f4f"/>
+          </svg>
+          <p class="text-dark font-semibold text-sm mb-1">福岡市中央区大名2丁目1-1</p>
+          <p class="text-dark/60 text-xs mb-5">地下鉄赤坂駅 徒歩3分</p>
+          <a href="https://maps.google.com/?q=福岡市中央区大名" target="_blank" rel="noopener noreferrer" class="btn-primary !py-2.5 !px-5 text-xs">
+            Google Mapで開く
+          </a>
+        </div>
+      </div>
+
+      <div class="space-y-4 reveal reveal-delay-2">
+        <div class="bg-white p-5" style="border-radius:2px;">
+          <h3 class="font-semibold text-dark mb-3 text-xs tracking-widest">営業時間</h3>
+          <ul class="space-y-2 text-sm">
+            <li class="flex justify-between"><span class="text-dark/60">平日（月〜金）</span><span class="font-medium">8:00 – 21:00</span></li>
+            <li class="flex justify-between"><span class="text-dark/60">土・日・祝</span><span class="font-medium">9:00 – 22:00</span></li>
+            <li class="flex justify-between"><span class="text-dark/60">定休日</span><span class="font-medium">なし（年末年始除く）</span></li>
+          </ul>
+        </div>
+
+        <div class="bg-white p-5" style="border-radius:2px;">
+          <h3 class="font-semibold text-dark mb-3 text-xs tracking-widest">店舗設備</h3>
+          <ul class="grid grid-cols-2 gap-y-2 gap-x-4 text-sm">
+            <li class="flex items-center gap-2"><span class="w-5 h-5 rounded-full bg-accent/15 flex items-center justify-center text-accent text-xs flex-shrink-0">✓</span>無料Wi-Fi</li>
+            <li class="flex items-center gap-2"><span class="w-5 h-5 rounded-full bg-accent/15 flex items-center justify-center text-accent text-xs flex-shrink-0">✓</span>全席電源完備</li>
+            <li class="flex items-center gap-2"><span class="w-5 h-5 rounded-full bg-accent/15 flex items-center justify-center text-accent text-xs flex-shrink-0">✓</span>禁煙</li>
+            <li class="flex items-center gap-2"><span class="w-5 h-5 rounded-full bg-accent/15 flex items-center justify-center text-accent text-xs flex-shrink-0">✓</span>テイクアウト可</li>
+            <li class="flex items-center gap-2"><span class="w-5 h-5 rounded-full bg-dark/10 flex items-center justify-center text-dark/35 text-xs flex-shrink-0">✗</span><span class="text-dark/50">専用駐車場</span></li>
+            <li class="flex items-center gap-2"><span class="w-5 h-5 rounded-full bg-accent/15 flex items-center justify-center text-accent text-xs flex-shrink-0">✓</span>近隣コインP</li>
+          </ul>
+        </div>
+
+        <div class="bg-white p-5" style="border-radius:2px;">
+          <h3 class="font-semibold text-dark mb-3 text-xs tracking-widest">連絡先</h3>
+          <ul class="space-y-1.5 text-sm text-dark/70">
+            <li>📍 福岡市中央区大名2丁目1-1</li>
+            <li>🚇 地下鉄空港線 赤坂駅 徒歩3分</li>
+            <li>🚌 西鉄バス 大名バス停 徒歩2分</li>
+            <li>📞 <a href="tel:0920000001" class="hover:text-accent transition-colors">092-000-0001</a></li>
+            <li>✉️ <a href="mailto:info@cafe-aroma.jp" class="hover:text-accent transition-colors">info@cafe-aroma.jp</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       9. CONTACT / RESERVATION
+  ═══════════════════════════════════ -->
+  <section id="contact" class="py-28 px-6 md:px-12 bg-bg" aria-label="予約・お問い合わせ">
+    <div class="max-w-2xl mx-auto text-center mb-14">
+      <p class="en-label reveal">Reservation &amp; Contact</p>
+      <h2 class="section-heading text-3xl md:text-4xl font-bold mt-3 reveal reveal-delay-1">予約・お問い合わせ</h2>
+      <div class="divider reveal reveal-delay-2"></div>
+      <p class="text-dark/55 text-sm mt-5 reveal reveal-delay-3">24時間オンラインでご予約いただけます。お気軽にどうぞ。</p>
+    </div>
+
+    <div class="max-w-2xl mx-auto reveal">
+      <div id="form-success" class="hidden mb-8 bg-accent/10 border border-accent/25 p-6 text-center" style="border-radius:2px;" role="status" aria-live="polite">
+        <div class="text-3xl mb-3">✉️</div>
+        <h3 class="font-serif text-xl font-bold text-dark mb-2">送信完了しました</h3>
+        <p class="text-sm text-dark/65">内容を確認の上、2営業日以内にご連絡いたします。</p>
+      </div>
+
+      <form id="contact-form" action="#" method="POST" novalidate class="bg-white p-8 md:p-10 space-y-5" style="border-radius:2px;">
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div>
+            <label for="name" class="block text-xs font-semibold text-dark/65 mb-1.5 tracking-wider">お名前 <span class="text-red-500">*</span></label>
+            <input type="text" id="name" name="name" required placeholder="山田 花子" class="form-field" autocomplete="name">
+            <p class="err-msg" id="name-error"></p>
+          </div>
+          <div>
+            <label for="phone" class="block text-xs font-semibold text-dark/65 mb-1.5 tracking-wider">電話番号 <span class="text-red-500">*</span></label>
+            <input type="tel" id="phone" name="phone" required placeholder="092-000-0000" class="form-field" autocomplete="tel">
+            <p class="err-msg" id="phone-error"></p>
+          </div>
+        </div>
+
+        <div>
+          <label for="email" class="block text-xs font-semibold text-dark/65 mb-1.5 tracking-wider">メールアドレス <span class="text-red-500">*</span></label>
+          <input type="email" id="email" name="email" required placeholder="example@email.com" class="form-field" autocomplete="email">
+          <p class="err-msg" id="email-error"></p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div>
+            <label for="visit-date" class="block text-xs font-semibold text-dark/65 mb-1.5 tracking-wider">ご来店日</label>
+            <input type="date" id="visit-date" name="visit_date" class="form-field">
+            <p class="err-msg" id="visit-date-error"></p>
+          </div>
+          <div>
+            <label for="visit-time" class="block text-xs font-semibold text-dark/65 mb-1.5 tracking-wider">ご来店時間</label>
+            <select id="visit-time" name="visit_time" class="form-field">
+              <option value="">選択してください</option>
+              <option>08:00〜10:00</option>
+              <option>10:00〜12:00</option>
+              <option>12:00〜14:00</option>
+              <option>14:00〜16:00</option>
+              <option>16:00〜18:00</option>
+              <option>18:00〜21:00</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div>
+            <label for="guests" class="block text-xs font-semibold text-dark/65 mb-1.5 tracking-wider">ご利用人数</label>
+            <select id="guests" name="guests" class="form-field">
+              <option value="">選択してください</option>
+              <option>1名</option>
+              <option>2名</option>
+              <option>3名</option>
+              <option>4名</option>
+              <option>5〜6名</option>
+              <option>7名以上</option>
+            </select>
+          </div>
+          <div>
+            <label for="purpose" class="block text-xs font-semibold text-dark/65 mb-1.5 tracking-wider">ご利用目的</label>
+            <select id="purpose" name="purpose" class="form-field">
+              <option value="">選択してください</option>
+              <option>作業・仕事</option>
+              <option>デート</option>
+              <option>読書・休憩</option>
+              <option>グループ利用</option>
+              <option>記念日</option>
+              <option>その他</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label for="message" class="block text-xs font-semibold text-dark/65 mb-1.5 tracking-wider">ご要望・ご質問</label>
+          <textarea id="message" name="message" rows="4" placeholder="アレルギー・ご要望などがあればお書きください" class="form-field resize-none"></textarea>
+        </div>
+
+        <button type="submit" id="submit-btn" class="btn-primary w-full justify-center">送信する</button>
+        <p class="text-xs text-center text-dark/35">ご入力いただいた情報はお問い合わせ対応のみに使用します。</p>
+      </form>
+
+      <div class="mt-6 flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="tel:0920000001" class="btn-outline flex items-center gap-2 justify-center">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          電話で予約
+        </a>
+        <a href="https://line.me/ti/p/@cafe_aroma" target="_blank" rel="noopener noreferrer" class="btn-primary flex items-center gap-2 justify-center" style="background:#06C755;">
+          LINE予約
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       10. FINAL CTA
+  ═══════════════════════════════════ -->
+  <section id="cta" class="py-32 px-6 md:px-12 text-center" style="background:linear-gradient(160deg,#1e1010 0%,#2c1f1f 50%,#4a3030 100%);" aria-label="最終CTA">
+    <div class="max-w-xl mx-auto">
+      <p class="en-label text-sub/50 reveal">We look forward to seeing you</p>
+      <h2 class="font-serif text-3xl md:text-5xl font-bold text-white mt-4 mb-5 leading-snug reveal reveal-delay-1">
+        ご来店を、<br>心よりお待ちしております。
+      </h2>
+      <p class="text-white/55 text-sm mb-10 leading-relaxed reveal reveal-delay-2">
+        自家焙煎の一杯と手作りスイーツで、<br>あなただけの特別なひとときを。
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center reveal reveal-delay-3">
+        <a href="#contact" class="btn-primary">予約する</a>
+        <a href="https://instagram.com/cafe_aroma" target="_blank" rel="noopener noreferrer"
+           class="btn-outline !text-white !border-white/40 hover:!bg-white hover:!text-dark flex items-center gap-2 justify-center">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          Instagram
+        </a>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════ -->
+  <footer class="py-14 px-6 md:px-12" style="background:#150c0c;">
+    <div class="max-w-5xl mx-auto">
+      <div class="grid sm:grid-cols-3 gap-10 mb-10">
+        <div>
+          <p class="font-serif text-2xl font-bold text-white tracking-widest mb-1">Cafe Aroma</p>
+          <p class="text-xs text-white/35 tracking-[.3em] mb-4">SPECIALTY COFFEE</p>
+          <p class="text-xs text-white/45 leading-relaxed">福岡市中央区大名2丁目1-1<br>TEL: 092-000-0001</p>
+        </div>
+        <div>
+          <h3 class="text-xs font-semibold text-white/40 tracking-widest mb-4">PAGES</h3>
+          <ul class="space-y-2 text-xs text-white/55">
+            <li><a href="#about"   class="hover:text-sub transition-colors">About</a></li>
+            <li><a href="#menu"    class="hover:text-sub transition-colors">Menu</a></li>
+            <li><a href="#gallery" class="hover:text-sub transition-colors">Gallery</a></li>
+            <li><a href="#access"  class="hover:text-sub transition-colors">Access</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xs font-semibold text-white/40 tracking-widest mb-4">CONTACT</h3>
+          <ul class="space-y-2 text-xs text-white/55">
+            <li><a href="#contact"          class="hover:text-sub transition-colors">予約・お問い合わせ</a></li>
+            <li><a href="tel:0920000001"     class="hover:text-sub transition-colors">092-000-0001</a></li>
+            <li><a href="mailto:info@cafe-aroma.jp" class="hover:text-sub transition-colors">info@cafe-aroma.jp</a></li>
+          </ul>
+          <div class="flex gap-4 mt-5">
+            <a href="https://instagram.com/cafe_aroma" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="text-white/35 hover:text-sub transition-colors">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-white/8 pt-6 text-center">
+        <p class="text-xs text-white/25">&copy; 2026 Cafe Aroma. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════
+       CHAT WIDGET
+  ═══════════════════════════════════ -->
+  <div id="chat-widget" style="position:fixed; bottom:24px; right:24px; z-index:9999;">
+    <div id="chat-bubble">
+      <div class="flex items-center gap-3 px-4 py-3" style="background:var(--dark);">
+        <div style="width:28px;height:28px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;">A</div>
+        <div>
+          <p class="text-white text-sm font-semibold leading-none">Cafe Aromaコンシェルジュ</p>
+          <p class="text-white/45 text-xs mt-0.5">AIアシスタント</p>
+        </div>
+        <button type="button" onclick="toggleChat()" class="ml-auto text-white/40 hover:text-white transition-colors" aria-label="チャットを閉じる">✕</button>
+      </div>
+      <div id="chat-messages"></div>
+      <div class="flex gap-2 p-3" style="background:#fff; border-top:1px solid #ede8e0;">
+        <input id="chat-input" type="text" placeholder="何でもお気軽に..." aria-label="メッセージ入力"
+          style="flex:1;padding:8px 12px;border-radius:20px;border:1.5px solid var(--sub);font-size:13px;outline:none;font-family:'Noto Sans JP',sans-serif;color:var(--dark);">
+        <button type="button" id="chat-send" aria-label="送信" style="width:34px;height:34px;border-radius:50%;background:var(--accent);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="white"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <button type="button" id="chat-toggle" onclick="toggleChat()" aria-label="チャットを開く"
+      style="width:52px;height:52px;border-radius:50%;background:var(--accent);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 28px rgba(107,79,79,.4);transition:transform .2s;position:relative;">
+      <svg id="chat-icon-open" width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
+      <svg id="chat-icon-close" width="20" height="20" viewBox="0 0 24 24" fill="white" style="display:none;"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+      <span id="chat-notif" style="display:none;position:absolute;top:-4px;right:-4px;width:16px;height:16px;background:#e53e3e;border-radius:50%;border:2px solid #fff;font-size:9px;color:#fff;align-items:center;justify-content:center;font-weight:700;">1</span>
+    </button>
+  </div>
+
+  <!-- ═══════════════════════════════════
+       JAVASCRIPT
+  ═══════════════════════════════════ -->
+  <script>
+  /* ─── SCROLL REVEAL ─── */
+  (function () {
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  })();
+
+  /* ─── NAVBAR ─── */
+  const navbar   = document.getElementById('navbar');
+  const navLogo  = document.getElementById('nav-logo');
+  const navSub   = document.getElementById('nav-sub');
+  const navLinks = document.getElementById('nav-links');
+
+  window.addEventListener('scroll', () => {
+    const s = window.scrollY > 80;
+    navbar.classList.toggle('scrolled', s);
+    navLogo.style.color = s ? 'var(--dark)' : '#fff';
+    navSub.style.color  = s ? 'rgba(44,31,31,.45)' : 'rgba(255,255,255,.6)';
+    navLinks.querySelectorAll('a:not(.btn-primary)').forEach(a => { a.style.color = s ? 'var(--dark)' : 'rgba(255,255,255,.85)'; });
+    document.querySelectorAll('#menu-btn span').forEach(sp => { sp.style.backgroundColor = s ? 'var(--dark)' : '#fff'; });
+  });
+
+  /* ─── MOBILE NAV ─── */
+  const mobileNav = document.getElementById('mobile-nav');
+  const menuBtn   = document.getElementById('menu-btn');
+  const ham1 = document.getElementById('ham-1');
+  const ham2 = document.getElementById('ham-2');
+  const ham3 = document.getElementById('ham-3');
+  let navOpen = false;
+
+  menuBtn.addEventListener('click', () => {
+    navOpen = !navOpen;
+    mobileNav.classList.toggle('open', navOpen);
+    if (navOpen) { ham1.style.transform='rotate(45deg) translate(5px,5px)'; ham2.style.opacity='0'; ham3.style.transform='rotate(-45deg) translate(5px,-5px)'; ham3.style.width='24px'; }
+    else { ham1.style.transform=''; ham2.style.opacity='1'; ham3.style.transform=''; ham3.style.width=''; }
+  });
+
+  function closeMobileNav() {
+    navOpen = false; mobileNav.classList.remove('open');
+    ham1.style.transform=''; ham2.style.opacity='1'; ham3.style.transform=''; ham3.style.width='';
+  }
+
+  /* ─── MENU TABS ─── */
+  function switchTab(tab, btn) {
+    ['coffee','sweets','other'].forEach(t => {
+      document.getElementById('tab-' + t).classList.toggle('hidden', t !== tab);
+    });
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  }
+
+  /* ─── FORM VALIDATION ─── */
+  const form = document.getElementById('contact-form');
+
+  function showErr(id, msg) {
+    const f = document.getElementById(id); const e = document.getElementById(id + '-error');
+    if (f) f.classList.add('is-error');
+    if (e) { e.textContent = msg; e.classList.add('show'); }
+  }
+  function clearErr(id) {
+    const f = document.getElementById(id); const e = document.getElementById(id + '-error');
+    if (f) f.classList.remove('is-error');
+    if (e) e.classList.remove('show');
+  }
+  function validateEmail(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
+  function validatePhone(v) { return /^[\d\-\+\(\)\s]{10,15}$/.test(v.replace(/\s/g,'')); }
+
+  function validateField(el) {
+    clearErr(el.id);
+    if (el.required && !el.value.trim()) { showErr(el.id, 'この項目は必須です'); return false; }
+    if (el.id === 'email' && el.value && !validateEmail(el.value)) { showErr(el.id, '正しいメールアドレスを入力してください'); return false; }
+    if (el.id === 'phone' && el.value && !validatePhone(el.value)) { showErr(el.id, '正しい電話番号を入力してください'); return false; }
+    if (el.id === 'visit-date' && el.value) {
+      const today = new Date(); today.setHours(0,0,0,0);
+      if (new Date(el.value) < today) { showErr(el.id, '過去の日付は選択できません'); return false; }
+    }
+    return true;
+  }
+
+  form.querySelectorAll('input, textarea').forEach(el => {
+    el.addEventListener('blur', () => validateField(el));
+    el.addEventListener('input', () => { if (el.classList.contains('is-error')) validateField(el); });
+  });
+
+  (function() { const d = document.getElementById('visit-date'); if (d) d.min = new Date().toISOString().split('T')[0]; })();
+
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    let valid = true;
+    ['name','phone','email'].forEach(id => { if (!validateField(document.getElementById(id))) valid = false; });
+    const dField = document.getElementById('visit-date');
+    if (dField.value && !validateField(dField)) valid = false;
+    if (!valid) return;
+
+    const btn = document.getElementById('submit-btn');
+    btn.disabled = true; btn.textContent = '送信中…';
+    try {
+      const formData = new FormData(form);
+      const body = [
+        `お名前: ${formData.get('name')}`,
+        `電話番号: ${formData.get('phone')}`,
+        `メールアドレス: ${formData.get('email')}`,
+        `ご来店日: ${formData.get('visit_date') || '未指定'}`,
+        `ご来店時間: ${formData.get('visit_time') || '未指定'}`,
+        `ご利用人数: ${formData.get('guests') || '未指定'}`,
+        `ご利用目的: ${formData.get('purpose') || '未指定'}`,
+        `ご要望・ご質問: ${formData.get('message') || 'なし'}`
+      ].join('\n');
+
+      const mailtoLink = `mailto:info@cafe-aroma.jp?subject=${encodeURIComponent('Cafe Aroma お問い合わせ')}&&body=${encodeURIComponent(body)}`;
+      window.location.href = mailtoLink;
+      await new Promise(resolve => setTimeout(resolve, 500));
+
+      document.getElementById('form-success').classList.remove('hidden');
+      form.reset();
+      document.getElementById('form-success').scrollIntoView({ behavior:'smooth', block:'center' });
+    } catch (_) {
+      alert('送信に失敗しました。お電話（092-000-0001）にてお問い合わせください。');
+    } finally {
+      btn.disabled = false; btn.textContent = '送信する';
+    }
+  });
+
+  /* ─── CHAT ─── */
+  const chatKB = [
+    { kw: ['作業','仕事','パソコン','勉強','wi-fi','wifi'],          res: 'Wi-Fi・電源全席完備の快適な作業空間をご用意しています☕ ゆっくりお過ごしください。' },
+    { kw: ['コーヒー','珈琲','おすすめ','coffee'],                   res: 'ハウスブレンドが一番人気です✨ シングルオリジンはエチオピアとコロンビアが好評です！' },
+    { kw: ['スイーツ','ケーキ','甘','バスク'],                       res: 'バスクチーズケーキが大人気🍰 季節のタルトも毎日変わるので要チェックです！' },
+    { kw: ['予約','席'],                                              res: '24時間オンライン予約受付中です📅 ページ上の「予約する」からどうぞ！' },
+    { kw: ['営業','時間','何時','open','オープン'],                   res: '平日 8:00〜21:00、土日祝 9:00〜22:00です⏰ 年末年始のみお休みをいただいています。' },
+    { kw: ['場所','アクセス','どこ','住所'],                          res: '福岡市中央区大名2丁目にあります🗺 地下鉄赤坂駅から徒歩3分です！' },
+    { kw: ['駐車場','車'],                                            res: '専用駐車場はございませんが、近隣にコインパーキングがあります🚗' },
+    { kw: ['値段','価格','いくら','料金'],                            res: 'コーヒーは¥550〜、スイーツは¥480〜です☕ モーニングセットは¥750でお得です！' },
+    { kw: ['テイクアウト','持ち帰り'],                               res: 'テイクアウトご利用いただけます🎁 コーヒー豆の販売もしております！' },
+  ];
+
+  let chatOpen = false, chatInited = false;
+  const chatBubble = document.getElementById('chat-bubble');
+  const chatMsgs   = document.getElementById('chat-messages');
+  const chatInput  = document.getElementById('chat-input');
+  const chatSend   = document.getElementById('chat-send');
+  const chatNotif  = document.getElementById('chat-notif');
+  const chatIconO  = document.getElementById('chat-icon-open');
+  const chatIconC  = document.getElementById('chat-icon-close');
+
+  function toggleChat() {
+    chatOpen = !chatOpen;
+    chatBubble.classList.toggle('open', chatOpen);
+    chatIconO.style.display = chatOpen ? 'none' : 'block';
+    chatIconC.style.display = chatOpen ? 'block' : 'none';
+    chatNotif.style.display = 'none';
+    document.getElementById('chat-toggle').style.transform = chatOpen ? 'scale(.9)' : '';
+    if (!chatInited) {
+      setTimeout(() => addBot('こんにちは！Cafe Aromaへようこそ☕'), 200);
+      setTimeout(() => addBot('メニュー・アクセス・予約など何でもお気軽にどうぞ😊'), 1000);
+      chatInited = true;
+    }
+    if (chatOpen) chatInput.focus();
+  }
+
+  function addBot(text) {
+    const d = document.createElement('div'); d.className = 'msg-bot';
+    d.innerHTML = `<div class="msg-bot-avatar">A</div><div class="msg-bot-text">${text}</div>`;
+    chatMsgs.appendChild(d); chatMsgs.scrollTop = chatMsgs.scrollHeight;
+  }
+  function addUser(text) {
+    const d = document.createElement('div'); d.className = 'msg-user';
+    d.innerHTML = `<div class="msg-user-text">${text}</div>`;
+    chatMsgs.appendChild(d); chatMsgs.scrollTop = chatMsgs.scrollHeight;
+  }
+  function handleChat() {
+    const text = chatInput.value.trim(); if (!text) return;
+    addUser(text); chatInput.value = '';
+    const lower = text.toLowerCase();
+    let resp = 'ありがとうございます😊 詳しくはお電話（092-000-0001）またはお問い合わせフォームへどうぞ！';
+    for (const item of chatKB) { if (item.kw.some(k => lower.includes(k))) { resp = item.res; break; } }
+    setTimeout(() => addBot(resp), 500);
+  }
+  chatSend.addEventListener('click', handleChat);
+  chatInput.addEventListener('keypress', e => { if (e.key === 'Enter') handleChat(); });
+  setTimeout(() => { if (!chatOpen) chatNotif.style.display = 'flex'; }, 3500);
+
+  /* ─── LAZY LOAD ─── */
+  if ('IntersectionObserver' in window) {
+    const imgIO = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.style.opacity='1'; imgIO.unobserve(e.target); } });
+    }, { rootMargin:'200px' });
+    document.querySelectorAll('img[loading="lazy"]').forEach(img => { img.style.transition='opacity .5s'; imgIO.observe(img); });
+  }
+  </script>
+</body>
+</html>
