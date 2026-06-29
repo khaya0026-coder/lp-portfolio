@@ -1,0 +1,1514 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>みなと歯科クリニック｜品川で痛くない虫歯・矯正・ホワイトニングなら</title>
+  <meta name="description" content="品川駅徒歩3分のみなと歯科クリニック。痛みの少ない虫歯治療・マウスピース矯正・ホワイトニング・インプラントに対応。土曜診療・当日予約OK。">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://minato-dental.jp/">
+  <meta property="og:title" content="みなと歯科クリニック｜品川で痛くない虫歯・矯正・ホワイトニングなら">
+  <meta property="og:description" content="品川駅徒歩3分。痛みの少ない虫歯治療・マウスピース矯正・ホワイトニング対応。土曜診療・当日予約OK。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://minato-dental.jp/">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:site_name" content="みなと歯科クリニック">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Dentist",
+    "name": "みなと歯科クリニック",
+    "url": "https://minato-dental.jp",
+    "telephone": "03-6441-2580",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "高輪3-25-7 高輪メディカルビル1F",
+      "addressLocality": "品川区",
+      "addressRegion": "東京都",
+      "postalCode": "108-0074",
+      "addressCountry": "JP"
+    },
+    "openingHoursSpecification": [
+      {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Friday"],"opens":"10:00","closes":"19:30"},
+      {"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday"],"opens":"10:00","closes":"17:00"}
+    ],
+    "aggregateRating": {"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"218"}
+  }
+  </script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+    function trackCTA(label) { gtag('event','cta_click',{event_category:'CTA',event_label:label}); }
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#071e3d',
+            main:  '#1a6fbf',
+            sky:   '#38bdf8',
+            sub:   '#e0f2fe',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* ═══ GLOBAL ═══ */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Hiragino Kaku Gothic ProN','Hiragino Sans',Meiryo,sans-serif;
+      color: #1e293b;
+      background: #f0f7ff;
+      line-height: 1.75;
+      padding-bottom: 72px;
+      overflow-x: hidden;
+    }
+    @media(min-width:768px){ body { padding-bottom: 0; } }
+
+    /* ═══ SCROLL PROGRESS ═══ */
+    #progress {
+      position: fixed; top:0; left:0; height:3px; width:0%;
+      background: linear-gradient(90deg,#1a6fbf,#38bdf8);
+      z-index:300; transition: width .1s linear;
+    }
+
+    /* ═══ BACKGROUND CANVAS (blobs) ═══ */
+    #bg-canvas {
+      position: fixed; inset:0; z-index:0; pointer-events:none;
+      background: linear-gradient(145deg,#e8f4fd 0%,#f0f9ff 40%,#e0f2fe 80%,#bfdbfe 100%);
+    }
+    .blob {
+      position: absolute; border-radius: 50%;
+      filter: blur(80px); opacity: .35;
+      animation: blobDrift 18s ease-in-out infinite alternate;
+      will-change: transform;
+    }
+    .blob1 { width:520px;height:520px; background:#bfdbfe; top:-120px;left:-80px; animation-duration:20s; }
+    .blob2 { width:400px;height:400px; background:#bae6fd; bottom:10%;right:-60px; animation-duration:16s; animation-delay:-6s; }
+    .blob3 { width:300px;height:300px; background:#c7d2fe; top:45%;left:30%; animation-duration:22s; animation-delay:-10s; }
+    @keyframes blobDrift {
+      from { transform: translate(0,0) scale(1); }
+      to   { transform: translate(30px,40px) scale(1.08); }
+    }
+
+    /* ═══ LAYOUT ═══ */
+    .section-wrap { position: relative; z-index:10; }
+
+    /* ═══ GLASS CARD ═══ */
+    .glass {
+      background: rgba(255,255,255,0.65);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,0.80);
+      box-shadow:
+        0 8px 32px rgba(14,60,120,0.10),
+        inset 0 1px 0 rgba(255,255,255,0.90);
+    }
+    .glass-dark {
+      background: rgba(7,30,61,0.72);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 8px 40px rgba(0,0,0,0.30), inset 0 1px 0 rgba(255,255,255,0.08);
+    }
+    .glass-blue {
+      background: rgba(26,111,191,0.88);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.20);
+      box-shadow: 0 8px 40px rgba(14,60,120,0.35), inset 0 1px 0 rgba(255,255,255,0.15);
+    }
+
+    /* ═══ SCROLL REVEAL ═══ */
+    .rv {
+      opacity:0;
+      transform: translateY(28px);
+      transition: opacity .6s cubic-bezier(.22,1,.36,1), transform .6s cubic-bezier(.22,1,.36,1);
+      will-change: opacity, transform;
+    }
+    .rv.d1 { transition-delay:.1s; }
+    .rv.d2 { transition-delay:.2s; }
+    .rv.d3 { transition-delay:.3s; }
+    .rv.visible { opacity:1; transform:translateY(0); }
+
+    /* ═══ 3D TILT CARD ═══ */
+    .tilt-wrap { perspective: 900px; }
+    .tilt-card {
+      transform-style: preserve-3d;
+      transition: transform .08s linear, box-shadow .2s ease;
+      will-change: transform;
+    }
+
+    /* ═══ HOVER LIFT ═══ */
+    .lift {
+      transition: transform .25s cubic-bezier(.22,1,.36,1), box-shadow .25s ease;
+      will-change: transform;
+    }
+    .lift:hover {
+      transform: translateY(-5px) scale(1.01);
+      box-shadow: 0 20px 50px rgba(14,60,120,0.18), 0 4px 12px rgba(14,60,120,0.10);
+    }
+
+    /* ═══ BUTTONS ═══ */
+    .btn-primary {
+      display: inline-flex; align-items: center; justify-content: center; gap:8px;
+      background: linear-gradient(135deg,#1a6fbf 0%,#0ea5e9 100%);
+      color: white; font-weight: 700; border-radius: 14px;
+      padding: 16px 32px; font-size:.95rem;
+      box-shadow: 0 6px 24px rgba(14,111,191,0.40), inset 0 1px 0 rgba(255,255,255,0.20);
+      transition: transform .12s ease, box-shadow .12s ease, filter .12s ease;
+      will-change: transform;
+      cursor: pointer; border: none; text-decoration: none;
+    }
+    .btn-primary:hover { filter: brightness(1.08); transform: translateY(-2px); box-shadow: 0 10px 32px rgba(14,111,191,0.50); }
+    .btn-primary:active { transform: translateY(1px) scale(.98); box-shadow: 0 3px 10px rgba(14,111,191,0.30); }
+
+    .btn-line-custom {
+      display: inline-flex; align-items: center; justify-content: center; gap:8px;
+      background: linear-gradient(135deg,#06c755 0%,#04a344 100%);
+      color: white; font-weight: 700; border-radius: 14px;
+      padding: 16px 32px; font-size:.95rem;
+      box-shadow: 0 6px 24px rgba(6,199,85,0.38), inset 0 1px 0 rgba(255,255,255,0.20);
+      transition: transform .12s ease, box-shadow .12s ease, filter .12s ease;
+      will-change: transform;
+      cursor: pointer; border: none; text-decoration: none;
+      animation: linePulse 2.6s ease-in-out infinite;
+    }
+    .btn-line-custom:hover { filter: brightness(1.08); transform: translateY(-2px); box-shadow: 0 10px 30px rgba(6,199,85,0.50); }
+    .btn-line-custom:active { transform: translateY(1px) scale(.98); }
+    @keyframes linePulse {
+      0%,100% { box-shadow: 0 6px 24px rgba(6,199,85,0.38), 0 0 0 0 rgba(6,199,85,.40); }
+      55%      { box-shadow: 0 6px 24px rgba(6,199,85,0.38), 0 0 0 12px rgba(6,199,85,0); }
+    }
+
+    .btn-outline {
+      display: inline-flex; align-items: center; justify-content: center; gap:8px;
+      background: rgba(255,255,255,0.18);
+      backdrop-filter: blur(8px);
+      color: white; font-weight: 700; border-radius: 14px;
+      padding: 16px 32px; font-size:.95rem;
+      border: 1.5px solid rgba(255,255,255,0.40);
+      transition: transform .12s ease, background .15s ease;
+      will-change: transform;
+      text-decoration: none;
+    }
+    .btn-outline:hover { background: rgba(255,255,255,0.28); transform: translateY(-2px); }
+    .btn-outline:active { transform: translateY(1px) scale(.98); }
+
+    /* ═══ SECTION LABEL ═══ */
+    .sec-label {
+      display: inline-block;
+      font-size: .7rem; letter-spacing: .18em; font-weight:700;
+      color: #1a6fbf; text-transform: uppercase;
+    }
+
+    /* ═══ HEADER ═══ */
+    #site-header {
+      position: fixed; top:0; left:0; right:0; z-index:200;
+      transition: transform .3s ease, background .3s ease;
+    }
+    #site-header.scrolled {
+      background: rgba(255,255,255,0.82);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255,255,255,0.70);
+      box-shadow: 0 4px 24px rgba(14,60,120,0.08);
+    }
+
+    /* ═══ HERO ═══ */
+    #hero { position:relative; min-height:100svh; display:flex; align-items:center; overflow:hidden; padding-top:56px; }
+    #hero-bg {
+      position:absolute; inset:0; z-index:1;
+      transform: scale(1.08);
+      will-change: transform;
+    }
+    #hero-bg img { width:100%; height:100%; object-fit:cover; object-position:center; }
+    .hero-overlay {
+      position:absolute; inset:0; z-index:2;
+      background: linear-gradient(145deg,rgba(7,30,61,0.88) 0%,rgba(10,45,90,0.70) 55%,rgba(0,0,0,0.35) 100%);
+    }
+    /* hero glass shimmer */
+    .hero-glass-line {
+      position:absolute; left:0; right:0; height:1px;
+      background: linear-gradient(90deg,transparent,rgba(255,255,255,0.25),transparent);
+    }
+    .hero-glass-line.t { top:56px; }
+    .hero-glass-line.b { bottom:0; }
+
+    /* ═══ TRUST BADGE ═══ */
+    .trust-badge {
+      display:inline-flex; align-items:center; gap:5px;
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 9999px;
+      padding: 5px 14px;
+      font-size:.72rem; color:rgba(255,255,255,.90); font-weight:500;
+    }
+
+    /* ═══ STARS ═══ */
+    .stars { color:#f59e0b; letter-spacing:1px; }
+
+    /* ═══ HOUR TABLE ═══ */
+    .hour-row { border-bottom:1px solid rgba(14,60,120,0.07); }
+    .hour-row:last-child { border-bottom:none; }
+
+    /* ═══ FAQ ═══ */
+    .faq-icon { transition:transform .25s ease; }
+    .faq-open .faq-icon { transform:rotate(180deg); }
+
+    /* ═══ COUNTER ═══ */
+    .counter-num { font-variant-numeric: tabular-nums; }
+
+    /* ═══ PARALLAX ═══ */
+    .parallax-img {
+      will-change: transform;
+    }
+
+    /* ═══ SECTION DIVIDER ═══ */
+    .wave-divider { display:block; width:100%; overflow:hidden; line-height:0; }
+    .wave-divider svg { display:block; }
+
+    /* ═══ FIXED BOTTOM CTA ═══ */
+    #fixed-cta {
+      position:fixed; bottom:0; left:0; right:0; z-index:150;
+      padding:10px 16px;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      border-top:1px solid rgba(14,60,120,0.10);
+      box-shadow:0 -4px 24px rgba(14,60,120,0.10);
+    }
+    @media(min-width:768px){ #fixed-cta { display:none; } }
+
+    /* ═══ BOUNCE ═══ */
+    @keyframes bounceY {
+      0%,100%{ transform:translateY(0); }
+      50%    { transform:translateY(7px); }
+    }
+    .bounce { animation: bounceY 2s ease-in-out infinite; }
+
+    /* ═══ CARD SHINE ═══ */
+    .shine-wrap { position:relative; overflow:hidden; }
+    .shine-wrap::after {
+      content:''; position:absolute; top:-60%; left:-60%;
+      width:40%; height:220%;
+      background: linear-gradient(105deg,transparent 40%,rgba(255,255,255,.28) 50%,transparent 60%);
+      transform: rotate(20deg) translateX(-100%);
+      transition: transform .55s ease;
+      pointer-events:none;
+    }
+    .shine-wrap:hover::after { transform: rotate(20deg) translateX(400%); }
+
+    /* ═══ GRADIENT TEXT ═══ */
+    .grad-text {
+      background: linear-gradient(135deg,#38bdf8 0%,#818cf8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ═══ SECTION BG VARIANTS ═══ */
+    .sec-light { background: rgba(240,249,255,0.70); }
+    .sec-white { background: rgba(255,255,255,0.80); }
+    .sec-blue  { background: linear-gradient(135deg,#1a6fbf 0%,#0369a1 100%); }
+    .sec-navy  { background: linear-gradient(145deg,#071e3d 0%,#0c2d5a 100%); }
+  </style>
+</head>
+
+<body>
+
+<!-- BG -->
+<div id="bg-canvas">
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+  <div class="blob blob3"></div>
+</div>
+
+<div id="progress"></div>
+
+
+<!-- ════════════ HEADER ════════════ -->
+<header id="site-header">
+  <div class="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
+    <a href="#hero" class="flex items-center gap-2.5">
+      <div class="w-8 h-8 rounded-lg glass flex items-center justify-center">
+        <svg class="w-5 h-5 text-main" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2C9.2 2 7 4 6 6.5 5 4 2.8 2 0 2c0 5 2.5 9 6.5 11L12 23l5.5-10C21.5 11 24 7 24 2c-2.8 0-5 2-6 4.5C17 4 14.8 2 12 2z"/>
+        </svg>
+      </div>
+      <div class="leading-tight">
+        <span class="font-bold text-navy text-sm md:text-base block">みなと歯科クリニック</span>
+        <span class="text-[10px] text-slate-400 hidden md:block tracking-wide">Minato Dental Clinic</span>
+      </div>
+    </a>
+    <nav class="hidden md:flex items-center gap-6 text-sm text-slate-500">
+      <a href="#features"   class="hover:text-main transition-colors">選ばれる理由</a>
+      <a href="#treatments" class="hover:text-main transition-colors">診療内容</a>
+      <a href="#price"      class="hover:text-main transition-colors">料金</a>
+      <a href="#reviews"    class="hover:text-main transition-colors">口コミ</a>
+      <a href="#access"     class="hover:text-main transition-colors">アクセス</a>
+    </nav>
+    <a href="tel:03-6441-2580" onclick="trackCTA('header_tel')"
+       class="hidden md:flex btn-primary py-2 px-5 text-sm rounded-full" style="padding:8px 20px;border-radius:9999px;">
+      <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.58.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.29 21 3 13.71 3 5c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57-.11.36-.02.75.23 1.03L6.6 10.8z"/>
+      </svg>
+      03-6441-2580
+    </a>
+    <a href="#cta" onclick="trackCTA('header_mobile')"
+       class="md:hidden btn-line-custom text-sm" style="padding:8px 18px;border-radius:9999px;font-size:.8rem;">
+      予約・相談
+    </a>
+  </div>
+</header>
+
+
+<!-- ════════════ HERO ════════════ -->
+<section id="hero">
+  <div id="hero-bg">
+    <img src="https://images.unsplash.com/photo-1588776814546-1ffbb172d536?w=1600&q=80&auto=format&fit=crop"
+         alt="清潔感ある診療室" loading="eager">
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-glass-line t"></div>
+  <div class="hero-glass-line b"></div>
+
+  <div class="relative z-10 max-w-5xl mx-auto px-4 py-24 w-full">
+    <div class="max-w-xl">
+
+      <div class="flex flex-wrap gap-2 mb-7 rv visible">
+        <span class="trust-badge">開院12年</span>
+        <span class="trust-badge">累計患者 10,000名以上</span>
+        <span class="trust-badge">保険診療対応</span>
+        <span class="trust-badge">品川駅 徒歩3分</span>
+      </div>
+
+      <h1 class="font-black text-white leading-[1.08] mb-6 rv d1 visible"
+          style="font-size:clamp(2rem,5.5vw,3.2rem);">
+        「歯医者が怖い」を、<br>
+        <span class="grad-text">変えにきてください。</span>
+      </h1>
+
+      <p class="text-white/80 text-sm md:text-base mb-9 leading-relaxed rv d2 visible">
+        痛みを最小限に抑えた治療・最新マウスピース矯正・本格ホワイトニング。<br class="hidden md:block">
+        品川で、もう一度「歯」と向き合おう。
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-3 mb-6 rv d3 visible">
+        <a href="https://line.me/ti/p/XXXXXXXXXX" target="_blank" rel="noopener"
+           onclick="trackCTA('hero_line')" class="btn-line-custom">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.07 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
+          </svg>
+          LINEで予約・無料相談
+        </a>
+        <a href="tel:03-6441-2580" onclick="trackCTA('hero_tel')" class="btn-outline">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.58.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.29 21 3 13.71 3 5c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57-.11.36-.02.75.23 1.03L6.6 10.8z"/>
+          </svg>
+          03-6441-2580
+        </a>
+      </div>
+      <p class="text-white/40 text-xs rv d3 visible">※ LINEでの相談・予約は24時間受付。当日予約もお気軽にどうぞ。</p>
+    </div>
+  </div>
+
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 bounce z-10">
+    <svg class="w-6 h-6 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"/>
+    </svg>
+  </div>
+</section>
+
+
+<!-- ════════════ PAIN POINTS ════════════ -->
+<section class="section-wrap py-20 md:py-28">
+  <div class="max-w-5xl mx-auto px-4">
+
+    <div class="text-center mb-12">
+      <span class="sec-label rv">PAIN POINTS</span>
+      <h2 class="text-2xl md:text-3xl font-black mt-2 text-navy rv d1">こんなお悩み、ありませんか？</h2>
+    </div>
+
+    <div class="grid sm:grid-cols-2 gap-4 mb-10">
+      <div class="glass rounded-2xl p-5 flex items-start gap-4 lift rv tilt-card">
+        <span class="text-2xl flex-shrink-0 mt-0.5">😨</span>
+        <div>
+          <p class="font-bold text-sm text-navy mb-1">歯医者の注射・器具の音が怖くて、ずっと避けてきた</p>
+          <p class="text-xs text-slate-400">痛みへの恐怖で受診できていない</p>
+        </div>
+      </div>
+      <div class="glass rounded-2xl p-5 flex items-start gap-4 lift rv d1 tilt-card">
+        <span class="text-2xl flex-shrink-0 mt-0.5">🦷</span>
+        <div>
+          <p class="font-bold text-sm text-navy mb-1">虫歯があるのに、ずっと放置してしまっている</p>
+          <p class="text-xs text-slate-400">後回しにするほど悪化するとわかっていても…</p>
+        </div>
+      </div>
+      <div class="glass rounded-2xl p-5 flex items-start gap-4 lift rv d1 tilt-card">
+        <span class="text-2xl flex-shrink-0 mt-0.5">😬</span>
+        <div>
+          <p class="font-bold text-sm text-navy mb-1">歯の黄ばみが気になり、笑顔に自信が持てない</p>
+          <p class="text-xs text-slate-400">写真を撮るとき口元を隠してしまう</p>
+        </div>
+      </div>
+      <div class="glass rounded-2xl p-5 flex items-start gap-4 lift rv d2 tilt-card">
+        <span class="text-2xl flex-shrink-0 mt-0.5">😤</span>
+        <div>
+          <p class="font-bold text-sm text-navy mb-1">歯並びが気になるが、目立つ矯正装置は嫌だ</p>
+          <p class="text-xs text-slate-400">仕事上、装置をつけたくない</p>
+        </div>
+      </div>
+      <div class="glass rounded-2xl p-5 flex items-start gap-4 lift rv d2 tilt-card">
+        <span class="text-2xl flex-shrink-0 mt-0.5">😟</span>
+        <div>
+          <p class="font-bold text-sm text-navy mb-1">歯が抜けて食事が不便。入れ歯はどうも合わない</p>
+          <p class="text-xs text-slate-400">インプラントの費用や手術が気になる</p>
+        </div>
+      </div>
+      <div class="glass rounded-2xl p-5 flex items-start gap-4 lift rv d3 tilt-card">
+        <span class="text-2xl flex-shrink-0 mt-0.5">👶</span>
+        <div>
+          <p class="font-bold text-sm text-navy mb-1">子どもが歯科嫌いにならないか心配</p>
+          <p class="text-xs text-slate-400">小さい頃の体験が大人になっても影響すると聞いた</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="glass rounded-2xl py-8 px-6 text-center rv d1">
+      <p class="text-main font-bold text-base md:text-lg leading-relaxed">そのお悩み、みなと歯科クリニックに一度ご相談ください。</p>
+      <p class="text-slate-500 text-sm mt-2">「怖くて踏み出せない」という方こそ、まずはLINEで気軽にどうぞ。</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ════════════ SOLUTION ════════════ -->
+<section class="section-wrap py-20 md:py-28" style="background:rgba(255,255,255,0.60);">
+  <div class="max-w-5xl mx-auto px-4">
+    <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+
+      <div class="order-2 md:order-1">
+        <span class="sec-label rv">WHY WE CAN HELP</span>
+        <h2 class="text-2xl md:text-3xl font-black mt-2 mb-7 text-navy rv d1">
+          なぜ、みなと歯科で<br>「怖くない」と感じるのか
+        </h2>
+        <div class="space-y-5">
+          <div class="flex items-start gap-4 rv d1">
+            <div class="w-9 h-9 rounded-xl glass flex items-center justify-center flex-shrink-0 mt-0.5"
+                 style="background:linear-gradient(135deg,#dbeafe,#bfdbfe);">
+              <svg class="w-4 h-4 text-main" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+              </svg>
+            </div>
+            <div>
+              <p class="font-bold text-sm text-navy mb-1">表面麻酔＋極細針で「注射の痛み」を最小化</p>
+              <p class="text-sm text-slate-500 leading-relaxed">麻酔注射の前に表面麻酔ジェルを塗布し、極細の針でゆっくり注入。「気づいたら終わっていた」とおっしゃる患者様が多数います。</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 rv d2">
+            <div class="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5"
+                 style="background:linear-gradient(135deg,#dbeafe,#bfdbfe);">
+              <svg class="w-4 h-4 text-main" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+              </svg>
+            </div>
+            <div>
+              <p class="font-bold text-sm text-navy mb-1">「なぜ・どうするか」を必ず先にご説明</p>
+              <p class="text-sm text-slate-500 leading-relaxed">いきなり治療を始めず、レントゲン・口腔内写真を見せながら現状と計画をご説明。納得してから進めます。</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 rv d3">
+            <div class="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5"
+                 style="background:linear-gradient(135deg,#dbeafe,#bfdbfe);">
+              <svg class="w-4 h-4 text-main" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+              </svg>
+            </div>
+            <div>
+              <p class="font-bold text-sm text-navy mb-1">「また虫歯になりにくい口」を一緒につくる</p>
+              <p class="text-sm text-slate-500 leading-relaxed">治療だけで終わらず、ブラッシング指導・定期クリーニングで再発を防ぐ予防歯科を重視しています。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="order-1 md:order-2 tilt-wrap rv d1">
+        <div class="tilt-card shine-wrap rounded-2xl overflow-hidden"
+             style="box-shadow:0 20px 60px rgba(14,60,120,0.18);">
+          <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=800&q=80&auto=format&fit=crop"
+               alt="丁寧に診察する歯科医師"
+               class="w-full h-72 md:h-[420px] object-cover parallax-img" loading="lazy">
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════ FEATURES ════════════ -->
+<section id="features" class="section-wrap py-20 md:py-28">
+  <div class="max-w-5xl mx-auto px-4">
+
+    <div class="text-center mb-14">
+      <span class="sec-label rv">WHY CHOOSE US</span>
+      <h2 class="text-2xl md:text-3xl font-black mt-2 text-navy rv d1">みなと歯科が選ばれる3つの理由</h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <div class="glass rounded-2xl p-8 text-center lift shine-wrap tilt-wrap rv">
+        <div class="tilt-card">
+          <div class="w-16 h-16 rounded-2xl mx-auto mb-6 flex items-center justify-center"
+               style="background:linear-gradient(135deg,#dbeafe,#bfdbfe);box-shadow:0 4px 16px rgba(26,111,191,0.20);">
+            <svg class="w-8 h-8 text-main" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+            </svg>
+          </div>
+          <p class="sec-label mb-2">REASON 01</p>
+          <h3 class="font-black text-lg text-navy mb-3">痛みを最小限に<br>抑えた治療</h3>
+          <p class="text-sm text-slate-500 leading-relaxed">表面麻酔・極細針・電動注射器を組み合わせ、「痛くない」を徹底追求。歯医者が苦手な方でも安心して通えるよう配慮しています。</p>
+        </div>
+      </div>
+
+      <div class="glass rounded-2xl p-8 text-center lift shine-wrap tilt-wrap rv d1">
+        <div class="tilt-card">
+          <div class="w-16 h-16 rounded-2xl mx-auto mb-6 flex items-center justify-center"
+               style="background:linear-gradient(135deg,#dbeafe,#bfdbfe);box-shadow:0 4px 16px rgba(26,111,191,0.20);">
+            <svg class="w-8 h-8 text-main" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <p class="sec-label mb-2">REASON 02</p>
+          <h3 class="font-black text-lg text-navy mb-3">土曜も診療・<br>仕事帰りに通える</h3>
+          <p class="text-sm text-slate-500 leading-relaxed">平日は夜19:30まで受付。土曜日も17:00まで診療しているので、お忙しい方でも通院しやすい環境を整えています。</p>
+        </div>
+      </div>
+
+      <div class="glass rounded-2xl p-8 text-center lift shine-wrap tilt-wrap rv d2">
+        <div class="tilt-card">
+          <div class="w-16 h-16 rounded-2xl mx-auto mb-6 flex items-center justify-center"
+               style="background:linear-gradient(135deg,#dbeafe,#bfdbfe);box-shadow:0 4px 16px rgba(26,111,191,0.20);">
+            <svg class="w-8 h-8 text-main" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/>
+            </svg>
+          </div>
+          <p class="sec-label mb-2">REASON 03</p>
+          <h3 class="font-black text-lg text-navy mb-3">口コミ評価 4.9<br>リピート率 91%</h3>
+          <p class="text-sm text-slate-500 leading-relaxed">「また来たい」と思っていただける医院づくりを12年続けた結果、Google口コミ評価は4.9。地域に根ざした信頼と実績が私たちの誇りです。</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════ STATS ════════════ -->
+<section class="section-wrap py-16" style="background:linear-gradient(135deg,#071e3d 0%,#0c2d5a 100%);">
+  <div class="max-w-5xl mx-auto px-4">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+
+      <div class="glass-dark rounded-2xl py-6 px-4 text-center rv">
+        <p class="text-sky-400/70 text-xs tracking-widest mb-2 uppercase">開院</p>
+        <p class="text-white text-4xl font-black"><span class="counter-num" data-target="12">0</span><span class="text-2xl">年</span></p>
+      </div>
+      <div class="glass-dark rounded-2xl py-6 px-4 text-center rv d1">
+        <p class="text-sky-400/70 text-xs tracking-widest mb-2 uppercase">累計患者数</p>
+        <p class="text-white text-4xl font-black"><span class="counter-num" data-target="10000">0</span><span class="text-xl">名+</span></p>
+      </div>
+      <div class="glass-dark rounded-2xl py-6 px-4 text-center rv d2">
+        <p class="text-sky-400/70 text-xs tracking-widest mb-2 uppercase">口コミ評価</p>
+        <p class="text-white text-4xl font-black">4.9<span class="text-xl text-white/40"> /5</span></p>
+      </div>
+      <div class="glass-dark rounded-2xl py-6 px-4 text-center rv d3">
+        <p class="text-sky-400/70 text-xs tracking-widest mb-2 uppercase">リピート率</p>
+        <p class="text-white text-4xl font-black"><span class="counter-num" data-target="91">0</span><span class="text-2xl">%</span></p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════ TREATMENTS ════════════ -->
+<section id="treatments" class="section-wrap py-20 md:py-28" style="background:rgba(255,255,255,0.70);">
+  <div class="max-w-5xl mx-auto px-4">
+
+    <div class="text-center mb-14">
+      <span class="sec-label rv">TREATMENTS</span>
+      <h2 class="text-2xl md:text-3xl font-black mt-2 text-navy rv d1">診療内容</h2>
+      <p class="text-slate-400 text-sm mt-2 rv d2">一般歯科から審美・矯正・予防まで幅広く対応しています</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 gap-6">
+
+      <div class="glass rounded-2xl overflow-hidden lift shine-wrap tilt-wrap rv">
+        <div class="tilt-card">
+          <div class="relative h-44 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=800&q=80&auto=format&fit=crop"
+                 alt="一般歯科・虫歯治療" class="w-full h-full object-cover parallax-img" loading="lazy">
+            <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(7,30,61,0.55),transparent)"></div>
+            <span class="absolute top-3 left-3 text-xs font-semibold px-3 py-1 rounded-full"
+                  style="background:rgba(255,255,255,0.20);backdrop-filter:blur(8px);color:#fff;border:1px solid rgba(255,255,255,0.35);">保険対応</span>
+          </div>
+          <div class="p-6">
+            <h3 class="font-black text-base text-navy mb-2">一般歯科・虫歯治療</h3>
+            <p class="text-sm text-slate-500 leading-relaxed">初期段階から重度まで、できる限り歯を残す治療を優先します。表面麻酔で痛みを軽減し、ドリルの振動・音へのストレスも最小化します。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass rounded-2xl overflow-hidden lift shine-wrap tilt-wrap rv d1">
+        <div class="tilt-card">
+          <div class="relative h-44 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=800&q=80&auto=format&fit=crop"
+                 alt="マウスピース矯正" class="w-full h-full object-cover parallax-img" loading="lazy">
+            <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(7,30,61,0.55),transparent)"></div>
+            <span class="absolute top-3 left-3 text-xs font-semibold px-3 py-1 rounded-full"
+                  style="background:rgba(255,255,255,0.20);backdrop-filter:blur(8px);color:#fff;border:1px solid rgba(255,255,255,0.35);">目立たない</span>
+          </div>
+          <div class="p-6">
+            <h3 class="font-black text-base text-navy mb-2">マウスピース矯正（インビザライン）</h3>
+            <p class="text-sm text-slate-500 leading-relaxed">透明なマウスピースで歯並びを整えるインビザライン対応。装置が目立たず、取り外して食事・歯磨きができます。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass rounded-2xl overflow-hidden lift shine-wrap tilt-wrap rv d1">
+        <div class="tilt-card">
+          <div class="relative h-44 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1571772996211-2f02c9727629?w=800&q=80&auto=format&fit=crop&crop=top"
+                 alt="ホワイトニング" class="w-full h-full object-cover parallax-img" loading="lazy">
+            <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(7,30,61,0.55),transparent)"></div>
+            <span class="absolute top-3 left-3 text-xs font-semibold px-3 py-1 rounded-full"
+                  style="background:rgba(255,255,255,0.20);backdrop-filter:blur(8px);color:#fff;border:1px solid rgba(255,255,255,0.35);">人気 No.1</span>
+          </div>
+          <div class="p-6">
+            <h3 class="font-black text-base text-navy mb-2">審美歯科・ホワイトニング</h3>
+            <p class="text-sm text-slate-500 leading-relaxed">オフィスホワイトニング（院内）・ホームホワイトニング（持ち帰り）の両方に対応。歯の黄ばみ・着色を落とし、自信ある笑顔へ。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass rounded-2xl overflow-hidden lift shine-wrap tilt-wrap rv d2">
+        <div class="tilt-card">
+          <div class="relative h-44 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80&auto=format&fit=crop"
+                 alt="インプラント・予防歯科" class="w-full h-full object-cover parallax-img" loading="lazy">
+            <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(7,30,61,0.55),transparent)"></div>
+            <span class="absolute top-3 left-3 text-xs font-semibold px-3 py-1 rounded-full"
+                  style="background:rgba(255,255,255,0.20);backdrop-filter:blur(8px);color:#fff;border:1px solid rgba(255,255,255,0.35);">小児・予防も対応</span>
+          </div>
+          <div class="p-6">
+            <h3 class="font-black text-base text-navy mb-2">インプラント・予防歯科・小児歯科</h3>
+            <p class="text-sm text-slate-500 leading-relaxed">失った歯を自然な見た目で補うインプラントから、定期クリーニング・子どもの虫歯ケアまで一貫して対応できます。</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════ FLOW ════════════ -->
+<section id="flow" class="section-wrap py-20 md:py-28">
+  <div class="max-w-5xl mx-auto px-4">
+
+    <div class="text-center mb-14">
+      <span class="sec-label rv">FLOW</span>
+      <h2 class="text-2xl md:text-3xl font-black mt-2 text-navy rv d1">初診の流れ</h2>
+      <p class="text-slate-400 text-sm mt-2 rv d2">初めての方でも安心してお越しいただけます</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-5 md:gap-3">
+
+      <div class="rv flex md:flex-col items-start md:items-center gap-4 md:gap-0 md:text-center relative">
+        <div class="w-16 h-16 rounded-2xl flex items-center justify-center flex-shrink-0 text-xl font-black text-white relative z-10"
+             style="background:linear-gradient(135deg,#1a6fbf,#0ea5e9);box-shadow:0 8px 24px rgba(14,111,191,0.40);">1</div>
+        <div class="hidden md:block absolute top-8 left-[calc(50%+32px)] w-[calc(100%-64px)] h-0.5"
+             style="background:linear-gradient(90deg,#bfdbfe,#e0f2fe);"></div>
+        <div class="md:mt-5">
+          <h3 class="font-black text-navy text-sm mb-1">ご予約</h3>
+          <p class="text-xs text-slate-500 leading-relaxed">LINE・電話・WEBフォームにて。当日予約も可能です</p>
+        </div>
+      </div>
+
+      <div class="rv d1 flex md:flex-col items-start md:items-center gap-4 md:gap-0 md:text-center relative">
+        <div class="w-16 h-16 rounded-2xl flex items-center justify-center flex-shrink-0 text-xl font-black text-white relative z-10"
+             style="background:linear-gradient(135deg,#1a6fbf,#0ea5e9);box-shadow:0 8px 24px rgba(14,111,191,0.40);">2</div>
+        <div class="hidden md:block absolute top-8 left-[calc(50%+32px)] w-[calc(100%-64px)] h-0.5"
+             style="background:linear-gradient(90deg,#bfdbfe,#e0f2fe);"></div>
+        <div class="md:mt-5">
+          <h3 class="font-black text-navy text-sm mb-1">問診・レントゲン</h3>
+          <p class="text-xs text-slate-500 leading-relaxed">お口の状態を確認し、レントゲン・口腔内写真を撮影します</p>
+        </div>
+      </div>
+
+      <div class="rv d2 flex md:flex-col items-start md:items-center gap-4 md:gap-0 md:text-center relative">
+        <div class="w-16 h-16 rounded-2xl flex items-center justify-center flex-shrink-0 text-xl font-black text-white relative z-10"
+             style="background:linear-gradient(135deg,#1a6fbf,#0ea5e9);box-shadow:0 8px 24px rgba(14,111,191,0.40);">3</div>
+        <div class="hidden md:block absolute top-8 left-[calc(50%+32px)] w-[calc(100%-64px)] h-0.5"
+             style="background:linear-gradient(90deg,#bfdbfe,#e0f2fe);"></div>
+        <div class="md:mt-5">
+          <h3 class="font-black text-navy text-sm mb-1">治療計画のご説明</h3>
+          <p class="text-xs text-slate-500 leading-relaxed">現状・治療方針・費用を丁寧にご説明。納得してから進めます</p>
+        </div>
+      </div>
+
+      <div class="rv d3 flex md:flex-col items-start md:items-center gap-4 md:gap-0 md:text-center">
+        <div class="w-16 h-16 rounded-2xl flex items-center justify-center flex-shrink-0 text-xl font-black text-white relative z-10"
+             style="background:linear-gradient(135deg,#1a6fbf,#0ea5e9);box-shadow:0 8px 24px rgba(14,111,191,0.40);">4</div>
+        <div class="md:mt-5">
+          <h3 class="font-black text-navy text-sm mb-1">治療スタート</h3>
+          <p class="text-xs text-slate-500 leading-relaxed">ご希望のペースで通院。予防・定期検診もセットでご提案します</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="glass rounded-2xl p-5 text-center mt-10 rv d1">
+      <p class="text-main text-sm font-bold">初回は問診・検査・説明込みで約60〜90分を目安にお考えください</p>
+      <p class="text-slate-400 text-xs mt-1">2回目以降の通常診療は30〜45分程度です</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ════════════ PRICE ════════════ -->
+<section id="price" class="section-wrap py-20 md:py-28" style="background:rgba(255,255,255,0.70);">
+  <div class="max-w-5xl mx-auto px-4">
+
+    <div class="text-center mb-14">
+      <span class="sec-label rv">PRICE</span>
+      <h2 class="text-2xl md:text-3xl font-black mt-2 text-navy rv d1">料金案内</h2>
+      <p class="text-slate-400 text-sm mt-2 rv d2">明確な料金設定で、安心して治療を受けていただけます</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 mb-8">
+
+      <div class="rv">
+        <div class="flex items-center gap-2 mb-4">
+          <span class="w-2.5 h-2.5 rounded-full bg-main"></span>
+          <h3 class="font-bold text-navy text-sm">保険診療</h3>
+        </div>
+        <div class="glass rounded-2xl overflow-hidden">
+          <div class="flex justify-between items-center p-4 hour-row">
+            <div>
+              <p class="font-medium text-sm text-navy">初診料（検査・レントゲン含む）</p>
+              <p class="text-xs text-slate-400 mt-0.5">3割負担の目安</p>
+            </div>
+            <p class="font-black text-main text-sm">¥3,000前後</p>
+          </div>
+          <div class="flex justify-between items-center p-4 hour-row">
+            <div>
+              <p class="font-medium text-sm text-navy">虫歯治療（1本あたり）</p>
+              <p class="text-xs text-slate-400 mt-0.5">大きさ・部位により変動</p>
+            </div>
+            <p class="font-black text-main text-sm">¥1,500〜¥5,000</p>
+          </div>
+          <div class="flex justify-between items-center p-4">
+            <div>
+              <p class="font-medium text-sm text-navy">定期クリーニング（PMTC）</p>
+              <p class="text-xs text-slate-400 mt-0.5">3〜6ヶ月ごと推奨</p>
+            </div>
+            <p class="font-black text-main text-sm">¥2,500〜¥4,000</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="rv d1">
+        <div class="flex items-center gap-2 mb-4">
+          <span class="w-2.5 h-2.5 rounded-full bg-sky-400"></span>
+          <h3 class="font-bold text-navy text-sm">自費診療</h3>
+        </div>
+        <div class="glass rounded-2xl overflow-hidden">
+          <div class="flex justify-between items-center p-4 hour-row">
+            <div>
+              <p class="font-medium text-sm text-navy">オフィスホワイトニング</p>
+              <p class="text-xs text-slate-400 mt-0.5">当日施術・約60分</p>
+            </div>
+            <p class="font-black text-main text-sm">¥22,000</p>
+          </div>
+          <div class="flex justify-between items-center p-4 hour-row">
+            <div>
+              <p class="font-medium text-sm text-navy">インビザライン（マウスピース矯正）</p>
+              <p class="text-xs text-slate-400 mt-0.5">軽度〜中等度 目安</p>
+            </div>
+            <p class="font-black text-main text-sm">¥330,000〜</p>
+          </div>
+          <div class="flex justify-between items-center p-4">
+            <div>
+              <p class="font-medium text-sm text-navy">インプラント（1本）</p>
+              <p class="text-xs text-slate-400 mt-0.5">診断・手術・上部構造込み</p>
+            </div>
+            <p class="font-black text-main text-sm">¥330,000〜</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="glass rounded-2xl p-5 flex items-start gap-3 text-sm text-slate-600 rv d1">
+      <svg class="w-5 h-5 text-main flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+      </svg>
+      <p>料金は症状・使用する材料・難易度によって異なります。初診時に詳しくご説明しますので、まずはお気軽にご相談ください。クレジットカード・デンタルローンにも対応しています。</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ════════════ REVIEWS ════════════ -->
+<section id="reviews" class="section-wrap py-20 md:py-28">
+  <div class="max-w-5xl mx-auto px-4">
+
+    <div class="text-center mb-14">
+      <span class="sec-label rv">REVIEWS</span>
+      <h2 class="text-2xl md:text-3xl font-black mt-2 text-navy rv d1">患者様の声</h2>
+      <p class="text-slate-400 text-sm mt-2 rv d2">実際にご来院いただいた患者様のご感想です</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+      <div class="glass rounded-2xl p-6 lift tilt-wrap rv">
+        <div class="tilt-card">
+          <div class="stars text-base mb-3">★★★★★</div>
+          <p class="text-sm text-navy leading-relaxed mb-5">「歯医者がずっと怖くて10年以上行けていませんでした。こちらに来たら、気づいたら治療が終わっていました。本当に痛くなかったです。」</p>
+          <div class="flex items-center gap-3 pt-4 border-t border-blue-100">
+            <div class="w-9 h-9 rounded-full flex items-center justify-center text-main font-black text-sm"
+                 style="background:linear-gradient(135deg,#dbeafe,#bfdbfe);">S</div>
+            <div>
+              <p class="text-xs font-semibold text-navy">鈴木さま（30代・女性）</p>
+              <p class="text-xs text-slate-400">虫歯治療</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass rounded-2xl p-6 lift tilt-wrap rv d1">
+        <div class="tilt-card">
+          <div class="stars text-base mb-3">★★★★★</div>
+          <p class="text-sm text-navy leading-relaxed mb-5">「インビザラインを始めて8ヶ月。職場でも気づかれなかったくらい目立たなくて快適です。毎回写真を見せながら説明してくれるのでわかりやすい。」</p>
+          <div class="flex items-center gap-3 pt-4 border-t border-blue-100">
+            <div class="w-9 h-9 rounded-full flex items-center justify-center text-main font-black text-sm"
+                 style="background:linear-gradient(135deg,#dbeafe,#bfdbfe);">T</div>
+            <div>
+              <p class="text-xs font-semibold text-navy">高橋さま（20代・男性）</p>
+              <p class="text-xs text-slate-400">マウスピース矯正</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass rounded-2xl p-6 lift tilt-wrap rv d1">
+        <div class="tilt-card">
+          <div class="stars text-base mb-3">★★★★★</div>
+          <p class="text-sm text-navy leading-relaxed mb-5">「ホワイトニングをお願いしました。施術前後の写真を見て自分でも驚くくらい白くなって感動。笑顔に自信が持てるようになりました！」</p>
+          <div class="flex items-center gap-3 pt-4 border-t border-blue-100">
+            <div class="w-9 h-9 rounded-full flex items-center justify-center text-main font-black text-sm"
+                 style="background:linear-gradient(135deg,#dbeafe,#bfdbfe);">I</div>
+            <div>
+              <p class="text-xs font-semibold text-navy">伊藤さま（30代・女性）</p>
+              <p class="text-xs text-slate-400">ホワイトニング</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass rounded-2xl p-6 lift tilt-wrap rv d2">
+        <div class="tilt-card">
+          <div class="stars text-base mb-3">★★★★★</div>
+          <p class="text-sm text-navy leading-relaxed mb-5">「子どもを連れていきましたが、スタッフの方が慣れた対応で子どもが泣かずに終わりました。その後も自分から『歯医者行きたい』と言うように。」</p>
+          <div class="flex items-center gap-3 pt-4 border-t border-blue-100">
+            <div class="w-9 h-9 rounded-full flex items-center justify-center text-main font-black text-sm"
+                 style="background:linear-gradient(135deg,#dbeafe,#bfdbfe);">W</div>
+            <div>
+              <p class="text-xs font-semibold text-navy">渡辺さま（40代・女性）</p>
+              <p class="text-xs text-slate-400">小児歯科</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass rounded-2xl p-6 lift tilt-wrap rv d2">
+        <div class="tilt-card">
+          <div class="stars text-base mb-3">★★★★☆</div>
+          <p class="text-sm text-navy leading-relaxed mb-5">「インプラントを相談しに行きましたが、費用や手術の流れを他院より丁寧に説明していただけて、不安が解消されました。品川駅から近いのも助かります。」</p>
+          <div class="flex items-center gap-3 pt-4 border-t border-blue-100">
+            <div class="w-9 h-9 rounded-full flex items-center justify-center text-main font-black text-sm"
+                 style="background:linear-gradient(135deg,#dbeafe,#bfdbfe);">N</div>
+            <div>
+              <p class="text-xs font-semibold text-navy">中島さま（60代・男性）</p>
+              <p class="text-xs text-slate-400">インプラント相談</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Google rating -->
+      <div class="glass-blue rounded-2xl p-6 flex flex-col items-center justify-center text-center lift rv d3">
+        <svg class="w-10 h-10 text-white/60 mb-3" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+        </svg>
+        <p class="text-white font-black text-4xl">4.9</p>
+        <div class="stars text-white mt-1 text-sm">★★★★★</div>
+        <p class="text-white/60 text-xs mt-2">Google マップ 評価</p>
+        <p class="text-white/40 text-xs">（口コミ 218件）</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════ DOCTOR ════════════ -->
+<section id="doctor" class="section-wrap py-20 md:py-28" style="background:rgba(255,255,255,0.70);">
+  <div class="max-w-5xl mx-auto px-4">
+
+    <div class="text-center mb-14">
+      <span class="sec-label rv">ABOUT</span>
+      <h2 class="text-2xl md:text-3xl font-black mt-2 text-navy rv d1">院長紹介</h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+
+      <div class="tilt-wrap rv">
+        <div class="tilt-card shine-wrap rounded-2xl overflow-hidden"
+             style="box-shadow:0 20px 60px rgba(14,60,120,0.18);">
+          <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=800&q=80&auto=format&fit=crop&crop=top"
+               alt="院長 山田健太" class="w-full h-80 md:h-96 object-cover object-top parallax-img" loading="lazy">
+        </div>
+      </div>
+
+      <div class="rv d1">
+        <div class="mb-5">
+          <p class="text-main text-xs font-semibold tracking-widest mb-1 uppercase">Director</p>
+          <h3 class="text-2xl font-black text-navy">山田 健太</h3>
+          <p class="text-slate-400 text-xs mt-0.5">Kenta Yamada</p>
+        </div>
+
+        <div class="glass rounded-xl p-5 mb-6 space-y-2.5">
+          <div class="flex gap-3">
+            <span class="text-main font-semibold text-xs w-16 flex-shrink-0 mt-0.5">保有資格</span>
+            <span class="text-slate-600 text-xs leading-relaxed">歯科医師免許（厚生労働大臣免許）・インビザライン認定医</span>
+          </div>
+          <div class="flex gap-3">
+            <span class="text-main font-semibold text-xs w-16 flex-shrink-0 mt-0.5">略歴</span>
+            <span class="text-slate-600 text-xs leading-relaxed">東京歯科大学卒業後、都内大学病院口腔外科に勤務。2013年に品川区にて独立開業。</span>
+          </div>
+          <div class="flex gap-3">
+            <span class="text-main font-semibold text-xs w-16 flex-shrink-0 mt-0.5">得意分野</span>
+            <span class="text-slate-600 text-xs leading-relaxed">痛みの少ない治療・マウスピース矯正・インプラント・予防歯科</span>
+          </div>
+        </div>
+
+        <div class="space-y-4 text-sm text-slate-500 leading-relaxed">
+          <p>「歯医者が怖い」という気持ちを、私は否定しません。怖いと感じるのは当然のことです。だからこそ、その気持ちに寄り添いながら、できる限り痛くない治療を届けることにこだわってきました。</p>
+          <p>大切にしているのは、患者さんが「自分の口の中のことを理解して帰る」こと。説明なく治療を進めることは、私の診療スタイルにはありません。</p>
+          <p>どうぞ、怖がらずにまずお話だけでも聞かせてください。</p>
+        </div>
+
+        <div class="mt-6 pt-5 border-t border-blue-100">
+          <p class="text-xs text-slate-300">みなと歯科クリニック 院長 山田 健太（やまだ けんた）</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════ FAQ ════════════ -->
+<section id="faq" class="section-wrap py-20 md:py-28">
+  <div class="max-w-3xl mx-auto px-4">
+
+    <div class="text-center mb-14">
+      <span class="sec-label rv">FAQ</span>
+      <h2 class="text-2xl md:text-3xl font-black mt-2 text-navy rv d1">よくある質問</h2>
+    </div>
+
+    <div class="space-y-3" id="faq-list">
+
+      <div class="faq-item glass rounded-2xl overflow-hidden rv lift">
+        <button class="faq-trigger w-full text-left px-6 py-5 flex items-center justify-between gap-4">
+          <span class="font-semibold text-sm text-navy">予約なしでも診てもらえますか？</span>
+          <svg class="faq-icon w-5 h-5 text-main flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div class="faq-body px-6 pb-5 hidden">
+          <p class="text-sm text-slate-500 leading-relaxed">予約なしでもご来院いただけますが、待ち時間が発生する場合があります。LINEまたはお電話での事前予約をおすすめしています。当日の予約も受け付けています。</p>
+        </div>
+      </div>
+
+      <div class="faq-item glass rounded-2xl overflow-hidden rv d1 lift">
+        <button class="faq-trigger w-full text-left px-6 py-5 flex items-center justify-between gap-4">
+          <span class="font-semibold text-sm text-navy">治療は本当に痛くないですか？</span>
+          <svg class="faq-icon w-5 h-5 text-main flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div class="faq-body px-6 pb-5 hidden">
+          <p class="text-sm text-slate-500 leading-relaxed">完全に無痛とは言い切れませんが、表面麻酔・極細針・電動注射器を使用することで痛みを大幅に軽減しています。「思っていたより全然痛くなかった」とおっしゃる患者様が多数います。</p>
+        </div>
+      </div>
+
+      <div class="faq-item glass rounded-2xl overflow-hidden rv d1 lift">
+        <button class="faq-trigger w-full text-left px-6 py-5 flex items-center justify-between gap-4">
+          <span class="font-semibold text-sm text-navy">子どもも診てもらえますか？</span>
+          <svg class="faq-icon w-5 h-5 text-main flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div class="faq-body px-6 pb-5 hidden">
+          <p class="text-sm text-slate-500 leading-relaxed">はい、小児歯科にも対応しています。小さいうちから歯科に慣れてもらうことを大切にしており、無理に治療を進めず「怖くない場所」と感じてもらう工夫をしています。</p>
+        </div>
+      </div>
+
+      <div class="faq-item glass rounded-2xl overflow-hidden rv d2 lift">
+        <button class="faq-trigger w-full text-left px-6 py-5 flex items-center justify-between gap-4">
+          <span class="font-semibold text-sm text-navy">マウスピース矯正はどのくらいの期間かかりますか？</span>
+          <svg class="faq-icon w-5 h-5 text-main flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div class="faq-body px-6 pb-5 hidden">
+          <p class="text-sm text-slate-500 leading-relaxed">症状の程度によって異なりますが、軽度の場合は6〜12ヶ月、中等度の場合は1〜2年が目安です。初回の無料相談でシミュレーションをお見せしながら期間・費用をご説明します。</p>
+        </div>
+      </div>
+
+      <div class="faq-item glass rounded-2xl overflow-hidden rv d2 lift">
+        <button class="faq-trigger w-full text-left px-6 py-5 flex items-center justify-between gap-4">
+          <span class="font-semibold text-sm text-navy">ホワイトニング後、食事制限はありますか？</span>
+          <svg class="faq-icon w-5 h-5 text-main flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div class="faq-body px-6 pb-5 hidden">
+          <p class="text-sm text-slate-500 leading-relaxed">施術後24時間は着色しやすい食べ物・飲み物（コーヒー・赤ワイン・カレーなど）をお控えいただくようお願いしています。知覚過敏が出る場合がありますが、数日で落ち着くことがほとんどです。</p>
+        </div>
+      </div>
+
+      <div class="faq-item glass rounded-2xl overflow-hidden rv d3 lift">
+        <button class="faq-trigger w-full text-left px-6 py-5 flex items-center justify-between gap-4">
+          <span class="font-semibold text-sm text-navy">クレジットカードや分割払いは使えますか？</span>
+          <svg class="faq-icon w-5 h-5 text-main flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div class="faq-body px-6 pb-5 hidden">
+          <p class="text-sm text-slate-500 leading-relaxed">はい、主要クレジットカード（VISA・Mastercard・JCB・AMEX）に対応しています。また、デンタルローン（最大60回払い）もご利用いただけますので、矯正・インプラントなど高額治療もご安心ください。</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════ ACCESS ════════════ -->
+<section id="access" class="section-wrap py-20 md:py-28" style="background:rgba(255,255,255,0.70);">
+  <div class="max-w-5xl mx-auto px-4">
+
+    <div class="text-center mb-14">
+      <span class="sec-label rv">ACCESS</span>
+      <h2 class="text-2xl md:text-3xl font-black mt-2 text-navy rv d1">アクセス・診療時間</h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8">
+
+      <div class="rv">
+        <div class="rounded-2xl overflow-hidden" style="height:300px;box-shadow:0 12px 40px rgba(14,60,120,0.15);">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3242.5!2d139.7387!3d35.6284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188bbd9009ec09%3A0x481a93f0d2a409dd!2z5ZKM5bed6aeF!5e0!3m2!1sja!2sjp!4v1700000000000!5m2!1sja!2sjp"
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade" title="みなと歯科クリニック 地図 品川">
+          </iframe>
+        </div>
+        <p class="text-xs text-slate-400 mt-2 text-center">※ 品川駅周辺を表示（架空住所のためピンはございません）</p>
+      </div>
+
+      <div class="rv d1 space-y-7">
+        <div>
+          <h3 class="font-black text-navy mb-3">みなと歯科クリニック</h3>
+          <div class="space-y-3">
+            <div class="flex items-start gap-3 text-sm text-slate-600">
+              <svg class="w-5 h-5 text-main flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+              <span>東京都品川区高輪3-25-7 高輪メディカルビル1F</span>
+            </div>
+            <div class="flex items-center gap-3 text-sm">
+              <svg class="w-5 h-5 text-main flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+              </svg>
+              <a href="tel:03-6441-2580" class="text-main font-black hover:underline">03-6441-2580</a>
+            </div>
+            <div class="flex items-start gap-3 text-sm text-slate-600">
+              <svg class="w-5 h-5 text-main flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
+              </svg>
+              <span>JR・京急「品川駅」高輪口 徒歩3分</span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-black text-navy text-sm mb-3">診療時間</h4>
+          <div class="glass rounded-xl overflow-hidden">
+            <div class="grid grid-cols-3 text-xs text-slate-400 font-semibold" style="background:rgba(219,234,254,0.40);">
+              <div class="px-4 py-2.5">曜日</div>
+              <div class="px-4 py-2.5 text-center">午前</div>
+              <div class="px-4 py-2.5 text-center">午後</div>
+            </div>
+            <div class="grid grid-cols-3 hour-row text-xs">
+              <div class="px-4 py-3 text-slate-600">月・火・水</div>
+              <div class="px-4 py-3 text-center text-main font-semibold">10:00〜13:00</div>
+              <div class="px-4 py-3 text-center text-main font-semibold">15:00〜19:30</div>
+            </div>
+            <div class="grid grid-cols-3 hour-row text-xs" style="background:rgba(241,245,249,0.50);">
+              <div class="px-4 py-3 text-slate-400">木曜</div>
+              <div class="px-4 py-3 text-center text-slate-400 col-span-2">定休日</div>
+            </div>
+            <div class="grid grid-cols-3 hour-row text-xs">
+              <div class="px-4 py-3 text-slate-600">金曜</div>
+              <div class="px-4 py-3 text-center text-main font-semibold">10:00〜13:00</div>
+              <div class="px-4 py-3 text-center text-main font-semibold">15:00〜19:30</div>
+            </div>
+            <div class="grid grid-cols-3 hour-row text-xs" style="background:rgba(241,245,249,0.50);">
+              <div class="px-4 py-3 text-slate-600">土曜</div>
+              <div class="px-4 py-3 text-center text-main font-semibold">10:00〜13:00</div>
+              <div class="px-4 py-3 text-center text-main font-semibold">14:00〜17:00</div>
+            </div>
+            <div class="grid grid-cols-3 text-xs">
+              <div class="px-4 py-3 text-slate-400">日・祝</div>
+              <div class="px-4 py-3 text-center text-slate-400 col-span-2">定休日</div>
+            </div>
+          </div>
+          <p class="text-xs text-slate-400 mt-2">※ 最終受付は終了30分前です</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════ CTA ════════════ -->
+<section id="cta" class="section-wrap py-20 md:py-28" style="background:linear-gradient(145deg,#071e3d 0%,#0c2d5a 100%);">
+  <div class="max-w-3xl mx-auto px-4 text-center">
+    <div class="rv">
+      <p class="text-sky-400/60 text-xs tracking-widest mb-2 uppercase">Contact</p>
+      <h2 class="text-white text-2xl md:text-3xl font-black mb-4">まずはお気軽にご相談ください</h2>
+      <p class="text-white/70 text-sm mb-10 leading-relaxed">
+        「久しぶりに歯科に行きたいけど怖い」「費用が気になる」<br>
+        そんなご質問でも、LINEからお気軽にどうぞ。
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12 rv d1">
+        <a href="https://line.me/ti/p/XXXXXXXXXX" target="_blank" rel="noopener"
+           onclick="trackCTA('bottom_line')" class="btn-line-custom">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.07 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
+          </svg>
+          LINEで無料相談・予約
+        </a>
+        <a href="tel:03-6441-2580" onclick="trackCTA('bottom_tel')" class="btn-outline">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.58.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.29 21 3 13.71 3 5c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57-.11.36-.02.75.23 1.03L6.6 10.8z"/>
+          </svg>
+          03-6441-2580
+        </a>
+      </div>
+
+      <div class="glass-dark rounded-2xl p-7 text-left rv d2">
+        <h3 class="text-white font-black text-base mb-5 text-center">オンライン予約・お問い合わせ</h3>
+        <form action="https://formspree.io/f/XXXXXXXX" method="POST" id="contact-form" class="space-y-4">
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="text-white/50 text-xs mb-1.5 block">お名前 <span class="text-red-400">*</span></label>
+              <input type="text" name="name" required placeholder="山田 花子"
+                class="w-full rounded-xl px-4 py-3 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-sky-400"
+                style="background:rgba(255,255,255,0.92);">
+            </div>
+            <div>
+              <label class="text-white/50 text-xs mb-1.5 block">電話番号 <span class="text-red-400">*</span></label>
+              <input type="tel" name="phone" required placeholder="090-0000-0000"
+                class="w-full rounded-xl px-4 py-3 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-sky-400"
+                style="background:rgba(255,255,255,0.92);">
+            </div>
+          </div>
+          <div>
+            <label class="text-white/50 text-xs mb-1.5 block">ご希望の診療内容</label>
+            <select name="treatment"
+              class="w-full rounded-xl px-4 py-3 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-sky-400"
+              style="background:rgba(255,255,255,0.92);">
+              <option value="">選択してください</option>
+              <option>虫歯・歯の痛み</option>
+              <option>マウスピース矯正（インビザライン）</option>
+              <option>ホワイトニング</option>
+              <option>インプラント</option>
+              <option>小児歯科</option>
+              <option>定期検診・クリーニング</option>
+              <option>その他・まず相談したい</option>
+            </select>
+          </div>
+          <div>
+            <label class="text-white/50 text-xs mb-1.5 block">ご希望の来院日時（任意）</label>
+            <input type="text" name="preferred_date" placeholder="例：平日夕方、土曜の午前中"
+              class="w-full rounded-xl px-4 py-3 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-sky-400"
+              style="background:rgba(255,255,255,0.92);">
+          </div>
+          <div>
+            <label class="text-white/50 text-xs mb-1.5 block">メッセージ（任意）</label>
+            <textarea name="message" rows="3" placeholder="症状やご不明な点をご記入ください"
+              class="w-full rounded-xl px-4 py-3 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-sky-400 resize-none"
+              style="background:rgba(255,255,255,0.92);"></textarea>
+          </div>
+          <button type="submit" onclick="trackCTA('form_submit')"
+            class="w-full btn-primary rounded-xl py-4 text-sm">送信する</button>
+          <p class="text-white/30 text-xs text-center">通常24時間以内にご返信いたします。お急ぎの場合はお電話ください。</p>
+        </form>
+        <div id="form-success" class="hidden text-center py-8">
+          <svg class="w-12 h-12 text-sky-400 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <p class="text-white font-black">送信が完了しました</p>
+          <p class="text-white/50 text-sm mt-1">担当者より24時間以内にご連絡いたします</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════ FOOTER ════════════ -->
+<footer style="background:#040f1e;" class="text-white pt-12 pb-8 section-wrap">
+  <div class="max-w-5xl mx-auto px-4">
+    <div class="grid sm:grid-cols-3 gap-8 mb-10">
+      <div>
+        <div class="flex items-center gap-2 mb-3">
+          <svg class="w-5 h-5 text-sky-400" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C9.2 2 7 4 6 6.5 5 4 2.8 2 0 2c0 5 2.5 9 6.5 11L12 23l5.5-10C21.5 11 24 7 24 2c-2.8 0-5 2-6 4.5C17 4 14.8 2 12 2z"/>
+          </svg>
+          <span class="font-black text-sm">みなと歯科クリニック</span>
+        </div>
+        <p class="text-white/35 text-xs leading-relaxed">
+          東京都品川区高輪3-25-7<br>
+          高輪メディカルビル1F<br>
+          TEL: 03-6441-2580
+        </p>
+      </div>
+      <div>
+        <h4 class="text-white/40 text-xs font-semibold tracking-widest mb-4 uppercase">Menu</h4>
+        <ul class="space-y-2">
+          <li><a href="#features"   class="text-white/35 text-xs hover:text-white/60 transition-colors">選ばれる理由</a></li>
+          <li><a href="#treatments" class="text-white/35 text-xs hover:text-white/60 transition-colors">診療内容</a></li>
+          <li><a href="#price"      class="text-white/35 text-xs hover:text-white/60 transition-colors">料金</a></li>
+          <li><a href="#reviews"    class="text-white/35 text-xs hover:text-white/60 transition-colors">口コミ</a></li>
+          <li><a href="#faq"        class="text-white/35 text-xs hover:text-white/60 transition-colors">よくある質問</a></li>
+          <li><a href="#access"     class="text-white/35 text-xs hover:text-white/60 transition-colors">アクセス</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white/40 text-xs font-semibold tracking-widest mb-4 uppercase">Hours</h4>
+        <div class="text-xs text-white/35 space-y-1.5">
+          <p>月・火・水・金</p>
+          <p class="text-white/55">10:00〜13:00 / 15:00〜19:30</p>
+          <p class="mt-2">土曜</p>
+          <p class="text-white/55">10:00〜17:00</p>
+          <p class="mt-2 text-red-400/60">木・日・祝 定休</p>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-white/8 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-white/20">
+      <p>© 2024 みなと歯科クリニック All Rights Reserved.</p>
+      <a href="#" class="hover:text-white/35 transition-colors">プライバシーポリシー</a>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ════════════ FIXED BOTTOM CTA ════════════ -->
+<div id="fixed-cta">
+  <div class="flex gap-2 max-w-sm mx-auto">
+    <a href="https://line.me/ti/p/XXXXXXXXXX" target="_blank" rel="noopener"
+       onclick="trackCTA('fixed_line')"
+       class="btn-line-custom flex-1 text-sm" style="padding:11px 16px;border-radius:12px;font-size:.8rem;">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.07 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
+      </svg>
+      LINE予約（無料）
+    </a>
+    <a href="tel:03-6441-2580" onclick="trackCTA('fixed_tel')"
+       class="flex-none flex items-center gap-1.5 text-white font-bold text-sm px-5 rounded-xl"
+       style="background:#1e293b;padding:11px 20px;border-radius:12px;font-size:.8rem;">
+      <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.58.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.29 21 3 13.71 3 5c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57-.11.36-.02.75.23 1.03L6.6 10.8z"/>
+      </svg>
+      電話
+    </a>
+  </div>
+</div>
+
+
+<!-- ════════════ JAVASCRIPT ════════════ -->
+<script>
+// ── Scroll progress ──
+const progressBar = document.getElementById('progress');
+window.addEventListener('scroll', () => {
+  const s = document.documentElement.scrollTop;
+  const t = document.documentElement.scrollHeight - window.innerHeight;
+  progressBar.style.width = (s / t * 100) + '%';
+}, { passive: true });
+
+// ── Header bg on scroll ──
+const siteHeader = document.getElementById('site-header');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 40) siteHeader.classList.add('scrolled');
+  else siteHeader.classList.remove('scrolled');
+}, { passive: true });
+
+// ── Hero parallax ──
+const heroBg = document.getElementById('hero-bg');
+window.addEventListener('scroll', () => {
+  const y = window.scrollY;
+  if (y < window.innerHeight * 1.2) {
+    heroBg.style.transform = `scale(1.08) translateY(${y * 0.25}px)`;
+  }
+}, { passive: true });
+
+// ── Scroll reveal ──
+const rvEls = document.querySelectorAll('.rv');
+const rvObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    e.target.classList.add('visible');
+    rvObs.unobserve(e.target);
+  });
+}, { threshold: 0.10, rootMargin: '0px 0px -20px 0px' });
+rvEls.forEach(el => rvObs.observe(el));
+
+// ── Counter ──
+function runCounter(el) {
+  const target = parseInt(el.dataset.target, 10);
+  const dur = 1800;
+  const start = performance.now();
+  (function step(now) {
+    const p = Math.min((now - start) / dur, 1);
+    const e = 1 - Math.pow(1 - p, 3);
+    el.textContent = Math.floor(e * target).toLocaleString('ja-JP');
+    if (p < 1) requestAnimationFrame(step);
+  })(start);
+}
+const cntObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    runCounter(e.target);
+    cntObs.unobserve(e.target);
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('.counter-num').forEach(el => cntObs.observe(el));
+
+// ── FAQ accordion ──
+document.querySelectorAll('.faq-trigger').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const body = item.querySelector('.faq-body');
+    const open = !body.classList.contains('hidden');
+    document.querySelectorAll('.faq-item').forEach(i => {
+      i.querySelector('.faq-body').classList.add('hidden');
+      i.classList.remove('faq-open');
+    });
+    if (!open) { body.classList.remove('hidden'); item.classList.add('faq-open'); }
+  });
+});
+
+// ── Form submit ──
+const form = document.getElementById('contact-form');
+const succ = document.getElementById('form-success');
+if (form) {
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const r = await fetch(form.action, {
+      method: 'POST', body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    });
+    if (r.ok) { form.classList.add('hidden'); succ.classList.remove('hidden'); }
+  });
+}
+
+// ── 3D Card tilt (desktop only, 60fps via RAF) ──
+if (window.matchMedia('(pointer:fine)').matches) {
+  let rafId = null;
+  document.querySelectorAll('.tilt-wrap').forEach(wrap => {
+    const card = wrap.querySelector('.tilt-card');
+    if (!card) return;
+    let mx = 0, my = 0, cx = 0, cy = 0;
+
+    wrap.addEventListener('mousemove', e => {
+      const r = wrap.getBoundingClientRect();
+      mx = (e.clientX - r.left) / r.width - 0.5;
+      my = (e.clientY - r.top)  / r.height - 0.5;
+    }, { passive: true });
+
+    wrap.addEventListener('mouseleave', () => {
+      mx = 0; my = 0;
+    });
+
+    function animTilt() {
+      cx += (mx - cx) * 0.12;
+      cy += (my - cy) * 0.12;
+      const rx = cy * -10;
+      const ry = cx * 10;
+      card.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) scale3d(1.02,1.02,1.02)`;
+      rafId = requestAnimationFrame(animTilt);
+    }
+
+    wrap.addEventListener('mouseenter', () => {
+      cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(animTilt);
+    });
+    wrap.addEventListener('mouseleave', () => {
+      cancelAnimationFrame(rafId);
+      card.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg) scale3d(1,1,1)';
+    });
+  });
+}
+
+// ── Parallax images on scroll ──
+const pImgs = document.querySelectorAll('.parallax-img');
+if (pImgs.length && window.matchMedia('(min-width:768px)').matches) {
+  window.addEventListener('scroll', () => {
+    const sy = window.scrollY;
+    pImgs.forEach(img => {
+      const rect = img.closest('section, .rv') && img.getBoundingClientRect();
+      if (!rect) return;
+      const offset = (rect.top + rect.height / 2 - window.innerHeight / 2) * 0.06;
+      img.style.transform = `translateY(${offset}px)`;
+    });
+  }, { passive: true });
+}
+</script>
+
+</body>
+</html>
