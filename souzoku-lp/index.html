@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>相続・遺言の専門家 | 田中法務行政書士事務所 | 東京都渋谷区</title>
+  <meta name="description" content="東京都渋谷区の相続・遺言専門の行政書士事務所。初回相談無料。遺言書作成から相続手続きまで丸ごとサポート。年間50件以上の相続案件実績。" />
+  <meta property="og:title" content="相続・遺言の専門家 | 田中法務行政書士事務所" />
+  <meta property="og:description" content="初回相談無料。遺言書作成から相続手続きまで、丸ごとサポートします。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ja_JP" />
+  <link rel="canonical" href="https://khaya0026-coder.github.io/lp-portfolio/souzoku-lp/" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              50: '#f0f5fb',
+              100: '#dce8f5',
+              200: '#b3caea',
+              300: '#7aaad9',
+              400: '#4a87c3',
+              500: '#2e6dab',
+              600: '#1e5490',
+              700: '#174278',
+              800: '#112e58',
+              900: '#0d2240',
+              950: '#060e1c',
+            },
+            gold: {
+              300: '#f0c878',
+              400: '#e8aa48',
+              500: '#c98a28',
+              600: '#a66f1c',
+              700: '#7c5010',
+            },
+          },
+          fontFamily: {
+            sans: ['"Noto Sans JP"', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+    body { font-family: 'Noto Sans JP', sans-serif; -webkit-font-smoothing: antialiased; }
+
+    /* Japanese text */
+    .jp { text-align: justify; word-break: keep-all; overflow-wrap: break-word; }
+
+    /* Gold gradient text */
+    .gold-text {
+      background: linear-gradient(135deg, #c98a28 0%, #e8aa48 50%, #c98a28 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Scroll reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+    .reveal-d1 { transition-delay: 0.08s; }
+    .reveal-d2 { transition-delay: 0.16s; }
+    .reveal-d3 { transition-delay: 0.24s; }
+
+    /* FAQ */
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.38s ease;
+    }
+    .faq-answer.open { max-height: 500px; }
+    .faq-icon { transition: transform 0.3s ease; }
+    .faq-item.faq-open .faq-icon { transform: rotate(45deg); }
+    .faq-item.faq-open { border-color: rgb(201 138 40 / 0.4); }
+
+    /* Mobile nav */
+    .mobile-menu { display: none; }
+    .mobile-menu.open { display: block; }
+
+    /* Step line connector (desktop) */
+    @media (min-width: 1024px) {
+      .step-wrap {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        position: relative;
+      }
+      .step-wrap::before {
+        content: '';
+        position: absolute;
+        top: 22px;
+        left: calc(12.5% + 24px);
+        right: calc(12.5% + 24px);
+        height: 1px;
+        background: linear-gradient(90deg, #c98a28 0%, #e8aa48 50%, #c98a28 100%);
+        opacity: 0.4;
+      }
+    }
+
+    /* Mobile phone CTA bar */
+    .mobile-cta-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      display: flex;
+    }
+    @media (min-width: 768px) {
+      .mobile-cta-bar { display: none; }
+    }
+  </style>
+</head>
+<body class="bg-white text-navy-950">
+
+<!-- Fixed mobile CTA bar -->
+<div class="mobile-cta-bar" role="complementary" aria-label="クイックアクション">
+  <a href="tel:0120000000" class="flex-1 flex flex-col items-center justify-center py-3 gap-0.5 bg-navy-800 text-white">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.15a16 16 0 006.94 6.94l1.51-1.52a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+    </svg>
+    <span class="text-xs font-bold">電話相談</span>
+  </a>
+  <a href="#contact" class="flex-1 flex flex-col items-center justify-center py-3 gap-0.5 bg-gold-500 text-white">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+    </svg>
+    <span class="text-xs font-bold">無料相談</span>
+  </a>
+</div>
+
+<!-- Navigation -->
+<header class="fixed top-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-sm border-b border-gray-100" role="banner">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+    <a href="#" class="flex flex-col leading-tight">
+      <span class="text-xs text-gold-500 font-medium tracking-wide">相続・遺言専門</span>
+      <span class="text-sm font-bold text-navy-900 tracking-tight">田中法務行政書士事務所</span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-5 text-sm font-medium text-gray-500" aria-label="メインナビゲーション">
+      <a href="#concerns" class="hover:text-navy-800 transition-colors">お悩み</a>
+      <a href="#reasons" class="hover:text-navy-800 transition-colors">選ばれる理由</a>
+      <a href="#flow" class="hover:text-navy-800 transition-colors">相談の流れ</a>
+      <a href="#pricing" class="hover:text-navy-800 transition-colors">料金</a>
+      <a href="#profile" class="hover:text-navy-800 transition-colors">代表紹介</a>
+      <a href="#faq" class="hover:text-navy-800 transition-colors">FAQ</a>
+    </nav>
+    <a href="#contact" class="hidden md:inline-flex items-center gap-1.5 bg-gold-500 hover:bg-gold-600 text-white text-sm font-bold px-5 py-2.5 rounded-lg transition-colors whitespace-nowrap">
+      無料相談を予約する
+    </a>
+    <button id="burger" class="lg:hidden p-2 rounded-md text-navy-800" aria-label="メニュー" aria-expanded="false">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+  </div>
+  <nav id="mobile-nav" class="mobile-menu lg:hidden bg-white border-t border-gray-100" aria-label="モバイルナビゲーション">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col gap-1 text-sm font-medium text-gray-700">
+      <a href="#concerns" class="py-2.5 border-b border-gray-100 block">お悩み</a>
+      <a href="#reasons" class="py-2.5 border-b border-gray-100 block">選ばれる理由</a>
+      <a href="#flow" class="py-2.5 border-b border-gray-100 block">相談の流れ</a>
+      <a href="#pricing" class="py-2.5 border-b border-gray-100 block">料金</a>
+      <a href="#profile" class="py-2.5 border-b border-gray-100 block">代表紹介</a>
+      <a href="#faq" class="py-2.5 border-b border-gray-100 block">FAQ</a>
+      <a href="#contact" class="mt-2 block text-center bg-gold-500 text-white font-bold py-3 rounded-lg">無料相談を予約する</a>
+    </div>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section id="hero" aria-label="ヒーロー" class="min-h-[100dvh] bg-navy-900 flex items-center pt-16">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20 w-full grid lg:grid-cols-[1fr_400px] gap-10 lg:gap-16 items-center">
+
+    <!-- Text -->
+    <div class="reveal">
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-snug mb-5">
+        相続・遺言のことは、<br />
+        <span class="gold-text">専門家</span>にご相談ください。
+      </h1>
+      <p class="text-gray-300 text-base sm:text-lg leading-relaxed mb-8 max-w-lg jp">
+        初回相談は無料です。遺言書作成から相続手続きまで、丸ごとサポートします。
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3">
+        <a href="#contact"
+          class="inline-flex items-center justify-center gap-2 bg-gold-500 hover:bg-gold-600 text-white font-bold text-base px-7 py-3.5 rounded-lg transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+          </svg>
+          無料相談を予約する
+        </a>
+        <a href="tel:0120000000"
+          class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/15 border border-white/20 text-white font-medium text-base px-7 py-3.5 rounded-lg transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.15a16 16 0 006.94 6.94l1.51-1.52a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+          </svg>
+          0120-000-000 に電話する
+        </a>
+      </div>
+    </div>
+
+    <!-- Image -->
+    <div class="hidden lg:block reveal reveal-d1">
+      <div class="rounded-2xl overflow-hidden relative shadow-2xl" style="aspect-ratio:3/4;">
+        <img
+          src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80&auto=format&fit=crop"
+          alt="書類に記入する専門家の手元"
+          class="w-full h-full object-cover"
+          width="400" height="533"
+          fetchpriority="high"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-navy-900/20 to-transparent"></div>
+        <!-- Credential badge -->
+        <div class="absolute bottom-5 left-5 right-5 bg-white/95 backdrop-blur-sm rounded-xl px-4 py-3">
+          <p class="text-gold-600 text-xs font-semibold mb-0.5">代表行政書士</p>
+          <p class="text-navy-900 font-bold text-sm">田中 義弘 (Yoshihiro Tanaka)</p>
+          <p class="text-gray-500 text-xs mt-1">相続専門歴 12年 / 累計相談 200件以上</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="bg-navy-950 border-b border-white/5 py-4" aria-label="実績と信頼">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm text-gray-400">
+      <div class="flex items-center gap-2">
+        <svg class="w-4 h-4 text-gold-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+        </svg>
+        初回相談 完全無料
+      </div>
+      <div class="flex items-center gap-2">
+        <svg class="w-4 h-4 text-gold-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+        </svg>
+        相続案件 200件以上の実績
+      </div>
+      <div class="flex items-center gap-2">
+        <svg class="w-4 h-4 text-gold-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+        </svg>
+        土日祝・夜間も対応
+      </div>
+      <div class="flex items-center gap-2">
+        <svg class="w-4 h-4 text-gold-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+        </svg>
+        オンライン相談 対応可
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONCERNS / お悩み -->
+<section id="concerns" class="py-20 sm:py-28 bg-white" aria-label="お客様のお悩み">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="mb-14 reveal">
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-navy-900 mb-4">
+        こんなお悩みを<br class="sm:hidden" />抱えていませんか？
+      </h2>
+      <p class="text-gray-500 max-w-lg jp">
+        相続・遺言は人生で何度もあることではありません。わからないことだらけで当然です。
+      </p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+
+      <div class="reveal bg-navy-50 rounded-2xl p-6 border border-navy-100 hover:-translate-y-1 hover:shadow-md transition-all">
+        <div class="w-10 h-10 bg-navy-100 rounded-xl flex items-center justify-center mb-4" aria-hidden="true">
+          <svg class="w-5 h-5 text-navy-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        </div>
+        <h3 class="font-bold text-navy-900 mb-2 text-sm sm:text-base">遺言書の書き方がわからない</h3>
+        <p class="text-xs sm:text-sm text-gray-600 leading-relaxed jp">形式に不備があると無効になる場合も。せっかくの遺志を確実に実現させるには専門家の確認が必要です。</p>
+      </div>
+
+      <div class="reveal reveal-d1 bg-navy-50 rounded-2xl p-6 border border-navy-100 hover:-translate-y-1 hover:shadow-md transition-all">
+        <div class="w-10 h-10 bg-navy-100 rounded-xl flex items-center justify-center mb-4" aria-hidden="true">
+          <svg class="w-5 h-5 text-navy-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        </div>
+        <h3 class="font-bold text-navy-900 mb-2 text-sm sm:text-base">相続人が誰なのかわからない</h3>
+        <p class="text-xs sm:text-sm text-gray-600 leading-relaxed jp">法定相続人の確認には戸籍調査が必要です。疎遠な親族が相続権を持つケースも少なくありません。</p>
+      </div>
+
+      <div class="reveal reveal-d2 bg-navy-50 rounded-2xl p-6 border border-navy-100 hover:-translate-y-1 hover:shadow-md transition-all">
+        <div class="w-10 h-10 bg-navy-100 rounded-xl flex items-center justify-center mb-4" aria-hidden="true">
+          <svg class="w-5 h-5 text-navy-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg>
+        </div>
+        <h3 class="font-bold text-navy-900 mb-2 text-sm sm:text-base">財産をどう分けるべきか迷っている</h3>
+        <p class="text-xs sm:text-sm text-gray-600 leading-relaxed jp">不動産・預貯金・株式など財産の種類によって分け方が異なります。遺産分割協議書の作成も必要です。</p>
+      </div>
+
+      <div class="reveal bg-navy-50 rounded-2xl p-6 border border-navy-100 hover:-translate-y-1 hover:shadow-md transition-all">
+        <div class="w-10 h-10 bg-navy-100 rounded-xl flex items-center justify-center mb-4" aria-hidden="true">
+          <svg class="w-5 h-5 text-navy-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+        </div>
+        <h3 class="font-bold text-navy-900 mb-2 text-sm sm:text-base">相続トラブルが心配</h3>
+        <p class="text-xs sm:text-sm text-gray-600 leading-relaxed jp">兄弟姉妹間での意見の相違は珍しくありません。早期に専門家を交えることでトラブルを未然に防げます。</p>
+      </div>
+
+      <div class="reveal reveal-d1 bg-navy-50 rounded-2xl p-6 border border-navy-100 hover:-translate-y-1 hover:shadow-md transition-all">
+        <div class="w-10 h-10 bg-navy-100 rounded-xl flex items-center justify-center mb-4" aria-hidden="true">
+          <svg class="w-5 h-5 text-navy-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+        </div>
+        <h3 class="font-bold text-navy-900 mb-2 text-sm sm:text-base">手続きの期限が不安</h3>
+        <p class="text-xs sm:text-sm text-gray-600 leading-relaxed jp">相続放棄は3ヶ月以内など、期限がある手続きが複数あります。知らずに期限を過ぎると選択肢が狭まります。</p>
+      </div>
+
+      <div class="reveal reveal-d2 bg-navy-50 rounded-2xl p-6 border border-navy-100 hover:-translate-y-1 hover:shadow-md transition-all">
+        <div class="w-10 h-10 bg-navy-100 rounded-xl flex items-center justify-center mb-4" aria-hidden="true">
+          <svg class="w-5 h-5 text-navy-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg>
+        </div>
+        <h3 class="font-bold text-navy-900 mb-2 text-sm sm:text-base">どこに相談すればいいかわからない</h3>
+        <p class="text-xs sm:text-sm text-gray-600 leading-relaxed jp">弁護士・司法書士・行政書士の違いがわからず、誰に相談すべきか迷っている方が多くいらっしゃいます。</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- REASONS / 選ばれる理由 -->
+<section id="reasons" class="py-20 sm:py-28 bg-navy-950" aria-label="選ばれる理由">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14 reveal">
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4">
+        選ばれる <span class="gold-text">4つの理由</span>
+      </h2>
+      <p class="text-gray-400 max-w-xl mx-auto jp">
+        専門性・明瞭な料金・柔軟な対応・連携体制で、多くのお客様にお選びいただいています。
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 gap-5 sm:gap-6">
+
+      <div class="reveal bg-white/5 border border-white/10 rounded-2xl p-7 hover:bg-white/8 transition-colors">
+        <div class="w-12 h-12 bg-gold-500/20 rounded-xl flex items-center justify-center mb-5" aria-hidden="true">
+          <svg class="w-6 h-6 text-gold-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+          </svg>
+        </div>
+        <h3 class="text-base sm:text-lg font-bold text-white mb-3">相続・遺言に特化した専門知識</h3>
+        <p class="text-gray-400 text-sm leading-relaxed jp">相続・遺言の案件のみに集中しているため、幅広く対応する事務所と比べて圧倒的な知識と経験があります。年間50件以上の相続案件を担当しています。</p>
+      </div>
+
+      <div class="reveal reveal-d1 bg-white/5 border border-white/10 rounded-2xl p-7 hover:bg-white/8 transition-colors">
+        <div class="w-12 h-12 bg-gold-500/20 rounded-xl flex items-center justify-center mb-5" aria-hidden="true">
+          <svg class="w-6 h-6 text-gold-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 14l6-6m-5.5.5h.01m4.99 5h.01M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16l3.5-2 3.5 2 3.5-2 3.5 2z"/>
+          </svg>
+        </div>
+        <h3 class="text-base sm:text-lg font-bold text-white mb-3">わかりやすい料金体系</h3>
+        <p class="text-gray-400 text-sm leading-relaxed jp">料金は事前に明示します。「気づいたら高額になっていた」という不安はありません。初回相談は完全無料。追加費用が発生する場合も必ず事前にご確認いただきます。</p>
+      </div>
+
+      <div class="reveal reveal-d1 bg-white/5 border border-white/10 rounded-2xl p-7 hover:bg-white/8 transition-colors">
+        <div class="w-12 h-12 bg-gold-500/20 rounded-xl flex items-center justify-center mb-5" aria-hidden="true">
+          <svg class="w-6 h-6 text-gold-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </div>
+        <h3 class="text-base sm:text-lg font-bold text-white mb-3">土日祝・夜間も対応可能</h3>
+        <p class="text-gray-400 text-sm leading-relaxed jp">お仕事をお持ちの方や遠方の方でも相談しやすいよう、土日祝日・夜間の対応も可能です。電話・オンライン相談も承ります。</p>
+      </div>
+
+      <div class="reveal reveal-d2 bg-white/5 border border-white/10 rounded-2xl p-7 hover:bg-white/8 transition-colors">
+        <div class="w-12 h-12 bg-gold-500/20 rounded-xl flex items-center justify-center mb-5" aria-hidden="true">
+          <svg class="w-6 h-6 text-gold-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
+          </svg>
+        </div>
+        <h3 class="text-base sm:text-lg font-bold text-white mb-3">税理士・司法書士との連携体制</h3>
+        <p class="text-gray-400 text-sm leading-relaxed jp">必要に応じて、信頼できる税理士・司法書士・弁護士をご紹介します。相続税申告から不動産登記まで、ワンストップでサポートできます。</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FLOW / 相談の流れ -->
+<section id="flow" class="py-20 sm:py-28 bg-white" aria-label="相談の流れ">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14 reveal">
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-navy-900 mb-4">相談から解決までの流れ</h2>
+      <p class="text-gray-500 max-w-xl mx-auto jp">はじめての方でも安心して進められるよう、丁寧にサポートします。</p>
+    </div>
+
+    <div class="step-wrap gap-8">
+      <div class="reveal text-center px-3">
+        <div class="w-11 h-11 bg-gold-500 text-white rounded-full flex items-center justify-center text-lg font-bold mx-auto mb-4 shadow-lg shadow-gold-500/30 relative z-10">1</div>
+        <h3 class="font-bold text-navy-900 mb-2 text-sm sm:text-base">無料相談</h3>
+        <p class="text-xs sm:text-sm text-gray-500 leading-relaxed jp">電話・メール・LINEでお気軽にご連絡ください。まずは状況をお聞きします。</p>
+      </div>
+      <div class="reveal reveal-d1 text-center px-3">
+        <div class="w-11 h-11 bg-gold-500 text-white rounded-full flex items-center justify-center text-lg font-bold mx-auto mb-4 shadow-lg shadow-gold-500/30 relative z-10">2</div>
+        <h3 class="font-bold text-navy-900 mb-2 text-sm sm:text-base">現状ヒアリング</h3>
+        <p class="text-xs sm:text-sm text-gray-500 leading-relaxed jp">財産・相続人・ご要望などを詳しくお聞きし、最適な対応策をご提案します。</p>
+      </div>
+      <div class="reveal reveal-d2 text-center px-3">
+        <div class="w-11 h-11 bg-gold-500 text-white rounded-full flex items-center justify-center text-lg font-bold mx-auto mb-4 shadow-lg shadow-gold-500/30 relative z-10">3</div>
+        <h3 class="font-bold text-navy-900 mb-2 text-sm sm:text-base">書類作成・手続き</h3>
+        <p class="text-xs sm:text-sm text-gray-500 leading-relaxed jp">遺産分割協議書・遺言書などを作成し、各種機関への手続きを代行します。</p>
+      </div>
+      <div class="reveal reveal-d3 text-center px-3">
+        <div class="w-11 h-11 bg-gold-500 text-white rounded-full flex items-center justify-center text-lg font-bold mx-auto mb-4 shadow-lg shadow-gold-500/30 relative z-10">4</div>
+        <h3 class="font-bold text-navy-900 mb-2 text-sm sm:text-base">解決・完了</h3>
+        <p class="text-xs sm:text-sm text-gray-500 leading-relaxed jp">手続き完了後も、ご不明点があればいつでもご連絡いただけます。</p>
+      </div>
+    </div>
+
+    <div class="mt-12 text-center reveal">
+      <a href="#contact" class="inline-flex items-center gap-2 bg-navy-800 hover:bg-navy-900 text-white font-bold px-8 py-4 rounded-xl transition-colors">
+        まずは無料相談をご予約する
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING / 料金 -->
+<section id="pricing" class="py-20 sm:py-28 bg-gray-50" aria-label="料金のご案内">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14 reveal">
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-navy-900 mb-4">料金のご案内</h2>
+      <p class="text-gray-500 max-w-xl mx-auto jp">すべての料金は事前にご説明します。ご同意いただいた後から費用が発生します。</p>
+    </div>
+
+    <div class="grid sm:grid-cols-3 gap-5 items-start">
+
+      <div class="reveal bg-white rounded-2xl border border-gray-200 p-7 hover:shadow-md hover:-translate-y-1 transition-all">
+        <p class="text-gold-500 text-xs font-bold mb-4 uppercase tracking-wider">遺言書作成</p>
+        <div class="flex items-baseline gap-1 mb-1">
+          <span class="text-3xl font-bold text-navy-900">66,000</span>
+          <span class="text-gray-400 text-sm">円 (税込) ~</span>
+        </div>
+        <p class="text-gray-400 text-xs mb-6">内容の複雑さにより変動します</p>
+        <ul class="space-y-2.5 text-sm text-gray-600" aria-label="遺言書作成サービス内容">
+          <li class="flex items-start gap-2.5">
+            <svg class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            自筆証書遺言の確認・添削
+          </li>
+          <li class="flex items-start gap-2.5">
+            <svg class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            公正証書遺言の原案作成
+          </li>
+          <li class="flex items-start gap-2.5">
+            <svg class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            公証役場への同行
+          </li>
+        </ul>
+      </div>
+
+      <!-- Featured -->
+      <div class="reveal reveal-d1 relative bg-navy-800 rounded-2xl border-2 border-gold-500 p-7 hover:shadow-xl hover:-translate-y-1 transition-all">
+        <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gold-500 text-white text-xs font-bold px-4 py-1 rounded-full whitespace-nowrap">最も人気</div>
+        <p class="text-gold-400 text-xs font-bold mb-4 uppercase tracking-wider">相続手続き 一式</p>
+        <div class="flex items-baseline gap-1 mb-1">
+          <span class="text-3xl font-bold text-white">110,000</span>
+          <span class="text-gray-400 text-sm">円 (税込) ~</span>
+        </div>
+        <p class="text-gray-400 text-xs mb-6">財産総額・相続人数により変動します</p>
+        <ul class="space-y-2.5 text-sm text-gray-300" aria-label="相続手続き一式サービス内容">
+          <li class="flex items-start gap-2.5">
+            <svg class="w-4 h-4 text-gold-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            相続人調査 (戸籍収集)
+          </li>
+          <li class="flex items-start gap-2.5">
+            <svg class="w-4 h-4 text-gold-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            財産調査・目録作成
+          </li>
+          <li class="flex items-start gap-2.5">
+            <svg class="w-4 h-4 text-gold-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            遺産分割協議書の作成
+          </li>
+          <li class="flex items-start gap-2.5">
+            <svg class="w-4 h-4 text-gold-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            預貯金・株式の名義変更手続き代行
+          </li>
+        </ul>
+      </div>
+
+      <div class="reveal reveal-d2 bg-white rounded-2xl border border-gray-200 p-7 hover:shadow-md hover:-translate-y-1 transition-all">
+        <p class="text-gold-500 text-xs font-bold mb-4 uppercase tracking-wider">相続放棄申立</p>
+        <div class="flex items-baseline gap-1 mb-1">
+          <span class="text-3xl font-bold text-navy-900">44,000</span>
+          <span class="text-gray-400 text-sm">円 (税込) ~</span>
+        </div>
+        <p class="text-gray-400 text-xs mb-6">複数人の場合は人数により変動します</p>
+        <ul class="space-y-2.5 text-sm text-gray-600" aria-label="相続放棄申立サービス内容">
+          <li class="flex items-start gap-2.5">
+            <svg class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            申立書類の作成・提出
+          </li>
+          <li class="flex items-start gap-2.5">
+            <svg class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            3ヶ月の期限内に確実に対応
+          </li>
+          <li class="flex items-start gap-2.5">
+            <svg class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            必要書類の取得サポート
+          </li>
+        </ul>
+      </div>
+
+    </div>
+    <p class="text-center text-xs text-gray-400 mt-6">上記は標準的な料金の目安です。詳細はご相談の上お見積りいたします。</p>
+  </div>
+</section>
+
+<!-- PROFILE / 代表紹介 -->
+<section id="profile" class="py-20 sm:py-28 bg-white" aria-label="代表紹介">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-[340px_1fr] gap-10 lg:gap-16 items-start">
+
+      <!-- Photo -->
+      <div class="reveal mx-auto lg:mx-0 max-w-xs lg:max-w-none w-full">
+        <div class="rounded-2xl overflow-hidden relative" style="aspect-ratio:3/4;">
+          <img
+            src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=680&q=80&auto=format&fit=crop&crop=top"
+            alt="代表行政書士 田中義弘"
+            class="w-full h-full object-cover"
+            width="340" height="453"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-navy-950/75 to-transparent"></div>
+          <div class="absolute bottom-5 left-5 right-5">
+            <p class="text-gold-400 text-xs font-semibold mb-0.5">代表 / 行政書士</p>
+            <p class="text-white text-lg font-bold">田中 義弘</p>
+            <p class="text-gray-300 text-xs mt-0.5">Yoshihiro Tanaka</p>
+          </div>
+        </div>
+        <!-- Qualifications -->
+        <div class="mt-4 bg-navy-50 rounded-xl p-5 border border-navy-100">
+          <p class="text-xs text-gray-400 mb-2.5 font-medium">保有資格</p>
+          <ul class="space-y-1.5 text-sm font-medium text-navy-800">
+            <li>行政書士 (東京都行政書士会 会員)</li>
+            <li>相続診断士</li>
+            <li>ファイナンシャルプランナー (AFP)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bio -->
+      <div class="reveal reveal-d1">
+        <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-navy-900 mb-6">
+          相続の不安を、<br />一緒に解決しましょう。
+        </h2>
+        <div class="space-y-4 text-gray-600 text-sm sm:text-base leading-relaxed jp">
+          <p>私が行政書士を志したのは、身近な人が相続でトラブルを経験した姿を見たことがきっかけでした。「もっと早く専門家に相談していれば」という言葉が今も心に残っています。</p>
+          <p>相続は、ご家族を亡くされた悲しみの中で進める手続きです。だからこそ、法律の難しい言葉はなるべく使わず、何が必要で次に何をすればよいかを丁寧にお伝えすることを大切にしています。</p>
+          <p>相続・遺言の専門家として、2012年の開業以来、累計200件以上のご相談をお受けしてきました。「相談してよかった」と感じていただけるよう、最後まで丁寧に伴走します。</p>
+        </div>
+
+        <!-- Stats row -->
+        <div class="mt-8 grid grid-cols-3 gap-3">
+          <div class="text-center bg-navy-50 rounded-xl py-4 px-2 border border-navy-100">
+            <p class="text-2xl font-bold text-navy-900 leading-none mb-1">12</p>
+            <p class="text-xs text-gray-500">年以上の経験</p>
+          </div>
+          <div class="text-center bg-navy-50 rounded-xl py-4 px-2 border border-navy-100">
+            <p class="text-2xl font-bold text-navy-900 leading-none mb-1">200<span class="text-base">+</span></p>
+            <p class="text-xs text-gray-500">累計相談件数</p>
+          </div>
+          <div class="text-center bg-navy-50 rounded-xl py-4 px-2 border border-navy-100">
+            <p class="text-2xl font-bold text-navy-900 leading-none mb-1">98<span class="text-base">%</span></p>
+            <p class="text-xs text-gray-500">お客様満足度</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="py-20 sm:py-28 bg-gray-50" aria-label="よくある質問">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14 reveal">
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-navy-900 mb-4">よくあるご質問</h2>
+      <p class="text-gray-500">ご不明な点はお気軽にお問い合わせください。</p>
+    </div>
+
+    <div class="space-y-3" role="list">
+
+      <div class="faq-item reveal bg-white rounded-xl border border-gray-200 overflow-hidden transition-colors" role="listitem">
+        <button class="faq-trigger w-full flex items-center justify-between gap-4 px-5 sm:px-6 py-4 sm:py-5 text-left" aria-expanded="false">
+          <span class="font-semibold text-navy-900 text-sm sm:text-base jp">行政書士と弁護士・司法書士の違いは何ですか？</span>
+          <svg class="faq-icon w-5 h-5 text-gold-500 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16m8-8H4"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p class="px-5 sm:px-6 pb-5 text-sm text-gray-600 leading-relaxed jp">行政書士は官公署に提出する書類の作成・手続き代行が専門です。遺言書・遺産分割協議書の作成、戸籍収集などを行います。不動産の名義変更登記は司法書士、相続トラブルの調停・訴訟は弁護士の業務です。当事務所では各専門家と連携し、ワンストップでサポートします。</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal reveal-d1 bg-white rounded-xl border border-gray-200 overflow-hidden transition-colors" role="listitem">
+        <button class="faq-trigger w-full flex items-center justify-between gap-4 px-5 sm:px-6 py-4 sm:py-5 text-left" aria-expanded="false">
+          <span class="font-semibold text-navy-900 text-sm sm:text-base jp">初回の相談は本当に無料ですか？</span>
+          <svg class="faq-icon w-5 h-5 text-gold-500 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16m8-8H4"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p class="px-5 sm:px-6 pb-5 text-sm text-gray-600 leading-relaxed jp">はい、初回のご相談（60分程度）は完全無料です。費用が発生するのは、ご依頼をいただき、内容・料金にご同意いただいた後からです。「相談だけ」でも大歓迎ですので、お気軽にお問い合わせください。</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal reveal-d1 bg-white rounded-xl border border-gray-200 overflow-hidden transition-colors" role="listitem">
+        <button class="faq-trigger w-full flex items-center justify-between gap-4 px-5 sm:px-6 py-4 sm:py-5 text-left" aria-expanded="false">
+          <span class="font-semibold text-navy-900 text-sm sm:text-base jp">相続手続きにはどのくらい時間がかかりますか？</span>
+          <svg class="faq-icon w-5 h-5 text-gold-500 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16m8-8H4"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p class="px-5 sm:px-6 pb-5 text-sm text-gray-600 leading-relaxed jp">ケースによって異なりますが、一般的な相続手続きで2〜4ヶ月程度が目安です。相続人の数が多い場合や財産が複雑な場合はそれ以上かかることもあります。相続放棄は3ヶ月の期限があるため、早めのご相談をお勧めします。</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal reveal-d2 bg-white rounded-xl border border-gray-200 overflow-hidden transition-colors" role="listitem">
+        <button class="faq-trigger w-full flex items-center justify-between gap-4 px-5 sm:px-6 py-4 sm:py-5 text-left" aria-expanded="false">
+          <span class="font-semibold text-navy-900 text-sm sm:text-base jp">遠方に住んでいても相談できますか？</span>
+          <svg class="faq-icon w-5 h-5 text-gold-500 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16m8-8H4"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p class="px-5 sm:px-6 pb-5 text-sm text-gray-600 leading-relaxed">はい、オンライン (Zoom・電話) でのご相談も承っています。書類の郵送でも対応可能です。遠方の方でも安心してご利用いただけます。</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal reveal-d2 bg-white rounded-xl border border-gray-200 overflow-hidden transition-colors" role="listitem">
+        <button class="faq-trigger w-full flex items-center justify-between gap-4 px-5 sm:px-6 py-4 sm:py-5 text-left" aria-expanded="false">
+          <span class="font-semibold text-navy-900 text-sm sm:text-base jp">相続税の申告も対応していただけますか？</span>
+          <svg class="faq-icon w-5 h-5 text-gold-500 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16m8-8H4"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p class="px-5 sm:px-6 pb-5 text-sm text-gray-600 leading-relaxed jp">相続税の申告は税理士の業務となりますが、連携している税理士をご紹介することができます。当事務所が窓口となってコーディネートしますので、別々に相談先を探す必要はありません。</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ACCESS / アクセス -->
+<section id="access" class="py-20 sm:py-28 bg-white" aria-label="アクセス・事務所情報">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12 reveal">
+      <h2 class="text-2xl sm:text-3xl font-bold text-navy-900 mb-2">アクセス・事務所情報</h2>
+    </div>
+    <div class="grid lg:grid-cols-2 gap-8 items-stretch">
+
+      <!-- Map -->
+      <div class="reveal rounded-2xl overflow-hidden bg-gray-100" style="min-height:280px;">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.4773788025714!2d139.6993!3d35.6607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188ca4d2c1d4a1%3A0x1!2z5riL6LC35Yy65YmN5Ymy!5e0!3m2!1sja!2sjp!4v1700000000000"
+          class="w-full h-full"
+          style="border:0; min-height:280px;"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="田中法務行政書士事務所の地図"
+        ></iframe>
+      </div>
+
+      <!-- Info -->
+      <div class="reveal reveal-d1 flex flex-col gap-4">
+        <div class="bg-navy-50 rounded-xl p-6 border border-navy-100 flex-1">
+          <h3 class="font-bold text-navy-900 mb-5">田中法務行政書士事務所</h3>
+          <dl class="space-y-3.5 text-sm">
+            <div class="flex gap-4">
+              <dt class="text-gray-400 w-14 flex-shrink-0 font-medium">住所</dt>
+              <dd class="text-navy-800">
+                〒150-0001<br />
+                東京都渋谷区神宮前1-1-1<br />
+                渋谷ファーストビル 3F
+              </dd>
+            </div>
+            <div class="flex gap-4">
+              <dt class="text-gray-400 w-14 flex-shrink-0 font-medium">電話</dt>
+              <dd><a href="tel:0120000000" class="text-navy-800 font-bold hover:text-gold-600 transition-colors">0120-000-000</a></dd>
+            </div>
+            <div class="flex gap-4">
+              <dt class="text-gray-400 w-14 flex-shrink-0 font-medium">受付</dt>
+              <dd class="text-navy-800">月〜金 9:00〜18:00<br />土日祝 要予約</dd>
+            </div>
+            <div class="flex gap-4">
+              <dt class="text-gray-400 w-14 flex-shrink-0 font-medium">最寄駅</dt>
+              <dd class="text-navy-800">東京メトロ 明治神宮前駅 徒歩3分<br />JR 原宿駅 徒歩5分</dd>
+            </div>
+          </dl>
+        </div>
+        <a href="tel:0120000000" class="flex items-center justify-center gap-3 bg-navy-800 hover:bg-navy-900 text-white font-bold py-4 rounded-xl transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.15a16 16 0 006.94 6.94l1.51-1.52a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          今すぐ電話する (無料)
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT / フォーム + LINE + 電話 CTA -->
+<section id="contact" class="py-20 sm:py-28 bg-navy-950" aria-label="無料相談フォーム">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="text-center mb-10 reveal">
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4">
+        まずは <span class="gold-text">無料相談</span> から
+      </h2>
+      <p class="text-gray-400 max-w-xl mx-auto jp">どんな些細なことでもご相談ください。相談だけで終わっても構いません。</p>
+    </div>
+
+    <!-- Contact options -->
+    <div class="grid sm:grid-cols-3 gap-4 mb-10">
+
+      <a href="tel:0120000000" class="reveal flex flex-col items-center gap-3 bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 hover:-translate-y-1 transition-all text-center">
+        <div class="w-11 h-11 bg-white/10 rounded-full flex items-center justify-center" aria-hidden="true">
+          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.15a16 16 0 006.94 6.94l1.51-1.52a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        </div>
+        <div>
+          <p class="text-gold-400 text-xs font-semibold mb-1">お電話</p>
+          <p class="text-white font-bold">0120-000-000</p>
+          <p class="text-gray-500 text-xs mt-1">月〜金 9:00〜18:00</p>
+        </div>
+      </a>
+
+      <a href="https://line.me/R/ti/p/@example" target="_blank" rel="noopener noreferrer" class="reveal reveal-d1 flex flex-col items-center gap-3 rounded-2xl p-6 hover:-translate-y-1 transition-all text-center border" style="background:rgba(6,199,85,0.12); border-color:rgba(6,199,85,0.3);">
+        <div class="w-11 h-11 rounded-full flex items-center justify-center" style="background:#06C755;" aria-hidden="true">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+        </div>
+        <div>
+          <p class="text-xs font-semibold mb-1" style="color:#06C755;">LINE相談</p>
+          <p class="text-white font-bold">LINEで相談する</p>
+          <p class="text-gray-500 text-xs mt-1">24時間メッセージ受付</p>
+        </div>
+      </a>
+
+      <div class="reveal reveal-d2 flex flex-col items-center gap-3 bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
+        <div class="w-11 h-11 bg-white/10 rounded-full flex items-center justify-center" aria-hidden="true">
+          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        </div>
+        <div>
+          <p class="text-gold-400 text-xs font-semibold mb-1">メール相談</p>
+          <p class="text-white font-bold">フォームから申込み</p>
+          <p class="text-gray-500 text-xs mt-1">24時間受付 / 翌営業日返信</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Form -->
+    <div class="reveal bg-white rounded-2xl p-6 sm:p-10 max-w-2xl mx-auto" style="transition-delay:0.1s">
+      <h3 class="text-lg sm:text-xl font-bold text-navy-900 mb-6">無料相談フォーム</h3>
+      <form id="contact-form" novalidate aria-label="無料相談申込みフォーム">
+        <div class="space-y-5">
+          <div>
+            <label for="name" class="block text-sm font-semibold text-navy-800 mb-1.5">
+              お名前 <span class="text-red-500" aria-label="必須">*</span>
+            </label>
+            <input type="text" id="name" name="name" required autocomplete="name"
+              class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-navy-500 focus:ring-2 focus:ring-navy-200 transition-colors"
+              placeholder="山田 太郎" />
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-semibold text-navy-800 mb-1.5">
+              メールアドレス <span class="text-red-500" aria-label="必須">*</span>
+            </label>
+            <input type="email" id="email" name="email" required autocomplete="email"
+              class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-navy-500 focus:ring-2 focus:ring-navy-200 transition-colors"
+              placeholder="example@email.com" />
+          </div>
+          <div>
+            <label for="phone" class="block text-sm font-semibold text-navy-800 mb-1.5">電話番号 (任意)</label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel"
+              class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-navy-500 focus:ring-2 focus:ring-navy-200 transition-colors"
+              placeholder="090-0000-0000" />
+          </div>
+          <div>
+            <label for="consultation-type" class="block text-sm font-semibold text-navy-800 mb-1.5">
+              ご相談の種類 <span class="text-red-500" aria-label="必須">*</span>
+            </label>
+            <div class="relative">
+              <select id="consultation-type" name="type" required
+                class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-navy-500 focus:ring-2 focus:ring-navy-200 transition-colors bg-white appearance-none pr-10 cursor-pointer">
+                <option value="">選択してください</option>
+                <option value="inheritance">相続手続き全般</option>
+                <option value="will">遺言書の作成</option>
+                <option value="renunciation">相続放棄</option>
+                <option value="dispute">相続トラブル相談</option>
+                <option value="other">その他</option>
+              </select>
+              <svg class="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 9l-7 7-7-7"/></svg>
+            </div>
+          </div>
+          <div>
+            <label for="message" class="block text-sm font-semibold text-navy-800 mb-1.5">ご相談内容 (任意)</label>
+            <textarea id="message" name="message" rows="4"
+              class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-navy-500 focus:ring-2 focus:ring-navy-200 transition-colors resize-none"
+              placeholder="ご状況やご不明点など、簡単にご記載ください。"></textarea>
+          </div>
+          <div class="flex items-start gap-3">
+            <input type="checkbox" id="privacy" name="privacy" required
+              class="mt-0.5 w-4 h-4 border-gray-300 rounded text-navy-700 focus:ring-navy-500 cursor-pointer flex-shrink-0 accent-navy-700" />
+            <label for="privacy" class="text-xs text-gray-500 leading-relaxed cursor-pointer">
+              <a href="#" class="text-navy-700 underline underline-offset-2">プライバシーポリシー</a>に同意の上、送信します。
+            </label>
+          </div>
+          <button type="submit" id="submit-btn"
+            class="w-full bg-gold-500 hover:bg-gold-600 disabled:opacity-60 disabled:cursor-not-allowed text-white font-bold py-4 rounded-xl transition-colors text-base flex items-center justify-center gap-2">
+            無料相談を申し込む
+            <svg id="submit-arrow" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+          </button>
+        </div>
+      </form>
+      <div id="form-success" class="hidden mt-5 p-5 bg-green-50 border border-green-200 rounded-xl text-center" role="alert">
+        <p class="text-green-700 font-bold mb-1">送信が完了しました。</p>
+        <p class="text-green-600 text-sm">翌営業日中にご連絡いたします。</p>
+      </div>
+      <p class="text-xs text-gray-400 text-center mt-4">送信後、翌営業日中にご連絡いたします。</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-navy-950 border-t border-white/5 py-10 pb-20 md:pb-10" role="contentinfo">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col md:flex-row justify-between items-start gap-8">
+      <div>
+        <p class="text-gold-400 text-xs mb-1 font-medium">相続・遺言専門</p>
+        <p class="text-white font-bold text-base mb-2">田中法務行政書士事務所</p>
+        <address class="text-gray-500 text-xs leading-relaxed not-italic">
+          〒150-0001 東京都渋谷区神宮前1-1-1<br />
+          TEL: <a href="tel:0120000000" class="hover:text-gray-300 transition-colors">0120-000-000</a>
+        </address>
+      </div>
+      <nav class="flex flex-wrap gap-5 text-sm text-gray-500" aria-label="フッターナビゲーション">
+        <a href="#concerns" class="hover:text-gray-300 transition-colors">お悩み</a>
+        <a href="#reasons" class="hover:text-gray-300 transition-colors">選ばれる理由</a>
+        <a href="#flow" class="hover:text-gray-300 transition-colors">相談の流れ</a>
+        <a href="#pricing" class="hover:text-gray-300 transition-colors">料金</a>
+        <a href="#profile" class="hover:text-gray-300 transition-colors">代表紹介</a>
+        <a href="#faq" class="hover:text-gray-300 transition-colors">FAQ</a>
+        <a href="#contact" class="hover:text-gray-300 transition-colors">無料相談</a>
+      </nav>
+    </div>
+    <p class="text-gray-600 text-xs text-center mt-8">&copy; 2024 田中法務行政書士事務所. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // Mobile nav toggle
+  const burger = document.getElementById('burger');
+  const mobileNav = document.getElementById('mobile-nav');
+  burger.addEventListener('click', () => {
+    const open = mobileNav.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open);
+  });
+  mobileNav.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      mobileNav.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-trigger').forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const item = trigger.closest('.faq-item');
+      const answer = item.querySelector('.faq-answer');
+      const isOpen = answer.classList.contains('open');
+      // Close all
+      document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('faq-open'));
+      document.querySelectorAll('.faq-trigger').forEach(t => t.setAttribute('aria-expanded', 'false'));
+      // Toggle
+      if (!isOpen) {
+        answer.classList.add('open');
+        item.classList.add('faq-open');
+        trigger.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  // Scroll reveal
+  const revealObs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1, rootMargin: '0px 0px -32px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+  // Contact form
+  const form = document.getElementById('contact-form');
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const btn = document.getElementById('submit-btn');
+    const arrow = document.getElementById('submit-arrow');
+    btn.disabled = true;
+    btn.textContent = '送信中...';
+    if (arrow) arrow.remove();
+    setTimeout(() => {
+      form.classList.add('hidden');
+      document.getElementById('form-success').classList.remove('hidden');
+    }, 1000);
+  });
+</script>
+</body>
+</html>
