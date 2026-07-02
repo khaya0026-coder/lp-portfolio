@@ -3,1540 +3,931 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hayato | LP制作・Web制作・AI導入 フリーランスエンジニア</title>
-  <meta name="description" content="LP制作・Webサイト制作・AI機能導入・業務効率化をワンストップで対応するフリーランスエンジニア Hayato のポートフォリオ。" />
-  <meta property="og:title" content="Hayato | LP制作・Web制作・AI導入" />
-  <meta property="og:description" content="高品質・スピード・コスパ。LP制作からAI導入まで一人で完結するフリーランスエンジニア。" />
+  <title>Hayato | LP制作 / AI自動化 / Webシステム構築</title>
+  <meta name="description" content="集客できるLPから業務自動化まで、一人で完結するフリーランスエンジニア Hayato のポートフォリオ。" />
+  <meta property="og:title" content="Hayato | LP制作 / AI自動化 / Webシステム構築" />
+  <meta property="og:description" content="成果の出るWebサイトを作るフリーランスエンジニア。" />
   <meta property="og:type" content="website" />
-  <link rel="canonical" href="https://hayato-portfolio.surge.sh" />
+  <link rel="canonical" href="https://khaya0026-coder.github.io/lp-portfolio/" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans:  ['"DM Sans"', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
   <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --bg:#faf9f7;
-  --bg2:#fefefe;
-  --bg3:#f4f2ee;
-  --surface:rgba(255,255,255,.78);
-  --surface2:rgba(255,255,255,.55);
-  --border:rgba(0,0,0,.07);
-  --border2:rgba(0,0,0,.12);
-  --border-glass:rgba(255,255,255,.65);
-  --text:#0c0b14;
-  --text2:#52526a;
-  --text3:#9898b4;
-  --accent:#4338ca;
-  --accent2:#6d28d9;
-  --accent3:#818cf8;
-  --gold:#f59e0b;
-  --gold2:#fbbf24;
-  --glow-gold:rgba(245,158,11,.3);
-  --grad:linear-gradient(135deg,#4338ca 0%,#6d28d9 100%);
-  --grad-gold:linear-gradient(135deg,#f59e0b 0%,#fbbf24 50%,#f59e0b 100%);
-  --grad-vivid:linear-gradient(135deg,#4f46e5 0%,#7c3aed 50%,#c026d3 100%);
-  --glow:rgba(67,56,202,.22);
-  --shadow-sm:0 1px 3px rgba(0,0,0,.05),0 1px 2px rgba(0,0,0,.03);
-  --shadow-md:0 4px 20px rgba(0,0,0,.07),0 2px 8px rgba(0,0,0,.04);
-  --shadow-lg:0 12px 40px rgba(0,0,0,.10),0 4px 16px rgba(0,0,0,.05);
-  --shadow-xl:0 24px 64px rgba(0,0,0,.13),0 8px 24px rgba(0,0,0,.06);
-  --shadow-glass:0 8px 32px rgba(0,0,0,.08),inset 0 1px 0 rgba(255,255,255,.95);
-  --r:18px;--r2:13px;
-  --transition:.28s cubic-bezier(.4,0,.2,1);
-}
-html{scroll-behavior:smooth;scroll-padding-top:68px}
-body{
-  background:#faf9f7;
-  color:var(--text);
-  font-family:'Inter','Noto Sans JP',sans-serif;
-  -webkit-font-smoothing:antialiased;
-  overflow-x:hidden;
-  line-height:1.6;
-}
-/* Page-wide gradient mesh — vivid, glamorous */
-body::before{
-  content:'';
-  position:fixed;inset:0;
-  background:
-    radial-gradient(at 14% 14%, rgba(139,92,246,.32) 0px, transparent 48%),
-    radial-gradient(at 88%  6%, rgba(245,158,11,.26)  0px, transparent 44%),
-    radial-gradient(at  6% 70%, rgba(20,184,166,.18)  0px, transparent 44%),
-    radial-gradient(at 93% 82%, rgba(236,72,153,.22)  0px, transparent 40%),
-    radial-gradient(at 50% 46%, rgba(99,102,241,.12)  0px, transparent 52%),
-    radial-gradient(at 72% 94%, rgba(245,158,11,.18)  0px, transparent 38%),
-    linear-gradient(160deg,#fefcff 0%,#f0ecff 20%,#fffcf0 50%,#eeedff 78%,#fefcff 100%);
-  pointer-events:none;
-  z-index:0;
-}
-a{text-decoration:none;color:inherit}
-button{cursor:pointer;border:none;background:none;font:inherit}
+    /* ── Reset ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-font-smoothing: antialiased; overflow-x: hidden; scroll-behavior: auto; }
+    body { font-family: "DM Sans", system-ui, sans-serif; background: #0d0d0b; color: #ede9e2; overflow-x: hidden; }
 
-/* ── NOISE TEXTURE (global, fixed) ─────────────────────── */
-#noise{
-  position:fixed;inset:0;z-index:1;
-  pointer-events:none;
-  opacity:.038;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23f)'/%3E%3C/svg%3E");
-  background-size:400px 400px;
-}
+    /* ── Grain ── */
+    body::after {
+      content: '';
+      position: fixed; inset: 0;
+      z-index: 9000;
+      pointer-events: none;
+      opacity: 0.026;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 300px 300px;
+    }
 
-/* ── GLOBAL FLOATING ORBS — vivid, luminous ─────────────── */
-.g-orb{position:fixed;border-radius:50%;pointer-events:none;z-index:0;filter:blur(0);will-change:transform}
-#orb-a{
-  width:1000px;height:1000px;top:-240px;right:-180px;
-  background:radial-gradient(circle,rgba(139,92,246,.38) 0%,rgba(99,102,241,.12) 45%,transparent 68%);
-  filter:blur(90px);
-}
-#orb-b{
-  width:800px;height:800px;top:38%;left:-180px;
-  background:radial-gradient(circle,rgba(245,158,11,.30) 0%,rgba(251,191,36,.10) 45%,transparent 68%);
-  filter:blur(82px);
-}
-#orb-c{
-  width:720px;height:720px;top:68%;right:-120px;
-  background:radial-gradient(circle,rgba(20,184,166,.24) 0%,rgba(99,102,241,.08) 45%,transparent 68%);
-  filter:blur(76px);
-}
-#orb-d{
-  width:660px;height:660px;top:125%;left:22%;
-  background:radial-gradient(circle,rgba(236,72,153,.28) 0%,rgba(139,92,246,.08) 55%,transparent 68%);
-  filter:blur(72px);
-}
-#orb-e{
-  width:580px;height:580px;top:185%;right:8%;
-  background:radial-gradient(circle,rgba(99,102,241,.30) 0%,rgba(139,92,246,.08) 50%,transparent 70%);
-  filter:blur(78px);
-}
-#orb-f{
-  width:520px;height:520px;top:260%;left:5%;
-  background:radial-gradient(circle,rgba(245,158,11,.24) 0%,rgba(251,146,60,.06) 50%,transparent 70%);
-  filter:blur(72px);
-}
+    /* ── Scrollbar ── */
+    ::-webkit-scrollbar { width: 2px; }
+    ::-webkit-scrollbar-track { background: #0d0d0b; }
+    ::-webkit-scrollbar-thumb { background: #3a3630; }
 
-/* LOADER */
-#loader{position:fixed;inset:0;background:#fefefe;display:flex;align-items:center;justify-content:center;z-index:9999;transition:opacity .5s,visibility .5s}
-#loader.hidden{opacity:0;visibility:hidden;pointer-events:none}
-.loader-ring{width:38px;height:38px;border-radius:50%;border:2px solid rgba(0,0,0,.08);border-top-color:var(--accent);animation:spin .7s linear infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
+    /* ── Custom Cursor ── */
+    .cur-dot {
+      position: fixed; top: 0; left: 0; z-index: 9100;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #ede9e2;
+      pointer-events: none;
+      transform: translate(-50%,-50%);
+      transition: width .2s, height .2s, opacity .2s, background .2s;
+      will-change: transform;
+    }
+    .cur-ring {
+      position: fixed; top: 0; left: 0; z-index: 9099;
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      border: 1px solid rgba(196,181,165,.45);
+      pointer-events: none;
+      transform: translate(-50%,-50%);
+      transition: width .35s cubic-bezier(.16,1,.3,1), height .35s cubic-bezier(.16,1,.3,1), border-color .3s;
+      will-change: transform;
+    }
+    .cur-dot.on-link  { width: 0; height: 0; opacity: 0; }
+    .cur-ring.on-link { width: 68px; height: 68px; border-color: rgba(196,181,165,.75); }
+    @media (hover: none) { .cur-dot, .cur-ring { display: none; } }
 
-/* PROGRESS */
-#progress{position:fixed;top:0;left:0;right:0;height:2px;background:var(--grad);z-index:9100;transform-origin:left;transform:scaleX(0);transition:transform .1s linear}
+    /* ── Nav ── */
+    #nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      padding: 0 3rem;
+      transition: background .4s ease, backdrop-filter .4s ease;
+    }
+    #nav.scrolled {
+      background: rgba(13,13,11,.88);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+    .nav-inner {
+      max-width: 1400px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 72px;
+    }
+    .nav-logo {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.375rem; font-weight: 300; letter-spacing: .07em;
+      color: #ede9e2; text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-link {
+      font-size: .8125rem; font-weight: 400; letter-spacing: .04em;
+      color: #888076; text-decoration: none;
+      position: relative; transition: color .3s;
+    }
+    .nav-link::after {
+      content: ''; position: absolute;
+      bottom: -3px; left: 0;
+      width: 0; height: 1px;
+      background: #c4b5a5;
+      transition: width .4s cubic-bezier(.16,1,.3,1);
+    }
+    .nav-link:hover { color: #ede9e2; }
+    .nav-link:hover::after { width: 100%; }
+    .nav-cta {
+      display: inline-block;
+      padding: .55rem 1.375rem;
+      font-size: .75rem; letter-spacing: .12em; text-transform: uppercase;
+      font-weight: 500; color: #0d0d0b; background: #ede9e2;
+      text-decoration: none;
+      transition: background .3s, transform .15s;
+    }
+    .nav-cta:hover { background: #c4b5a5; }
+    .nav-cta:active { transform: translateY(1px); }
+    @media (max-width: 767px) {
+      #nav { padding: 0 1.25rem; }
+      .nav-links { display: none; }
+    }
 
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:900;height:64px;display:flex;align-items:center;padding:0 clamp(1.25rem,5vw,3rem);background:rgba(252,251,250,.75);backdrop-filter:blur(24px) saturate(1.4);-webkit-backdrop-filter:blur(24px) saturate(1.4);border-bottom:1px solid rgba(255,255,255,.6);transition:var(--transition);box-shadow:0 1px 0 rgba(0,0,0,.04)}
-.nav-logo{font-size:.875rem;font-weight:700;letter-spacing:.08em;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.nav-links{display:flex;align-items:center;gap:2rem;margin-left:auto;list-style:none}
-.nav-links a{font-size:.8125rem;font-weight:500;color:var(--text2);transition:color var(--transition);letter-spacing:.02em}
-.nav-links a:hover{color:var(--text)}
-.nav-cta{margin-left:1.5rem;font-size:.8125rem;font-weight:600;padding:.45rem 1.1rem;border-radius:999px;background:var(--text);color:#fff;transition:opacity var(--transition),transform var(--transition)}
-.nav-cta:hover{opacity:.8;transform:translateY(-1px)}
-.nav-burger{display:none;flex-direction:column;gap:5px;padding:6px;margin-left:auto}
-.nav-burger span{display:block;width:22px;height:1.5px;background:var(--text2);border-radius:2px;transition:var(--transition)}
-.nav-burger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
-.nav-burger.open span:nth-child(2){opacity:0}
-.nav-burger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
-.nav-mobile{position:fixed;inset:64px 0 0;background:rgba(250,250,248,.97);backdrop-filter:blur(24px);display:none;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;z-index:799}
-.nav-mobile.open{display:flex}
-.nav-mobile a{font-size:1.125rem;color:var(--text2)}
+    /* ── Hero ── */
+    #hero {
+      position: relative;
+      min-height: 100dvh;
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 0 3rem;
+      background: #0d0d0b;
+      overflow: hidden;
+    }
+    @media (max-width: 767px) { #hero { padding: 0 1.25rem; } }
+    .hero-ambient {
+      position: absolute; inset: -30%;
+      background:
+        radial-gradient(ellipse 70% 55% at 72% 50%, rgba(196,181,165,.042) 0%, transparent 65%),
+        radial-gradient(ellipse 45% 35% at 18% 78%, rgba(196,181,165,.028) 0%, transparent 60%);
+      animation: ambient 14s ease-in-out infinite alternate;
+      pointer-events: none;
+    }
+    @keyframes ambient {
+      0%   { transform: scale(1)    translate(0,0)      rotate(0deg); }
+      50%  { transform: scale(1.09) translate(-2.5%,2%) rotate(.4deg); }
+      100% { transform: scale(.97)  translate(2%,-2.5%) rotate(-.3deg); }
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      max-width: 1400px; margin: 0 auto; width: 100%;
+      padding-top: 4.5rem;
+    }
+    .hero-eyebrow {
+      display: block;
+      font-size: .6875rem; letter-spacing: .22em; text-transform: uppercase;
+      color: #c4b5a5; font-weight: 400; margin-bottom: 2.5rem;
+      opacity: 0;
+      animation: fadeup .8s cubic-bezier(.16,1,.3,1) .25s forwards;
+    }
+    @keyframes fadeup {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero-h1 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-weight: 300;
+      font-size: clamp(4rem, 9.5vw, 10rem);
+      line-height: 1.04; letter-spacing: -.02em;
+      color: #ede9e2;
+    }
+    .hero-line { display: block; overflow: hidden; }
+    .hero-line-inner {
+      display: block;
+      transform: translateY(108%);
+      transition: transform 1.05s cubic-bezier(.16,1,.3,1);
+    }
+    .hero-line-inner.show { transform: translateY(0); }
+    .hero-sub {
+      font-size: clamp(.875rem, 1.4vw, 1.0625rem);
+      color: #7e7870; line-height: 1.88; max-width: 400px;
+      margin-top: 2.25rem;
+      opacity: 0;
+      animation: fadeup .8s cubic-bezier(.16,1,.3,1) 1.15s forwards;
+    }
+    .hero-actions {
+      display: flex; gap: 1rem; flex-wrap: wrap;
+      margin-top: 2.25rem;
+      opacity: 0;
+      animation: fadeup .8s cubic-bezier(.16,1,.3,1) 1.35s forwards;
+    }
+    .btn-ph {
+      display: inline-block;
+      padding: .875rem 2rem;
+      font-size: .8125rem; letter-spacing: .12em; text-transform: uppercase;
+      font-weight: 500; color: #0d0d0b; background: #ede9e2;
+      text-decoration: none;
+      transition: background .3s, transform .15s;
+    }
+    .btn-ph:hover { background: #c4b5a5; }
+    .btn-ph:active { transform: translateY(1px); }
+    .btn-gh {
+      display: inline-block;
+      padding: .875rem 2rem;
+      font-size: .8125rem; letter-spacing: .12em; text-transform: uppercase;
+      font-weight: 400; color: #888076;
+      border: 1px solid rgba(196,181,165,.28);
+      text-decoration: none;
+      transition: color .3s, border-color .3s, transform .15s;
+    }
+    .btn-gh:hover { color: #ede9e2; border-color: rgba(196,181,165,.65); }
+    .btn-gh:active { transform: translateY(1px); }
 
-/* HERO */
-#hero{min-height:100svh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:0 clamp(1.25rem,6vw,5rem);padding-top:80px;position:relative;overflow:hidden;gap:4rem;
-  background:
-    radial-gradient(at 20% 30%, rgba(99,102,241,.22) 0px, transparent 50%),
-    radial-gradient(at 80% 20%, rgba(139,92,246,.18) 0px, transparent 48%),
-    radial-gradient(at 55% 85%, rgba(251,146,60,.13) 0px, transparent 45%),
-    radial-gradient(at 0%  90%, rgba(99,102,241,.14) 0px, transparent 44%),
-    linear-gradient(160deg,#fefcff 0%,#f5f3ff 40%,#fef9f5 75%,#f5f8ff 100%);
-}
-/* Dramatic upper-right light shaft — vivid violet */
-#hero::before{
-  content:'';position:absolute;top:-280px;right:-220px;
-  width:1100px;height:1100px;border-radius:50%;
-  background:radial-gradient(circle,rgba(255,255,255,.98) 0%,rgba(230,220,255,.7) 18%,rgba(167,139,250,.22) 40%,transparent 65%);
-  pointer-events:none;z-index:0;
-}
-/* Lower-left gold glow */
-#hero::after{
-  content:'';position:absolute;bottom:-180px;left:-130px;
-  width:900px;height:900px;border-radius:50%;
-  background:radial-gradient(circle,rgba(245,158,11,.22) 0%,rgba(251,191,36,.10) 38%,transparent 62%);
-  filter:blur(65px);pointer-events:none;z-index:0;
-}
-/* SVG ring decoration */
-.hero-deco-svg{
-  position:absolute;top:-100px;right:-100px;
-  width:700px;height:700px;
-  pointer-events:none;z-index:0;opacity:.65;
-}
-@keyframes float-slow{
-  0%,100%{transform:translateY(0) rotate(0deg)}
-  50%{transform:translateY(-18px) rotate(6deg)}
-}
-@keyframes float-ring{
-  0%,100%{transform:translateY(0) rotate(0deg)}
-  50%{transform:translateY(-22px) rotate(12deg)}
-}
-@keyframes pulse-glow{
-  0%,100%{opacity:.5}50%{opacity:.9}
-}
-.hero-noise{display:none}/* removed — global noise covers */
-.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(67,56,202,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(67,56,202,.035) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse at 65% 40%,black 15%,transparent 68%);pointer-events:none;z-index:0}
-.hero-left{position:relative;z-index:2}
-/* hero-right also above orbs */
-.hero-badge{display:inline-flex;align-items:center;gap:.5rem;font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);background:rgba(67,56,202,.08);border:1px solid rgba(67,56,202,.2);border-radius:999px;padding:.35rem 1rem;margin-bottom:1.75rem}
-.hero-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 2s ease-in-out infinite}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.6)}}
-.hero-h1{font-size:clamp(2.25rem,5vw,3.75rem);font-weight:700;line-height:1.1;letter-spacing:-.035em;color:var(--text);margin-bottom:1.25rem}
-.hero-h1 .grad{background:var(--grad-vivid);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero-h1 .gold{background:linear-gradient(135deg,#d97706 0%,#f59e0b 40%,#fbbf24 60%,#f59e0b 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero-sub{font-size:clamp(.9rem,1.5vw,1.0625rem);color:var(--text2);line-height:1.8;margin-bottom:2.25rem;max-width:460px}
-.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
-.btn-primary{display:inline-flex;align-items:center;gap:.5rem;font-size:.9375rem;font-weight:600;padding:.8rem 1.75rem;border-radius:12px;background:var(--text);color:#fff;box-shadow:var(--shadow-md);transition:transform var(--transition),box-shadow var(--transition),opacity var(--transition);position:relative;overflow:hidden}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg);opacity:.88}
-.btn-accent{display:inline-flex;align-items:center;gap:.5rem;font-size:.9375rem;font-weight:600;padding:.8rem 1.75rem;border-radius:12px;background:linear-gradient(135deg,#4f46e5 0%,#7c3aed 50%,#4f46e5 100%);background-size:200% auto;color:#fff;box-shadow:0 4px 24px var(--glow),0 0 0 1px rgba(255,255,255,.15) inset;transition:transform var(--transition),box-shadow var(--transition),background-position .5s;animation:shimmer-btn 3s linear infinite}
-.btn-accent:hover{transform:translateY(-2px);box-shadow:0 10px 36px var(--glow)}
-@keyframes shimmer-btn{0%{background-position:0% center}100%{background-position:200% center}}
-.btn-secondary{display:inline-flex;align-items:center;gap:.5rem;font-size:.9375rem;font-weight:500;padding:.8rem 1.75rem;border-radius:12px;background:transparent;color:var(--text2);border:1.5px solid var(--border2);transition:var(--transition)}
-.btn-secondary:hover{background:var(--surface2);color:var(--text);border-color:var(--text3)}
+    /* ── Concept (ONE light section) ── */
+    #concept {
+      background: #f0ede8; color: #1a1815;
+      padding: 7rem 3rem;
+    }
+    @media (max-width: 767px) { #concept { padding: 4rem 1.25rem; } }
+    .concept-wrap { max-width: 1400px; margin: 0 auto; }
+    .concept-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    @media (max-width: 767px) { .concept-grid { grid-template-columns: 1fr; gap: 2rem; } }
+    .concept-h2 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(2.25rem, 4.5vw, 4.25rem);
+      font-weight: 300; line-height: 1.15; letter-spacing: -.015em;
+      color: #1a1815;
+    }
+    .concept-body {
+      font-size: 1rem; line-height: 1.9; color: #5c5852;
+      max-width: 480px;
+    }
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid rgba(26,24,21,.12);
+      margin-top: 5rem;
+    }
+    @media (max-width: 767px) { .pillars-grid { grid-template-columns: 1fr; } }
+    .pillar {
+      padding: 2rem;
+      border-bottom: 1px solid rgba(26,24,21,.08);
+    }
+    .pillar:not(:last-child) { border-right: 1px solid rgba(26,24,21,.08); }
+    @media (max-width: 767px) {
+      .pillar:not(:last-child) { border-right: none; }
+      .pillar:last-child { border-bottom: none; }
+    }
+    .pillar-num {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 3rem; font-weight: 300;
+      color: rgba(26,24,21,.1); line-height: 1;
+    }
+    .pillar-title { font-size: 1.125rem; font-weight: 300; color: #1a1815; margin: .625rem 0; }
+    .pillar-body  { font-size: .8125rem; color: #6a6460; line-height: 1.72; }
 
-/* 3D HERO STAGE */
-.hero-stage{position:relative;height:100%;display:flex;align-items:center;justify-content:center;perspective:1100px;perspective-origin:50% 45%;z-index:1}
-.hero-cards-3d{position:relative;width:100%;height:460px;transform-style:preserve-3d}
-.hc{
-  position:absolute;
-  background:rgba(255,255,255,.75);
-  backdrop-filter:blur(20px) saturate(1.4);
-  -webkit-backdrop-filter:blur(20px) saturate(1.4);
-  border:1px solid rgba(255,255,255,.65);
-  border-radius:var(--r);overflow:hidden;
-  box-shadow:0 20px 60px rgba(0,0,0,.1),inset 0 1px 0 rgba(255,255,255,.95);
-  transition:box-shadow .4s;cursor:pointer;will-change:transform;
-}
-.hc:hover{box-shadow:0 32px 80px rgba(0,0,0,.15),inset 0 1px 0 rgba(255,255,255,.95)}
-.hc-img{width:100%;background-size:cover;background-position:center}
-.hc-body{padding:.75rem 1rem}
-.hc-cat{font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:.25rem}
-.hc-title{font-size:.875rem;font-weight:600;color:var(--text);line-height:1.3}
-/* Positioned in 3D space */
-.hc-1{width:220px;top:20px;left:10%;transform:translateZ(60px) rotateY(-8deg) rotateX(4deg)}
-.hc-2{width:200px;top:60px;right:5%;transform:translateZ(20px) rotateY(-12deg) rotateX(2deg)}
-.hc-3{width:210px;bottom:30px;left:5%;transform:translateZ(100px) rotateY(-6deg) rotateX(-3deg)}
-.hc-4{width:195px;bottom:60px;right:12%;transform:translateZ(40px) rotateY(-10deg) rotateX(3deg)}
-.hc-1 .hc-img{height:120px}
-.hc-2 .hc-img{height:110px}
-.hc-3 .hc-img{height:115px}
-.hc-4 .hc-img{height:105px}
-/* Depth badge on cards */
-.hc-depth{position:absolute;top:.5rem;right:.5rem;width:20px;height:20px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center}
-.hc-depth svg{width:10px;height:10px;color:#fff}
+    /* ── Works ── */
+    #works { background: #0d0d0b; padding: 7rem 0; }
+    .works-header {
+      max-width: 1400px; margin: 0 auto; padding: 0 3rem;
+      display: flex; justify-content: space-between; align-items: flex-end;
+    }
+    @media (max-width: 767px) { .works-header { padding: 0 1.25rem; flex-direction: column; align-items: flex-start; gap: .75rem; } }
+    .works-h2 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(2.25rem, 4.5vw, 4rem);
+      font-weight: 300; line-height: 1.2; letter-spacing: -.015em;
+      color: #ede9e2;
+    }
+    .works-grid {
+      max-width: 1400px; margin: 3rem auto 0;
+      padding: 0 3rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: #1e1c18;
+    }
+    @media (max-width: 639px) {
+      .works-grid { grid-template-columns: 1fr; padding: 0 1.25rem; }
+    }
+    .work-item {
+      position: relative; overflow: hidden; display: block;
+      text-decoration: none;
+      aspect-ratio: 4 / 3;
+      background: #111;
+      transform-style: preserve-3d;
+    }
+    .wi-bg {
+      position: absolute; inset: 0;
+      background-size: cover; background-position: center;
+      transform: scale(1.06);
+      transition: transform .9s cubic-bezier(.16,1,.3,1);
+    }
+    .work-item:hover .wi-bg { transform: scale(1.13); }
+    .wi-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,.72) 0%, rgba(0,0,0,.08) 55%, transparent 100%);
+    }
+    .wi-cat {
+      position: absolute; top: 1.5rem; left: 1.5rem;
+      font-size: .6875rem; letter-spacing: .18em; text-transform: uppercase;
+      color: #c4b5a5;
+      opacity: 0; transform: translateY(-6px);
+      transition: opacity .38s ease, transform .38s ease;
+    }
+    .work-item:hover .wi-cat { opacity: 1; transform: translateY(0); }
+    .wi-bottom {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      padding: 1.5rem;
+    }
+    .wi-title {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(1.25rem, 2.2vw, 1.75rem);
+      font-weight: 300; color: #ede9e2; line-height: 1.25;
+    }
+    .wi-arrow {
+      display: inline-flex; align-items: center; gap: .4rem;
+      font-size: .75rem; letter-spacing: .1em; text-transform: uppercase;
+      color: #c4b5a5; margin-top: .625rem;
+      opacity: 0; transform: translateX(-6px);
+      transition: opacity .32s .06s ease, transform .32s .06s ease;
+    }
+    .work-item:hover .wi-arrow { opacity: 1; transform: translateX(0); }
 
-/* MARQUEE */
-.marquee-section{padding:1.25rem 0;border-top:1px solid rgba(0,0,0,.07);border-bottom:1px solid rgba(0,0,0,.07);overflow:hidden;background:rgba(243,242,238,.6);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
-.marquee-track{display:flex;gap:3rem;animation:marquee 30s linear infinite;width:max-content}
-.marquee-section:hover .marquee-track{animation-play-state:paused}
-@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.marquee-item{display:flex;align-items:center;gap:.75rem;white-space:nowrap;font-size:.75rem;font-weight:600;letter-spacing:.1em;color:var(--text3);text-transform:uppercase}
-.marquee-dot{width:4px;height:4px;border-radius:50%;background:var(--accent);flex-shrink:0}
+    /* ── Process ── */
+    #process { background: #100f0d; padding: 7rem 3rem; }
+    @media (max-width: 767px) { #process { padding: 4rem 1.25rem; } }
+    .process-wrap { max-width: 1400px; margin: 0 auto; }
+    .process-h2 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(2.25rem, 4.5vw, 4rem);
+      font-weight: 300; line-height: 1.2; letter-spacing: -.015em; color: #ede9e2;
+    }
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid rgba(196,181,165,.14);
+      margin-top: 4rem;
+    }
+    @media (max-width: 767px) { .process-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 480px) { .process-grid { grid-template-columns: 1fr; } }
+    .process-step {
+      padding: 2.5rem 2rem 2.5rem 0;
+      border-bottom: 1px solid rgba(196,181,165,.1);
+    }
+    .process-step:not(:nth-child(3n)) { border-right: 1px solid rgba(196,181,165,.08); }
+    .process-step:nth-child(n+4) { border-bottom: none; }
+    @media (max-width: 767px) {
+      .process-step:not(:nth-child(3n)) { border-right: none; }
+      .process-step:nth-child(odd)  { border-right: 1px solid rgba(196,181,165,.08); }
+      .process-step:nth-child(n+5)  { border-bottom: none; }
+    }
+    @media (max-width: 480px) {
+      .process-step { border-right: none !important; }
+      .process-step:last-child { border-bottom: none; }
+      .process-step:nth-child(n+5) { border-bottom: 1px solid rgba(196,181,165,.1); }
+      .process-step:last-child { border-bottom: none !important; }
+    }
+    .p-num {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 4rem; font-weight: 300;
+      color: rgba(196,181,165,.18); line-height: 1;
+    }
+    .p-title {
+      font-size: 1.0625rem; font-weight: 300;
+      color: #ede9e2; margin: .875rem 0 .5rem;
+    }
+    .p-body { font-size: .8125rem; color: #7e7870; line-height: 1.76; }
 
-/* SECTION BASE */
-.section{padding:7rem clamp(1.25rem,6vw,5rem);position:relative}
-.section-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1}
-.section-label{display:inline-flex;align-items:center;gap:.5rem;font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:.875rem}
-.section-label::before{content:'';width:18px;height:1.5px;background:var(--grad)}
-.section-h2{font-size:clamp(1.75rem,4vw,2.75rem);font-weight:700;letter-spacing:-.03em;line-height:1.15;color:var(--text);margin-bottom:1.25rem}
-.section-h2 .grad{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.section-sub{font-size:clamp(.9rem,1.5vw,1.0625rem);color:var(--text2);line-height:1.8;max-width:580px}
+    /* ── Services ── */
+    #services { background: #0d0d0b; padding: 7rem 3rem; }
+    @media (max-width: 767px) { #services { padding: 4rem 1.25rem; } }
+    .services-wrap { max-width: 1400px; margin: 0 auto; }
+    .services-h2 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(2.25rem, 4.5vw, 4rem);
+      font-weight: 300; line-height: 1.2; letter-spacing: -.015em; color: #ede9e2;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-top: 1px solid rgba(196,181,165,.14);
+      margin-top: 4rem;
+    }
+    @media (max-width: 639px) { .services-grid { grid-template-columns: 1fr; } }
+    .svc-item {
+      padding: 2.25rem 2rem 2.25rem 0;
+      border-bottom: 1px solid rgba(196,181,165,.08);
+      display: flex; gap: 1.25rem; align-items: flex-start;
+    }
+    .svc-item:nth-child(even) { padding-left: 2rem; padding-right: 0; }
+    .svc-item:nth-child(odd):not(:last-child) { border-right: 1px solid rgba(196,181,165,.08); }
+    .svc-item:nth-last-child(-n+2) { border-bottom: none; }
+    @media (max-width: 639px) {
+      .svc-item, .svc-item:nth-child(even) { padding-left: 0; padding-right: 0; }
+      .svc-item:nth-child(odd) { border-right: none; }
+      .svc-item:last-child { border-bottom: none; }
+      .svc-item:nth-last-child(-n+2) { border-bottom: 1px solid rgba(196,181,165,.08); }
+      .svc-item:last-child { border-bottom: none !important; }
+    }
+    .svc-line {
+      display: block; width: 28px; height: 1px;
+      background: #c4b5a5; flex-shrink: 0; margin-top: .7rem;
+      transition: width .4s cubic-bezier(.16,1,.3,1);
+    }
+    .svc-item:hover .svc-line { width: 44px; }
+    .svc-title { font-size: 1.0625rem; font-weight: 300; color: #ede9e2; margin-bottom: .4rem; }
+    .svc-body  { font-size: .8125rem; color: #7e7870; line-height: 1.75; }
 
-/* SCROLL REVEAL */
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}
-.reveal.visible{opacity:1;transform:none}
-.reveal-delay-1{transition-delay:.1s}
-.reveal-delay-2{transition-delay:.2s}
-.reveal-delay-3{transition-delay:.3s}
-.reveal-delay-4{transition-delay:.4s}
+    /* ── CTA ── */
+    #cta {
+      background: #0d0d0b;
+      min-height: 100dvh;
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center;
+      text-align: center;
+      padding: 4rem 3rem;
+      position: relative;
+      border-top: 1px solid rgba(196,181,165,.1);
+    }
+    @media (max-width: 767px) { #cta { padding: 4rem 1.25rem; } }
+    .cta-ambient {
+      position: absolute; inset: -10%;
+      background: radial-gradient(ellipse 60% 50% at 50% 55%, rgba(196,181,165,.038) 0%, transparent 70%);
+      animation: ambient 11s ease-in-out infinite alternate-reverse;
+      pointer-events: none;
+    }
+    .cta-inner { position: relative; z-index: 2; max-width: 860px; width: 100%; }
+    .cta-eyebrow {
+      display: block;
+      font-size: .6875rem; letter-spacing: .22em; text-transform: uppercase;
+      color: #c4b5a5; margin-bottom: 1.75rem;
+    }
+    .cta-h2 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(3rem, 8vw, 8rem);
+      font-weight: 300; line-height: 1.08; letter-spacing: -.025em; color: #ede9e2;
+    }
+    .cta-sub {
+      font-size: .9375rem; color: #7e7870; line-height: 1.85;
+      max-width: 400px; margin: 1.875rem auto 0;
+    }
+    .cta-actions {
+      display: flex; gap: 1rem; flex-wrap: wrap;
+      justify-content: center; margin-top: 2.75rem;
+    }
+    .btn-cl {
+      display: inline-flex; align-items: center; gap: .625rem;
+      padding: 1rem 2.25rem;
+      font-size: .8125rem; letter-spacing: .12em; text-transform: uppercase;
+      font-weight: 500; color: #0d0d0b; background: #ede9e2;
+      text-decoration: none;
+      transition: background .3s, transform .15s;
+    }
+    .btn-cl:hover { background: #c4b5a5; }
+    .btn-cl:active { transform: translateY(1px); }
+    .btn-cm {
+      display: inline-flex; align-items: center; gap: .625rem;
+      padding: 1rem 2.25rem;
+      font-size: .8125rem; letter-spacing: .12em; text-transform: uppercase;
+      font-weight: 400; color: #888076;
+      border: 1px solid rgba(196,181,165,.28);
+      text-decoration: none;
+      transition: color .3s, border-color .3s, transform .15s;
+    }
+    .btn-cm:hover { color: #ede9e2; border-color: rgba(196,181,165,.65); }
+    .btn-cm:active { transform: translateY(1px); }
 
-/* STATS */
-#stats{padding:5rem clamp(1.25rem,6vw,5rem);background:transparent;position:relative}
-#stats::before{
-  content:'';position:absolute;inset:0;
-  background:
-    radial-gradient(at 20% 50%, rgba(99,102,241,.09) 0px, transparent 55%),
-    radial-gradient(at 80% 50%, rgba(251,146,60,.07) 0px, transparent 55%),
-    linear-gradient(180deg, rgba(255,255,255,.0) 0%, rgba(248,247,255,.9) 20%, rgba(248,247,255,.9) 80%, rgba(255,255,255,.0) 100%);
-  pointer-events:none;
-}
-.stats-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;position:relative;z-index:1}
-.stat-card{
-  background:rgba(255,255,255,.65);
-  backdrop-filter:blur(20px) saturate(1.3);
-  -webkit-backdrop-filter:blur(20px) saturate(1.3);
-  border:1px solid rgba(255,255,255,.7);
-  border-radius:var(--r);padding:2rem;text-align:center;position:relative;overflow:hidden;
-  box-shadow:var(--shadow-glass);
-  transition:transform var(--transition),box-shadow var(--transition);
-}
-.stat-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,.11),inset 0 1px 0 rgba(255,255,255,.9)}
-.stat-card::after{content:'';position:absolute;inset:0;background:var(--grad);opacity:0;transition:opacity .3s}
-.stat-num{font-size:2.5rem;font-weight:700;background:var(--grad-vivid);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-.04em;line-height:1;margin-bottom:.5rem}
-.stat-suffix{font-size:1.25rem}
-.stat-label{font-size:.8125rem;color:var(--text2)}
+    /* ── Footer ── */
+    footer {
+      background: #090908;
+      border-top: 1px solid rgba(196,181,165,.08);
+      padding: 2.25rem 3rem;
+    }
+    @media (max-width: 767px) { footer { padding: 2.25rem 1.25rem; } }
+    .footer-inner {
+      max-width: 1400px; margin: 0 auto;
+      display: flex; align-items: center;
+      justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-logo {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.25rem; font-weight: 300; letter-spacing: .06em;
+      color: #ede9e2; text-decoration: none;
+    }
+    .footer-copy { font-size: .75rem; color: #4a4640; }
 
-/* PROBLEM */
-#problem{background:transparent;position:relative}
-#problem::before{
-  content:'';position:absolute;inset:0;
-  background:
-    radial-gradient(at 88% 12%, rgba(245,158,11,.34) 0px, transparent 52%),
-    radial-gradient(at  8% 82%, rgba(251,191,36,.26)  0px, transparent 50%),
-    radial-gradient(at 50% 50%, rgba(255,255,255,.55)  0px, transparent 60%),
-    linear-gradient(180deg, transparent 0%, rgba(255,252,238,.94) 10%, rgba(255,252,238,.94) 90%, transparent 100%);
-  pointer-events:none;
-}
-#problem::after{
-  content:'';position:absolute;inset:0;
-  background-image:linear-gradient(rgba(245,158,11,.04) 1px, transparent 1px),linear-gradient(90deg, rgba(245,158,11,.04) 1px, transparent 1px);
-  background-size:56px 56px;
-  pointer-events:none;
-}
-.problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:3rem;position:relative;z-index:1}
-.problem-card{
-  background:rgba(255,255,255,.68);
-  backdrop-filter:blur(18px) saturate(1.2);
-  -webkit-backdrop-filter:blur(18px) saturate(1.2);
-  border:1px solid rgba(255,255,255,.7);
-  border-radius:var(--r);padding:1.75rem;display:flex;gap:1rem;align-items:flex-start;
-  box-shadow:var(--shadow-glass);
-  transition:transform var(--transition),box-shadow var(--transition);
-}
-.problem-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,.1),inset 0 1px 0 rgba(255,255,255,.95)}
-.problem-icon{width:42px;height:42px;border-radius:11px;flex-shrink:0;background:rgba(243,242,238,.8);border:1px solid rgba(255,255,255,.7);display:flex;align-items:center;justify-content:center;font-size:1.125rem}
-.problem-title{font-size:.9375rem;font-weight:600;color:var(--text);margin-bottom:.375rem}
-.problem-text{font-size:.8125rem;color:var(--text2);line-height:1.7}
+    /* ── Reveal ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity .95s cubic-bezier(.16,1,.3,1), transform .95s cubic-bezier(.16,1,.3,1);
+    }
+    .reveal.show { opacity: 1; transform: translateY(0); }
 
-/* BRIDGE — dark contrast moment */
-#bridge{
-  background:
-    radial-gradient(at 30% 40%, rgba(99,102,241,.55) 0px, transparent 55%),
-    radial-gradient(at 72% 60%, rgba(139,92,246,.50) 0px, transparent 50%),
-    radial-gradient(at 50% 100%, rgba(67,56,202,.38) 0px, transparent 48%),
-    radial-gradient(at 10% 10%, rgba(180,60,255,.25) 0px, transparent 45%),
-    linear-gradient(135deg, #07060f 0%, #130e2e 50%, #07060f 100%);
-  text-align:center;padding:7rem clamp(1.25rem,6vw,5rem);position:relative;overflow:hidden;color:#fff;
-}
-#bridge::before{
-  content:'';position:absolute;inset:0;
-  background:radial-gradient(ellipse 70% 80% at 50% 50%, rgba(255,255,255,.04) 0%, transparent 65%);
-  pointer-events:none;
-}
-#bridge::after{
-  content:'';position:absolute;inset:0;
-  background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
-  background-size:52px 52px;
-  pointer-events:none;
-}
-#bridge .bridge-h2{color:#fff}
-#bridge .bridge-text{color:rgba(255,255,255,.65)}
-#bridge .bridge-arrow{box-shadow:0 4px 24px rgba(99,102,241,.55),0 0 70px rgba(99,102,241,.28)}
-.bridge-glow-ring{
-  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-  width:600px;height:600px;border-radius:50%;
-  border:1px solid rgba(255,255,255,.06);
-  pointer-events:none;z-index:0;
-  animation:pulse-glow 4s ease-in-out infinite;
-}
-.bridge-glow-ring:nth-child(2){width:400px;height:400px;border-color:rgba(139,92,246,.12);animation-delay:1s}
-.bridge-glow-ring:nth-child(3){width:240px;height:240px;border-color:rgba(99,102,241,.18);animation-delay:2s}
-.bridge-inner{max-width:680px;margin:0 auto;position:relative;z-index:1}
-.bridge-arrow{width:48px;height:48px;margin:0 auto 2rem;background:var(--grad);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px var(--glow);animation:bob 2.5s ease-in-out infinite}
-@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
-.bridge-h2{font-size:clamp(1.5rem,3.5vw,2.25rem);font-weight:700;color:var(--text);letter-spacing:-.03em;margin-bottom:1rem}
-.bridge-text{color:var(--text2);font-size:1.0625rem;line-height:1.8}
-
-/* SERVICES */
-#services{background:transparent;position:relative}
-#services::before{
-  content:'';position:absolute;inset:0;
-  background:
-    radial-gradient(at 10% 25%, rgba(99,102,241,.26) 0px, transparent 52%),
-    radial-gradient(at 90% 75%, rgba(139,92,246,.22)  0px, transparent 50%),
-    radial-gradient(at 60% 15%, rgba(192,38,211,.18)  0px, transparent 48%),
-    radial-gradient(at 35% 85%, rgba(245,158,11,.14)  0px, transparent 45%),
-    linear-gradient(180deg, transparent 0%, rgba(240,238,255,.94) 10%, rgba(240,238,255,.94) 90%, transparent 100%);
-  pointer-events:none;
-}
-.services-wave{position:absolute;bottom:0;left:0;right:0;width:100%;height:80px;pointer-events:none;z-index:0;opacity:.7}
-.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:3rem;position:relative;z-index:1}
-.service-card{
-  background:rgba(255,255,255,.65);
-  backdrop-filter:blur(20px) saturate(1.3);
-  -webkit-backdrop-filter:blur(20px) saturate(1.3);
-  border:1px solid rgba(255,255,255,.72);
-  border-radius:var(--r);padding:2rem;
-  box-shadow:var(--shadow-glass);
-  transition:transform var(--transition),box-shadow var(--transition);
-}
-.service-card:hover{transform:translateY(-5px) perspective(600px) rotateX(-3deg);box-shadow:0 20px 60px rgba(0,0,0,.11),inset 0 1px 0 rgba(255,255,255,.95)}
-.service-icon{width:48px;height:48px;border-radius:12px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:1.25rem;margin-bottom:1.25rem;box-shadow:0 4px 14px var(--glow)}
-.service-title{font-size:1rem;font-weight:700;color:var(--text);margin-bottom:.625rem}
-.service-text{font-size:.8125rem;color:var(--text2);line-height:1.7}
-.service-tags{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:1rem}
-.service-tag{font-size:.65rem;padding:.2rem .6rem;border-radius:999px;background:rgba(67,56,202,.07);border:1px solid rgba(67,56,202,.15);color:var(--accent)}
-
-/* STRENGTHS */
-#strengths{background:transparent;position:relative}
-#strengths::before{
-  content:'';position:absolute;inset:0;
-  background:
-    radial-gradient(at  5% 20%, rgba(251,191,36,.22) 0px, transparent 52%),
-    radial-gradient(at 92% 80%, rgba(245,158,11,.18) 0px, transparent 50%),
-    radial-gradient(at 55% 50%, rgba(255,255,255,.55) 0px, transparent 65%),
-    linear-gradient(180deg, transparent 0%, rgba(255,253,245,.92) 10%, rgba(255,253,245,.92) 90%, transparent 100%);
-  pointer-events:none;
-}
-.strengths-grid{
-  display:grid;
-  grid-template-columns:1.25fr 1fr;
-  grid-template-rows:1fr 1fr;
-  gap:1.5rem;margin-top:3rem;position:relative;z-index:1;
-}
-.strength-card:first-child{
-  grid-row:span 2;
-  padding:4rem 2.5rem;
-  display:flex;flex-direction:column;justify-content:center;
-}
-.strength-card:first-child .strength-num{font-size:6rem;opacity:.12}
-.strength-card:first-child .strength-title{font-size:1.5rem}
-/* Floating ring decoration */
-.strength-ring{
-  position:absolute;top:-60px;right:-70px;
-  width:300px;height:300px;pointer-events:none;z-index:0;
-  animation:float-ring 9s ease-in-out infinite;
-}
-.strength-card{
-  background:rgba(255,255,255,.6);
-  backdrop-filter:blur(18px) saturate(1.25);
-  -webkit-backdrop-filter:blur(18px) saturate(1.25);
-  border:1px solid rgba(255,255,255,.7);
-  border-radius:var(--r);padding:2.5rem 2rem;position:relative;overflow:hidden;
-  box-shadow:var(--shadow-glass);
-  transition:transform var(--transition),box-shadow var(--transition);
-}
-.strength-card:hover{transform:translateY(-4px);box-shadow:0 20px 56px rgba(0,0,0,.1),inset 0 1px 0 rgba(255,255,255,.95)}
-.strength-card::before{content:'';position:absolute;inset:0;background:var(--grad);opacity:0;transition:opacity .3s;border-radius:inherit}
-.strength-card:hover::before{opacity:.025}
-.strength-num{font-size:4rem;font-weight:800;letter-spacing:-.05em;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;opacity:.15;position:absolute;top:.5rem;right:1rem;line-height:1}
-.strength-point{font-size:.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:.75rem}
-.strength-title{font-size:1.25rem;font-weight:700;color:var(--text);margin-bottom:.875rem;line-height:1.3;position:relative}
-.strength-text{font-size:.875rem;color:var(--text2);line-height:1.75;position:relative}
-
-/* WHY */
-#why{background:transparent;position:relative}
-#why::before{
-  content:'';position:absolute;inset:0;
-  background:
-    radial-gradient(at  0% 55%, rgba(20,184,166,.20) 0px, transparent 55%),
-    radial-gradient(at 100% 45%, rgba(99,102,241,.15) 0px, transparent 55%),
-    radial-gradient(at 50%  10%, rgba(255,255,255,.75) 0px, transparent 60%),
-    linear-gradient(160deg, rgba(240,253,250,.92) 0%, rgba(245,244,255,.9) 100%);
-  pointer-events:none;
-}
-.why-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;position:relative;z-index:1}
-.why-visual{
-  background:rgba(255,255,255,.65);
-  backdrop-filter:blur(22px) saturate(1.3);
-  -webkit-backdrop-filter:blur(22px) saturate(1.3);
-  border:1px solid rgba(255,255,255,.72);
-  border-radius:var(--r);padding:2.5rem;
-  box-shadow:0 12px 48px rgba(0,0,0,.08),inset 0 1px 0 rgba(255,255,255,.95);
-}
-.why-row{display:flex;gap:1rem;align-items:flex-start;padding:.875rem 0;border-bottom:1px solid var(--border)}
-.why-row:last-child{border-bottom:none}
-.why-check{width:24px;height:24px;border-radius:50%;flex-shrink:0;margin-top:2px;background:var(--grad);display:flex;align-items:center;justify-content:center;color:#fff;font-size:.65rem;font-weight:700}
-.why-row-title{font-size:.9375rem;font-weight:600;color:var(--text);margin-bottom:.25rem}
-.why-row-text{font-size:.8125rem;color:var(--text2);line-height:1.65}
-
-/* COMPARISON */
-#comparison{background:transparent;position:relative}
-#comparison::before{
-  content:'';position:absolute;inset:0;
-  background:
-    radial-gradient(at 50% 55%, rgba(139,92,246,.13) 0px, transparent 65%),
-    radial-gradient(at 15% 85%, rgba(99,102,241,.12)  0px, transparent 52%),
-    radial-gradient(at 85% 15%, rgba(34,211,238,.08)  0px, transparent 50%),
-    linear-gradient(180deg, transparent 0%, rgba(248,246,255,.92) 10%, rgba(248,246,255,.92) 90%, transparent 100%);
-  pointer-events:none;
-}
-#comparison::after{
-  content:'';position:absolute;inset:0;
-  background-image:linear-gradient(rgba(99,102,241,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(99,102,241,.04) 1px,transparent 1px);
-  background-size:60px 60px;
-  pointer-events:none;
-}
-.cmp-wrap{
-  overflow-x:auto;margin-top:3rem;
-  border-radius:var(--r);
-  border:1px solid rgba(255,255,255,.7);
-  box-shadow:0 12px 48px rgba(0,0,0,.08),inset 0 1px 0 rgba(255,255,255,.9);
-  background:rgba(255,255,255,.55);
-  backdrop-filter:blur(20px) saturate(1.2);
-  -webkit-backdrop-filter:blur(20px) saturate(1.2);
-  position:relative;z-index:1;
-}
-.cmp-table{width:100%;min-width:640px;border-collapse:collapse}
-.cmp-table th{padding:1.125rem 1.5rem;font-size:.8rem;font-weight:700;letter-spacing:.05em;text-align:center;background:rgba(244,242,238,.7)}
-.cmp-table th:first-child{text-align:left;color:var(--text2)}
-.cmp-table th.me{background:rgba(67,56,202,.07);color:var(--accent);border-top:2px solid var(--accent)}
-.cmp-table th.other{color:var(--text3)}
-.cmp-table td{padding:.875rem 1.5rem;font-size:.875rem;border-bottom:1px solid var(--border);text-align:center;color:var(--text2)}
-.cmp-table td:first-child{text-align:left;color:var(--text);font-weight:500}
-.cmp-table tr:last-child td{border-bottom:none}
-.cmp-table td.me{background:rgba(67,56,202,.04);font-weight:600;color:var(--text)}
-.cmp-ico-yes{color:#16a34a}.cmp-ico-mid{color:#d97706}.cmp-ico-no{color:#9ca3af}
-.cmp-table tr:hover td{background:rgba(0,0,0,.02)}
-.cmp-table tr:hover td.me{background:rgba(67,56,202,.07)}
-
-/* WORKS */
-#works{background:transparent;position:relative}
-#works::before{
-  content:'';position:absolute;inset:0;
-  background:
-    radial-gradient(at 12% 58%, rgba(109,40,217,.28) 0px, transparent 55%),
-    radial-gradient(at 88% 22%, rgba(245,158,11,.22)  0px, transparent 52%),
-    radial-gradient(at 55% 80%, rgba(99,102,241,.24)  0px, transparent 50%),
-    radial-gradient(at 40% 10%, rgba(192,38,211,.16)  0px, transparent 48%),
-    linear-gradient(180deg, transparent 0%, rgba(243,240,255,.94) 10%, rgba(243,240,255,.94) 90%, transparent 100%);
-  pointer-events:none;
-}
-#works::after{
-  content:'';position:absolute;inset:0;
-  background-image:linear-gradient(rgba(109,40,217,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(109,40,217,.035) 1px,transparent 1px);
-  background-size:56px 56px;
-  pointer-events:none;
-}
-/* Featured first work card */
-.work-card.featured{grid-column:span 2}
-.work-card.featured .work-preview{height:280px}
-.works-filter{display:flex;gap:.5rem;flex-wrap:wrap;margin:2.5rem 0;position:relative;z-index:1}
-.filter-btn{
-  font-size:.8rem;font-weight:500;letter-spacing:.03em;padding:.4rem 1rem;border-radius:999px;
-  background:rgba(255,255,255,.65);
-  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
-  border:1px solid rgba(255,255,255,.7);color:var(--text2);
-  transition:var(--transition);
-  box-shadow:0 1px 4px rgba(0,0,0,.05);
-}
-.filter-btn:hover{background:rgba(255,255,255,.85);color:var(--text)}
-.filter-btn.active{background:var(--text);border-color:var(--text);color:#fff;backdrop-filter:none}
-.works-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:1.5rem;position:relative;z-index:1}
-
-/* WORK CARD — 3D glass */
-.work-card{
-  background:rgba(255,255,255,.7);
-  backdrop-filter:blur(20px) saturate(1.3);
-  -webkit-backdrop-filter:blur(20px) saturate(1.3);
-  border:1px solid rgba(255,255,255,.72);
-  border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;
-  text-decoration:none;color:inherit;
-  box-shadow:0 4px 20px rgba(0,0,0,.07),inset 0 1px 0 rgba(255,255,255,.9);
-  will-change:transform;transition:box-shadow .3s;
-}
-.work-preview{position:relative;height:196px;overflow:hidden;transform-origin:center bottom}
-.work-browser{position:absolute;top:0;left:0;right:0;height:28px;background:rgba(248,248,246,.9);backdrop-filter:blur(8px);display:flex;align-items:center;gap:.4rem;padding:0 .75rem;z-index:2;border-bottom:1px solid var(--border)}
-.wdot{width:8px;height:8px;border-radius:50%}
-.wdot-r{background:#ff5f57}.wdot-y{background:#febc2e}.wdot-g{background:#28c840}
-.work-bg{position:absolute;inset:0;background-size:cover;background-position:center top;transition:transform .6s ease}
-.work-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(to bottom,transparent 45%,rgba(0,0,0,.55))}
-.work-num{position:absolute;bottom:.75rem;left:.875rem;z-index:2;font-size:.6rem;font-weight:700;letter-spacing:.12em;color:rgba(255,255,255,.55);text-transform:uppercase}
-.work-body{padding:1.25rem;flex:1;display:flex;flex-direction:column;gap:.45rem}
-.work-cat{font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
-.work-title{font-size:1rem;font-weight:700;color:var(--text);line-height:1.3}
-.work-desc{font-size:.8rem;color:var(--text2);line-height:1.65;flex:1}
-.work-tags{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.5rem}
-.work-tag{font-size:.62rem;padding:.18rem .5rem;border-radius:999px;background:var(--bg3);border:1px solid var(--border);color:var(--text3)}
-.work-foot{display:flex;align-items:center;justify-content:space-between;padding:.875rem 1.25rem;border-top:1px solid var(--border);font-size:.75rem;color:var(--text3)}
-.work-foot-icon{width:28px;height:28px;border-radius:50%;background:var(--bg3);display:flex;align-items:center;justify-content:center;transition:background var(--transition),color var(--transition);flex-shrink:0}
-.work-card.hovered .work-foot-icon{background:var(--text);color:#fff}
-.work-card.hovered .work-bg{transform:scale(1.07)}
-.work-foot-icon svg{width:12px;height:12px}
-.work-card.hidden{display:none}
-
-/* FLOW — dark section for dramatic contrast */
-#flow{
-  position:relative;
-  background:
-    radial-gradient(at 25% 40%, rgba(99,102,241,.45) 0px, transparent 55%),
-    radial-gradient(at 80% 65%, rgba(139,92,246,.40) 0px, transparent 52%),
-    radial-gradient(at 55% 10%, rgba(180,60,255,.25)  0px, transparent 48%),
-    linear-gradient(135deg, #06050e 0%, #110d2a 50%, #06050e 100%);
-  color:rgba(255,255,255,.9);
-}
-#flow::before{
-  content:'';position:absolute;inset:0;
-  background-image:linear-gradient(rgba(255,255,255,.028) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.028) 1px,transparent 1px);
-  background-size:48px 48px;
-  pointer-events:none;
-}
-#flow .section-label{color:rgba(167,139,250,.85)}
-#flow .section-label::before{background:linear-gradient(135deg,rgba(167,139,250,.85),rgba(99,102,241,.65))}
-#flow .section-h2{color:#fff}
-#flow .section-sub{color:rgba(255,255,255,.6)}
-#flow .flow-title{color:#fff}
-#flow .flow-text{color:rgba(255,255,255,.55)}
-#flow .flow-num{color:rgba(167,139,250,.85)}
-#flow .flow-icon{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.16);box-shadow:0 4px 20px rgba(0,0,0,.35);color:#fff}
-#flow .flow-line{background:linear-gradient(90deg,transparent,rgba(255,255,255,.15),rgba(255,255,255,.15),transparent)}
-.flow-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:3rem;position:relative;z-index:1}
-.flow-line{position:absolute;top:30px;left:calc(10% + 30px);right:calc(10% + 30px);height:1px;background:linear-gradient(90deg,transparent,rgba(0,0,0,.1),rgba(0,0,0,.1),transparent);z-index:0}
-.flow-step{display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 .75rem;position:relative;z-index:1}
-.flow-icon{
-  width:60px;height:60px;border-radius:50%;margin-bottom:1.25rem;
-  background:rgba(255,255,255,.75);
-  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
-  border:1px solid rgba(255,255,255,.8);
-  display:flex;align-items:center;justify-content:center;font-size:1.375rem;
-  box-shadow:0 4px 16px rgba(0,0,0,.07),inset 0 1px 0 rgba(255,255,255,.95);
-  transition:transform var(--transition),box-shadow var(--transition),border-color var(--transition);
-}
-.flow-step:hover .flow-icon{transform:translateY(-4px) scale(1.08);box-shadow:var(--shadow-md);border-color:rgba(67,56,202,.3)}
-.flow-num{font-size:.6rem;font-weight:700;letter-spacing:.1em;color:var(--accent);margin-bottom:.375rem}
-.flow-title{font-size:.875rem;font-weight:700;color:var(--text);margin-bottom:.375rem}
-.flow-text{font-size:.75rem;color:var(--text2);line-height:1.6}
-
-/* REVIEWS */
-#reviews{background:transparent;position:relative}
-#reviews::before{
-  content:'';position:absolute;inset:0;
-  background:
-    radial-gradient(at 85% 20%, rgba(245,158,11,.30) 0px, transparent 52%),
-    radial-gradient(at 10% 75%, rgba(236,72,153,.22)  0px, transparent 50%),
-    radial-gradient(at 50% 50%, rgba(255,255,255,.50)  0px, transparent 65%),
-    linear-gradient(180deg, transparent 0%, rgba(255,252,240,.94) 10%, rgba(255,252,240,.94) 90%, transparent 100%);
-  pointer-events:none;
-}
-.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:3rem;position:relative;z-index:1}
-.review-card{
-  background:rgba(255,255,255,.78);
-  backdrop-filter:blur(20px) saturate(1.3);
-  -webkit-backdrop-filter:blur(20px) saturate(1.3);
-  border:1px solid rgba(255,255,255,.85);
-  border-radius:var(--r);padding:2rem;
-  box-shadow:0 4px 24px rgba(0,0,0,.06),inset 0 1px 0 rgba(255,255,255,.95);
-  transition:transform var(--transition),box-shadow var(--transition);
-}
-.review-card:hover{transform:translateY(-5px);box-shadow:0 16px 48px rgba(0,0,0,.10),inset 0 1px 0 rgba(255,255,255,.95)}
-.review-stars{color:var(--gold);font-size:1rem;margin-bottom:.875rem;letter-spacing:.1em}
-.review-text{font-size:.9rem;color:var(--text2);line-height:1.8;margin-bottom:1.375rem;font-style:italic}
-.review-author{display:flex;align-items:center;gap:.875rem}
-.review-avatar{width:44px;height:44px;border-radius:50%;background:var(--grad-vivid);display:flex;align-items:center;justify-content:center;color:#fff;font-size:.875rem;font-weight:700;flex-shrink:0;box-shadow:0 4px 12px rgba(99,102,241,.3)}
-.review-name{font-size:.875rem;font-weight:700;color:var(--text)}
-.review-role{font-size:.72rem;color:var(--text3);margin-top:.1rem}
-
-/* PRICE */
-#price{background:transparent;position:relative}
-#price::before{
-  content:'';position:absolute;inset:0;
-  background:
-    radial-gradient(at 15% 30%, rgba(99,102,241,.26) 0px, transparent 52%),
-    radial-gradient(at 85% 70%, rgba(139,92,246,.22)  0px, transparent 50%),
-    radial-gradient(at 50% 10%, rgba(245,158,11,.18)  0px, transparent 48%),
-    linear-gradient(180deg, transparent 0%, rgba(244,242,255,.94) 10%, rgba(244,242,255,.94) 90%, transparent 100%);
-  pointer-events:none;
-}
-.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem;position:relative;z-index:1;align-items:start}
-.price-card{
-  background:rgba(255,255,255,.72);
-  backdrop-filter:blur(22px) saturate(1.3);
-  -webkit-backdrop-filter:blur(22px) saturate(1.3);
-  border:1px solid rgba(255,255,255,.8);
-  border-radius:var(--r);padding:2.5rem 2rem;
-  box-shadow:0 4px 24px rgba(0,0,0,.07),inset 0 1px 0 rgba(255,255,255,.95);
-  transition:transform var(--transition),box-shadow var(--transition);
-  position:relative;
-}
-.price-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,.10)}
-.price-card.popular{
-  border:2px solid rgba(99,102,241,.55);
-  background:rgba(255,255,255,.88);
-  box-shadow:0 8px 40px rgba(67,56,202,.18),0 0 0 1px rgba(99,102,241,.12),inset 0 1px 0 rgba(255,255,255,.95);
-  transform:translateY(-10px);
-}
-.price-card.popular:hover{transform:translateY(-14px)}
-.price-badge{position:absolute;top:-15px;left:50%;transform:translateX(-50%);background:var(--grad-vivid);color:#fff;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.32rem 1.1rem;border-radius:999px;white-space:nowrap;box-shadow:0 4px 14px rgba(99,102,241,.35)}
-.price-name{font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:.875rem}
-.price-amount{display:flex;align-items:baseline;gap:.25rem;margin-bottom:.25rem}
-.price-num{font-size:2.75rem;font-weight:800;letter-spacing:-.05em;background:var(--grad-vivid);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
-.price-unit{font-size:.9rem;font-weight:600;color:var(--text2)}
-.price-from{font-size:.75rem;color:var(--text3);margin-bottom:1.25rem}
-.price-desc{font-size:.8375rem;color:var(--text2);line-height:1.75;margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}
-.price-features{list-style:none;display:flex;flex-direction:column;gap:.7rem;margin-bottom:2rem}
-.price-feature{display:flex;align-items:flex-start;gap:.625rem;font-size:.8375rem;color:var(--text2);line-height:1.5}
-.price-check{width:18px;height:18px;border-radius:50%;background:var(--grad-vivid);display:flex;align-items:center;justify-content:center;color:#fff;font-size:.6rem;font-weight:700;flex-shrink:0;margin-top:1px;box-shadow:0 2px 8px rgba(99,102,241,.3)}
-.price-cta{display:block;text-align:center;padding:.9rem;border-radius:12px;font-size:.9375rem;font-weight:600;transition:all var(--transition)}
-.price-outline{border:1.5px solid rgba(99,102,241,.45);color:var(--accent)}
-.price-outline:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
-.price-fill{background:var(--grad-vivid);color:#fff;box-shadow:0 4px 18px var(--glow);background-size:200% auto;animation:shimmer-btn 3s linear infinite}
-.price-fill:hover{box-shadow:0 8px 32px var(--glow);transform:translateY(-1px)}
-
-/* INLINE CTA BANNER */
-.mid-cta{
-  padding:2.75rem clamp(1.25rem,6vw,5rem);
-  background:var(--grad-vivid);
-  background-size:200% auto;
-  animation:shimmer-btn 4s linear infinite;
-  display:flex;align-items:center;justify-content:space-between;gap:2rem;
-  position:relative;overflow:hidden;
-}
-.mid-cta::before{
-  content:'';position:absolute;inset:0;
-  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ccircle cx='30' cy='30' r='1' fill='rgba(255,255,255,.12)'/%3E%3C/svg%3E") 0 0;
-  background-size:60px 60px;
-}
-.mid-cta-body{position:relative;z-index:1}
-.mid-cta-label{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:.375rem}
-.mid-cta-text{font-size:clamp(1.125rem,2.5vw,1.5rem);font-weight:700;color:#fff;line-height:1.35}
-.mid-cta-sub{font-size:.875rem;color:rgba(255,255,255,.7);margin-top:.375rem}
-.mid-cta-btn{position:relative;z-index:1;display:inline-flex;align-items:center;gap:.5rem;font-size:.9375rem;font-weight:700;padding:.9rem 2rem;border-radius:12px;background:#fff;color:var(--accent2);box-shadow:0 4px 20px rgba(0,0,0,.2);transition:transform var(--transition),box-shadow var(--transition);white-space:nowrap;flex-shrink:0}
-.mid-cta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,0,0,.28)}
-
-/* FAQ */
-#faq{background:transparent;position:relative}
-#faq::before{
-  content:'';position:absolute;inset:0;
-  background:
-    radial-gradient(at 82% 28%, rgba(236,72,153,.24) 0px, transparent 52%),
-    radial-gradient(at 12% 72%, rgba(139,92,246,.22)  0px, transparent 52%),
-    radial-gradient(at 50% 50%, rgba(255,255,255,.55)  0px, transparent 65%),
-    linear-gradient(180deg, transparent 0%, rgba(254,246,255,.94) 10%, rgba(254,246,255,.94) 90%, transparent 100%);
-  pointer-events:none;
-}
-.faq-list{margin-top:3rem;display:flex;flex-direction:column;gap:.75rem;max-width:780px;position:relative;z-index:1}
-.faq-item{
-  background:rgba(255,255,255,.65);
-  backdrop-filter:blur(18px) saturate(1.2);
-  -webkit-backdrop-filter:blur(18px) saturate(1.2);
-  border:1px solid rgba(255,255,255,.72);
-  border-radius:var(--r2);overflow:hidden;
-  box-shadow:0 2px 12px rgba(0,0,0,.05),inset 0 1px 0 rgba(255,255,255,.9);
-  transition:border-color var(--transition),box-shadow var(--transition);
-}
-.faq-item.open{border-color:rgba(67,56,202,.3);box-shadow:var(--shadow-md)}
-.faq-q{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 1.5rem;cursor:pointer;gap:1rem}
-.faq-q-text{font-size:.9375rem;font-weight:600;color:var(--text)}
-.faq-icon{width:28px;height:28px;flex-shrink:0;border-radius:50%;background:var(--bg3);display:flex;align-items:center;justify-content:center;transition:transform var(--transition),background var(--transition);color:var(--text2)}
-.faq-item.open .faq-icon{transform:rotate(45deg);background:var(--grad);color:#fff}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease}
-.faq-a-inner{padding:0 1.5rem 1.25rem;font-size:.875rem;color:var(--text2);line-height:1.8}
-
-/* CTA */
-#cta{
-  background:
-    radial-gradient(ellipse 80% 70% at 20% 30%,rgba(99,102,241,.5) 0%,transparent 55%),
-    radial-gradient(ellipse 70% 60% at 80% 70%,rgba(139,92,246,.45) 0%,transparent 55%),
-    radial-gradient(ellipse 60% 50% at 55% 10%,rgba(67,56,202,.3) 0%,transparent 55%),
-    linear-gradient(135deg,#0c0b14 0%,#1a1040 50%,#0c0b14 100%);
-  padding:7rem clamp(1.25rem,6vw,5rem);text-align:center;position:relative;overflow:hidden;
-}
-#cta::before{
-  content:'';position:absolute;inset:0;
-  background:radial-gradient(ellipse 100% 100% at 50% -20%,rgba(255,255,255,.04) 0%,transparent 55%);
-  pointer-events:none;
-}
-.cta-grid-lines{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:56px 56px;pointer-events:none}
-.cta-inner{max-width:680px;margin:0 auto;position:relative;z-index:1}
-.cta-label{display:inline-flex;align-items:center;gap:.5rem;font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:1.25rem}
-.cta-h2{font-size:clamp(1.75rem,4vw,2.75rem);font-weight:700;color:#fff;letter-spacing:-.03em;margin-bottom:1rem}
-.cta-h2 .grad{background:linear-gradient(135deg,#818cf8,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.cta-text{color:rgba(255,255,255,.55);font-size:1.0625rem;line-height:1.75;margin-bottom:2.5rem}
-.cta-actions{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
-.btn-cta-primary{display:inline-flex;align-items:center;gap:.5rem;font-size:.9375rem;font-weight:600;padding:.85rem 1.85rem;border-radius:12px;background:#fff;color:var(--text);box-shadow:0 4px 20px rgba(0,0,0,.3);transition:transform var(--transition),box-shadow var(--transition)}
-.btn-cta-primary:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,0,0,.4)}
-.btn-cta-secondary{display:inline-flex;align-items:center;gap:.5rem;font-size:.9375rem;font-weight:500;padding:.85rem 1.85rem;border-radius:12px;background:rgba(255,255,255,.1);color:rgba(255,255,255,.8);border:1.5px solid rgba(255,255,255,.2);transition:var(--transition)}
-.btn-cta-secondary:hover{background:rgba(255,255,255,.15);color:#fff}
-
-/* CONTACT */
-#contact{background:transparent;position:relative}
-#contact::before{
-  content:'';position:absolute;inset:0;
-  background:
-    radial-gradient(at 90%  8%, rgba(99,102,241,.15) 0px, transparent 52%),
-    radial-gradient(at 10% 90%, rgba(251,146,60,.10)  0px, transparent 50%),
-    radial-gradient(at 40% 40%, rgba(139,92,246,.08)  0px, transparent 55%),
-    linear-gradient(180deg, transparent 0%, rgba(250,249,255,.94) 10%, rgba(250,249,255,.94) 90%, transparent 100%);
-  pointer-events:none;
-}
-.contact-note{font-size:.875rem;color:var(--text2);margin-bottom:2.5rem;line-height:1.75}
-.form-group{margin-bottom:1.25rem}
-.form-label{display:block;font-size:.8125rem;font-weight:600;color:var(--text);margin-bottom:.5rem}
-.form-input,.form-select,.form-textarea{width:100%;background:rgba(255,255,255,.7);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.75);border-radius:var(--r2);padding:.875rem 1.125rem;font-size:.9375rem;font-family:inherit;color:var(--text);transition:border-color var(--transition),box-shadow var(--transition);-webkit-appearance:none}
-.form-input::placeholder,.form-textarea::placeholder{color:var(--text3)}
-.form-input:focus,.form-select:focus,.form-textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(67,56,202,.1);background:var(--bg2)}
-.form-textarea{resize:vertical;min-height:130px}
-.form-select{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239898b4' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;background-size:16px;padding-right:3rem}
-.form-select option{background:var(--bg2);color:var(--text)}
-.form-submit{width:100%;padding:1rem;border-radius:12px;background:var(--text);color:#fff;font-size:1rem;font-weight:600;box-shadow:var(--shadow-md);transition:transform var(--transition),box-shadow var(--transition),opacity var(--transition)}
-.form-submit:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg);opacity:.88}
-.form-submit:disabled{opacity:.5;cursor:not-allowed;transform:none}
-.form-submit.sending{pointer-events:none;opacity:.65;display:flex;align-items:center;justify-content:center;gap:.6rem}
-.form-submit.sending::before{content:'';width:16px;height:16px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .65s linear infinite;flex-shrink:0}
-@keyframes fstat-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-#form-status{margin-top:1.25rem;display:none;padding:1.5rem;border-radius:12px;text-align:center;animation:fstat-in .35s ease both}
-#form-status.success{display:block;color:#15803d;background:rgba(21,128,61,.06);border:1px solid rgba(21,128,61,.2)}
-#form-status.error{display:block;color:#dc2626;background:rgba(220,38,38,.05);border:1px solid rgba(220,38,38,.15)}
-.fstat-icon{display:flex;justify-content:center;margin-bottom:.75rem}
-.fstat-title{font-size:1rem;font-weight:700;margin-bottom:.35rem;line-height:1.5}
-.fstat-body{font-size:.875rem;opacity:.8;line-height:1.6}
-.contact-divider{display:flex;align-items:center;gap:1rem;margin:1.5rem 0;color:var(--text3);font-size:.8125rem}
-.contact-divider::before,.contact-divider::after{content:'';flex:1;height:1px;background:var(--border2)}
-.btn-line{display:inline-flex;align-items:center;justify-content:center;gap:.625rem;width:100%;padding:.9rem 1.75rem;border-radius:12px;background:#06C755;color:#fff;font-size:.9375rem;font-weight:600;box-shadow:0 4px 16px rgba(6,199,85,.25);transition:transform var(--transition),box-shadow var(--transition),opacity var(--transition)}
-.btn-line:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(6,199,85,.35);opacity:.92}
-
-/* FOOTER */
-footer{
-  background:rgba(244,242,238,.7);
-  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
-  border-top:1px solid rgba(255,255,255,.6);
-  padding:3rem clamp(1.25rem,6vw,5rem) 2rem;
-  position:relative;z-index:1;
-}
-.footer-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem}
-.footer-logo{font-size:.9375rem;font-weight:700;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.footer-links{display:flex;gap:2rem;list-style:none;flex-wrap:wrap}
-.footer-links a{font-size:.8125rem;color:var(--text3);transition:color var(--transition)}
-.footer-links a:hover{color:var(--text2)}
-.footer-copy{width:100%;text-align:center;margin-top:2rem;font-size:.75rem;color:var(--text3)}
-
-/* FIXED */
-#line-btn{position:fixed;bottom:5rem;right:1.5rem;z-index:700;width:52px;height:52px;border-radius:50%;background:#06C755;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(6,199,85,.35);transition:transform var(--transition),box-shadow var(--transition)}
-#line-btn:hover{transform:scale(1.1);box-shadow:0 8px 28px rgba(6,199,85,.45)}
-#line-btn svg{width:28px;height:28px;fill:#fff}
-#back-top{position:fixed;bottom:1.5rem;right:1.5rem;z-index:700;width:44px;height:44px;border-radius:50%;background:var(--bg2);border:1.5px solid var(--border2);display:flex;align-items:center;justify-content:center;color:var(--text2);cursor:pointer;box-shadow:var(--shadow-md);transition:var(--transition);opacity:0;pointer-events:none}
-#back-top.visible{opacity:1;pointer-events:auto}
-#back-top:hover{background:var(--text);color:#fff;border-color:var(--text)}
-#back-top svg{width:16px;height:16px}
-
-/* RIPPLE */
-.ripple{position:absolute;border-radius:50%;background:rgba(0,0,0,.1);transform:scale(0);animation:ripple .6s linear;pointer-events:none}
-@keyframes ripple{to{transform:scale(4);opacity:0}}
-
-/* RESPONSIVE */
-@media(max-width:1024px){
-  .problem-grid{grid-template-columns:1fr 1fr}
-  .services-grid{grid-template-columns:1fr 1fr}
-  .strengths-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto}
-  .strength-card:first-child{grid-row:span 1;padding:2.5rem 2rem}
-  .strength-card:first-child .strength-num{font-size:4rem}
-  .stats-grid{grid-template-columns:repeat(2,1fr)}
-  .flow-steps{grid-template-columns:1fr;gap:2rem}
-  .flow-line{display:none}
-  .flow-step{flex-direction:row;text-align:left;gap:1rem;align-items:flex-start}
-  .flow-icon{flex-shrink:0;margin-bottom:0}
-  .why-inner{grid-template-columns:1fr}
-  .work-card.featured{grid-column:span 1}
-  .work-card.featured .work-preview{height:196px}
-  .reviews-grid{grid-template-columns:1fr 1fr}
-  .price-grid{grid-template-columns:1fr;max-width:420px;margin-left:auto;margin-right:auto}
-  .price-card.popular{transform:none}
-  .price-card.popular:hover{transform:translateY(-4px)}
-  .mid-cta{flex-direction:column;text-align:center}
-}
-@media(max-width:768px){
-  #hero{grid-template-columns:1fr;padding-top:90px}
-  .hero-stage{display:none}
-  .hero-deco-svg{display:none}
-  .nav-links,.nav-cta{display:none}
-  .nav-burger{display:flex}
-  .problem-grid{grid-template-columns:1fr}
-  .services-grid{grid-template-columns:1fr}
-  .strengths-grid{grid-template-columns:1fr;grid-template-rows:auto}
-  .strength-card:first-child{grid-row:span 1;padding:2rem 1.5rem}
-  .stats-grid{grid-template-columns:1fr 1fr}
-  .cta-actions{flex-direction:column;align-items:stretch}
-  .cta-actions>*{text-align:center;justify-content:center}
-  .footer-inner{flex-direction:column;align-items:flex-start}
-  .bridge-glow-ring{display:none}
-  .strength-ring{display:none}
-  .services-wave{display:none}
-  .reviews-grid{grid-template-columns:1fr}
-  .price-grid{grid-template-columns:1fr;max-width:360px}
-  .mid-cta{flex-direction:column;text-align:center;gap:1.5rem}
-}
-@media(max-width:480px){
-  .stats-grid{grid-template-columns:1fr}
-  .hero-actions{flex-direction:column}
-  .hero-actions>*{text-align:center;justify-content:center}
-}
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .hero-line-inner { transform: translateY(0); transition: none; }
+      .hero-eyebrow, .hero-sub, .hero-actions { opacity: 1; animation: none; }
+      .hero-ambient, .cta-ambient { animation: none; }
+    }
   </style>
 </head>
 <body>
 
-<!-- NOISE + GLOBAL ORBS -->
-<div id="noise"></div>
-<div class="g-orb" id="orb-a"></div>
-<div class="g-orb" id="orb-b"></div>
-<div class="g-orb" id="orb-c"></div>
-<div class="g-orb" id="orb-d"></div>
-<div class="g-orb" id="orb-e"></div>
-<div class="g-orb" id="orb-f"></div>
+  <!-- Custom cursor -->
+  <div class="cur-dot" id="cur-dot"></div>
+  <div class="cur-ring" id="cur-ring"></div>
 
-<div id="loader"><div class="loader-ring"></div></div>
-<div id="progress"></div>
-
-<!-- NAV -->
-<nav id="nav">
-  <a class="nav-logo" href="#">HAYATO</a>
-  <ul class="nav-links">
-    <li><a href="#services">できること</a></li>
-    <li><a href="#works">実績</a></li>
-    <li><a href="#price">料金</a></li>
-    <li><a href="#faq">FAQ</a></li>
-  </ul>
-  <a class="nav-cta" href="#contact">お問い合わせ</a>
-  <button class="nav-burger" id="burger" aria-label="メニュー">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-<div class="nav-mobile" id="mobile-nav">
-  <a href="#services" class="mobile-link">できること</a>
-  <a href="#works" class="mobile-link">実績</a>
-  <a href="#price" class="mobile-link">料金</a>
-  <a href="#faq" class="mobile-link">FAQ</a>
-  <a href="#contact" class="mobile-link" style="color:var(--accent)">お問い合わせ</a>
-</div>
-
-<!-- HERO -->
-<section id="hero">
-  <div class="hero-noise"></div>
-  <div class="hero-grid"></div>
-  <!-- SVG ring decoration -->
-  <svg class="hero-deco-svg" aria-hidden="true" viewBox="0 0 700 700" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <radialGradient id="sph-grd" cx="35%" cy="35%" r="65%" fx="35%" fy="35%">
-        <stop offset="0%" stop-color="rgba(255,255,255,.9)"/>
-        <stop offset="40%" stop-color="rgba(139,92,246,.4)"/>
-        <stop offset="100%" stop-color="rgba(67,56,202,.0)"/>
-      </radialGradient>
-    </defs>
-    <circle cx="350" cy="350" r="295" stroke="rgba(99,102,241,.09)" stroke-width="1" fill="none"/>
-    <circle cx="350" cy="350" r="240" stroke="rgba(139,92,246,.14)" stroke-width="0.75" fill="none" stroke-dasharray="4 8"/>
-    <circle cx="350" cy="350" r="175" stroke="rgba(99,102,241,.18)" stroke-width="1.25" fill="none"/>
-    <circle cx="350" cy="350" r="110" stroke="rgba(139,92,246,.22)" stroke-width="1" fill="none" stroke-dasharray="2 6"/>
-    <circle cx="350" cy="350" r="72" fill="url(#sph-grd)"/>
-    <circle cx="580" cy="100" r="28" fill="none" stroke="rgba(251,146,60,.28)" stroke-width="1.5"/>
-    <circle cx="90"  cy="560" r="18" fill="none" stroke="rgba(99,102,241,.22)" stroke-width="1"/>
-    <circle cx="640" cy="480" r="12" fill="rgba(251,146,60,.15)"/>
-    <circle cx="60"  cy="200" r="8"  fill="rgba(99,102,241,.18)"/>
-  </svg>
-  <div class="hero-left">
-    <div class="hero-badge">Freelance Engineer &amp; Designer</div>
-    <h1 class="hero-h1">
-      売れる<span class="grad">Web</span>を、<br />
-      <span class="gold">ひとり</span>で完結。
-    </h1>
-    <p class="hero-sub">LP制作・Webシステム・AI導入・業務効率化まですべて一人で対応。制作会社より速く、格安より高品質。あなたのビジネスの集客を本気で変えます。</p>
-    <div class="hero-actions">
-      <a class="btn-accent" href="#contact">
-        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-        無料で相談する
-      </a>
-      <a class="btn-secondary" href="#works">
-        制作実績を見る
-        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
+  <!-- NAV -->
+  <nav id="nav" aria-label="メインナビゲーション">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">Hayato</a>
+      <ul class="nav-links">
+        <li><a href="#works"    class="nav-link">Works</a></li>
+        <li><a href="#process"  class="nav-link">Process</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#cta"      class="nav-link">Contact</a></li>
+      </ul>
+      <a href="https://lin.ee/wYTBSCJ" target="_blank" rel="noopener" class="nav-cta">LINE相談</a>
     </div>
-  </div>
-  <!-- 3D STAGE -->
-  <div class="hero-stage" id="hero-stage">
-    <div class="hero-cards-3d" id="cards3d">
-      <div class="hc hc-1" data-depth="1.4" data-base="translateZ(60px) rotateY(-8deg) rotateX(4deg)">
-        <div class="hc-img" style="background-image:url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&q=75&auto=format&fit=crop')"></div>
-        <div class="hc-body"><div class="hc-cat">Fitness</div><div class="hc-title">LUXE BODY TOKYO</div></div>
-      </div>
-      <div class="hc hc-2" data-depth="0.8" data-base="translateZ(20px) rotateY(-12deg) rotateX(2deg)">
-        <div class="hc-img" style="background-image:url('https://images.unsplash.com/photo-1588776814546-1ffbb172d536?w=600&q=75&auto=format&fit=crop')"></div>
-        <div class="hc-body"><div class="hc-cat">Medical</div><div class="hc-title">みなと歯科クリニック</div></div>
-      </div>
-      <div class="hc hc-3" data-depth="2.0" data-base="translateZ(100px) rotateY(-6deg) rotateX(-3deg)">
-        <div class="hc-img" style="background-image:url('https://images.unsplash.com/photo-1562322140-8baeececf3df?w=600&q=75&auto=format&fit=crop')"></div>
-        <div class="hc-body"><div class="hc-cat">Beauty</div><div class="hc-title">Hair Salon BLOOM</div></div>
-      </div>
-      <div class="hc hc-4" data-depth="1.1" data-base="translateZ(40px) rotateY(-10deg) rotateX(3deg)">
-        <div class="hc-img" style="background-image:url('https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&q=75&auto=format&fit=crop')"></div>
-        <div class="hc-body"><div class="hc-cat">SaaS / AI</div><div class="hc-title">PostPilot</div></div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero" aria-label="イントロダクション">
+    <div class="hero-ambient" aria-hidden="true"></div>
+    <div class="hero-content">
+      <span class="hero-eyebrow">LP制作 / AI自動化 / Webシステム構築</span>
+      <h1 class="hero-h1" aria-label="集客できるWebサイトを作る。">
+        <span class="hero-line"><span class="hero-line-inner" id="hl0">集客できる</span></span>
+        <span class="hero-line"><span class="hero-line-inner" id="hl1">Webサイトを</span></span>
+        <span class="hero-line"><span class="hero-line-inner" id="hl2">作る。</span></span>
+      </h1>
+      <p class="hero-sub">
+        ただ作るのではなく、予約・問い合わせ・集客まで業務に組み込めるWebを。成果が出る設計で制作します。
+      </p>
+      <div class="hero-actions">
+        <a href="https://lin.ee/wYTBSCJ" target="_blank" rel="noopener" class="btn-ph">LINEで相談する</a>
+        <a href="#works" class="btn-gh">実績を見る</a>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- MARQUEE -->
-<div class="marquee-section">
-  <div class="marquee-track">
-    <span class="marquee-item"><span class="marquee-dot"></span>LP制作</span>
-    <span class="marquee-item"><span class="marquee-dot"></span>Webサイト制作</span>
-    <span class="marquee-item"><span class="marquee-dot"></span>AI機能導入</span>
-    <span class="marquee-item"><span class="marquee-dot"></span>業務効率化</span>
-    <span class="marquee-item"><span class="marquee-dot"></span>SEO対策</span>
-    <span class="marquee-item"><span class="marquee-dot"></span>集客強化</span>
-    <span class="marquee-item"><span class="marquee-dot"></span>フロントエンド実装</span>
-    <span class="marquee-item"><span class="marquee-dot"></span>予約システム</span>
-    <span class="marquee-item"><span class="marquee-dot"></span>料金シミュレーター</span>
-    <span class="marquee-item"><span class="marquee-dot"></span>LINE連携</span>
-    <span class="marquee-item"><span class="marquee-dot"></span>LP制作</span>
-    <span class="marquee-item"><span class="marquee-dot"></span>Webサイト制作</span>
-    <span class="marquee-item"><span class="marquee-dot"></span>AI機能導入</span>
-    <span class="marquee-item"><span class="marquee-dot"></span>業務効率化</span>
-    <span class="marquee-item"><span class="marquee-dot"></span>SEO対策</span>
-    <span class="marquee-item"><span class="marquee-dot"></span>集客強化</span>
-    <span class="marquee-item"><span class="marquee-dot"></span>フロントエンド実装</span>
-    <span class="marquee-item"><span class="marquee-dot"></span>予約システム</span>
-    <span class="marquee-item"><span class="marquee-dot"></span>料金シミュレーター</span>
-    <span class="marquee-item"><span class="marquee-dot"></span>LINE連携</span>
-  </div>
-</div>
-
-<!-- STATS -->
-<section id="stats">
-  <div class="stats-grid">
-    <div class="stat-card reveal"><div class="stat-num"><span class="counter" data-target="7">0</span><span class="stat-suffix">+</span></div><div class="stat-label">制作実績</div></div>
-    <div class="stat-card reveal reveal-delay-1"><div class="stat-num"><span class="counter" data-target="100">0</span><span class="stat-suffix">%</span></div><div class="stat-label">クライアント満足度</div></div>
-    <div class="stat-card reveal reveal-delay-2"><div class="stat-num"><span class="counter" data-target="12">0</span><span class="stat-suffix">+</span></div><div class="stat-label">対応業種</div></div>
-    <div class="stat-card reveal reveal-delay-3"><div class="stat-num">最短<span class="counter" data-target="3">0</span><span class="stat-suffix">日</span></div><div class="stat-label">納品スピード</div></div>
-  </div>
-</section>
-
-<!-- PROBLEM -->
-<section id="problem" class="section">
-  <div class="section-inner">
-    <div class="reveal">
-      <div class="section-label">Problem</div>
-      <h2 class="section-h2">こんな<span class="grad">お悩み</span>ありませんか？</h2>
-      <p class="section-sub">多くのお客様が、Web制作で同じ課題を抱えています。</p>
-    </div>
-    <div class="problem-grid">
-      <div class="problem-card reveal reveal-delay-1"><div class="problem-icon">😤</div><div><div class="problem-title">LPを作ったのに集客できない</div><div class="problem-text">「それっぽいサイト」はあるのに、問い合わせもアクセスも伸びない。デザインより設計が重要です。</div></div></div>
-      <div class="problem-card reveal reveal-delay-2"><div class="problem-icon">💸</div><div><div class="problem-title">制作会社は高すぎる</div><div class="problem-text">数十万〜百万円の見積もりが来て断念。もっとコスパよく本格的なサイトを作りたい。</div></div></div>
-      <div class="problem-card reveal reveal-delay-3"><div class="problem-icon">🐢</div><div><div class="problem-title">納品が遅すぎる</div><div class="problem-text">「2〜3ヶ月かかります」と言われ、キャンペーンに間に合わない。スピードが命の案件も多い。</div></div></div>
-      <div class="problem-card reveal reveal-delay-1"><div class="problem-icon">🤷</div><div><div class="problem-title">何を頼めばいいかわからない</div><div class="problem-text">LP・ホームページ・予約システム・AI機能…どこに何を依頼すればいいか整理できない。</div></div></div>
-      <div class="problem-card reveal reveal-delay-2"><div class="problem-icon">🔄</div><div><div class="problem-title">修正のたびに費用がかかる</div><div class="problem-text">テキストを一行変えるだけで「修正費用1万円」。気軽に変更できない縛りが続く。</div></div></div>
-      <div class="problem-card reveal reveal-delay-3"><div class="problem-icon">🤖</div><div><div class="problem-title">AIを活用したいが相談できない</div><div class="problem-text">ChatGPT連携・自動応答・業務自動化…相談したくても「うちでは対応していない」と断られる。</div></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- BRIDGE -->
-<section id="bridge">
-  <div class="bridge-glow-ring"></div>
-  <div class="bridge-glow-ring"></div>
-  <div class="bridge-glow-ring"></div>
-  <div class="bridge-inner reveal">
-    <div class="bridge-arrow"><svg width="20" height="20" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg></div>
-    <h2 class="bridge-h2">だから、<span style="background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">はやと</span>に依頼する</h2>
-    <p class="bridge-text">高品質・スピード納品・低コストの3つを同時に実現。<br />LP制作からAI導入まで、あなたのビジネスに必要なすべてを一人で担います。</p>
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section id="services" class="section">
-  <svg class="services-wave" aria-hidden="true" viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 50 C240 20 480 75 720 50 C960 25 1200 72 1440 50" stroke="rgba(99,102,241,.14)" stroke-width="1.5" fill="none"/>
-    <path d="M0 65 C240 35 480 90 720 65 C960 40 1200 87 1440 65" stroke="rgba(139,92,246,.08)" stroke-width="1" fill="none"/>
-  </svg>
-  <div class="section-inner">
-    <div class="reveal"><div class="section-label">Services</div><h2 class="section-h2"><span class="grad">できること</span></h2><p class="section-sub">LP制作だけでなく、集客・業務効率化まで幅広く対応します。</p></div>
-    <div class="services-grid">
-      <div class="service-card reveal reveal-delay-1"><div class="service-icon">🚀</div><div class="service-title">ランディングページ制作</div><div class="service-text">成約率を高める設計とデザインで、問い合わせ・予約・購入につながるLPを制作。アニメーション・AI機能も実装可能。</div><div class="service-tags"><span class="service-tag">集客特化設計</span><span class="service-tag">レスポンシブ</span><span class="service-tag">SEO対応</span></div></div>
-      <div class="service-card reveal reveal-delay-2"><div class="service-icon">🌐</div><div class="service-title">Webサイト・ホームページ制作</div><div class="service-text">企業サイト・店舗サイト・個人ブランドサイト。採用・集客・信頼構築など目的に合わせた設計で制作します。</div><div class="service-tags"><span class="service-tag">コーポレート</span><span class="service-tag">店舗サイト</span><span class="service-tag">ブランドサイト</span></div></div>
-      <div class="service-card reveal reveal-delay-3"><div class="service-icon">🤖</div><div class="service-title">AI機能導入・自動化</div><div class="service-text">チャットボット・AI問診・自動見積もり・コンテンツ生成など、実用的なAI機能をサイトに組み込みます。</div><div class="service-tags"><span class="service-tag">ChatGPT連携</span><span class="service-tag">自動応答</span><span class="service-tag">AI診断ツール</span></div></div>
-      <div class="service-card reveal reveal-delay-1"><div class="service-icon">⚙️</div><div class="service-title">業務システム・Webアプリ</div><div class="service-text">予約管理・在庫管理・顧客管理など、業務をデジタル化するシステムを開発。外部ツール連携も対応。</div><div class="service-tags"><span class="service-tag">予約システム</span><span class="service-tag">管理画面</span><span class="service-tag">API連携</span></div></div>
-      <div class="service-card reveal reveal-delay-2"><div class="service-icon">📈</div><div class="service-title">SEO対策・集客改善</div><div class="service-text">検索上位を狙うSEO設計、Core Web Vitals改善、構造化データ実装。既存サイトの集客改善も承ります。</div><div class="service-tags"><span class="service-tag">SEO設計</span><span class="service-tag">表示速度改善</span><span class="service-tag">構造化データ</span></div></div>
-      <div class="service-card reveal reveal-delay-3"><div class="service-icon">💬</div><div class="service-title">Webコンサルティング</div><div class="service-text">「何を作るべきか」から相談OK。現状分析・競合調査・施策提案まで、戦略レベルからサポートします。</div><div class="service-tags"><span class="service-tag">戦略設計</span><span class="service-tag">競合分析</span><span class="service-tag">改善提案</span></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- STRENGTHS -->
-<section id="strengths" class="section">
-  <svg class="strength-ring" aria-hidden="true" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="150" cy="150" r="130" stroke="rgba(251,191,36,.2)" stroke-width="1.5" fill="none" stroke-dasharray="6 10"/>
-    <circle cx="150" cy="150" r="95"  stroke="rgba(245,158,11,.16)" stroke-width="1" fill="none"/>
-    <circle cx="150" cy="150" r="55"  stroke="rgba(251,191,36,.22)" stroke-width="1.5" fill="none" stroke-dasharray="3 6"/>
-    <circle cx="150" cy="150" r="22"  fill="rgba(251,191,36,.12)"/>
-  </svg>
-  <div class="section-inner">
-    <div class="reveal"><div class="section-label">Why Choose Me</div><h2 class="section-h2">選ばれる<span class="grad">3つの理由</span></h2></div>
-    <div class="strengths-grid">
-      <div class="strength-card reveal reveal-delay-1"><div class="strength-num">01</div><div class="strength-point">POINT 01</div><div class="strength-title">制作会社クオリティを<br />フリーランス価格で</div><div class="strength-text">大手エージェンシーで培ったデザイン・実装スキルを、フリーランスならではのコストで提供。「安くていい仕事」ではなく「高品質なのに適正価格」です。</div></div>
-      <div class="strength-card reveal reveal-delay-2"><div class="strength-num">02</div><div class="strength-point">POINT 02</div><div class="strength-title">最短3日〜の<br />スピード納品</div><div class="strength-text">社内稟議や複数人確認が不要なフリーランスだからこそのスピード。緊急のキャンペーンや急な展示会対応にも柔軟に対応します。</div></div>
-      <div class="strength-card reveal reveal-delay-3"><div class="strength-num">03</div><div class="strength-point">POINT 03</div><div class="strength-title">設計から実装まで<br />すべてワンストップ</div><div class="strength-text">デザイン・コーディング・SEO・AI機能・フォーム設定まで窓口ひとつ。「このツールは別の人に」という分断がなく、一貫した品質を保てます。</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- WHY LOW COST -->
-<section id="why" class="section">
-  <div class="why-inner">
-    <div class="why-text reveal"><div class="section-label">Why Low Price</div><h2 class="section-h2">なぜ<span class="grad">高品質</span>なのに<br />低価格なのか</h2><p class="section-sub">「安かろう悪かろう」ではありません。コストを下げられる明確な理由があります。</p></div>
-    <div class="why-visual reveal reveal-delay-2">
-      <div class="why-row"><div class="why-check">✓</div><div><div class="why-row-title">家賃・人件費ゼロのフリーランス</div><div class="why-row-text">オフィス賃料も正社員人件費も不要。制作会社の固定費をそのまま価格転嫁せずに済みます。</div></div></div>
-      <div class="why-row"><div class="why-check">✓</div><div><div class="why-row-title">中間マージンが一切ない</div><div class="why-row-text">全工程を直接担当するため営業・ディレクター・デザイナー・エンジニアへの分業マージンが消え、その分品質に還元します。</div></div></div>
-      <div class="why-row"><div class="why-check">✓</div><div><div class="why-row-title">AI・最新ツールで工数を圧縮</div><div class="why-row-text">AIと最新の開発環境を活用しコーディング・デザイン作業を大幅に効率化。浮いた時間をクオリティに全振りします。</div></div></div>
-      <div class="why-row"><div class="why-check">✓</div><div><div class="why-row-title">ポートフォリオとして公開するから</div><div class="why-row-text">作った作品を公開することで次の案件につながります。だから全力で作ります。手を抜く理由がない。</div></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- COMPARISON -->
-<section id="comparison" class="section">
-  <div class="section-inner">
-    <div class="reveal"><div class="section-label">Comparison</div><h2 class="section-h2">他と<span class="grad">何が違う</span>のか</h2><p class="section-sub">制作会社・格安フリーランスと正直に比較します。</p></div>
-    <div class="cmp-wrap reveal reveal-delay-1">
-      <table class="cmp-table">
-        <thead><tr><th></th><th class="me">はやと</th><th class="other">制作会社</th><th class="other">格安フリーランス</th></tr></thead>
-        <tbody>
-          <tr><td>デザイン品質</td><td class="me"><span class="cmp-ico-yes">◎</span> 高品質</td><td><span class="cmp-ico-yes">◎</span> 高品質</td><td><span class="cmp-ico-mid">△</span> ケースによる</td></tr>
-          <tr><td>価格</td><td class="me"><span class="cmp-ico-yes">◎</span> 適正・低コスト</td><td><span class="cmp-ico-no">✕</span> 高額</td><td><span class="cmp-ico-yes">◎</span> 安い</td></tr>
-          <tr><td>納品スピード</td><td class="me"><span class="cmp-ico-yes">◎</span> 最短3日〜</td><td><span class="cmp-ico-no">✕</span> 1〜3ヶ月</td><td><span class="cmp-ico-mid">△</span> まちまち</td></tr>
-          <tr><td>AI機能・高度な実装</td><td class="me"><span class="cmp-ico-yes">◎</span> 対応可</td><td><span class="cmp-ico-mid">○</span> 追加費用あり</td><td><span class="cmp-ico-no">✕</span> 対応不可が多い</td></tr>
-          <tr><td>SEO・集客設計</td><td class="me"><span class="cmp-ico-yes">◎</span> 全案件標準対応</td><td><span class="cmp-ico-mid">△</span> オプション追加</td><td><span class="cmp-ico-no">✕</span> 対応不可が多い</td></tr>
-          <tr><td>修正対応</td><td class="me"><span class="cmp-ico-yes">◎</span> 柔軟・迅速</td><td><span class="cmp-ico-no">✕</span> 追加費用・時間</td><td><span class="cmp-ico-mid">△</span> 連絡がつかないことも</td></tr>
-          <tr><td>窓口の一本化</td><td class="me"><span class="cmp-ico-yes">◎</span> 全工程ワンストップ</td><td><span class="cmp-ico-no">✕</span> 複数担当が関わる</td><td><span class="cmp-ico-mid">△</span> 外注に丸投げも</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
-<!-- WORKS -->
-<section id="works" class="section">
-  <svg style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:.5" aria-hidden="true" viewBox="0 0 1440 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="60"   cy="120"  r="120" fill="none" stroke="rgba(109,40,217,.10)" stroke-width="1.5"/>
-    <circle cx="1380" cy="680"  r="90"  fill="none" stroke="rgba(245,158,11,.14)" stroke-width="1"/>
-    <circle cx="1200" cy="100"  r="50"  fill="none" stroke="rgba(99,102,241,.18)" stroke-width="1" stroke-dasharray="4 6"/>
-    <path d="M0 700 Q360 650 720 700 Q1080 750 1440 700" stroke="rgba(109,40,217,.08)" stroke-width="1.5" fill="none"/>
-  </svg>
-  <div class="section-inner">
-    <div class="reveal"><div class="section-label">Works</div><h2 class="section-h2"><span class="grad">制作実績</span></h2><p class="section-sub">実際に制作したLP・Webサイトの一覧です。クリックして確認できます。</p></div>
-    <div class="works-filter reveal reveal-delay-1">
-      <button class="filter-btn active" data-filter="all">すべて</button>
-      <button class="filter-btn" data-filter="medical">医療・健康</button>
-      <button class="filter-btn" data-filter="beauty">美容</button>
-      <button class="filter-btn" data-filter="food">飲食</button>
-      <button class="filter-btn" data-filter="tech">Tech / AI</button>
-      <button class="filter-btn" data-filter="legal">士業・法律</button>
-      <button class="filter-btn" data-filter="other">その他</button>
-    </div>
-    <div class="works-grid">
-
-      <a class="work-card featured" href="./portfolio/dental/" target="_blank" rel="noopener" data-cat="medical">
-        <div class="work-preview"><div class="work-browser"><div class="wdot wdot-r"></div><div class="wdot wdot-y"></div><div class="wdot wdot-g"></div></div><div class="work-bg" style="background-color:#071e3d;background-image:url('https://images.unsplash.com/photo-1588776814546-1ffbb172d536?w=800&q=80&auto=format&fit=crop');background-blend-mode:overlay;"></div><div class="work-overlay"></div><div class="work-num">No.06</div></div>
-        <div class="work-body"><div class="work-cat">Medical / Dental</div><div class="work-title">みなと歯科クリニック</div><div class="work-desc">品川の歯科医院LP。グラスモーフィズム＋3Dチルト＋パララックス搭載のプレミアム構成。</div><div class="work-tags"><span class="work-tag">HTML/CSS</span><span class="work-tag">Glassmorphism</span><span class="work-tag">JSON-LD</span></div></div>
-        <div class="work-foot"><span>shika-lp</span><span class="work-foot-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg></span></div>
-      </a>
-
-      <a class="work-card" href="./portfolio/cafe/" target="_blank" rel="noopener" data-cat="food">
-        <div class="work-preview"><div class="work-browser"><div class="wdot wdot-r"></div><div class="wdot wdot-y"></div><div class="wdot wdot-g"></div></div><div class="work-bg" style="background-color:#3d2b1f;background-image:url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80&auto=format&fit=crop');"></div><div class="work-overlay"></div><div class="work-num">No.01</div></div>
-        <div class="work-body"><div class="work-cat">Cafe / Food</div><div class="work-title">Cafe Aroma</div><div class="work-desc">福岡のスペシャルティコーヒーカフェのLP。温かみのある世界観と予約導線を設計。</div><div class="work-tags"><span class="work-tag">HTML/CSS</span><span class="work-tag">JavaScript</span><span class="work-tag">Formspree</span></div></div>
-        <div class="work-foot"><span>cafe-lp</span><span class="work-foot-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg></span></div>
-      </a>
-
-      <a class="work-card" href="./portfolio/beauty/" target="_blank" rel="noopener" data-cat="beauty">
-        <div class="work-preview"><div class="work-browser"><div class="wdot wdot-r"></div><div class="wdot wdot-y"></div><div class="wdot wdot-g"></div></div><div class="work-bg" style="background-color:#3a2e24;background-image:url('https://images.unsplash.com/photo-1562322140-8baeececf3df?w=800&q=80&auto=format&fit=crop');"></div><div class="work-overlay"></div><div class="work-num">No.02</div></div>
-        <div class="work-body"><div class="work-cat">Beauty / Hair Salon</div><div class="work-title">Hair Salon BLOOM</div><div class="work-desc">渋谷の美容院LP。ギャラリー・料金シミュレーター・Before/After等を実装した高機能構成。</div><div class="work-tags"><span class="work-tag">HTML/CSS</span><span class="work-tag">JavaScript</span><span class="work-tag">JSON-LD</span></div></div>
-        <div class="work-foot"><span>bloom-lp</span><span class="work-foot-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg></span></div>
-      </a>
-
-      <a class="work-card" href="./portfolio/chiro/" target="_blank" rel="noopener" data-cat="medical">
-        <div class="work-preview"><div class="work-browser"><div class="wdot wdot-r"></div><div class="wdot wdot-y"></div><div class="wdot wdot-g"></div></div><div class="work-bg" style="background-color:#1a2030;background-image:url('https://images.unsplash.com/photo-1519824145371-296894a0daa9?w=800&q=80&auto=format&fit=crop');"></div><div class="work-overlay"></div><div class="work-num">No.03</div></div>
-        <div class="work-body"><div class="work-cat">Medical / Health</div><div class="work-title">さくら整骨院</div><div class="work-desc">三軒茶屋の整骨院LP。腰痛・肩こり・産後骨盤矯正をターゲットにした集患特化設計。</div><div class="work-tags"><span class="work-tag">HTML/CSS</span><span class="work-tag">JavaScript</span><span class="work-tag">SEO</span></div></div>
-        <div class="work-foot"><span>seikotsu-lp</span><span class="work-foot-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg></span></div>
-      </a>
-
-      <a class="work-card" href="./portfolio/sns-school/" target="_blank" rel="noopener" data-cat="tech">
-        <div class="work-preview"><div class="work-browser"><div class="wdot wdot-r"></div><div class="wdot wdot-y"></div><div class="wdot wdot-g"></div></div><div class="work-bg" style="background-color:#0c0820;background-image:url('https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&q=80&auto=format&fit=crop');"></div><div class="work-overlay"></div><div class="work-num">No.04</div></div>
-        <div class="work-body"><div class="work-cat">SaaS / AI Product</div><div class="work-title">PostPilot</div><div class="work-desc">AI SNS自動化SaaSのLP。3D風UI・インタラクティブデモ・CV最大化設計のポートフォリオ作品。</div><div class="work-tags"><span class="work-tag">HTML/CSS</span><span class="work-tag">JavaScript</span><span class="work-tag">3D UI</span></div></div>
-        <div class="work-foot"><span>postpilot</span><span class="work-foot-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg></span></div>
-      </a>
-
-      <a class="work-card" href="./portfolio/realestate/" target="_blank" rel="noopener" data-cat="other">
-        <div class="work-preview"><div class="work-browser"><div class="wdot wdot-r"></div><div class="wdot wdot-y"></div><div class="wdot wdot-g"></div></div><div class="work-bg" style="background-color:#0c1020;background-image:url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80&auto=format&fit=crop');"></div><div class="work-overlay"></div><div class="work-num">No.07</div></div>
-        <div class="work-body"><div class="work-cat">Real Estate</div><div class="work-title">不動産LP</div><div class="work-desc">不動産・物件紹介のランディングページ。信頼感とコンバージョンを両立した設計。</div><div class="work-tags"><span class="work-tag">HTML/CSS</span><span class="work-tag">JavaScript</span><span class="work-tag">SEO</span></div></div>
-        <div class="work-foot"><span>realestate-lp</span><span class="work-foot-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg></span></div>
-      </a>
-
-      <a class="work-card" href="./personal-gym-lp/" target="_blank" rel="noopener" data-cat="other">
-        <div class="work-preview"><div class="work-browser"><div class="wdot wdot-r"></div><div class="wdot wdot-y"></div><div class="wdot wdot-g"></div></div><div class="work-bg" style="background-color:#080808;background-image:url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80&auto=format&fit=crop');background-size:cover;"></div><div class="work-overlay"></div><div class="work-num">No.08</div></div>
-        <div class="work-body"><div class="work-cat">Fitness / Personal Gym</div><div class="work-title">LUXE BODY TOKYO</div><div class="work-desc">高級パーソナルジムLP。AI体型診断・料金シミュレーター・Before/After比較スライダー・3Dパネルを実装。</div><div class="work-tags"><span class="work-tag">HTML/CSS</span><span class="work-tag">JavaScript</span><span class="work-tag">AI Simulator</span><span class="work-tag">Glassmorphism</span></div></div>
-        <div class="work-foot"><span>personal-gym-lp</span><span class="work-foot-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg></span></div>
-      </a>
-
-      <a class="work-card" href="./souzoku-lp/" target="_blank" rel="noopener" data-cat="legal">
-        <div class="work-preview"><div class="work-browser"><div class="wdot wdot-r"></div><div class="wdot wdot-y"></div><div class="wdot wdot-g"></div></div><div class="work-bg" style="background-color:#0d2240;background-image:url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80&auto=format&fit=crop');background-blend-mode:overlay;"></div><div class="work-overlay"></div><div class="work-num">No.09</div></div>
-        <div class="work-body"><div class="work-cat">士業 / Legal</div><div class="work-title">相続・遺言 行政書士LP</div><div class="work-desc">東京の相続専門行政書士事務所LP。ネイビー×ゴールドの信頼感あるデザインで、FAQ・料金表・相談フォームを完備。</div><div class="work-tags"><span class="work-tag">HTML/CSS</span><span class="work-tag">Tailwind CDN</span><span class="work-tag">Accordion</span><span class="work-tag">SEO</span></div></div>
-        <div class="work-foot"><span>souzoku-lp</span><span class="work-foot-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg></span></div>
-      </a>
-
-    </div>
-  </div>
-</section>
-
-<!-- INLINE CTA 1 -->
-<div class="mid-cta reveal">
-  <div class="mid-cta-body">
-    <div class="mid-cta-label">Free Consultation</div>
-    <div class="mid-cta-text">まず無料でご相談ください。<br />あなたのビジネスに合った最適な提案をします。</div>
-    <div class="mid-cta-sub">通常24時間以内にご返信 ・ 完全無料・相談のみもOK</div>
-  </div>
-  <a class="mid-cta-btn" href="#contact">
-    今すぐ無料相談する
-    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-  </a>
-</div>
-
-<!-- REVIEWS -->
-<section id="reviews" class="section">
-  <div class="section-inner">
-    <div class="reveal">
-      <div class="section-label">Reviews</div>
-      <h2 class="section-h2">お客様の<span class="grad">声</span></h2>
-      <p class="section-sub">実際にご依頼いただいたお客様からの声を掲載しています。</p>
-    </div>
-    <div class="reviews-grid">
-      <div class="review-card reveal reveal-delay-1">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">「完成度が想像以上でした。デザインのセンスはもちろん、予約システムやSEO対策まで全部お任せできて本当に助かりました。公開後すぐに問い合わせが来て驚いています。」</p>
-        <div class="review-author">
-          <div class="review-avatar">K</div>
-          <div><div class="review-name">K.M 様</div><div class="review-role">美容サロンオーナー・東京都</div></div>
+  <!-- CONCEPT (light section, one deliberate theme break) -->
+  <section id="concept" aria-labelledby="concept-h2">
+    <div class="concept-wrap">
+      <div class="concept-grid">
+        <div>
+          <h2 class="concept-h2 reveal" id="concept-h2">
+            成果が出るWebを、<br>業務に組み込む。
+          </h2>
+        </div>
+        <div style="padding-top:.25rem;">
+          <p class="concept-body reveal">
+            ランディングページは公開して終わりではありません。予約フォーム、問い合わせ、料金シミュレーター、LINE誘導など、集客から成約までを一つのWebサイトで完結させる設計を行います。
+          </p>
+          <p class="concept-body reveal" style="margin-top:1.125rem;">
+            AI自動化と組み合わせることで、問い合わせ対応や予約確認の工数を大幅に削減できます。
+          </p>
         </div>
       </div>
-      <div class="review-card reveal reveal-delay-2">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">「他のフリーランスに断られた細かい機能も全部実装してくれました。スピードも早く、こちらの要望をしっかり汲み取ってくれる丁寧な対応に感謝しています。リピート確定です。」</p>
-        <div class="review-author">
-          <div class="review-avatar">T</div>
-          <div><div class="review-name">T.S 様</div><div class="review-role">整骨院院長・神奈川県</div></div>
+      <div class="pillars-grid">
+        <div class="pillar reveal">
+          <p class="pillar-num">01</p>
+          <p class="pillar-title">LP制作</p>
+          <p class="pillar-body">業種・ターゲットに合ったデザインと成約につながる構成で制作。</p>
         </div>
-      </div>
-      <div class="review-card reveal reveal-delay-3">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">「制作会社に頼むのが不安だったのでフリーランスにしましたが、品質は完全に制作会社レベルでした。価格も予算内に収まり、LPからの集客が3倍になりました。」</p>
-        <div class="review-author">
-          <div class="review-avatar">Y</div>
-          <div><div class="review-name">Y.N 様</div><div class="review-role">カフェオーナー・福岡県</div></div>
+        <div class="pillar reveal">
+          <p class="pillar-num">02</p>
+          <p class="pillar-title">AI自動化</p>
+          <p class="pillar-body">問い合わせ・予約・返信など、繰り返しの業務をAIとWebで自動化。</p>
+        </div>
+        <div class="pillar reveal">
+          <p class="pillar-num">03</p>
+          <p class="pillar-title">Webシステム</p>
+          <p class="pillar-body">予約システム・料金計算・LINE連携など、業務直結の機能を実装。</p>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- PRICE -->
-<section id="price" class="section">
-  <div class="section-inner">
-    <div class="reveal">
-      <div class="section-label">Pricing</div>
-      <h2 class="section-h2"><span class="grad">料金プラン</span></h2>
-      <p class="section-sub">シンプルな料金体系でご提案。まずはお見積もりを。</p>
+  <!-- WORKS -->
+  <section id="works" aria-labelledby="works-h2">
+    <div class="works-header">
+      <h2 class="works-h2 reveal" id="works-h2">制作実績</h2>
+      <p class="reveal" style="font-size:.8125rem;color:#504c48;padding-bottom:.375rem;">クリックして実際のLPを確認できます。</p>
     </div>
-    <div class="price-grid">
-      <div class="price-card reveal reveal-delay-1">
-        <div class="price-name">ライト LP</div>
-        <div class="price-amount"><span class="price-num">3</span><span class="price-unit">万円〜</span></div>
-        <div class="price-from">税込 3.3万円〜</div>
-        <p class="price-desc">スピード重視の小規模LP。シンプル設計・早期公開を優先したいケースに。</p>
-        <ul class="price-features">
-          <li class="price-feature"><span class="price-check">✓</span>シングルページLP</li>
-          <li class="price-feature"><span class="price-check">✓</span>レスポンシブ対応</li>
-          <li class="price-feature"><span class="price-check">✓</span>お問い合わせフォーム</li>
-          <li class="price-feature"><span class="price-check">✓</span>納品5〜7日目安</li>
-          <li class="price-feature"><span class="price-check">✓</span>1ヶ月無料サポート</li>
-        </ul>
-        <a class="price-cta price-outline" href="#contact">相談・見積もり</a>
-      </div>
-      <div class="price-card popular reveal reveal-delay-2">
-        <div class="price-badge">人気 No.1</div>
-        <div class="price-name">スタンダード LP</div>
-        <div class="price-amount"><span class="price-num">8</span><span class="price-unit">万円〜</span></div>
-        <div class="price-from">税込 8.8万円〜</div>
-        <p class="price-desc">集客重視のフルスペックLP。アニメーション・SEO対策・CV最大化設計を標準装備。</p>
-        <ul class="price-features">
-          <li class="price-feature"><span class="price-check">✓</span>フルアニメーションLP</li>
-          <li class="price-feature"><span class="price-check">✓</span>SEO構造化データ実装</li>
-          <li class="price-feature"><span class="price-check">✓</span>CV最大化設計</li>
-          <li class="price-feature"><span class="price-check">✓</span>Google Analytics連携</li>
-          <li class="price-feature"><span class="price-check">✓</span>納品10〜14日目安</li>
-          <li class="price-feature"><span class="price-check">✓</span>1ヶ月無料サポート</li>
-        </ul>
-        <a class="price-cta price-fill" href="#contact">相談・見積もり</a>
-      </div>
-      <div class="price-card reveal reveal-delay-3">
-        <div class="price-name">プレミアム LP</div>
-        <div class="price-amount"><span class="price-num">15</span><span class="price-unit">万円〜</span></div>
-        <div class="price-from">税込 16.5万円〜</div>
-        <p class="price-desc">AI機能・予約システム・高度な実装込みのハイエンド構成。差別化したいブランドへ。</p>
-        <ul class="price-features">
-          <li class="price-feature"><span class="price-check">✓</span>AI機能・チャットボット</li>
-          <li class="price-feature"><span class="price-check">✓</span>予約・料金シミュレーター</li>
-          <li class="price-feature"><span class="price-check">✓</span>LINE/外部ツール連携</li>
-          <li class="price-feature"><span class="price-check">✓</span>世界トップレベルUI</li>
-          <li class="price-feature"><span class="price-check">✓</span>納品2〜3週間目安</li>
-          <li class="price-feature"><span class="price-check">✓</span>3ヶ月無料サポート</li>
-        </ul>
-        <a class="price-cta price-outline" href="#contact">相談・見積もり</a>
-      </div>
-    </div>
-    <p class="reveal" style="text-align:center;margin-top:2rem;font-size:.8125rem;color:var(--text3)">※ 料金はすべて目安です。要件により変動します。まずはお気軽にご相談ください。</p>
-  </div>
-</section>
+    <div class="works-grid" role="list">
 
-<!-- FLOW -->
-<section id="flow" class="section">
-  <div class="section-inner">
-    <div class="reveal"><div class="section-label">Process</div><h2 class="section-h2"><span class="grad">制作の流れ</span></h2><p class="section-sub">ご依頼から納品まで、迷わず進められるシンプルなフロー。</p></div>
-    <div class="flow-steps">
-      <div class="flow-line"></div>
-      <div class="flow-step reveal"><div class="flow-icon">💬</div><div class="flow-num">STEP 01</div><div class="flow-title">無料ヒアリング</div><div class="flow-text">目的・予算・納期をLINE or メールで確認。</div></div>
-      <div class="flow-step reveal reveal-delay-1"><div class="flow-icon">📋</div><div class="flow-num">STEP 02</div><div class="flow-title">提案・お見積もり</div><div class="flow-text">構成案・費用・スケジュールを提示。</div></div>
-      <div class="flow-step reveal reveal-delay-2"><div class="flow-icon">🎨</div><div class="flow-num">STEP 03</div><div class="flow-title">デザイン・実装</div><div class="flow-text">途中経過も随時共有します。</div></div>
-      <div class="flow-step reveal reveal-delay-3"><div class="flow-icon">🔍</div><div class="flow-num">STEP 04</div><div class="flow-title">確認・修正</div><div class="flow-text">細かい修正に迅速対応。回数制限なし。</div></div>
-      <div class="flow-step reveal reveal-delay-4"><div class="flow-icon">🚀</div><div class="flow-num">STEP 05</div><div class="flow-title">納品・公開</div><div class="flow-text">公開後1ヶ月間サポート付き。</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section id="faq" class="section">
-  <div class="section-inner">
-    <div class="reveal"><div class="section-label">FAQ</div><h2 class="section-h2">よくある<span class="grad">ご質問</span></h2></div>
-    <div class="faq-list">
-      <div class="faq-item reveal"><div class="faq-q"><span class="faq-q-text">どんな業種・規模に対応していますか？</span><span class="faq-icon"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></div><div class="faq-a"><div class="faq-a-inner">店舗・中小企業・個人事業主・スタートアップまで幅広く対応しています。業種もカフェ・美容室・医療・不動産・SaaS・フィットネスなど多岐にわたります。</div></div></div>
-      <div class="faq-item reveal reveal-delay-1"><div class="faq-q"><span class="faq-q-text">費用の目安を教えてください。</span><span class="faq-icon"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></div><div class="faq-a"><div class="faq-a-inner">ご要件によって異なりますが、シンプルなLPは比較的リーズナブルにご提供しています。AI機能・予約システム・アニメーション実装など追加機能もご相談ください。まずは無料でお見積もりします。</div></div></div>
-      <div class="faq-item reveal reveal-delay-2"><div class="faq-q"><span class="faq-q-text">納期はどのくらいかかりますか？</span><span class="faq-icon"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></div><div class="faq-a"><div class="faq-a-inner">シンプルなLPであれば最短3日〜1週間。機能が多い場合は2〜3週間が目安です。「◯月◯日までに公開したい」という逆算でスケジュールを組むことも可能です。</div></div></div>
-      <div class="faq-item reveal reveal-delay-3"><div class="faq-q"><span class="faq-q-text">修正・アフターサポートはありますか？</span><span class="faq-icon"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></div><div class="faq-a"><div class="faq-a-inner">納品後1ヶ月間は無料でサポートします。テキスト変更・画像差し替え・細かいデザイン調整など、気軽にご連絡ください。</div></div></div>
-      <div class="faq-item reveal"><div class="faq-q"><span class="faq-q-text">素材（文章・写真）がない場合はどうすればいいですか？</span><span class="faq-icon"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></div><div class="faq-a"><div class="faq-a-inner">コピーライティングのご提案・ストック写真の選定・AI画像生成など、素材のない状態からでも対応可能です。「何も用意できていないけど作りたい」という方もお気軽にどうぞ。</div></div></div>
-      <div class="faq-item reveal reveal-delay-1"><div class="faq-q"><span class="faq-q-text">AI機能はどんなものを実装できますか？</span><span class="faq-icon"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></div><div class="faq-a"><div class="faq-a-inner">料金シミュレーター・AI問診・チャットボット・コンテンツ自動生成・パーソナライズ提案など、実用的なAI機能を実装できます。「こんなことがしたい」というイメージをお聞かせください。</div></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section id="cta">
-  <div class="cta-grid-lines"></div>
-  <div class="cta-inner reveal">
-    <div class="cta-label">Let's Work Together</div>
-    <h2 class="cta-h2">まず、<span class="grad">無料で相談</span>してみませんか？</h2>
-    <p class="cta-text">「こんなサイトを作りたい」「今のサイトを改善したい」<br />どんな段階のご相談でもOKです。一緒に考えます。</p>
-    <div style="display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;margin-bottom:2rem">
-      <div style="display:flex;align-items:center;gap:.5rem;font-size:.75rem;color:rgba(255,255,255,.65)"><span style="font-size:1rem">✓</span> 完全無料・相談のみもOK</div>
-      <div style="display:flex;align-items:center;gap:.5rem;font-size:.75rem;color:rgba(255,255,255,.65)"><span style="font-size:1rem">✓</span> 24時間以内に返信</div>
-      <div style="display:flex;align-items:center;gap:.5rem;font-size:.75rem;color:rgba(255,255,255,.65)"><span style="font-size:1rem">✓</span> 納品後1ヶ月サポート付き</div>
-    </div>
-    <div class="cta-actions">
-      <a class="btn-cta-primary" href="#contact">
-        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-        フォームで相談する
+      <a href="./portfolio/dental/" target="_blank" rel="noopener"
+         class="work-item" aria-label="みなと歯科クリニック LP を開く" role="listitem">
+        <div class="wi-bg" style="background-color:#071e3d;background-image:url('https://images.unsplash.com/photo-1588776814546-1ffbb172d536?w=900&q=55&auto=format&fit=crop');opacity:.38;"></div>
+        <div class="wi-overlay"></div>
+        <span class="wi-cat">Medical / Dental</span>
+        <div class="wi-bottom">
+          <p class="wi-title">みなと歯科クリニック</p>
+          <span class="wi-arrow">View LP <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
+        </div>
       </a>
-      <a class="btn-cta-secondary" href="https://lin.ee/wYTBSCJ" target="_blank" rel="noopener">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.03 2 11c0 2.84 1.38 5.38 3.55 7.09L4.5 22l3.73-1.98A10.6 10.6 0 0012 20.5c5.52 0 10-4.03 10-9S17.52 2 12 2z"/></svg>
-        LINEで気軽に相談
+
+      <a href="./portfolio/cafe/" target="_blank" rel="noopener"
+         class="work-item" aria-label="Cafe Aroma LP を開く" role="listitem">
+        <div class="wi-bg" style="background-color:#3d2b1f;background-image:url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=900&q=55&auto=format&fit=crop');opacity:.42;"></div>
+        <div class="wi-overlay"></div>
+        <span class="wi-cat">Cafe / Food</span>
+        <div class="wi-bottom">
+          <p class="wi-title">Cafe Aroma</p>
+          <span class="wi-arrow">View LP <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
+        </div>
       </a>
-    </div>
-  </div>
-</section>
 
-<!-- CONTACT -->
-<section id="contact" class="section">
-  <div class="section-inner">
-    <div class="reveal"><div class="section-label">Contact</div><h2 class="section-h2"><span class="grad">お問い合わせ</span></h2></div>
-    <div style="max-width:640px">
-      <p class="contact-note reveal reveal-delay-1">ご依頼・ご相談・お見積もりはこちらから。<br />通常24時間以内にご返信いたします。</p>
-      <form id="contact-form" action="https://formspree.io/f/mrewyppy" method="POST" class="reveal reveal-delay-2">
-        <div class="form-group"><label class="form-label" for="name">お名前 <span style="color:#dc2626">*</span></label><input class="form-input" type="text" id="name" name="name" placeholder="山田 太郎" required /></div>
-        <div class="form-group"><label class="form-label" for="email">メールアドレス <span style="color:#dc2626">*</span></label><input class="form-input" type="email" id="email" name="email" placeholder="example@email.com" required /></div>
-        <div class="form-group"><label class="form-label" for="service">ご相談内容</label><select class="form-select" id="service" name="service"><option value="">選択してください</option><option value="lp">LP制作</option><option value="web">Webサイト制作</option><option value="ai">AI機能導入</option><option value="system">業務システム開発</option><option value="consult">Webコンサルティング</option><option value="other">その他</option></select></div>
-        <div class="form-group"><label class="form-label" for="message">メッセージ <span style="color:#dc2626">*</span></label><textarea class="form-textarea" id="message" name="message" placeholder="ご要望・ご予算・納期など、お気軽にお書きください。" required></textarea></div>
-        <button class="form-submit" type="submit" id="submit-btn">送信する →</button>
-        <div id="form-status"></div>
-      </form>
-      <div class="contact-divider reveal">または</div>
-      <a class="btn-line reveal" href="https://lin.ee/wYTBSCJ" target="_blank" rel="noopener">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.03 2 11c0 2.84 1.38 5.38 3.55 7.09L4.5 22l3.73-1.98A10.6 10.6 0 0012 20.5c5.52 0 10-4.03 10-9S17.52 2 12 2zm0 16.5a8.6 8.6 0 01-3.55-.77L6 18.77l1.06-2.88C5.38 14.6 4 12.93 4 11c0-4.14 3.58-7.5 8-7.5s8 3.36 8 7.5-3.58 7.5-8 7.5z"/></svg>
-        LINEで気軽に相談する
+      <a href="./portfolio/beauty/" target="_blank" rel="noopener"
+         class="work-item" aria-label="Hair Salon BLOOM LP を開く" role="listitem">
+        <div class="wi-bg" style="background-color:#2e2420;background-image:url('https://images.unsplash.com/photo-1562322140-8baeececf3df?w=900&q=55&auto=format&fit=crop');opacity:.42;"></div>
+        <div class="wi-overlay"></div>
+        <span class="wi-cat">Beauty / Hair</span>
+        <div class="wi-bottom">
+          <p class="wi-title">Hair Salon BLOOM</p>
+          <span class="wi-arrow">View LP <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
+        </div>
       </a>
+
+      <a href="./personal-gym-lp/" target="_blank" rel="noopener"
+         class="work-item" aria-label="LUXE BODY TOKYO LP を開く" role="listitem">
+        <div class="wi-bg" style="background-color:#080808;background-image:url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=900&q=55&auto=format&fit=crop');opacity:.42;"></div>
+        <div class="wi-overlay"></div>
+        <span class="wi-cat">Fitness / Premium Gym</span>
+        <div class="wi-bottom">
+          <p class="wi-title">LUXE BODY TOKYO</p>
+          <span class="wi-arrow">View LP <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
+        </div>
+      </a>
+
+      <a href="./portfolio/chiro/" target="_blank" rel="noopener"
+         class="work-item" aria-label="さくら整骨院 LP を開く" role="listitem">
+        <div class="wi-bg" style="background-color:#1a2030;background-image:url('https://images.unsplash.com/photo-1519824145371-296894a0daa9?w=900&q=55&auto=format&fit=crop');opacity:.42;"></div>
+        <div class="wi-overlay"></div>
+        <span class="wi-cat">Medical / Health</span>
+        <div class="wi-bottom">
+          <p class="wi-title">さくら整骨院</p>
+          <span class="wi-arrow">View LP <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
+        </div>
+      </a>
+
+      <a href="./portfolio/sns-school/" target="_blank" rel="noopener"
+         class="work-item" aria-label="PostPilot LP を開く" role="listitem">
+        <div class="wi-bg" style="background-color:#0c0820;background-image:url('https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=900&q=55&auto=format&fit=crop');opacity:.42;"></div>
+        <div class="wi-overlay"></div>
+        <span class="wi-cat">SaaS / AI Product</span>
+        <div class="wi-bottom">
+          <p class="wi-title">PostPilot</p>
+          <span class="wi-arrow">View LP <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
+        </div>
+      </a>
+
+      <a href="./souzoku-lp/" target="_blank" rel="noopener"
+         class="work-item" aria-label="相続・遺言 行政書士LP を開く" role="listitem">
+        <div class="wi-bg" style="background-color:#0d2240;background-image:url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=900&q=55&auto=format&fit=crop');opacity:.28;"></div>
+        <div class="wi-overlay"></div>
+        <span class="wi-cat">Legal / 士業</span>
+        <div class="wi-bottom">
+          <p class="wi-title">相続・遺言 行政書士LP</p>
+          <span class="wi-arrow">View LP <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
+        </div>
+      </a>
+
+      <a href="./portfolio/realestate/" target="_blank" rel="noopener"
+         class="work-item" aria-label="不動産LP を開く" role="listitem">
+        <div class="wi-bg" style="background-color:#0c1020;background-image:url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=900&q=55&auto=format&fit=crop');opacity:.42;"></div>
+        <div class="wi-overlay"></div>
+        <span class="wi-cat">Real Estate</span>
+        <div class="wi-bottom">
+          <p class="wi-title">不動産LP</p>
+          <span class="wi-arrow">View LP <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
+        </div>
+      </a>
+
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-logo">HAYATO</div>
-    <ul class="footer-links">
-      <li><a href="#services">できること</a></li>
-      <li><a href="#works">実績</a></li>
-      <li><a href="#flow">制作の流れ</a></li>
-      <li><a href="#faq">FAQ</a></li>
-      <li><a href="#contact">お問い合わせ</a></li>
-    </ul>
-  </div>
-  <div class="footer-copy">© 2026 Hayato. All rights reserved.</div>
-</footer>
+  <!-- PROCESS -->
+  <section id="process" aria-labelledby="process-h2">
+    <div class="process-wrap">
+      <h2 class="process-h2 reveal" id="process-h2">制作の流れ</h2>
+      <div class="process-grid">
+        <div class="process-step reveal">
+          <p class="p-num">01</p>
+          <p class="p-title">ヒアリング</p>
+          <p class="p-body">目的・ターゲット・予算・納期をLINEまたはお問い合わせで確認します。</p>
+        </div>
+        <div class="process-step reveal">
+          <p class="p-num">02</p>
+          <p class="p-title">構成設計</p>
+          <p class="p-body">集客導線・CTA配置・コンテンツ構成をワイヤーフレームで設計します。</p>
+        </div>
+        <div class="process-step reveal">
+          <p class="p-num">03</p>
+          <p class="p-title">デザイン</p>
+          <p class="p-body">業種・ブランドに合ったビジュアルデザインを制作します。</p>
+        </div>
+        <div class="process-step reveal">
+          <p class="p-num">04</p>
+          <p class="p-title">実装</p>
+          <p class="p-body">コーディング・フォーム設置・AI機能の組み込みまで一貫して行います。</p>
+        </div>
+        <div class="process-step reveal">
+          <p class="p-num">05</p>
+          <p class="p-title">公開</p>
+          <p class="p-body">GitHub Pages・Vercel・Surgeなど最適な環境で公開します。</p>
+        </div>
+        <div class="process-step reveal">
+          <p class="p-num">06</p>
+          <p class="p-title">改善</p>
+          <p class="p-body">公開後のアクセス解析・機能追加・修正を継続サポートします。</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<a id="line-btn" href="https://lin.ee/wYTBSCJ" target="_blank" rel="noopener" aria-label="LINEで相談">
-  <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.03 2 11c0 2.84 1.38 5.38 3.55 7.09L4.5 22l3.73-1.98A10.6 10.6 0 0012 20.5c5.52 0 10-4.03 10-9S17.52 2 12 2zm1 13H9v-1.5h4V15zm2-3H9v-1.5h6V12zm0-3H9V7.5h6V9z"/></svg>
-</a>
-<button id="back-top" aria-label="トップへ戻る">
-  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 15l7-7 7 7"/></svg>
-</button>
+  <!-- SERVICES -->
+  <section id="services" aria-labelledby="services-h2">
+    <div class="services-wrap">
+      <h2 class="services-h2 reveal" id="services-h2">提供サービス</h2>
+      <div class="services-grid">
+        <div class="svc-item reveal">
+          <span class="svc-line" aria-hidden="true"></span>
+          <div>
+            <p class="svc-title">LP制作</p>
+            <p class="svc-body">成約率を高める構成・デザイン・コーディング。最短3日納品。</p>
+          </div>
+        </div>
+        <div class="svc-item reveal">
+          <span class="svc-line" aria-hidden="true"></span>
+          <div>
+            <p class="svc-title">予約フォーム実装</p>
+            <p class="svc-body">Googleカレンダー連携・Calendlyなど予約動線を実装します。</p>
+          </div>
+        </div>
+        <div class="svc-item reveal">
+          <span class="svc-line" aria-hidden="true"></span>
+          <div>
+            <p class="svc-title">問い合わせフォーム</p>
+            <p class="svc-body">Formspree・EmailJS・カスタムAPIによる問い合わせ窓口を設置します。</p>
+          </div>
+        </div>
+        <div class="svc-item reveal">
+          <span class="svc-line" aria-hidden="true"></span>
+          <div>
+            <p class="svc-title">料金シミュレーター</p>
+            <p class="svc-body">条件に応じた料金を自動計算するインタラクティブ機能を実装します。</p>
+          </div>
+        </div>
+        <div class="svc-item reveal">
+          <span class="svc-line" aria-hidden="true"></span>
+          <div>
+            <p class="svc-title">LINE導線設計</p>
+            <p class="svc-body">LINE公式アカウント連携・自動返信設定まで対応します。</p>
+          </div>
+        </div>
+        <div class="svc-item reveal">
+          <span class="svc-line" aria-hidden="true"></span>
+          <div>
+            <p class="svc-title">公開・デプロイ対応</p>
+            <p class="svc-body">GitHub Pages・Vercel・Surgeへの公開設定まで一貫して対応します。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<script>
-/* LOADER */
-window.addEventListener('load',()=>setTimeout(()=>document.getElementById('loader').classList.add('hidden'),280));
+  <!-- CTA -->
+  <section id="cta" aria-labelledby="cta-h2">
+    <div class="cta-ambient" aria-hidden="true"></div>
+    <div class="cta-inner">
+      <span class="cta-eyebrow reveal">無料相談受付中</span>
+      <h2 class="cta-h2 reveal" id="cta-h2">まず、<br>話しましょう。</h2>
+      <p class="cta-sub reveal">
+        相談・見積もり・アイデアの壁打ちなど、お気軽にどうぞ。通常24時間以内に返信します。
+      </p>
+      <div class="cta-actions reveal">
+        <a href="https://lin.ee/wYTBSCJ" target="_blank" rel="noopener" class="btn-cl">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.03 2 11c0 2.84 1.38 5.38 3.55 7.09L4.5 22l3.73-1.98A10.6 10.6 0 0012 20.5c5.52 0 10-4.03 10-9S17.52 2 12 2z"/></svg>
+          LINEで相談する
+        </a>
+        <a href="mailto:khaya0026@gmail.com" class="btn-cm">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          メールで相談する
+        </a>
+      </div>
+    </div>
+  </section>
 
-/* PROGRESS */
-const prog=document.getElementById('progress');
-window.addEventListener('scroll',()=>{prog.style.transform=`scaleX(${window.scrollY/(document.body.scrollHeight-window.innerHeight)})`;},{passive:true});
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <a href="#" class="footer-logo">Hayato</a>
+      <p class="footer-copy">LP制作 / AI自動化 / Webシステム構築</p>
+      <p class="footer-copy">© 2025 Hayato. All rights reserved.</p>
+    </div>
+  </footer>
 
-/* NAV */
-window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',window.scrollY>40),{passive:true});
+  <!-- Scripts (load order matters: GSAP -> ScrollTrigger -> Lenis -> init) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <script>
+  (function () {
+    'use strict';
 
-/* BURGER */
-const burger=document.getElementById('burger'),mNav=document.getElementById('mobile-nav');
-burger.addEventListener('click',()=>{burger.classList.toggle('open');mNav.classList.toggle('open');document.body.style.overflow=mNav.classList.contains('open')?'hidden':'';});
-document.querySelectorAll('.mobile-link').forEach(l=>l.addEventListener('click',()=>{burger.classList.remove('open');mNav.classList.remove('open');document.body.style.overflow='';}));
+    /* ── Lenis + GSAP ticker integration ── */
+    var lenis = new Lenis({
+      duration: 1.25,
+      easing: function (t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); }
+    });
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.ticker.add(function (time) { lenis.raf(time * 1000); });
+    gsap.ticker.lagSmoothing(0);
+    lenis.on('scroll', ScrollTrigger.update);
 
-/* SCROLL REVEAL */
-const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+    /* ── Hero line reveal ── */
+    ['hl0','hl1','hl2'].forEach(function (id, i) {
+      setTimeout(function () {
+        var el = document.getElementById(id);
+        if (el) el.classList.add('show');
+      }, 550 + i * 170);
+    });
 
-/* COUNTER */
-function counter(el){
-  const t=+el.dataset.target,d=1500,s=performance.now();
-  const step=n=>{const p=Math.min((n-s)/d,1),ease=1-Math.pow(1-p,3);el.textContent=Math.round(ease*t);if(p<1)requestAnimationFrame(step);else el.textContent=t;};
-  requestAnimationFrame(step);
-}
-const cobs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){counter(e.target);cobs.unobserve(e.target);}});},{threshold:.5});
-document.querySelectorAll('.counter').forEach(el=>cobs.observe(el));
-
-/* BACK TO TOP */
-const bt=document.getElementById('back-top');
-window.addEventListener('scroll',()=>bt.classList.toggle('visible',window.scrollY>400),{passive:true});
-bt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
-
-/* FAQ */
-document.querySelectorAll('.faq-q').forEach(q=>{
-  q.addEventListener('click',()=>{
-    const item=q.parentElement,isOpen=item.classList.contains('open');
-    document.querySelectorAll('.faq-item').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-a').style.maxHeight='';});
-    if(!isOpen){item.classList.add('open');const a=item.querySelector('.faq-a');a.style.maxHeight=a.scrollHeight+'px';}
-  });
-});
-
-/* WORKS FILTER */
-document.querySelectorAll('.filter-btn').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
-    btn.classList.add('active');
-    const f=btn.dataset.filter;
-    document.querySelectorAll('.work-card').forEach(c=>c.classList.toggle('hidden',f!=='all'&&c.dataset.cat!==f));
-  });
-});
-
-/* 3D WORK CARD TILT */
-document.querySelectorAll('.work-card').forEach(card=>{
-  card.addEventListener('mouseenter',()=>card.classList.add('hovered'));
-  card.addEventListener('mouseleave',()=>{card.classList.remove('hovered');card.style.transform='';});
-  card.addEventListener('mousemove',e=>{
-    const r=card.getBoundingClientRect();
-    const x=(e.clientX-r.left)/r.width-.5;
-    const y=(e.clientY-r.top)/r.height-.5;
-    card.style.transform=`perspective(700px) rotateY(${x*14}deg) rotateX(${-y*10}deg) translateY(-6px) scale(1.02)`;
-    card.style.boxShadow=`${-x*20}px ${-y*20+16}px 40px rgba(0,0,0,.14),0 4px 16px rgba(0,0,0,.06)`;
-  });
-});
-
-/* HERO 3D MOUSE PARALLAX */
-const stage=document.getElementById('hero-stage');
-const hCards=document.querySelectorAll('.hc');
-if(stage){
-  let ticking=false;
-  document.getElementById('hero').addEventListener('mousemove',e=>{
-    if(ticking)return;ticking=true;
-    requestAnimationFrame(()=>{
-      const rect=stage.getBoundingClientRect();
-      const cx=(e.clientX-rect.left-rect.width/2)/rect.width;
-      const cy=(e.clientY-rect.top-rect.height/2)/rect.height;
-      hCards.forEach(card=>{
-        const depth=parseFloat(card.dataset.depth)||1;
-        const base=card.dataset.base||'';
-        const tx=cx*depth*-28;
-        const ty=cy*depth*-18;
-        card.style.transform=`${base} translate(${tx}px,${ty}px)`;
+    /* ── IntersectionObserver: general reveals ── */
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('show');
+          io.unobserve(e.target);
+        }
       });
-      ticking=false;
+    }, { threshold: 0.1, rootMargin: '0px 0px -36px 0px' });
+    document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+
+    /* ── Nav scroll state ── */
+    var nav = document.getElementById('nav');
+    window.addEventListener('scroll', function () {
+      nav.classList.toggle('scrolled', window.scrollY > 56);
+    }, { passive: true });
+
+    /* ── Works: scroll-driven parallax on bg layers ── */
+    document.querySelectorAll('.work-item').forEach(function (item) {
+      var bg = item.querySelector('.wi-bg');
+      if (!bg) return;
+      gsap.fromTo(bg,
+        { y: '0%' },
+        { y: '9%', ease: 'none',
+          scrollTrigger: { trigger: item, start: 'top bottom', end: 'bottom top', scrub: true }
+        }
+      );
     });
-  });
-  document.getElementById('hero').addEventListener('mouseleave',()=>{
-    hCards.forEach(card=>{card.style.transform=card.dataset.base||'';});
-  });
-}
 
-/* RIPPLE */
-document.querySelectorAll('.btn-accent,.btn-primary,.btn-cta-primary,.form-submit').forEach(btn=>{
-  btn.addEventListener('click',e=>{
-    const r=document.createElement('span');r.className='ripple';
-    const rect=btn.getBoundingClientRect();
-    const size=Math.max(rect.width,rect.height)*2;
-    r.style.cssText=`width:${size}px;height:${size}px;left:${e.clientX-rect.left-size/2}px;top:${e.clientY-rect.top-size/2}px`;
-    btn.appendChild(r);r.addEventListener('animationend',()=>r.remove());
-  });
-});
-
-/* CONTACT FORM */
-const form=document.getElementById('contact-form'),sbtn=document.getElementById('submit-btn'),fstat=document.getElementById('form-status');
-form.addEventListener('submit',async e=>{
-  e.preventDefault();
-  sbtn.disabled=true;sbtn.classList.add('sending');sbtn.textContent='送信中...';
-  fstat.className='';fstat.style.display='none';
-  try{
-    const res=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});
-    if(res.ok){
-      form.reset();
-      fstat.innerHTML='<div class="fstat-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-5"/></svg></div><p class="fstat-title">お問い合わせありがとうございます！</p><p class="fstat-body">24時間以内にご返信いたします。</p>';
-      fstat.className='success';
-    }else throw new Error();
-  }catch{
-    fstat.innerHTML='<div class="fstat-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div><p class="fstat-title">送信に失敗しました。</p><p class="fstat-body">時間をおいて再度お試しください。</p>';
-    fstat.className='error';
-  }finally{sbtn.disabled=false;sbtn.classList.remove('sending');sbtn.textContent='送信する →';}
-});
-
-/* SMOOTH ANCHORS */
-document.querySelectorAll('a[href^="#"]').forEach(a=>{
-  a.addEventListener('click',e=>{const el=document.getElementById(a.getAttribute('href').slice(1));if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth'});}});
-});
-
-/* PARALLAX ORBS */
-(function(){
-  const orbA=document.getElementById('orb-a');
-  const orbB=document.getElementById('orb-b');
-  const orbC=document.getElementById('orb-c');
-  const orbD=document.getElementById('orb-d');
-  const orbE=document.getElementById('orb-e');
-  const orbF=document.getElementById('orb-f');
-  let ticking=false;
-  window.addEventListener('scroll',()=>{
-    if(ticking)return;ticking=true;
-    requestAnimationFrame(()=>{
-      const y=window.scrollY;
-      if(orbA)orbA.style.transform=`translateY(${y*0.13}px)`;
-      if(orbB)orbB.style.transform=`translateY(${y*-0.09}px)`;
-      if(orbC)orbC.style.transform=`translateY(${y*0.07}px)`;
-      if(orbD)orbD.style.transform=`translateY(${y*-0.06}px)`;
-      if(orbE)orbE.style.transform=`translateY(${y*0.08}px)`;
-      if(orbF)orbF.style.transform=`translateY(${y*-0.05}px)`;
-      ticking=false;
+    /* ── Works: stagger fade-in ── */
+    gsap.utils.toArray('.work-item').forEach(function (item, i) {
+      gsap.fromTo(item,
+        { opacity: 0, y: 28 },
+        { opacity: 1, y: 0, duration: .85, ease: 'power3.out',
+          delay: (i % 2) * 0.1,
+          scrollTrigger: { trigger: item, start: 'top 88%', once: true }
+        }
+      );
     });
-  },{passive:true});
-})();
-</script>
+
+    /* ── 3D tilt on work cards ── */
+    if (window.matchMedia('(hover: hover)').matches) {
+      document.querySelectorAll('.work-item').forEach(function (card) {
+        card.addEventListener('mousemove', function (e) {
+          var r = card.getBoundingClientRect();
+          var x = (e.clientX - r.left) / r.width  - 0.5;
+          var y = (e.clientY - r.top)  / r.height - 0.5;
+          card.style.transform = 'perspective(900px) rotateY(' + (x * 7) + 'deg) rotateX(' + (-y * 5) + 'deg)';
+        });
+        card.addEventListener('mouseleave', function () {
+          card.style.transform = '';
+        });
+      });
+    }
+
+    /* ── Custom cursor (pointer-device only) ── */
+    var dot  = document.getElementById('cur-dot');
+    var ring = document.getElementById('cur-ring');
+    if (dot && ring && window.matchMedia('(hover: hover)').matches) {
+      var mx = window.innerWidth / 2, my = window.innerHeight / 2;
+      var rx = mx, ry = my;
+      document.addEventListener('mousemove', function (e) {
+        mx = e.clientX; my = e.clientY;
+        dot.style.left = mx + 'px';
+        dot.style.top  = my + 'px';
+      });
+      (function loop() {
+        rx += (mx - rx) * 0.1;
+        ry += (my - ry) * 0.1;
+        ring.style.left = rx + 'px';
+        ring.style.top  = ry + 'px';
+        requestAnimationFrame(loop);
+      })();
+      document.querySelectorAll('a, button, .work-item').forEach(function (el) {
+        el.addEventListener('mouseenter', function () { dot.classList.add('on-link');  ring.classList.add('on-link'); });
+        el.addEventListener('mouseleave', function () { dot.classList.remove('on-link'); ring.classList.remove('on-link'); });
+      });
+    }
+
+    /* ── Smooth anchor scrollTo ── */
+    document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        var id = this.getAttribute('href');
+        if (id === '#') {
+          e.preventDefault();
+          lenis.scrollTo(0, { duration: 1.4 });
+          return;
+        }
+        var target = document.querySelector(id);
+        if (target) {
+          e.preventDefault();
+          lenis.scrollTo(target, { offset: -72, duration: 1.4 });
+        }
+      });
+    });
+
+  }());
+  </script>
 </body>
 </html>
